@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Fall Meal Ideas — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <a href="/main-dishes/" class="hover:text-sage transition-colors">Main dishes</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Fast Fall Meal Ideas</span>
+</nav>
+
+<div class="max-w-2xl">
+
+  <!-- Title & photo -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-stone-800 mb-3">Fast Fall Meal Ideas</h1>
+    <span class="inline-block text-xs bg-sage text-white px-2 py-0.5 rounded-full mb-4">Main dishes</span>
+
+    
+    <div class="w-full h-40 bg-amber-50 rounded-xl border border-amber-100 flex items-center justify-center text-amber-200 text-5xl mb-4">
+      🍽
+    </div>
+    
+  </div>
+
+  <!-- Print button -->
+  <button onclick="window.print()" class="no-print mb-6 text-sm text-sage hover:underline border border-sage px-3 py-1 rounded">
+    Print recipe
+  </button>
+
+  <!-- Preamble / intro text -->
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+    <!-- Ingredients -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Ingredients</h2>
+      <ul class="space-y-1.5">
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Some of my “go-to” meals when kids were all young.</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Fast Side Dishes:</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Couscous – Cook in broth or water with seasonings if desired</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Israeli or Pearl Couscous</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Fast cooking quinoa</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Ratatouille from Harmon’s deli</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Alexia’s sweet potato fries – sprinkle with Cavendar’s Greek seasoning, bake as directed.</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1.  Chopped Cauliflower or Broccoli</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Drizzle juice from 1 orange on top of cauliflower or broccoli</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Drizzle EVOO on top, mix with hands, sprinkle with kosher salt and pepper.  Bake for 15-18 min.</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2.  Root vegies – Chop choice of fingerling potatoes, red potatoes, sweet potatoes, turnips, celery root, celery, kohlrabi bulbs, beets, onions, whole garlic cloves – Drizzle EVOO on top, mix around with hands, sprinkle with kosher salt and pepper.  Bake for 40 minutes.</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>3.  Butternut squash or zucchini or other squash – Chop in pieces (or buy already chopped!), place in pan, Drizzle EVOO on top, press 2-3 cloves of garlic on top, mix with hands, bake for 30 minutes.</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Fast Sandwiches:</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>French Dip:</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Thinly sliced roast beef (recommend Boar’s Head, Target brand is also pretty good)</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>French rolls, sliced</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Butter</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Provolone cheese</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 cans Campbell French Onion soup</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>water</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2. Ciabatta, chicken, marinara sauce, mozzarella or provolone cheese</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>3. Firm sandwich bread, turkey, artichoke pesto, tomatoes, Havarti cheese</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>4. Caprese – fresh mozzarella, basil leaves, tomato slices, drizzle of balsamic vinegar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>5. Proscuitto, fontina or Coastal cheese, spinach leaves</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>6. Pizza panini – tomato or pizza sauce, fresh mozzarella, basil slices</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Eggs:</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>French Omelet Bar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Set up filling choices – bacon, ham, chopped tomatoes, chopped green onions, spinach, grated cheeses, bay shrimp, sliced avocados, chopped vegetables</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Whip 3 eggs well with 3 TB water.  Butter omelet pan, pour ½ of egg mixture in each side.  Cook over low-med heat until almost set.  Fill with your choice of filling.  Flip pan.  Cook over low heat for 2-3 minutes.</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Toad-in-the-hole</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>12 slices white bread</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>½ lb. sliced sharp Cheddar cheese (or other cheese of choice)</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>4 eggs, beaten</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 ½ c. whole milk</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>½ tsp. prepared mustard</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>½ tsp. salt and pepper</span>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    <!-- Instructions -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Instructions</h2>
+      <ol class="space-y-3 list-none">
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            1
+          </span>
+          <span class="pt-0.5">Roasted Vegetables – My favorite fast way to cook vegies.  Line a roasting pan with aluminum foil.  Preheat oven to 425 degrees (use convection setting if you have convection oven.) Roasting brings out the flavor.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            2
+          </span>
+          <span class="pt-0.5">Try these combinations:</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            3
+          </span>
+          <span class="pt-0.5">Mix 2 cans of soup and 1 can of water in saucepan, heat.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            4
+          </span>
+          <span class="pt-0.5">Slice French rolls, butter and toast under broiler.  Layer roast beef on bottom side of roll, place Provolone cheese on top.  Return to broiler to melt cheese.  Put top on sandwich.  Serve with soup dip. (If you want to be fancier, slice 2 onions and caramelize in frying pan with butter – cook on low-med heat until golden and yummy or top with carmelized onions from the can.)</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            5
+          </span>
+          <span class="pt-0.5">Paninis:
+Try these combinations – 1. Ciabatta, basil pesto, goat cheese, red pepper strips</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            6
+          </span>
+          <span class="pt-0.5">Cut out circle from piece of white bread, melt butter in frying pan or griddle, put bread in pan, crack egg and put in center hole of bread, place circle in pan and toast on both sides.  Once lightly set, flip bread over and cook on other side.  Serve with toasted middle.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            7
+          </span>
+          <span class="pt-0.5">Cheese Strata</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            8
+          </span>
+          <span class="pt-0.5">Arrange 6 slices of bread in a buttered 13 x 9 inch pan.  Top with cheese slices, then top with additional bread slices.  Place all other ingredients in blender and mix well.  Pour egg mixture over bread.  Cover and place in refrigerator for several hours.  Bake at 325 for 40 minutes.</span>
+        </li>
+        
+      </ol>
+    </section>
+    
+
+  </div>
+
+  <!-- Notes -->
+  
+  <section class="mt-8 bg-amber-50 border border-amber-100 rounded-xl px-5 py-4">
+    <h2 class="text-base font-bold text-sage mb-2">Notes &amp; Tips</h2>
+    <ul class="space-y-1.5">
+      
+      <li class="text-sm text-stone-600 italic">Bacon Pie</li>
+      
+      <li class="text-sm text-stone-600 italic">Pillsbury refrigerated pie crust</li>
+      
+      <li class="text-sm text-stone-600 italic">2 ½ cup – 3 C grated Swiss cheese</li>
+      
+      <li class="text-sm text-stone-600 italic">6-8 slices of bacon, cooked and chopped</li>
+      
+      <li class="text-sm text-stone-600 italic">5 eggs</li>
+      
+      <li class="text-sm text-stone-600 italic">1 cup half-n-half</li>
+      
+      <li class="text-sm text-stone-600 italic">1 ½ cups milk</li>
+      
+      <li class="text-sm text-stone-600 italic">½ tsp Salt and ¼ tsp. pepper</li>
+      
+      <li class="text-sm text-stone-600 italic">Preheat oven to 425 degrees.  Unroll pie crust, crimp edge.  Sprinkle bacon in bottom of crust, then top with Swiss cheese.  Place eggs, milk, half-n-half, salt and pepper in blender, mix well.  Pour egg mixture on top of bacon/cheese.  Bake at 425 degrees for 15 minutes, reduce oven temp to 350 degrees, and bake for additional 30 minutes.  Remove from oven, let rest 5 minutes, cut and serve.</li>
+      
+      <li class="text-sm text-stone-600 italic">Favorite leftover meat idea:</li>
+      
+      <li class="text-sm text-stone-600 italic">Puff pastry shells – bake as directed</li>
+      
+      <li class="text-sm text-stone-600 italic">Use with left-over roast or chicken.  Mix 2 cans Cream of Mushroom soup and 1 can whole milk in pan.  Whisk and heat, stir in left over meat.</li>
+      
+      <li class="text-sm text-stone-600 italic">When puff pastry shells done, remove top and middle portion.  Ladle in soup/meat mixture, place top on.  Serve.</li>
+      
+      <li class="text-sm text-stone-600 italic">Crock-Pot</li>
+      
+      <li class="text-sm text-stone-600 italic">Cream Cheese Chicken</li>
+      
+      <li class="text-sm text-stone-600 italic">Place 1/3 – ½ package frozen chicken tenderloins (from Costco) in bottom of crock pot.  Add 1 can of cream of chicken soup, 1 8-oz. block of cream cheese (cubed), and 1 package Zesty Italian dry recipe package.  Cook on low for 8 hours.  Stir every 2-3 hours.  Serve with rice.</li>
+      
+      <li class="text-sm text-stone-600 italic">Meatballs</li>
+      
+      <li class="text-sm text-stone-600 italic">Place ½ package of frozen meatballs (from Costco) in bottom or crock pot.  Add 2 bottles of Heinz chili sauce, 32 oz. grape jelly, 3-4 crushed garlic cloves, dashes of Tabasco.  Cook on low for about 8 hours.  Serve on rolls, over rice, or as an appetizer.</li>
+      
+      <li class="text-sm text-stone-600 italic">Mexican chicken</li>
+      
+      <li class="text-sm text-stone-600 italic">Place 1/3-1/2 package of frozen chicken tenderloins, sliced onions, sliced bell peppers.  Top with 1 can Rotel original tomatoes and 1 can mild enchilada sauce.  Cook on low for about 8 hours.  Serve with tortillas.</li>
+      
+    </ul>
+  </section>
+  
+
+  <!-- If no structured content was parsed, show raw preamble as full text -->
+  
+
+</div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

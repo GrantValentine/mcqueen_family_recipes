@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lemon Cream Cheese Squares — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <a href="/cookies/" class="hover:text-sage transition-colors">Cookies</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Lemon Cream Cheese Squares</span>
+</nav>
+
+<div class="max-w-2xl">
+
+  <!-- Title & photo -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-stone-800 mb-3">Lemon Cream Cheese Squares</h1>
+    <span class="inline-block text-xs bg-sage text-white px-2 py-0.5 rounded-full mb-4">Cookies</span>
+
+    
+    <div class="w-full h-40 bg-amber-50 rounded-xl border border-amber-100 flex items-center justify-center text-amber-200 text-5xl mb-4">
+      🍽
+    </div>
+    
+  </div>
+
+  <!-- Print button -->
+  <button onclick="window.print()" class="no-print mb-6 text-sm text-sage hover:underline border border-sage px-3 py-1 rounded">
+    Print recipe
+  </button>
+
+  <!-- Preamble / intro text -->
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+    <!-- Ingredients -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Ingredients</h2>
+      <ul class="space-y-1.5">
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Base:</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 cup flour</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>¼ cup powdered sugar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>8 tbsp unsalted butter, room temp, cut into 8 pieces</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Egg white for glazing</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Lemon Cheesecake Topping:</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>10 ounces Philadelphia cream cheese, at room temp</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>½ cup plus 1 tbsp granulated sugar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 tsp. grated lemon zest</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>¼ cup plus 1 tbsp sour cream, room temp</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>6 tbsp fresh lemon juice</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 large eggs, room temp</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 tsp vanilla</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Sour cream Layer:</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 cups sour cream</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>½ cup sugar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 tsp. vanilla</span>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    <!-- Instructions -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Instructions</h2>
+      <ol class="space-y-3 list-none">
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            1
+          </span>
+          <span class="pt-0.5">Preheat oven to 350 degrees F. Lightly grease 8-inch square pan with butter.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            2
+          </span>
+          <span class="pt-0.5">For the base, process flour and sugar in food processor for 20 seconds. Add the butter and process until dough comes together, about 20-30 seconds. Pat the dough gently over bottom of the prepared pan and glaze it with the egg white: Pour the egg white on the dough and tip the pan from side to side so that the white spreads over the surface. Pour off the excess. Bake the base on the center oven rack until golden, about 25 minutes. Place the base in the refrigerator for 15 minutes to cool. Keep the oven on.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            3
+          </span>
+          <span class="pt-0.5">While base is cooking, prepare the lemon cheesecake topping layer. Place cream cheese, granulated sugar, and lemon zest in medium-sized bowl and beat until light and fluffy, about 3 minutes. Stop the mixture a couple times to scrape the sides of the bowl. Add the eggs and vanilla and beat on medium-high heat until smooth and creamy, about 10 seconds. Spread the topping evenly over the base.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            4
+          </span>
+          <span class="pt-0.5">Bake the bars on the center oven rack until the top is slightly golden, about 1 hour. If the topping bubbles up during baking, prick the bubbles with a toothpick. While the lemon cream cheese layer is baking, combine the sour cream layer ingredients in a medium bowl. Let sit to allow sugar to dissolve.</span>
+        </li>
+        
+      </ol>
+    </section>
+    
+
+  </div>
+
+  <!-- Notes -->
+  
+  <section class="mt-8 bg-amber-50 border border-amber-100 rounded-xl px-5 py-4">
+    <h2 class="text-base font-bold text-sage mb-2">Notes &amp; Tips</h2>
+    <ul class="space-y-1.5">
+      
+      <li class="text-sm text-stone-600 italic">When lemon cream cheese layer is done, remove from oven and let cool for 15 minutes. Pour sour cream mixture on top and return to oven for 10 more minutes. Remove from oven and allow to cool completely. Refrigerate. Cut into bars using a sharp knife and wipe blade between cuts.</li>
+      
+    </ul>
+  </section>
+  
+
+  <!-- If no structured content was parsed, show raw preamble as full text -->
+  
+
+</div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

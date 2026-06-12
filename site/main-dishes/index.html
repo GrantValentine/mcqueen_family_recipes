@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main dishes — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Main dishes</span>
+</nav>
+
+<h1 class="text-3xl font-bold text-sage mb-1">Main dishes</h1>
+<p class="text-stone-500 text-sm mb-8">62 recipes</p>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  
+  <a href="/main-dishes/angel-hair-pasta-with-fresh-tomato-sauce/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Angel Hair Pasta with Fresh Tomato Sauce</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Ripe tomatoes (about 8-10 Roma, 4 large red) peeled, seeded and chopped, 1 small white onion or 3 scallions, minced, 2-3 cloves garlic…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/asparagus-bacon-pasta/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Asparagus Bacon Pasta</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 pkg. bow tie pasta
+1/2 c. (1 cube) butter (the real stuff)
+2-3 cloves garlic, minced
+3/4 c. grated Parmesan cheese
+1-2 chicken bouillon cubes
+1 pint heavy cream
+salt &amp; pepper to taste
+10-15 spears asparagus, blanched
+1/2 c. bacon, crumbled
+1/2 c. toasted pinenuts (or to taste)
+Parsley, to taste
+Parmesan cheese, to taste
+
+Boil bow tie pasta in salted water until al dente. Do NOT over cook.
+In wok or heavy skillet melt butter. Add minced garlic and saute a minute or so.
+Add Parmesan Cheese and bouillon cube(s). When the bouillon cube is dissolved, slowly stir in heavy cream and salt &amp; pepper. Add cooked pasta to cream sauce and toss until pasta is well covered. Add blanched asparagus. Sprinkle with crumbled bacon, toasted pinenuts, parsley &amp; Parmesan cheese and toss together. Serve immediately.…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/asparagus-soup/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Asparagus Soup</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      3 pounds fresh asparagus, rinsed, 8 cups chicken broth or stock, 4 tbsp unsalted butter…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/avgolemono/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Avgolemono</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Greek Lemon Chicken Soup, 1 tablespoon olive oil, 1 medium onion, diced…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/quiche-or-bacon-pie/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">BACON PIE (also known as quiche)</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Unbaked pie crust (for speed use Pillsbury refrigerated pie crust), 6-8 pieces of bacon, cooked and crumbled, 2 cups shredded Swiss cheese…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/baked-rigatoni-with-spinach-and-fresh-mozzarella/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Baked Rigatoni with Spinach and Fresh Mozzarella</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Garlic Tomato Sauce:, 2 tbsp EVOO, 8 cloves garlic, thinly sliced…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/beef-stroganoff/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Beef Stroganoff</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      From Oma’s cookbook, 1 ½ pounds top round steak, cut into 2-inch strips (can use other tender steak cut), 1 large onion, minced…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/butternut-apple-soup/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Butternut Apple Soup</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 onions, chopped, 3 TB butter, 2 cups diced butternut squash…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/carnitas/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Carnitas</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 tsp chili powder, paprika, cumin, and black pepper, ¼ tsp cayenne pepper, 2 tsp kosher salt…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/cheesy-chicken-strudel/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Cheesy Chicken Strudel</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 whole chicken breasts, cooked and diced, 1 onion, chopped, 8 ounces mushrooms, chopped…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/cherry-tomato-pasta-with-crispy-chickpeas/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Cherry Tomato Pasta with Crispy Chickpeas</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ½ cup EVOO, 1 can chickpeas, drained and patted dry, 3 sprigs fresh rosemary…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/chicken-artichoke-piccata/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chicken Artichoke Piccata</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Sauce:, ½ cup butter divided in half, 1 package sliced mushrooms…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/chicken-breast-in-phyllo-packets/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chicken Breast in Phyllo Packets</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 ½ cup mayonnaise, 1 cup chopped scallions, ¼ cup lemon juice…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/chicken-etouffee/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chicken Etouffee</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ⅓ cup vegetable oil, ⅓ cup all-purpose flour, ½ cup chopped onion…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/chilled-fruit-soup/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chilled Fruit Soup</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      6 medium-sized ripe peaches, peeled, pitted and sliced, ¼ cup dry white wine (non-alcoholic works fine), 6 tbsp fresh lemon juice…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/christmas-morning-breakfast-casserole/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Christmas Morning Breakfast Casserole</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      From Oma’s Cookbook, 4-6 slices of white bread (depends on size of bread slices), 1 pound bulk sausage (spicy or regular), browned and drained…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/cornmeal-crusted-salmon-fillets-with-artichoke-shallot-sauce/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Cornmeal Crusted Salmon Fillets with Artichoke Shallot Sauce</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      6 8-ounce salmon fillets, 2 cups cornmeal, ¼ tsp. paprika…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/cream-of-mushroom-soup/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Cream of Mushroom Soup</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1½ pounds fresh mushrooms, wiped clean and trimmed, 9 tablespoons butter, 2 finely chopped shallots…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/creamy-cheese-and-chicken-enchiladas/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Creamy Cheese and Chicken Enchiladas</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      This is one of Grandma Carol’s recipes, 8-9 flour tortillas, 3 cups shredded Monterey Jack Cheese…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/crustless-crab-quiche/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Crustless Crab Quiche</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Adapted from Pinch of Salt Lake Cookbook, 4 eggs, 1 cup sour cream…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/easy-baked-pork-tenderloin/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Easy Baked Pork Tenderloin</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 pork tenderloins, ¼ cup butter, Dry rub:…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/fast-fall-meal-ideas/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Fast Fall Meal Ideas</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Some of my “go-to” meals when kids were all young., Fast Side Dishes:, Couscous – Cook in broth or water with seasonings if desired…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/grandpa-frank-reuben-sandwiches/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Grandpa Frank Reuben Sandwiches</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Grandpa Frank loved a good Reuben sandwich. His favorite was on marble rye bread and toasted. While this is not Grandpa Frank’s recipe, it is my interpretation of a delicious Reuben that he would have loved. Best eaten while playing Monopoly and watching football– his favorite games., Good-quality pastrami, sliced very thin (I like Boar’s Head brand), Swiss cheese, sliced…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/hallelujah-halibut/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Hallelujah Halibut</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 pounds halibut steaks, about 1 inch thick, 1/3 cup mayonnaise, ½ cup sour cream…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/homestead-crab-cakes/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Homestead Crab Cakes</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 pound jumbo crabmeat (Chef recommended can of Phillips Crabmeat – found in refrigerator section at Costco and some supermarkets), drained well, ½ cup unseasoned bread crumbs, 2 egg yolks, beaten…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/horseradish-cream-sauce/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Horseradish Cream Sauce</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ¾ cup heavy whipping cream, 1/3 cup mayonnaise, ½ cup prepared horseradish, drained if needed…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/hungarian-goulash-soup-with-spaetzle/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Hungarian Goulash Soup with Spaetzle</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 onion, chopped, 2 garlic cloves, minced, 2 tbsp olive or avocado oil…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/indian-mulligatawney/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Indian Mulligatawney</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 tbsp. oil, 2 tbsp. butter, ¾ cup chopped onion…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/julie-s-flank-steak/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Flank Steak</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 ½ cup soy sauce, ½ cup water, orange juice, or beef broth, 1 generous tbsp Dijon mustard…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/julie-s-korean-fried-chicken/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Korean Fried Chicken</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      6 Skinless, boneless chicken breasts or 8 thighs, Marinade:, 3 TB Gochujang…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/pasta-sauce-bases/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Pasta Sauce Bases</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Pasta is a fast meal that can incorporate almost any ingredients. I use the below bases and then let creativity reign! When we were a full house of 10, I made pasta at least once a week., Basic Marinara Sauce, 2 28 oz. cans crushed tomatoes…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/julie-s-roasted-tomato-soup/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Roasted Tomato Soup</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 28 oz. cans chopped tomatoes, drained well, reserve juice, EVOO, Kosher salt and fresh ground black pepper…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/julies-soup-tips/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Soup Tips</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1.  You can make soup out of anything!, 2.  Be adventurous – try new flavor combinations, 3.  There are 3 types of soups:…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/julie-s-spaghetti-with-meat-sauce/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Spaghetti with Meat Sauce</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 medium onion, diced (about ½ cup), 3 cloves garlic, minced, ¼ cup butter…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/leftover-turkey-tortilla-soup/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Leftover Turkey Tortilla Soup (a.k.a. the pink soup)</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 tablespoons olive oil, 1½ cups chopped onion, 3 tablespoons minced garlic…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/lemon-chicken/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Lemon Chicken</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 chickens, cut into quarters, 2 cups fresh lemon juice, 2 cups flour…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/meatballs-for-a-crowd/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Meatballs for a Crowd*</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 large bags meatballs (the huge bags sold at Costco), 6 bottles chili sauce, 1 large jar grape jelly…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/mona-lisa-penne-pasta/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Mona Lisa’s Chicken and Penne Pasta</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Chicken breast tenders, cut into bite-size pieces, 1–2 cloves garlic, crushed, ½ pound penne pasta…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/no-peekie-roast-beefie/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">No Peekie Roast Beefie</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Rib Roast, Kosher Salt, Fresh Ground Pepper…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/pan-seared-white-fish-with-spicy-tomato-pan-sauce/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Pan Seared White Fish with Spicy Tomato Pan Sauce</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ¼ cup olive oil, 2 pounds tilapia, red snapper, or orange roughy fillets, Old Bay fish seasoning…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/pan-seared-pork-chops/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Pan Seared, Oven Roasted Thick-cut Pork Chops with</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Spicy Tomato Pan Sauce, ¾ cup packed light brown sugar, ¼ cup kosher salt…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/pan-seared-tilapia/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Pan-Seared Tilapia with Chile Lime Butter</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Chile Lime Butter, ½ stick (¼ cup) unsalted butter, softened, 1 tablespoon finely chopped shallot…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/porcupine-meatballs/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Porcupine Meatballs</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      From Oma’s Cookbook, 1 pound lean ground beef, ½ cup uncooked rice…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/puff-pastry-veggie-quiche/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Puff Pastry Veggie Quiche</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 sheets frozen puff pastry (one 17.3-oz package), thawed, 2 C. sliced mushrooms, 3-4 shallots, chopped (optional)…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/raspberry-chicken/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Raspberry Chicken</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 boneless, skinless chicken breasts, about 2 pounds, 2 tbsp butter, ¼ cup finely chopped sweet onion…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/roman-chicken/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Roman Chicken</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 skinless chicken breast halves (with ribs), 2 skinless chicken thighs (with bones), 1½ teaspoons salt, divided…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/salmon-on-the-smoker/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Salmon on the Smoker</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1-½ to 2 pounds salmon, rinsed and patted dry, 3 tablespoons butter, softened, 1 medium shallot, chopped small…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/seafood-stew/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Seafood Stew</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ¼ cup olive oil, ¼ cup flour, 2 medium celery stalks, diced…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/sesame-chicken/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Sesame Chicken</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      6 chicken breast halves, boneless, skinless and cut into bite-sized pieces, ½ cup flour, Salt and ground black pepper…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/short-rib-barley-soup/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Short Rib Barley Soup</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ¼ cup vegetable or olive oil, 2 pounds beef short ribs, 1 cup chopped onions…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/shrimp-pasta/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Shrimp Pasta</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 tablespoons butter, 1 pound large shrimp, peeled and deveined, 8 Roma tomatoes, peeled and diced (about 2½ cups)…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/shrimp-and-mushroom-linguine/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Shrimp and Mushroom Linguine</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 tbsp. butter, 1 pound large shrimp, peeled and deveined*, 8 Roma tomatoes, diced…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/simply-zucchini-soup/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Simply Zucchini Soup</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      8 small zucchini, cut into 1-inch pieces, 1 large onion, chopped, 1/2 cup butter…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/sloppy-joes/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Sloppy Joes</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 small onion, chopped into sections, 1 tbsp chopped pickled hot peppers (jalapenos or Peppadews), 3 cloves garlic…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/souffle-au-fromage/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Souffle Au Fromage (Cheese Souffle)</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      From Oma’s cookbook, 8 tbsp unsalted butter, 8 tbsp flour…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/southwestern-orange-roughy/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Southwestern Orange Roughy</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 pounds orange roughy fillets, ¾ cup sour cream, ½ cup cream cheese, softened…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/spaghetti-alla-carbonara/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Spaghetti Alla Carbonara (known as Bacon Pasta in our home)</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 pound spaghetti, 3/4 cup chicken broth, 1-2 garlic cloves, minced…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/spaghetti-alla-puttanesca/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Spaghetti Alla Puttanesca</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ¼ cup EVOO, 4 large garlic cloves, minced, 1 28-oz crushed tomatoes…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/spicy-pulled-pork-recipe-recipe-for-mark/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Spicy pulled pork recipe – Recipe for Mark</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      5-7 pounds pork shoulder or pork butt, 1 large yellow onion, 6 cloves garlic…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/swedish-meat-balls/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Swedish Meat Balls</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      From Oma’s Cookbook, 1 pound ground beef (lean), 2 tbsp finely chopped onion…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/toad-in-the-hole/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Toad-in-the-hole</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Eggs, White bread, Salt &amp; pepper…
+    </p>
+    
+  </a>
+  
+  <a href="/main-dishes/white-chili/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">White Chili</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 pound dried white beans (or use canned Great Northern White Beans), 14 cups chicken broth, 2 cloves garlic…
+    </p>
+    
+  </a>
+  
+</div>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

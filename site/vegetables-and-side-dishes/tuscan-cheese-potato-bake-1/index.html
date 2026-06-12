@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuscan Cheese Potato Bake — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <a href="/vegetables-and-side-dishes/" class="hover:text-sage transition-colors">Vegetables and Side Dishes</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Tuscan Cheese Potato Bake</span>
+</nav>
+
+<div class="max-w-2xl">
+
+  <!-- Title & photo -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-stone-800 mb-3">Tuscan Cheese Potato Bake</h1>
+    <span class="inline-block text-xs bg-sage text-white px-2 py-0.5 rounded-full mb-4">Vegetables and Side Dishes</span>
+
+    
+    <div class="w-full h-40 bg-amber-50 rounded-xl border border-amber-100 flex items-center justify-center text-amber-200 text-5xl mb-4">
+      🍽
+    </div>
+    
+  </div>
+
+  <!-- Print button -->
+  <button onclick="window.print()" class="no-print mb-6 text-sm text-sage hover:underline border border-sage px-3 py-1 rounded">
+    Print recipe
+  </button>
+
+  <!-- Preamble / intro text -->
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+    <!-- Ingredients -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Ingredients</h2>
+      <ul class="space-y-1.5">
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 lb red potatoes</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>3-4 cloves garlic, minced</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1.5 tsp snipped  fresh thyme or ½ tsp dried thyme, crushed</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>¼ C butter</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 C buttermilk</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>4 oz. fontina cheese, shredded (1 C)</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>4 oz Parmesan cheese, finely shredded (1 C)</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1/3 C crumbled blue cheese</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>½ C panko (Japanese style bread crumbs)</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>¼ tsp dried Italian seasoning, crushed</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 Tbsp olive oil</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Snipped fresh parsley (optional)</span>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    <!-- Instructions -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Instructions</h2>
+      <ol class="space-y-3 list-none">
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            1
+          </span>
+          <span class="pt-0.5">Preheat oven to 400 degrees. Lightly grease a 2 qt. square baking dish; set aside. Scrub potatoes, cut into 1 inch pieces. In large saucepan cook potatoes in lightly salted boiling water 12 -15 min or until tender; drain.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            2
+          </span>
+          <span class="pt-0.5">In 12 inch skillet, cook and stir garlic and thyme in butter over medium heat for 1 min.; add potatoes. Coarsely mash potatoes. Stir in buttermilk, ½ tsp salt, and ¼ tsp black pepper. Fold in fontina cheese, half of the Parmesan cheese, and the blue cheese. Evenly spread in baking dish.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            3
+          </span>
+          <span class="pt-0.5">In small bowl combine remaining Parmesan, panko, Italian seasoning, and oil; toss with a fork to combine.  Evenly sprinkle over potato mixture in dish. Back for 20 min or until bubbly and top is golden. Sprinkle with fresh snipped parsley.  Makes 8-10 servings.</span>
+        </li>
+        
+      </ol>
+    </section>
+    
+
+  </div>
+
+  <!-- Notes -->
+  
+
+  <!-- If no structured content was parsed, show raw preamble as full text -->
+  
+
+</div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

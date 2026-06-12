@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Strawberry Cupcakes with White Chocolate Frosting — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <a href="/desserts/" class="hover:text-sage transition-colors">Desserts</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Fresh Strawberry Cupcakes with White Chocolate Frosting</span>
+</nav>
+
+<div class="max-w-2xl">
+
+  <!-- Title & photo -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-stone-800 mb-3">Fresh Strawberry Cupcakes with White Chocolate Frosting</h1>
+    <span class="inline-block text-xs bg-sage text-white px-2 py-0.5 rounded-full mb-4">Desserts</span>
+
+    
+    <div class="w-full h-40 bg-amber-50 rounded-xl border border-amber-100 flex items-center justify-center text-amber-200 text-5xl mb-4">
+      🍽
+    </div>
+    
+  </div>
+
+  <!-- Print button -->
+  <button onclick="window.print()" class="no-print mb-6 text-sm text-sage hover:underline border border-sage px-3 py-1 rounded">
+    Print recipe
+  </button>
+
+  <!-- Preamble / intro text -->
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+    <!-- Ingredients -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Ingredients</h2>
+      <ul class="space-y-1.5">
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 stick unsalted butter, room temperature</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 cup sugar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 eggs</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1½ cups flour</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 teaspoon baking powder</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>½ teaspoon salt</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>⅓ cup milk</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 teaspoon vanilla extract</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1½ cups fresh strawberries, sliced</span>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    <!-- Instructions -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Instructions</h2>
+      <ol class="space-y-3 list-none">
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            1
+          </span>
+          <span class="pt-0.5">Preheat oven to 350°F. Line a cupcake pan with liners.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            2
+          </span>
+          <span class="pt-0.5">Cream butter and sugar on medium speed for 3–5 minutes, until fluffy. Add eggs one at a time, beating well after each addition.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            3
+          </span>
+          <span class="pt-0.5">Combine dry ingredients. Add to creamed mixture alternately with milk, mixing until smooth. Fold in vanilla and strawberries.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            4
+          </span>
+          <span class="pt-0.5">Fill liners ½ to ¾ full. Bake 20–25 minutes, until a toothpick inserted comes out clean. Cool completely before frosting.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            5
+          </span>
+          <span class="pt-0.5">White Chocolate Frosting</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            6
+          </span>
+          <span class="pt-0.5">8 ounces white chocolate, chopped (do not use chips)</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            7
+          </span>
+          <span class="pt-0.5">3 packages (8 ounces each) cream cheese, room temperature</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            8
+          </span>
+          <span class="pt-0.5">2½ cups powdered sugar</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            9
+          </span>
+          <span class="pt-0.5">2 cups heavy whipping cream, chilled</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            10
+          </span>
+          <span class="pt-0.5">Strawberry slices for garnish</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            11
+          </span>
+          <span class="pt-0.5">Melt white chocolate over a double boiler just until smooth and warm. Do not overheat. Remove from heat.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            12
+          </span>
+          <span class="pt-0.5">Beat cream cheese until fluffy. Beat in 1¼ cups powdered sugar, then warm white chocolate.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            13
+          </span>
+          <span class="pt-0.5">Whip cream separately until beginning to thicken, then add remaining powdered sugar and beat to medium-firm peaks. Fold whipped cream into cream cheese mixture in three additions.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            14
+          </span>
+          <span class="pt-0.5">Cover and refrigerate several hours before using. Garnish with strawberry slice.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            15
+          </span>
+          <span class="pt-0.5">Served at Katie and Patrick’s wedding reception.</span>
+        </li>
+        
+      </ol>
+    </section>
+    
+
+  </div>
+
+  <!-- Notes -->
+  
+
+  <!-- If no structured content was parsed, show raw preamble as full text -->
+  
+
+</div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

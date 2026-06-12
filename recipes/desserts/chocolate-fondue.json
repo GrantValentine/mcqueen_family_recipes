@@ -1,0 +1,18 @@
+{
+  "title": "Chocolate Fondue",
+  "ingredients": [
+    "1 cup whipping cream",
+    "2 2/3 cups finely chopped semi-sweet or dark chocolate (use good quality chocolate, avoid using chocolate chips)",
+    "2 tsp vanilla extract"
+  ],
+  "instructions": [
+    "In a saucepan, slowly heat whipping cream until bubbles form around the edge of the pan. Remove from heat, whisk in chopped chocolate until mixture is smooth. Stir in vanilla. Transfer mixture to a fondue pot and keep warm over low heat. Serve with berries, bananas, cookies, cake cubes.",
+    "We traditionally enjoy this recipe on New Year’s Eve."
+  ],
+  "notes": [],
+  "category": "Desserts",
+  "category_slug": "desserts",
+  "slug": "chocolate-fondue",
+  "source_file": "Chocolate Fondue.docx",
+  "photo": null
+}

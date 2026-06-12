@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desserts — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Desserts</span>
+</nav>
+
+<h1 class="text-3xl font-bold text-sage mb-1">Desserts</h1>
+<p class="text-stone-500 text-sm mb-8">44 recipes</p>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  
+  <a href="/desserts/baklava/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Baklava (Recipe from Lisa Ames)</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Nut Filling, 1 lb walnuts (about 4 cups), chopped, 1 cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/brenton-valentine-s-chocolate-chip-coffee-cake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Brenton Valentine’s Chocolate Chip Coffee Cake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 cup butter, slightly softened, 1 cup sugar, 2 eggs, room temp…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/butterscotch-puddings-with-whipped-cream-and-crushed-toffee/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Butterscotch Puddings with Whipped Cream and Crushed Toffee*</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Butterscotch Pudding:, 3 cups half and half, divided, 2 large egg yolks…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/carrot-cake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Carrot Cake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      (from The Silver Palate Cookbook with adaptations by Julie), 3 cups all-purpose flour, 3 cups sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/chocolate-fondue/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chocolate Fondue</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 cup whipping cream, 2 2/3 cups finely chopped semi-sweet or dark chocolate (use good quality chocolate, avoid using chocolate chips), 2 tsp vanilla extract…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/chocolate-pudding/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chocolate Pudding</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 cups whole milk, divided, ½ cup sugar, ⅓ cup good quality cocoa powder…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/chocolate-sour-cream-cupcakes/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chocolate Sour Cream Cupcakes</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Cupcakes, 3 ounces unsweetened chocolate, 1 stick butter, softened…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/chocolate-glazed-3-layer-cheesecake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chocolate-Glazed Three Layer Cheesecake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Crust:, 2 cups Oreo cookie crumbs, ¼ cup sugar 5 tbsp. unsalted butter, melted…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/christmas-eve-white-chocolate-cheesecake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Christmas Eve White Chocolate Cheesecake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      (Adapted from Pacific Northwest Palate Cookbook, 1989, by Susan Bradley. Lori gave me this cookbook many years ago.), ¼ cup fine, dry chocolate cookie crumbs (use gluten-free if possible for Jen), 6 ounces good quality white chocolate (do not use chips)…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/crème-anglaise/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Crème Anglaise</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 cup (8floz/225ml) cream, 1 1/2 cups (12floz/340ml) whole milk, 1/2 cup (4oz/115g) sugar, divided…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/crème-brulee/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Crème Brulee</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 cups heavy cream, 1 vanilla bean, split lengthwise, and 1 teaspoon vanilla bean extract, ⅛ teaspoon salt…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/daniel-s-fudge-pie/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Daniel’s Fudge Pie</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      (adapted from Rosie’s All Butter, Fresh Cream, Sugar-Packed Cookbook), 1 pie crust, lightly baked (use pie weights), 4 ounces unsweetened chocolate…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/dark-chocolate-crème-brûlée/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Dark Chocolate Crème Brûlée</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 cups heavy whipping cream, 2 cups half-and-half, 8 ounces semisweet chocolate, finely chopped…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/decadent-chocolate-cake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Decadent Chocolate Cake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 cup boiling water, 3 ounces unsweetened chocolate, 8 tablespoons (1 stick) unsalted butter…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/deer-valley-resort-area-chocolate-snowball/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Deer Valley Resort Area Chocolate Snowball</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Cake, 12 ounces semisweet chocolate, chopped (high quality chocolate, avoid chips), 1 cup strong hot coffee…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/fluffy-tapioca-pudding/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Fluffy Tapioca Pudding</h2>
+
+    
+  </a>
+  
+  <a href="/desserts/french-chocolate-mousse/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">French Chocolate Mousse</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      6 ounces semisweet baking chocolate, chopped, 3 tablespoons unsalted butter, 3 eggs, separated…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/fresh-apple-cake-with-caramel-frosting/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Fresh Apple Cake with Caramel Frosting</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 1/3 cups flour, 2 cups sugar, 2 tsp. baking soda…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/fresh-fruit-tray-with-french-cream-for-a-party/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Fresh Fruit Tray with French Cream for a Party</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Fruit, 2 whole pineapples, 2 large clusters green seedless grapes…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/fresh-strawberry-cupcakes-with-white-chocolate-frosting/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Fresh Strawberry Cupcakes with White Chocolate Frosting</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 stick unsalted butter, room temperature, 1 cup sugar, 2 eggs…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/fresh-strawberry-cupcakes/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Fresh Strawberry Mini-Cupcakes with White Chocolate Frosting</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      (Makes 12-16  regular-sized cupcakes), 1 stick unsalted butter, room temperature, 1 cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/frozen-white-chocolate-mousse-cake-with-raspberry-sauce/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Frozen White Chocolate Mousse Cake with Raspberry Sauce</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Crust, 1 cup vanilla or chocolate wafer crumbs, 3 tablespoons unsalted butter, melted…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/gingerbread-cake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Gingerbread Cake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      From Oma’s Cookbook, 2 eggs, ¾ cup brown sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/glazed-lemon-cake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Glazed Lemon Cake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ½ pound (2 sticks) unsalted butter, softened, 2 cups granulated sugar, 3 eggs…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/italian-panna-cotta-with-blackberry-sauce/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Italian Panna Cotta with Blackberry Sauce</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Panna Cotta, 1 vanilla bean, 1¼ cups heavy cream…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/julies-apple-crumb-pie/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Apple Crumb Pie</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      This is adapted from Aunt Joanne’s recipe!, Nut Crust, ½ c. butter, softened…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/julie-s-cookies-and-cream-cheesecake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Cookies and Cream Cheesecake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Crust, 2 cups chocolate cookie crumbs, ½ cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/lemon-and-white-chocolate-mousse-parfaits-with-strawberries/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Lemon and White Chocolate Mousse Parfaits with Strawberries</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Lemon Mousse, 5 large egg yolks, ½ cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/lemon-or-key-lime-curd-tartlets/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Lemon or Key Lime Curd Tartlets</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Make almond crust and fill with  curd. Top with a dollop of fresh whipped cream and a berry and a mint leaf., Lemon Curd, 3 lemons, juiced				1 c. sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/light-fudge-frosting/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Light Fudge Frosting:</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 cup heavy cream, 1/4 cup corn syrup, 1 cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/maple-walnut-fondue/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Maple Walnut Fondue</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      12 ounces white chocolate, chopped fine, 1 cup cream, 2 tbsp pure maple syrup…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/matcha-panna-cotta/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Matcha Panna Cotta</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ½ cup whole milk, 2 cups heavy cream, ¼ cup granulated sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/mexican-chocolate-cake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Mexican Chocolate Cake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Cake, 1 package (18.25 oz) devil’s food or dark chocolate fudge cake mix, 1 package (3.9 oz) instant chocolate pudding mix…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/mini-brownie-cupcakes-gourmet/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Mini Brownie Cupcakes Gourmet | December 1999</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Read More http://www.epicurious.com/recipes/food/printerfriendly/Mini-Brownie-Cupcakes-102748#ixzz1ESlQD43R…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/olive-oil-cake-with-brown-butter-frosting/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Olive Oil Cake with Brown Butter Frosting</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Inspired by Tulie Bakery in Salt Lake City, 1 ½ cups extra virgin olive oil, 3 large eggs, room temp…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/oma-s-fudge/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Oma’s Fudge</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      From Oma’s Cookbook, 1 cup chopped walnuts, 1 cube butter, cut into 8 pieces…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/pecan-pie/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Pecan Pie</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 eggs, 1 cup dark brown sugar, ¾ cup light corn syrup…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/plum-cake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Plum cake</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      From Oma’s Cookbook, 1 ½ cup flour, 2 tsp baking powder…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/poppyseed-cake/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Poppyseed Cake</h2>
+
+    
+  </a>
+  
+  <a href="/desserts/pumpkin-pie/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Pumpkin Pie</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      3 eggs, 1/3 cup sugar, 1/3 cup brown sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/raspberry-sauce/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Raspberry Sauce</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 10 ounce packages frozen raspberries in syrup, thawed, ¼ cup sugar, 1 tsp. vanilla…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/strawberry-shortcakes-with-white-chocolate-mousse/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Strawberry Shortcakes with White Chocolate Mousse</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Shortcakes, 1½ cups all-purpose flour, 3 tablespoons plus 1 teaspoon sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/toll-house-pie/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Toll House Pie</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 eggs, ½ cup white sugar, ½ cup packed brown sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/desserts/valentine-hot-fudge-sauce/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Valentine Favorite Hot Fudge Sauce</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      10 ounces good quality semi-sweet chocolate, chopped, 1/3 cup sifted Dutch-process cocoa, 1/3 cup sugar…
+    </p>
+    
+  </a>
+  
+</div>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

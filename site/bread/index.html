@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bread — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Bread</span>
+</nav>
+
+<h1 class="text-3xl font-bold text-sage mb-1">Bread</h1>
+<p class="text-stone-500 text-sm mb-8">14 recipes</p>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  
+  <a href="/bread/angel-biscuits/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Angel Biscuits</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 pkg. yeast (2 1/4 tsp.), 1 tbsp. tepid water, 1 tsp. sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/artisan-no-knead-bread/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Artisan No-Knead Crusty Bread</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      3 cups bread or all-purpose flour, ½ tsp. instant or rapid rise yeast (recommend SAF), 1 ¾ tsp kosher salt…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/best-buttermilk-biscuit-recipe/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Best Buttermilk Biscuit Recipe</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 cups all-purpose flour (can substitute 1:1 GF flour), 2 teaspoons baking powder, ¼ teaspoon baking soda…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/sourdough-for-instructing-groups/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">CONDENSEDSOURDOUGHRECIPE/METHODforcrustyartisanloaf</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Recipefor1loaf:- 1c.Sourdoughstart.(Bubblyandactive.)- 4c.Breadorall-purposeflour.- 2tsp.Salt.- 1½-1¾c.warmwater.------------------------------------------------------Feedingyourstart=¾c.warmwater&amp;1c.flour(Idobreadflour).Aimforthickpancakebatterconsistency.------------------------------------------------------METHOD:makes2loaves-(Alltimesareflexible)., 1:00p.m. -Take1cupstarteroutofyourjarandfeedit.Leaveonthecounter., 5:00p.m. -Divideyourstarterintotwobowls.Onecupineach.Thisisyour1cupofactivestartneededforarecipe.Addintherestoftheingredientsfor1recipetoeachbowlandcombine.Coverbowlsandletrest30minutesto1houronthecounter.…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/cherries-and-cream-scones/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Cherries and Cream Scones</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Combine the following in a large bowl:, 2 cups flour, 1/3 cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/corn-muffins-ole/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Corn Muffins Ole</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 cup all-purpose flour, 1 cup yellow cornmeal, ¼ cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/gluten-free-lemon-poppyseed-scones/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Gluten Free Lemon Poppyseed Scones</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Zest from 2 lemons, 100 grams granulated sugar, 300 grams gluten free multipurpose flour…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/homemade-corn-tortillas/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Homemade Corn Tortillas</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 cups Maseca gluten free corn masa flour, 1 ½ cups water…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/julie-s-sunday-rolls/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Sunday Rolls</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      ¼ cup warm water, 1 tbsp yeast (Saf-instant), 1 tsp sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/popovers/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Popovers (Regular or Gluten-free)</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 large eggs (room temp or warmed in shallow bowl of warm water for 10 minutes), 1 ½ cups lukewarm milk, 1 ½ tsp salt…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/scones/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Scones</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Makes enough for 40 people (can be cut in half), Proof 4 tbsp. yeast and 1 cup water.  Add 1 tbsp. sugar to water., 2 tbsp. salt…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/sour-cream-chocolate-chip-banana-bread/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Sour Cream Chocolate Chip Banana Bread</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      8 tablespoons (1 stick) butter, softened, 1 cup sugar, 2 eggs, beaten…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/the-best-blueberry-muffins/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">The Best Blueberry Muffins</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1/2 cup butter or 1/2 cup margarine, at room temp, 1 cup granulated sugar, 2 large eggs…
+    </p>
+    
+  </a>
+  
+  <a href="/bread/fluffy-waffle-recipe/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Valentine Fluffy Waffle Recipe</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1¾ cups all-purpose flour, 2 tsp baking powder, ½ tsp salt…
+    </p>
+    
+  </a>
+  
+</div>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

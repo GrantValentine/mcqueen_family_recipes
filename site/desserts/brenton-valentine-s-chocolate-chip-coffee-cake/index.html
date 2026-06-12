@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brenton Valentine’s Chocolate Chip Coffee Cake — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <a href="/desserts/" class="hover:text-sage transition-colors">Desserts</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Brenton Valentine’s Chocolate Chip Coffee Cake</span>
+</nav>
+
+<div class="max-w-2xl">
+
+  <!-- Title & photo -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-stone-800 mb-3">Brenton Valentine’s Chocolate Chip Coffee Cake</h1>
+    <span class="inline-block text-xs bg-sage text-white px-2 py-0.5 rounded-full mb-4">Desserts</span>
+
+    
+    <div class="w-full h-40 bg-amber-50 rounded-xl border border-amber-100 flex items-center justify-center text-amber-200 text-5xl mb-4">
+      🍽
+    </div>
+    
+  </div>
+
+  <!-- Print button -->
+  <button onclick="window.print()" class="no-print mb-6 text-sm text-sage hover:underline border border-sage px-3 py-1 rounded">
+    Print recipe
+  </button>
+
+  <!-- Preamble / intro text -->
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+    <!-- Ingredients -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Ingredients</h2>
+      <ul class="space-y-1.5">
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 cup butter, slightly softened</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 cup sugar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 eggs, room temp</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 cup sour cream</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 tsp. baking powder</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 tsp. salt</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 tsp. baking soda</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 tsp. vanilla extract</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 cups sifted flour</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Topping:</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>¼ cup sugar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1/3 cup brown sugar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 ½ tsp. cinnamon</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 cup chopped pecans or walnuts</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 cup mini semisweet chocolate chips</span>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    <!-- Instructions -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Instructions</h2>
+      <ol class="space-y-3 list-none">
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            1
+          </span>
+          <span class="pt-0.5">In a large bowl, cream butter and sugar until smooth. Add eggs and beat until light. Add remaining cake ingredients, except flour. Gradually add in flour and mix well. Preheat oven to 350 degrees.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            2
+          </span>
+          <span class="pt-0.5">Mix topping ingredients together. Sprinkle into a greased tube pan 1/3 of the topping. Scoop in ½ the cake batter. Sprinkle an additional 1/3 of the topping ingredients. Layer remaining cake batter. Top with last of the topping. Bang pan on countertop to level. Use a chopstick to poke holes randomly in dough. Bake 50-60 minutes.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            3
+          </span>
+          <span class="pt-0.5">This is our traditional Christmas morning coffee cake and Brenton’s birthday cake. Adapted from Pinch of Salt Lake cookbook.</span>
+        </li>
+        
+      </ol>
+    </section>
+    
+
+  </div>
+
+  <!-- Notes -->
+  
+
+  <!-- If no structured content was parsed, show raw preamble as full text -->
+  
+
+</div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

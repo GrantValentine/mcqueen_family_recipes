@@ -1,0 +1,33 @@
+{
+  "title": "Sloppy Joes",
+  "ingredients": [
+    "1 small onion, chopped into sections",
+    "1 tbsp chopped pickled hot peppers (jalapenos or Peppadews)",
+    "3 cloves garlic",
+    "2 tbsp olive oil",
+    "1 tsp smoked paprika",
+    "1 tsp cumin",
+    "½ tsp chili powder",
+    "½ tsp dry yellow mustard",
+    "1 ½ pounds ground beef, turkey or chicken",
+    "½ cup ketchup",
+    "1 ½ cups tomato puree",
+    "1 tbsp apple cider vinegar",
+    "1 tsp salt (adjust as preferred)",
+    "½ tsp ground black pepper",
+    "4-6 hamburger buns, lightly buttered and toasted under broiler"
+  ],
+  "instructions": [
+    "In a food processor, combine onion, peppers, garlic. Pulse until very finely minced.",
+    "Heat oil in large skillet, add the onion mixture and saute 4-5 minutes. Add the spices, stir well and saute another 4 minutes or until onions are very soft.",
+    "Add the ground meat and saute, breaking up clumps with a spoon until the meat is browned, about 5 minutes.",
+    "In a large measuring cup, whisk together the ketchup, tomato puree, and vinegar. Add this to the meat, bring to a simmer, and cook uncovered for 10 minutes or until slightly thickened.",
+    "Season with salt and pepper. Scoop sloppy joes onto each bun bottom, top, and serve. Good eaten with dill pickles."
+  ],
+  "notes": [],
+  "category": "Main dishes",
+  "category_slug": "main-dishes",
+  "slug": "sloppy-joes",
+  "source_file": "Sloppy Joes.docx",
+  "photo": null
+}

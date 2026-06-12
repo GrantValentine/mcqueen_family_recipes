@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookies — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Cookies</span>
+</nav>
+
+<h1 class="text-3xl font-bold text-sage mb-1">Cookies</h1>
+<p class="text-stone-500 text-sm mb-8">25 recipes</p>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  
+  <a href="/cookies/chocolate-chip-delta-bars/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chocolate Chip Delta Bars</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      For bars:, 1 cup softened butter, ½ cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/chocolate-krinkles/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chocolate Krinkles</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Adapted From Oma’s Cookbook, 1/2 cup (1 cube) butter, 1 2/3 cups sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/chocolate-os/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chocolate O’s</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Brownies:, 3 ½ ounces unsweetened chocolate, 12 tbsp unsalted butter, room temp…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/chocolate-truffle-cookies-with-crackly-crust/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Chocolate Truffle Cookies with Crackly Crust</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      (Makes about 30 cookies that are 3 1/2 inches in diameter), 1 1/4 cups all-purpose flour, 3 tablespoons plus 1 teaspoon unsweetened cocoa powder…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/congo-bars/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Congo Bars</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 1/3 cups flour, 1 ½ tsp. baking soda, ½ tsp. salt…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/cream-cheese-cookie-bars-with-variations/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Cream Cheese Cookie Bars</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Cookies:, 1 cup plus 2 tablespoons butter, room temperature, 2 8-oz. packages cream cheese, room temperature…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/creamy-brownie-wafers/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Creamy Brownie Wafers</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      For Brownie Layer:, 5 ounces (5 squares) unsweetened chocolate, 2 ½ cubes of butter…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/dark-chocolate-peanut-butter-cookies/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Dark Chocolate Peanut Butter Cup Cookies</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 cup butter, 1 ½ cup peanut butter, 2 cups light brown sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/grant-solomon-valentine-cookies/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Grant Solomon Valentine Cookies</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 cup butter, softened, 1 cup white sugar, 1 cup light brown sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/honeypots/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Honeypots</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      (from Rosie’s All Butter, Fresh Cream, Sugar-Packed Cookbook), Base, 1 cup flour…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/ian-s-holiday-ginger-cookies/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Ian’s Holiday Ginger Cookies</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      (adapted from Rosie’s All Butter, Fresh Cream, Sugar-Packed Cookbook), 2 ½ cups flour, 2 tsp baking soda…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/moms-chocolate-chip-cookie-recipe/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Chocolate Chip Cookie Recipe</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Preheat oven to 350 degrees., 1 cup light brown sugar, ¾ cup granulated sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/julie-s-marble-brownies/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Julie’s Marble Brownies</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Brownie Batter, 7 ounces unsweetened chocolate, 3 sticks unsalted butter…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/lemon-cream-cheese-squares/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Lemon Cream Cheese Squares</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Base:, 1 cup flour, ¼ cup powdered sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/marble-brownies/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Marble Brownies</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Brownie Batter:, 7 ounces unsweetened chocolate, 3 cubes (1 ½ cup) unsalted butter…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/mason-lee-valentine-cookies/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Mason Lee Valentine Cookies</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      2 cups butter, 1 cup white sugar, 1 cup brown sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/oma-s-french-meringue-cookies/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Oma’s French Meringue Cookies</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 egg whites, room temperature, ¼ tsp. cream of tartar, ¼ tsp. salt…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/pumpkin-bars/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Pumpkin Bars</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Bars, 4 eggs, 1¼ cups vegetable oil…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/red-velvet-swirl-brownies/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Red Velvet Swirl Brownies</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      Red Velvet Brownie Layer:, 1 stick unsalted butter, 1 cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/salted-caramel-butter-bars/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Salted Caramel Butter Bars</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      For the Crust:, 1 lb. salted butter room temp, 1 cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/shortbread-hearts-dipped-in-chocolate/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Shortbread Hearts dipped in chocolate</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      1 ½ cups salted butter, softened, 1 cup powdered sugar, 1 TBSP vanilla…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/snickerdoodles-sandwich-cookies/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Snickerdoodles</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      And Snickerdoodles Sandwich Cookies, Snickerdoodles, 1 ½ cup sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/springerle/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Springerle</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      (Adapted from Oma’s Cookbook), 5 large eggs, 4 cups powdered sugar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/surprise-meringues/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">Surprise Meringues</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      4 egg whites, room temperature, ¼ tsp. salt, ¼ tsp. cream of tartar…
+    </p>
+    
+  </a>
+  
+  <a href="/cookies/smores-ooey-gooey-bars/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">S’mores Ooey Gooey Bars</h2>
+
+    
+    <p class="text-xs text-stone-400 truncate">
+      18 whole graham crackers, or two cellophane wrapped stacks
+1 1/2 sticks (12 tablespoons) unsalted butter, melted
+1 pinch of kosher salt
+1 14 ounce can (400g) sweetened condensed milk
+1 1/2 cups (250g) semisweet chocolate chips
+2/3 bag of large marshmallows, cut in half, 1. Preheat the oven to 350 degrees. In a food processor, process graham crackers until finely ground. Stir in melted butter and salt. Press into a 13×9″ pan.  Bake for 5 minutes.  Remove from oven.
+2. Sprinkle on chocolate chips. Drizzle can of condensed milk over graham crackers; follow with marshmallows.
+3. Bake for 20 minutes more, until marshmallows are lightly browned.  (To brown marshmallows to “perfect” brown, place under broiler for a few seconds.)  Let cool completely., I didn’t make these much at home, but often for church summer events. Super easy.…
+    </p>
+    
+  </a>
+  
+</div>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "title": "Gingerbread Cake",
+  "ingredients": [
+    "From Oma’s Cookbook",
+    "2 eggs",
+    "¾ cup brown sugar",
+    "¾ cup unsulphered molasses",
+    "¾ cup melted butter",
+    "2 ½ cup flour",
+    "2 tsp baking soda",
+    "1 ½ tsp ginger and cinnamon",
+    "½ tsp nutmeg, cloves, and baking powder",
+    "1 cup boiling water"
+  ],
+  "instructions": [
+    "Beat eggs, add sugar, molasses and melted butter, then dry ingredients which have been mixed and sifted. Lastly, add boiling water. Pour into lightly greased 13X9 inch pan. Bake at 350 degrees F for 40 minutes. Serve warm with fresh, lightly sweetened whipped cream."
+  ],
+  "notes": [
+    "My grandparents like to eat this cake with applesauce and a mug of hot cocoa."
+  ],
+  "category": "Desserts",
+  "category_slug": "desserts",
+  "slug": "gingerbread-cake",
+  "source_file": "Gingerbread Cake.docx",
+  "photo": null
+}

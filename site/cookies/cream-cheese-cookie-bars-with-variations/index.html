@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cream Cheese Cookie Bars — Julie&#39;s Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fdf6ec',
+            sage:  '#6b7f5e',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #fdf6ec; }
+    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+    @media print {
+      nav, #search-bar, .no-print { display: none !important; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="bg-sage text-white shadow-md no-print">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
+        Julie's Recipes
+      </a>
+      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
+        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
+        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
+        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
+        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
+        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
+        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
+        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
+        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
+      </div>
+      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes…"
+          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+          autocomplete="off"
+        >
+        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+    
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <a href="/cookies/" class="hover:text-sage transition-colors">Cookies</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">Cream Cheese Cookie Bars</span>
+</nav>
+
+<div class="max-w-2xl">
+
+  <!-- Title & photo -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-stone-800 mb-3">Cream Cheese Cookie Bars</h1>
+    <span class="inline-block text-xs bg-sage text-white px-2 py-0.5 rounded-full mb-4">Cookies</span>
+
+    
+    <div class="w-full h-40 bg-amber-50 rounded-xl border border-amber-100 flex items-center justify-center text-amber-200 text-5xl mb-4">
+      🍽
+    </div>
+    
+  </div>
+
+  <!-- Print button -->
+  <button onclick="window.print()" class="no-print mb-6 text-sm text-sage hover:underline border border-sage px-3 py-1 rounded">
+    Print recipe
+  </button>
+
+  <!-- Preamble / intro text -->
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+    <!-- Ingredients -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Ingredients</h2>
+      <ul class="space-y-1.5">
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>Cookies:</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 cup plus 2 tablespoons butter, room temperature</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 8-oz. packages cream cheese, room temperature</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 ¼ cup sugar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>6 eggs</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 teaspoon vanilla</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 ½ cup cake flour</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>1 8-oz. package cream cheese, room temperature</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>¾ cup butter, room temperature</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>4 ½ cup powdered sugar</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>4 tablespoons whipping cream</span>
+        </li>
+        
+        <li class="flex gap-2 text-sm text-stone-700">
+          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
+          <span>2 teaspoons vanilla</span>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    <!-- Instructions -->
+    
+    <section>
+      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Instructions</h2>
+      <ol class="space-y-3 list-none">
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            1
+          </span>
+          <span class="pt-0.5">Cream the butter and cream cheese together until smooth and well blended.  Slowly add sugar, beating well.  Add eggs, one at a time, mixing well.  Add vanilla.  Gradually add cake flour, folding in completely.  Pour into lightly greased 10” x 15” jelly roll pan.  Bake at 325 degrees for 30 – 35 mintues.  Cool completely.</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            2
+          </span>
+          <span class="pt-0.5">Frosting:</span>
+        </li>
+        
+        <li class="flex gap-3 text-sm text-stone-700">
+          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
+            3
+          </span>
+          <span class="pt-0.5">Cream butter and cream cheese together until well combined.  Add 2 cups powdered sugar.  Add whipping cream and vanilla.  Add remaining powdered sugar and beat until smooth.  Add additional cream or sugar if needed to be of spreading consistency.  Spread on top of cooled bar.  Refrigerate until frosting sets or place in freezer for 10 minutes. Cut into bars, wiping knife after each slice.</span>
+        </li>
+        
+      </ol>
+    </section>
+    
+
+  </div>
+
+  <!-- Notes -->
+  
+  <section class="mt-8 bg-amber-50 border border-amber-100 rounded-xl px-5 py-4">
+    <h2 class="text-base font-bold text-sage mb-2">Notes &amp; Tips</h2>
+    <ul class="space-y-1.5">
+      
+      <li class="text-sm text-stone-600 italic">Mini – Cakes:</li>
+      
+      <li class="text-sm text-stone-600 italic">Bake batter as described above.  Cut out into small circular cakes with smallest biscuit cutter, about 1 inch or 1 ½ inch.  Should make about 80 mini cakes.  Tint above frosting of desired color.  Place frosting in icing bag (or gallon Ziploc bag) fitted with a large star tip.  Pipe frosting onto each mini cake.  Decorate with pearl and silver dragees or other sprinkles of choice. If you want to recreate Katie and Patrick’s wedding reception, tint the frosting Tiffany Blue.</li>
+      
+      <li class="text-sm text-stone-600 italic">Chocolate inspired recipe:</li>
+      
+      <li class="text-sm text-stone-600 italic">Add 1 ½ cup mini chocolate chips to batter after folding in vanilla.  Place in pan and bake as directed.  After cookies cool, frost with cream cheese frosting. Place in freezer for 5 minutes.  Remove from freezer.  Drizzle on chocolate glaze (recipe below) making a web-type pattern.  Place again in freezer for 5 minutes to set glaze.  Remove and keep at room temperature or refrigerated.  Cut and serve.</li>
+      
+      <li class="text-sm text-stone-600 italic">Chocolate Glaze:</li>
+      
+      <li class="text-sm text-stone-600 italic">2/3 cup Ghiradelli Double Chocolate chips (or can use regular semisweet choc. Chips)</li>
+      
+      <li class="text-sm text-stone-600 italic">4 tablespoons butter</li>
+      
+      <li class="text-sm text-stone-600 italic">Melt butter and chips together in small saucepan until completely melted, stirring constantly.  Drizzle on frosting on bars.</li>
+      
+      <li class="text-sm text-stone-600 italic">Raspberry Lemon Bars:</li>
+      
+      <li class="text-sm text-stone-600 italic">Make batter as directed above, but adding in the zest of 1emon and 1 teaspoon fresh lemon juice to the batter at the same time as adding vanilla.  After placing batter in pan, sprinkle with 2 – 3 pints of fresh washed and dried fresh raspberries.  Press berries lightly into batter.  Bake as directed, although may take an additional 5 – 10 minutes of baking time.  For frosting, make as directed except only add 1 tablespoon of cream.  Use fresh lemon juice for the other liquid to thin the frosting.  Frost bars.  Cool and cut into bars.  Place a fresh raspberry on each square.</li>
+      
+    </ul>
+  </section>
+  
+
+  <!-- If no structured content was parsed, show raw preamble as full text -->
+  
+
+</div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
+    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  </footer>
+
+  <!-- Fuse.js search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script src="/static/search.js"></script>
+</body>
+</html>

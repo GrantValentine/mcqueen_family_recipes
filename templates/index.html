@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero / Intro -->
+<section class="text-center py-10 border-b border-stone-200 mb-10">
+  <h1 class="text-4xl font-bold text-sage mb-2">Julie's Christmas Recipes</h1>
+  <p class="text-stone-500 text-sm mb-6">Christmas 2025 &mdash; {{ total }} recipes across {{ categories|length }} categories</p>
+
+  {% if intro_paragraphs %}
+  <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-sm px-8 py-6 text-left border border-amber-100">
+    <div class="text-amber-600 text-2xl mb-3">"</div>
+    {% for para in intro_paragraphs[:4] %}
+    <p class="text-stone-700 leading-relaxed mb-3 text-sm italic">{{ para }}</p>
+    {% endfor %}
+    {% if intro_paragraphs|length > 4 %}
+    <details class="mt-2">
+      <summary class="cursor-pointer text-sage text-sm hover:underline">Read more…</summary>
+      {% for para in intro_paragraphs[4:] %}
+      <p class="text-stone-700 leading-relaxed mt-3 text-sm italic">{{ para }}</p>
+      {% endfor %}
+    </details>
+    {% endif %}
+  </div>
+  {% endif %}
+</section>
+
+<!-- Category Grid -->
+<section>
+  <h2 class="text-2xl font-bold text-stone-700 mb-6">Browse by Category</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {% for cat in categories %}
+    <a href="/{{ cat.slug }}/" class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-5 hover:shadow-md hover:border-amber-200 transition-all">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-lg font-bold text-stone-800">{{ cat.name }}</h3>
+        <span class="text-xs bg-sage text-white px-2 py-0.5 rounded-full">{{ cat.count }}</span>
+      </div>
+      <ul class="text-sm text-stone-500 space-y-0.5">
+        {% for r in cat.sample %}
+        <li class="truncate">{{ r.title }}</li>
+        {% endfor %}
+        {% if cat.count > 3 %}
+        <li class="text-stone-400">+ {{ cat.count - 3 }} more…</li>
+        {% endif %}
+      </ul>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

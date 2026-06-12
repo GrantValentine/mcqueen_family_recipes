@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Breadcrumb -->
+<nav class="text-sm text-stone-400 mb-6 no-print">
+  <a href="/" class="hover:text-sage transition-colors">Home</a>
+  <span class="mx-2">/</span>
+  <span class="text-stone-700">{{ category_name }}</span>
+</nav>
+
+<h1 class="text-3xl font-bold text-sage mb-1">{{ category_name }}</h1>
+<p class="text-stone-500 text-sm mb-8">{{ recipes|length }} recipe{{ 's' if recipes|length != 1 }}</p>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  {% for recipe in recipes %}
+  <a href="/{{ category_slug }}/{{ recipe.slug }}/"
+     class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-4 hover:shadow-md hover:border-amber-200 transition-all">
+
+    {% if recipe.photo %}
+    <img src="{{ recipe.photo }}" alt="{{ recipe.title }}"
+         class="w-full h-36 object-cover rounded-lg mb-3">
+    {% else %}
+    <div class="w-full h-36 bg-amber-50 rounded-lg mb-3 flex items-center justify-center text-amber-200 text-4xl">
+      🍽
+    </div>
+    {% endif %}
+
+    <h2 class="font-bold text-stone-800 leading-snug mb-1">{{ recipe.title }}</h2>
+
+    {% if recipe.ingredients %}
+    <p class="text-xs text-stone-400 truncate">
+      {{ recipe.ingredients[:3] | join(', ') }}…
+    </p>
+    {% endif %}
+  </a>
+  {% endfor %}
+</div>
+
+{% endblock %}
