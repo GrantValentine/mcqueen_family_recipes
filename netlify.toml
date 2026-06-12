@@ -1,5 +1,5 @@
 [build]
-  command = "python main.py"
+  command = "pip install -r requirements.txt && python main.py"
   publish = "site"
 
 [build.environment]
