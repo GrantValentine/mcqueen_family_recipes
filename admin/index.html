@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — Julie's Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:#1f2ca3; --porcelain:#fffdf9; --rose:#cb8589;
+      --olive:#7c7f65; --ink:#1a1a2e; --light:#e8eaf6;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family:'Lora',Georgia,serif; background:var(--porcelain);
+           color:var(--ink); min-height:100vh; }
+
+    /* ── Top bar ── */
+    .top-bar {
+      background:var(--blue); color:white; padding:0 1.5rem;
+      display:flex; align-items:center; justify-content:space-between;
+      height:52px; position:sticky; top:0; z-index:100;
+    }
+    .top-bar__logo { font-family:'Fraunces',serif;
+      font-variation-settings:'opsz' 24,'SOFT' 90; font-size:1.05rem;
+      font-weight:500; }
+    .top-bar__logo span { opacity:.55; font-weight:400; font-size:.85rem;
+      font-family:'Lora',serif; }
+    .top-bar__actions { display:flex; gap:.6rem; align-items:center; }
+    .btn { font-family:'Lora',serif; font-size:.8rem; padding:.38rem .9rem;
+      border-radius:6px; border:1.5px solid; cursor:pointer;
+      transition:opacity .15s; }
+    .btn:hover { opacity:.8; }
+    .btn--ghost { background:transparent; color:white; border-color:rgba(255,255,255,.45); }
+    .btn--primary { background:white; color:var(--blue); border-color:white; }
+    .btn--sm { font-size:.74rem; padding:.28rem .7rem; }
+    .btn--danger { color:#b91c1c; border-color:#fca5a5; background:white; }
+
+    /* ── Banner ── */
+    .admin-banner { display:none; padding:.65rem 1.2rem; font-size:.83rem;
+      border-radius:6px; margin:1rem 1.5rem 0; }
+    .admin-banner--error { background:#fef2f2; border:1px solid #fca5a5; color:#b91c1c; }
+    .admin-banner--success { background:#f0fdf4; border:1px solid #86efac; color:#166534; }
+
+    /* ── Page body ── */
+    .page { max-width:1060px; margin:0 auto; padding:1.5rem 1.5rem 4rem; }
+
+    /* ── Quick-add card ── */
+    .quick-add {
+      background:white; border-radius:10px;
+      box-shadow:0 2px 10px rgba(31,44,163,.07);
+      padding:1.2rem 1.4rem; margin-bottom:2rem;
+      display:flex; gap:.8rem; flex-wrap:wrap; align-items:flex-end;
+    }
+    .quick-add__field { display:flex; flex-direction:column; gap:.3rem; flex:1;
+      min-width:160px; }
+    .quick-add__field label { font-size:.76rem; color:var(--olive);
+      letter-spacing:.05em; }
+    input[type=text], select {
+      font-family:'Lora',serif; font-size:.88rem;
+      padding:.45rem .7rem; border:1.5px solid #dde; border-radius:6px;
+      background:var(--porcelain); color:var(--ink); outline:none;
+      transition:border-color .15s; width:100%;
+    }
+    input:focus, select:focus { border-color:var(--blue); }
+    .btn--add { background:var(--blue); color:white; border-color:var(--blue);
+      white-space:nowrap; align-self:flex-end; padding:.45rem 1.1rem; }
+
+    /* ── Section heading ── */
+    .section-heading {
+      font-family:'Fraunces',serif; font-variation-settings:'opsz' 24,'SOFT' 80;
+      font-size:1.1rem; font-weight:500; color:var(--blue);
+      border-bottom:1.5px solid var(--light); padding-bottom:.5rem;
+      margin:2rem 0 .8rem;
+    }
+    .section-count { font-family:'Lora',serif; font-size:.78rem;
+      color:var(--olive); font-weight:400; margin-left:.4rem; }
+
+    /* ── Recipe rows ── */
+    .recipe-row {
+      background:white; border-radius:8px; border:1.5px solid var(--light);
+      padding:.65rem .9rem; margin-bottom:.45rem;
+      display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;
+    }
+    .recipe-row__title { flex:1; min-width:180px; }
+    .recipe-row__title a {
+      font-family:'Fraunces',serif; font-variation-settings:'opsz' 18,'SOFT' 70;
+      font-size:.95rem; font-weight:500; color:var(--blue); text-decoration:none;
+    }
+    .recipe-row__title a:hover { text-decoration:underline; }
+    .recipe-row__cat { min-width:160px; }
+    .recipe-row__cat select { font-size:.8rem; padding:.3rem .5rem; }
+    .recipe-row__tags { display:flex; flex-wrap:wrap; gap:.3rem;
+      align-items:center; flex:1; }
+    .tag-chip {
+      display:inline-flex; align-items:center; gap:.25rem;
+      font-size:.7rem; padding:.18rem .55rem; border-radius:20px;
+      background:var(--light); color:var(--blue); border:1px solid var(--blue);
+    }
+    .tag-chip__rm { background:none; border:none; color:var(--rose);
+      cursor:pointer; font-size:.8rem; line-height:1; padding:0 .1rem; }
+    .tag-add-wrap { position:relative; }
+    .tag-add-btn { background:none; border:1.5px dashed rgba(31,44,163,.35);
+      color:var(--blue); border-radius:20px; font-size:.7rem;
+      padding:.18rem .55rem; cursor:pointer; }
+    .tag-add-btn:hover { border-color:var(--blue); background:var(--light); }
+    .tag-dropdown {
+      position:absolute; top:calc(100% + 4px); left:0; z-index:50;
+      background:white; border:1.5px solid var(--blue); border-radius:8px;
+      box-shadow:0 4px 16px rgba(31,44,163,.12); min-width:150px;
+      display:none; flex-direction:column;
+    }
+    .tag-dropdown.open { display:flex; }
+    .tag-dropdown__item { padding:.4rem .8rem; font-size:.8rem;
+      cursor:pointer; transition:background .1s; }
+    .tag-dropdown__item:hover { background:var(--light); }
+
+    /* ── Empty state ── */
+    .empty { color:var(--olive); font-size:.85rem; font-style:italic;
+      padding:.5rem 0; }
+
+    /* ── Loading ── */
+    .loading { text-align:center; padding:3rem; color:var(--olive);
+      font-style:italic; }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar__logo">
+    Julie's Recipes <span>/ Admin</span>
+  </div>
+  <div class="top-bar__actions">
+    <button class="btn btn--ghost btn--sm" onclick="triggerRebuild(this)">Publish Changes</button>
+    <a class="btn btn--ghost btn--sm" href="/" target="_blank">View Site</a>
+    <button class="btn btn--ghost btn--sm" onclick="logout()">Log out</button>
+  </div>
+</div>
+
+<div id="admin-banner" class="admin-banner"></div>
+
+<div class="page">
+
+  <!-- Quick-add a new recipe -->
+  <div class="quick-add">
+    <div class="quick-add__field">
+      <label for="new-title">New recipe title</label>
+      <input id="new-title" type="text" placeholder="Grandma's Apple Pie">
+    </div>
+    <div class="quick-add__field">
+      <label for="new-category">Section</label>
+      <select id="new-category"></select>
+    </div>
+    <button class="btn btn--add" onclick="addRecipe()">+ Add Recipe</button>
+  </div>
+
+  <div id="recipe-list">
+    <p class="loading">Loading recipes…</p>
+  </div>
+
+</div>
+
+<!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/admin/config.js" onerror="window.ADMIN_EMAIL=null;window.NETLIFY_BUILD_HOOK=null"></script>
+<script src="/admin/admin.js"></script>
+<script>
+// ── State ─────────────────────────────────────────────────────────────────────
+let allCategories = [];   // [{id, slug, name, sort_order}]
+let allTags       = [];   // [{id, slug, label}]
+let recipesData   = [];   // flat array from Supabase, with .tags injected
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+(async () => {
+  await requireAuth();
+  await Promise.all([loadCategories(), loadTags()]);
+  await loadRecipes();
+})();
+
+// ── Data loading ──────────────────────────────────────────────────────────────
+async function loadCategories() {
+  const { data, error } = await db.from('categories')
+    .select('id, slug, name, sort_order')
+    .order('sort_order');
+  if (error) { showBanner('Could not load categories: ' + error.message); return; }
+  allCategories = data;
+  // Populate quick-add dropdown
+  const sel = document.getElementById('new-category');
+  sel.innerHTML = allCategories.map(c =>
+    `<option value="${escHtml(c.id)}">${escHtml(c.name)}</option>`
+  ).join('');
+}
+
+async function loadTags() {
+  const { data, error } = await db.from('tags').select('id, slug, label').order('label');
+  if (error) return;
+  allTags = data;
+}
+
+async function loadRecipes() {
+  document.getElementById('recipe-list').innerHTML = '<p class="loading">Loading recipes…</p>';
+
+  // Fetch recipes with their category and tags
+  const { data: recipes, error } = await db
+    .from('recipes')
+    .select('id, title, slug, category_id, recipe_tags(tag_id)')
+    .order('title');
+
+  if (error) {
+    showBanner('Could not load recipes: ' + error.message);
+    document.getElementById('recipe-list').innerHTML = '';
+    return;
+  }
+
+  recipesData = recipes;
+  renderList();
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function renderList() {
+  const container = document.getElementById('recipe-list');
+  container.innerHTML = '';
+
+  // Group by category order
+  const catOrder = allCategories.map(c => c.id);
+  const groups = {};
+  allCategories.forEach(c => { groups[c.id] = { cat: c, recipes: [] }; });
+  const uncategorised = [];
+
+  recipesData.forEach(r => {
+    if (r.category_id && groups[r.category_id]) {
+      groups[r.category_id].recipes.push(r);
+    } else {
+      uncategorised.push(r);
+    }
+  });
+
+  catOrder.forEach(catId => {
+    const g = groups[catId];
+    if (!g.recipes.length) return;
+
+    const heading = document.createElement('div');
+    heading.className = 'section-heading';
+    heading.innerHTML = escHtml(g.cat.name) +
+      `<span class="section-count">${g.recipes.length}</span>`;
+    container.appendChild(heading);
+
+    g.recipes.forEach(r => container.appendChild(buildRow(r)));
+  });
+
+  if (uncategorised.length) {
+    const heading = document.createElement('div');
+    heading.className = 'section-heading';
+    heading.textContent = 'Uncategorised';
+    container.appendChild(heading);
+    uncategorised.forEach(r => container.appendChild(buildRow(r)));
+  }
+
+  if (!recipesData.length) {
+    container.innerHTML = '<p class="empty">No recipes yet. Add one above.</p>';
+  }
+}
+
+function buildRow(recipe) {
+  const recipeTagIds = (recipe.recipe_tags || []).map(rt => rt.tag_id);
+  const recipeTags   = allTags.filter(t => recipeTagIds.includes(t.id));
+  const unusedTags   = allTags.filter(t => !recipeTagIds.includes(t.id));
+
+  const row = document.createElement('div');
+  row.className = 'recipe-row';
+  row.dataset.id = recipe.id;
+
+  // Title + edit link
+  const titleCell = document.createElement('div');
+  titleCell.className = 'recipe-row__title';
+  titleCell.innerHTML = `<a href="/admin/recipe/?id=${encodeURIComponent(recipe.id)}">${escHtml(recipe.title)}</a>`;
+  row.appendChild(titleCell);
+
+  // Category dropdown (inline move)
+  const catCell = document.createElement('div');
+  catCell.className = 'recipe-row__cat';
+  const catSel = document.createElement('select');
+  catSel.innerHTML = allCategories.map(c =>
+    `<option value="${escHtml(c.id)}" ${c.id === recipe.category_id ? 'selected' : ''}>${escHtml(c.name)}</option>`
+  ).join('');
+  catSel.addEventListener('change', () => moveRecipe(recipe.id, catSel.value, catSel));
+  catCell.appendChild(catSel);
+  row.appendChild(catCell);
+
+  // Tags
+  const tagsCell = document.createElement('div');
+  tagsCell.className = 'recipe-row__tags';
+
+  recipeTags.forEach(tag => {
+    const chip = document.createElement('span');
+    chip.className = 'tag-chip';
+    chip.innerHTML = `${escHtml(tag.label)}<button class="tag-chip__rm" title="Remove tag"
+      onclick="removeTag('${recipe.id}','${tag.id}')">×</button>`;
+    tagsCell.appendChild(chip);
+  });
+
+  // Add-tag dropdown
+  if (unusedTags.length) {
+    const wrap = document.createElement('div');
+    wrap.className = 'tag-add-wrap';
+
+    const addBtn = document.createElement('button');
+    addBtn.className = 'tag-add-btn';
+    addBtn.textContent = '+ tag';
+    addBtn.onclick = (e) => { e.stopPropagation(); toggleDropdown(wrap); };
+
+    const dropdown = document.createElement('div');
+    dropdown.className = 'tag-dropdown';
+    unusedTags.forEach(tag => {
+      const item = document.createElement('div');
+      item.className = 'tag-dropdown__item';
+      item.textContent = tag.label;
+      item.onclick = () => addTag(recipe.id, tag.id);
+      dropdown.appendChild(item);
+    });
+
+    wrap.appendChild(addBtn);
+    wrap.appendChild(dropdown);
+    tagsCell.appendChild(wrap);
+  }
+
+  row.appendChild(tagsCell);
+  return row;
+}
+
+// ── Actions ───────────────────────────────────────────────────────────────────
+
+function toggleDropdown(wrap) {
+  // Close all other open dropdowns first
+  document.querySelectorAll('.tag-dropdown.open').forEach(d => {
+    if (d !== wrap.querySelector('.tag-dropdown')) d.classList.remove('open');
+  });
+  wrap.querySelector('.tag-dropdown').classList.toggle('open');
+}
+document.addEventListener('click', () => {
+  document.querySelectorAll('.tag-dropdown.open').forEach(d => d.classList.remove('open'));
+});
+
+async function addRecipe() {
+  const title = document.getElementById('new-title').value.trim();
+  const categoryId = document.getElementById('new-category').value;
+  if (!title) { showBanner('Please enter a recipe title.', 'error'); return; }
+
+  // Build a slug from the title
+  const slug = title.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
+
+  const { data, error } = await db
+    .from('recipes')
+    .insert({ title, category_id: categoryId, slug,
+              ingredients: [], instructions: [], notes: [] })
+    .select('id')
+    .single();
+
+  if (error) {
+    showBanner('Could not create recipe: ' + (error.message.includes('duplicate') ?
+      'A recipe with that title already exists.' : error.message), 'error');
+    return;
+  }
+  document.getElementById('new-title').value = '';
+  // Navigate to editor
+  window.location.href = `/admin/recipe/?id=${data.id}`;
+}
+
+async function moveRecipe(recipeId, newCategoryId, selectEl) {
+  selectEl.disabled = true;
+  const { error } = await db
+    .from('recipes')
+    .update({ category_id: newCategoryId })
+    .eq('id', recipeId);
+  selectEl.disabled = false;
+  if (error) { showBanner('Move failed: ' + error.message); return; }
+  // Update local state + re-render
+  const r = recipesData.find(x => x.id === recipeId);
+  if (r) r.category_id = newCategoryId;
+  renderList();
+  showBanner('Recipe moved.', 'success');
+}
+
+async function addTag(recipeId, tagId) {
+  document.querySelectorAll('.tag-dropdown.open').forEach(d => d.classList.remove('open'));
+  const { error } = await db.from('recipe_tags').insert({ recipe_id: recipeId, tag_id: tagId });
+  if (error) { showBanner('Could not add tag: ' + error.message); return; }
+  const r = recipesData.find(x => x.id === recipeId);
+  if (r) r.recipe_tags = [...(r.recipe_tags || []), { tag_id: tagId }];
+  renderList();
+}
+
+async function removeTag(recipeId, tagId) {
+  const { error } = await db.from('recipe_tags')
+    .delete().eq('recipe_id', recipeId).eq('tag_id', tagId);
+  if (error) { showBanner('Could not remove tag: ' + error.message); return; }
+  const r = recipesData.find(x => x.id === recipeId);
+  if (r) r.recipe_tags = (r.recipe_tags || []).filter(rt => rt.tag_id !== tagId);
+  renderList();
+}
+</script>
+</body>
+</html>
