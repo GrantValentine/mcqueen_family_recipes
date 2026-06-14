@@ -35,16 +35,16 @@ RECIPES_DIR = ROOT / "recipes"
 # ── Supabase client ───────────────────────────────────────────────────────────
 
 def get_client() -> Client:
-    url = os.environ.get("SUPABASE_URL", "").rstrip("/")
-    key = os.environ.get("SUPABASE_ANON_KEY", "")
+    url = os.environ.get("SUPABASE_URL", "https://jiouygrsqxbhtapyffbm.supabase.co").rstrip("/")
+    key = os.environ.get("SUPABASE_ANON_KEY", "sb_publishable_REjkQ00uDAp_laGS6rYsmA_KBnDkiv9")
     if not url or not key:
         sys.exit("Error: SUPABASE_URL and SUPABASE_ANON_KEY must be set.")
     return create_client(url, key)
 
 
 def authenticate(db: Client) -> None:
-    email = os.environ.get("ADMIN_EMAIL", "")
-    password = os.environ.get("ADMIN_PASSWORD", "")
+    email = os.environ.get("ADMIN_EMAIL", "grantsvalentine@gmail.com")
+    password = os.environ.get("ADMIN_PASSWORD", "theridge")
     if not email or not password:
         sys.exit(
             "Error: ADMIN_EMAIL and ADMIN_PASSWORD must be set.\n"
@@ -161,7 +161,7 @@ def migrate(dry_run: bool = False) -> None:
     print(f"  {'TOTAL':<35} {total}")
     print("\nExpected totals from JSON files:")
     print("  Appetizers 16, Bread 14, Cookies 25, Desserts 44,")
-    print("  Main Dishes 62, Salads 13, Vegetables 14  →  188")
+    print("  Main Dishes 62, Salads 12, Vegetables 14  ->  187")
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
