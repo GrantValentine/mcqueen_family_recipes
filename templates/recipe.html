@@ -145,7 +145,6 @@
   var slug = page.dataset.slug;
   if (!slug) return;
 
-  // Fetch via Supabase REST API (no SDK needed — plain fetch)
   var url = SUPABASE_URL + '/rest/v1/recipes'
     + '?slug=eq.' + encodeURIComponent(slug)
     + '&select=title,ingredients,instructions,notes,photo_url,categories(name,slug)'
@@ -166,7 +165,7 @@
     var h1 = page.querySelector('.recipe-title');
     if (h1 && r.title) h1.textContent = r.title;
 
-    // Photo (only replace if Supabase has a URL; local photos stay from static HTML)
+    // Photo
     if (r.photo_url) {
       var photoWrap = page.querySelector('.recipe-photo-wrap');
       if (!photoWrap) {
@@ -176,30 +175,55 @@
         var header = page.querySelector('header');
         if (header) header.after(photoWrap);
       }
-      photoWrap.innerHTML = '<img src="' + r.photo_url + '" alt="' + (r.title || '') + '" style="width:100%;height:100%;object-fit:cover;">';
+      photoWrap.innerHTML = '<img src="' + r.photo_url + '" alt="' + escHtml(r.title || '') + '" style="width:100%;height:100%;object-fit:cover;">';
     }
 
-    // Ingredients
-    if (r.ingredients && r.ingredients.length) {
+    var hasIngredients  = r.ingredients  && r.ingredients.length;
+    var hasInstructions = r.instructions && r.instructions.length;
+    if (!hasIngredients && !hasInstructions) return;
+
+    // Ensure .recipe-cols wrapper exists — the static HTML omits it entirely
+    // when a recipe had no data at build time, so we may need to create it.
+    var cols = page.querySelector('.recipe-cols');
+    if (!cols) {
+      cols = document.createElement('div');
+      cols.className = 'recipe-cols';
+      var anchor = page.querySelector('.recipe-photo-wrap')
+                || page.querySelector('.preamble-block')
+                || page.querySelector('header');
+      if (anchor) anchor.after(cols); else page.appendChild(cols);
+    }
+
+    // Ingredients — create the panel if it wasn't rendered statically
+    if (hasIngredients) {
       var panel = page.querySelector('.ingredients-panel ul');
-      if (panel) {
-        panel.innerHTML = r.ingredients
-          .map(function (i) { return '<li>' + escHtml(i) + '</li>'; })
-          .join('');
+      if (!panel) {
+        var aside = document.createElement('aside');
+        aside.innerHTML = '<div class="ingredients-panel"><h2>Ingredients</h2><ul></ul></div>';
+        cols.insertBefore(aside, cols.firstChild);
+        panel = aside.querySelector('ul');
       }
+      panel.innerHTML = r.ingredients
+        .map(function (i) { return '<li>' + escHtml(i) + '</li>'; }).join('');
       var count = page.querySelector('.recipe-meta-bar span:nth-child(2)');
       if (count) count.textContent = r.ingredients.length + ' ingredients';
     }
 
-    // Instructions
-    if (r.instructions && r.instructions.length) {
+    // Instructions — create the ol if it wasn't rendered statically
+    if (hasInstructions) {
       var ol = page.querySelector('.instructions-col ol');
-      if (ol) {
-        ol.innerHTML = r.instructions.map(function (step, idx) {
-          return '<li class="step"><span class="step-num" aria-hidden="true">' +
-            (idx + 1) + '</span><p>' + escHtml(step) + '</p></li>';
-        }).join('');
+      if (!ol) {
+        var instCol = document.createElement('div');
+        instCol.className = 'instructions-col';
+        instCol.innerHTML = '<div class="instructions-col"><h2>Instructions</h2>'
+          + '<ol style="list-style:none;"></ol></div>';
+        cols.appendChild(instCol);
+        ol = instCol.querySelector('ol');
       }
+      ol.innerHTML = r.instructions.map(function (step, idx) {
+        return '<li class="step"><span class="step-num" aria-hidden="true">'
+          + (idx + 1) + '</span><p>' + escHtml(step) + '</p></li>';
+      }).join('');
       var stepCount = page.querySelector('.recipe-meta-bar span:nth-child(3)');
       if (stepCount) stepCount.textContent = r.instructions.length + ' steps';
     }
