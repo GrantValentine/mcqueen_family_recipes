@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Login — Julie's Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1f2ca3; --porcelain: #fffdf9; --rose: #cb8589;
+      --olive: #7c7f65; --ink: #1a1a2e;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--porcelain);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .login-card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(31,44,163,0.1), 0 1px 4px rgba(31,44,163,0.06);
+      padding: 2.8rem 2.4rem 2.4rem;
+      width: 100%;
+      max-width: 380px;
+    }
+    .login-logo {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 36, 'SOFT' 90;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--blue);
+      text-align: center;
+      margin-bottom: 0.25rem;
+    }
+    .login-sub {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--olive);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--olive);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+    input[type=text], input[type=password] {
+      width: 100%;
+      font-family: 'Lora', serif;
+      font-size: 0.92rem;
+      padding: 0.6rem 0.9rem;
+      border: 1.5px solid #dde;
+      border-radius: 8px;
+      background: var(--porcelain);
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.15s;
+      margin-bottom: 1.1rem;
+    }
+    input:focus { border-color: var(--blue); }
+    .login-btn {
+      width: 100%;
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 18, 'SOFT' 80;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.7rem;
+      background: var(--blue);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      margin-top: 0.4rem;
+    }
+    .login-btn:hover { opacity: 0.88; }
+    .login-btn:disabled { opacity: 0.55; cursor: default; }
+    #error-msg {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #b91c1c;
+      font-size: 0.83rem;
+      border-radius: 6px;
+      padding: 0.6rem 0.8rem;
+      margin-top: 1rem;
+    }
+    .willow-rule {
+      border: none;
+      border-top: 1px solid rgba(31,44,163,0.12);
+      margin: 1.5rem 0 1.2rem;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--olive);
+      text-decoration: none;
+      margin-top: 1.2rem;
+    }
+    .back-link:hover { color: var(--blue); }
+  </style>
+</head>
+<body>
+
+<div class="login-card">
+  <p class="login-logo">Julie's Recipes</p>
+  <p class="login-sub">Admin</p>
+
+  <form id="login-form" onsubmit="handleLogin(event)">
+    <label for="username">Username</label>
+    <input id="username" type="text" placeholder="julie"
+           autocomplete="username" spellcheck="false" required>
+
+    <label for="password">Password</label>
+    <input id="password" type="password"
+           autocomplete="current-password" required>
+
+    <button class="login-btn" type="submit" id="submit-btn">Sign in</button>
+    <div id="error-msg"></div>
+  </form>
+
+  <hr class="willow-rule">
+  <a class="back-link" href="/">← Back to site</a>
+</div>
+
+<!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- Build-time config: provides window.ADMIN_EMAIL -->
+<script src="/admin/config.js" onerror="window.ADMIN_EMAIL=null"></script>
+
+<script>
+const SUPABASE_URL      = 'https://jiouygrsqxbhtapyffbm.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_REjkQ00uDAp_laGS6rYsmA_KBnDkiv9';
+const { createClient } = supabase;
+const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// Redirect if already logged in
+(async () => {
+  const { data: { session } } = await db.auth.getSession();
+  if (session) window.location.replace('/admin/');
+})();
+
+async function handleLogin(e) {
+  e.preventDefault();
+  const errEl  = document.getElementById('error-msg');
+  const btn    = document.getElementById('submit-btn');
+  const user   = document.getElementById('username').value.trim().toLowerCase();
+  const pass   = document.getElementById('password').value;
+
+  errEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Signing in…';
+
+  // Map "julie" → configured admin email.
+  // If ADMIN_EMAIL wasn't injected at build time, fall back to treating the
+  // username field as an email address directly.
+  let email = window.ADMIN_EMAIL || null;
+  if (!email) {
+    // No config.js injection — treat username as raw email (dev fallback)
+    email = user.includes('@') ? user : null;
+    if (!email) {
+      showError('Admin email not configured. Set ADMIN_EMAIL in your .env and rebuild.');
+      btn.disabled = false; btn.textContent = 'Sign in';
+      return;
+    }
+  } else if (user !== 'julie') {
+    showError('Unknown username.');
+    btn.disabled = false; btn.textContent = 'Sign in';
+    return;
+  }
+
+  const { error } = await db.auth.signInWithPassword({ email, password: pass });
+  if (error) {
+    showError('Incorrect password. Please try again.');
+    btn.disabled = false; btn.textContent = 'Sign in';
+    document.getElementById('password').value = '';
+    document.getElementById('password').focus();
+    return;
+  }
+  window.location.replace('/admin/');
+}
+
+function showError(msg) {
+  const el = document.getElementById('error-msg');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+</script>
+</body>
+</html>
