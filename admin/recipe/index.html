@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Edit Recipe — Julie's Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue:#1f2ca3; --porcelain:#fffdf9; --rose:#cb8589;
+            --olive:#7c7f65; --ink:#1a1a2e; --light:#e8eaf6; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Lora',Georgia,serif; background:var(--porcelain);
+           color:var(--ink); min-height:100vh; }
+
+    /* ── Top bar ── */
+    .top-bar {
+      background:var(--blue); color:white; padding:0 1.5rem;
+      display:flex; align-items:center; justify-content:space-between;
+      height:52px; position:sticky; top:0; z-index:100;
+    }
+    .top-bar__left { display:flex; align-items:center; gap:.9rem; }
+    .back-link { color:rgba(255,255,255,.65); font-size:.8rem;
+      text-decoration:none; }
+    .back-link:hover { color:white; }
+    .top-bar__title { font-family:'Fraunces',serif;
+      font-variation-settings:'opsz' 18,'SOFT' 80; font-size:1rem; }
+    .top-bar__actions { display:flex; gap:.6rem; align-items:center; }
+    .btn { font-family:'Lora',serif; font-size:.8rem; padding:.38rem .9rem;
+      border-radius:6px; border:1.5px solid; cursor:pointer;
+      transition:opacity .15s; }
+    .btn:hover:not(:disabled) { opacity:.8; }
+    .btn:disabled { opacity:.45; cursor:default; }
+    .btn--primary { background:white; color:var(--blue); border-color:white; }
+    .btn--ghost { background:transparent; color:white;
+      border-color:rgba(255,255,255,.45); }
+    .btn--danger { background:white; color:#b91c1c; border-color:#fca5a5; }
+
+    /* ── Banner ── */
+    .admin-banner { display:none; padding:.65rem 1.2rem; font-size:.83rem;
+      border-radius:6px; margin:1rem 1.5rem 0; }
+    .admin-banner--error { background:#fef2f2; border:1px solid #fca5a5; color:#b91c1c; }
+    .admin-banner--success { background:#f0fdf4; border:1px solid #86efac; color:#166534; }
+
+    /* ── Layout ── */
+    .page { max-width:860px; margin:0 auto; padding:1.8rem 1.5rem 4rem; }
+    .two-col { display:grid; grid-template-columns:1fr 320px; gap:2rem;
+      align-items:start; }
+    @media(max-width:700px) { .two-col { grid-template-columns:1fr; } }
+
+    /* ── Card ── */
+    .card { background:white; border-radius:10px;
+      box-shadow:0 2px 10px rgba(31,44,163,.07); padding:1.4rem 1.5rem;
+      margin-bottom:1.2rem; }
+    .card__heading { font-family:'Fraunces',serif;
+      font-variation-settings:'opsz' 18,'SOFT' 80; font-size:.95rem;
+      font-weight:500; color:var(--blue); margin-bottom:1rem; }
+
+    /* ── Fields ── */
+    label { display:block; font-size:.76rem; color:var(--olive);
+      letter-spacing:.05em; margin-bottom:.3rem; }
+    input[type=text], textarea, select {
+      width:100%; font-family:'Lora',serif; font-size:.88rem;
+      padding:.45rem .75rem; border:1.5px solid #dde; border-radius:6px;
+      background:var(--porcelain); color:var(--ink); outline:none;
+      transition:border-color .15s; resize:vertical;
+    }
+    input:focus, textarea:focus, select:focus { border-color:var(--blue); }
+    .field-group { margin-bottom:1rem; }
+
+    /* ── Dynamic list editor ── */
+    .list-item { display:flex; gap:.5rem; align-items:flex-start;
+      margin-bottom:.45rem; }
+    .list-item textarea { flex:1; rows:2; min-height:2.4rem; }
+    .list-item__btns { display:flex; flex-direction:column; gap:.2rem;
+      flex-shrink:0; }
+    .list-btn { background:none; border:1.5px solid #dde; border-radius:4px;
+      width:24px; height:24px; font-size:.75rem; cursor:pointer; color:var(--olive);
+      display:flex; align-items:center; justify-content:center;
+      transition:border-color .1s, color .1s; }
+    .list-btn:hover { border-color:var(--blue); color:var(--blue); }
+    .list-btn--rm:hover { border-color:#fca5a5; color:#b91c1c; }
+    .list-btn:disabled { opacity:.3; cursor:default; }
+    .add-item-btn { font-family:'Lora',serif; font-size:.8rem; color:var(--blue);
+      background:none; border:1.5px dashed rgba(31,44,163,.3); border-radius:6px;
+      padding:.35rem .8rem; cursor:pointer; margin-top:.3rem;
+      transition:border-color .15s, background .15s; width:100%; }
+    .add-item-btn:hover { border-color:var(--blue); background:var(--light); }
+
+    /* ── Tags ── */
+    .tags-grid { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .tag-check { display:flex; align-items:center; gap:.35rem; cursor:pointer;
+      font-size:.82rem; }
+    .tag-check input { width:15px; height:15px; accent-color:var(--blue); }
+    .new-tag-row { display:flex; gap:.5rem; margin-top:.8rem; }
+    .new-tag-row input { flex:1; font-size:.82rem; }
+    .new-tag-row button { white-space:nowrap; background:var(--blue); color:white;
+      border:none; border-radius:6px; padding:.4rem .8rem; font-family:'Lora',serif;
+      font-size:.8rem; cursor:pointer; }
+
+    /* ── Photo ── */
+    #photo-preview { max-width:100%; border-radius:8px; margin-bottom:.8rem;
+      display:none; border:1.5px solid var(--light); }
+    .photo-source-note { font-size:.75rem; color:var(--olive); font-style:italic;
+      margin-bottom:.8rem; }
+    input[type=file] { font-family:'Lora',serif; font-size:.8rem;
+      border:1.5px dashed #dde; border-radius:6px; padding:.4rem .6rem;
+      width:100%; cursor:pointer; background:var(--porcelain); }
+    input[type=file]:hover { border-color:var(--blue); }
+    #upload-status { font-size:.78rem; color:var(--olive); margin-top:.4rem;
+      min-height:1.2em; }
+
+    /* ── Delete ── */
+    .delete-row { display:flex; justify-content:flex-end; margin-top:.5rem; }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar__left">
+    <a class="back-link" href="/admin/">← Dashboard</a>
+    <span class="top-bar__title" id="page-title">Edit Recipe</span>
+  </div>
+  <div class="top-bar__actions">
+    <span id="save-indicator" style="font-size:.78rem;color:rgba(255,255,255,.65);"></span>
+    <button class="btn btn--primary" onclick="saveRecipe(this)">Save Recipe</button>
+    <button class="btn btn--ghost" onclick="logout()">Log out</button>
+  </div>
+</div>
+
+<div id="admin-banner" class="admin-banner"></div>
+<div class="page">
+
+  <div class="two-col">
+
+    <!-- Left column: title, meta, ingredients, instructions, notes -->
+    <div>
+      <div class="card">
+        <div class="field-group">
+          <label for="recipe-title">Title</label>
+          <input id="recipe-title" type="text" placeholder="Recipe title">
+        </div>
+        <div class="field-group">
+          <label for="recipe-category">Section</label>
+          <select id="recipe-category"></select>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card__heading">Ingredients</p>
+        <div id="ingredients-list"></div>
+        <button class="add-item-btn" onclick="addItem('ingredients')">+ Add ingredient</button>
+      </div>
+
+      <div class="card">
+        <p class="card__heading">Instructions</p>
+        <div id="instructions-list"></div>
+        <button class="add-item-btn" onclick="addItem('instructions')">+ Add step</button>
+      </div>
+
+      <div class="card">
+        <p class="card__heading">Notes &amp; Tips</p>
+        <div id="notes-list"></div>
+        <button class="add-item-btn" onclick="addItem('notes')">+ Add note</button>
+      </div>
+    </div>
+
+    <!-- Right column: tags, photo, danger zone -->
+    <div>
+      <div class="card">
+        <p class="card__heading">Tags</p>
+        <div class="tags-grid" id="tags-grid"></div>
+        <div class="new-tag-row">
+          <input id="new-tag-input" type="text" placeholder="New tag label">
+          <button onclick="createTag()">Add tag</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card__heading">Photo</p>
+        <img id="photo-preview" alt="Recipe photo preview">
+        <p id="photo-source-note" class="photo-source-note"></p>
+        <label for="photo-file">Upload a photo (max 2 MB)</label>
+        <input id="photo-file" type="file" accept="image/jpeg,image/png,image/webp"
+               onchange="handlePhotoSelect(this)">
+        <p id="upload-status"></p>
+      </div>
+
+      <div class="card">
+        <p class="card__heading" style="color:var(--rose)">Danger Zone</p>
+        <div class="delete-row">
+          <button class="btn btn--danger" onclick="deleteRecipe()">Delete this recipe</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/admin/config.js" onerror="window.ADMIN_EMAIL=null;window.NETLIFY_BUILD_HOOK=null"></script>
+<script src="/admin/admin.js"></script>
+<script>
+// ── State ─────────────────────────────────────────────────────────────────────
+const recipeId   = new URLSearchParams(location.search).get('id');
+let   allCategories = [];
+let   allTags       = [];
+let   activeTagIds  = new Set();
+let   newPhotoUrl   = null;   // set after a successful upload
+let   listState     = { ingredients: [], instructions: [], notes: [] };
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+(async () => {
+  await requireAuth();
+  if (!recipeId) { showBanner('No recipe ID in URL.'); return; }
+  await Promise.all([loadCategories(), loadTags()]);
+  await loadRecipe();
+})();
+
+// ── Load data ─────────────────────────────────────────────────────────────────
+async function loadCategories() {
+  const { data } = await db.from('categories').select('id,slug,name,sort_order').order('sort_order');
+  allCategories = data || [];
+  const sel = document.getElementById('recipe-category');
+  sel.innerHTML = allCategories.map(c =>
+    `<option value="${escHtml(c.id)}">${escHtml(c.name)}</option>`
+  ).join('');
+}
+
+async function loadTags() {
+  const { data } = await db.from('tags').select('id,slug,label').order('label');
+  allTags = data || [];
+}
+
+async function loadRecipe() {
+  const { data: recipe, error } = await db
+    .from('recipes')
+    .select('*, recipe_tags(tag_id)')
+    .eq('id', recipeId)
+    .single();
+
+  if (error || !recipe) {
+    showBanner('Recipe not found.');
+    return;
+  }
+
+  // Title
+  document.getElementById('page-title').textContent = recipe.title || 'Edit Recipe';
+  document.getElementById('recipe-title').value = recipe.title || '';
+
+  // Category
+  const sel = document.getElementById('recipe-category');
+  if (recipe.category_id) sel.value = recipe.category_id;
+
+  // Lists
+  listState.ingredients  = recipe.ingredients  || [];
+  listState.instructions = recipe.instructions || [];
+  listState.notes        = recipe.notes        || [];
+  renderList('ingredients');
+  renderList('instructions');
+  renderList('notes');
+
+  // Active tags
+  activeTagIds = new Set((recipe.recipe_tags || []).map(rt => rt.tag_id));
+  renderTags();
+
+  // Photo
+  if (recipe.photo_url) {
+    showPhotoPreview(recipe.photo_url, 'Supabase Storage');
+  } else {
+    document.getElementById('photo-source-note').textContent =
+      'No Supabase photo set. Local photos/ matches are used at build time. Upload here to override.';
+  }
+}
+
+// ── Dynamic list editors ──────────────────────────────────────────────────────
+function renderList(key) {
+  const container = document.getElementById(key + '-list');
+  container.innerHTML = '';
+  const items = listState[key];
+  items.forEach((text, i) => {
+    const row = document.createElement('div');
+    row.className = 'list-item';
+
+    const ta = document.createElement('textarea');
+    ta.rows = text.length > 80 ? 3 : 2;
+    ta.value = text;
+    ta.oninput = () => { listState[key][i] = ta.value; };
+
+    const btns = document.createElement('div');
+    btns.className = 'list-item__btns';
+
+    const up = makeListBtn('↑', i === 0, () => { swapItems(key, i, i-1); });
+    const dn = makeListBtn('↓', i === items.length-1, () => { swapItems(key, i, i+1); });
+    const rm = makeListBtn('×', false, () => { listState[key].splice(i, 1); renderList(key); });
+    rm.classList.add('list-btn--rm');
+
+    btns.append(up, dn, rm);
+    row.append(ta, btns);
+    container.appendChild(row);
+  });
+}
+
+function makeListBtn(label, disabled, onClick) {
+  const b = document.createElement('button');
+  b.className = 'list-btn';
+  b.textContent = label;
+  b.disabled = disabled;
+  b.onclick = onClick;
+  return b;
+}
+
+function swapItems(key, i, j) {
+  [listState[key][i], listState[key][j]] = [listState[key][j], listState[key][i]];
+  renderList(key);
+}
+
+function addItem(key) {
+  listState[key].push('');
+  renderList(key);
+  // Focus new textarea
+  const tas = document.querySelectorAll('#' + key + '-list .list-item textarea');
+  tas[tas.length - 1]?.focus();
+}
+
+function syncListFromDOM(key) {
+  document.querySelectorAll('#' + key + '-list .list-item textarea').forEach((ta, i) => {
+    listState[key][i] = ta.value;
+  });
+  // Filter out empty entries
+  listState[key] = listState[key].map(s => s.trim()).filter(Boolean);
+}
+
+// ── Tags ──────────────────────────────────────────────────────────────────────
+function renderTags() {
+  const grid = document.getElementById('tags-grid');
+  grid.innerHTML = '';
+  allTags.forEach(tag => {
+    const lbl = document.createElement('label');
+    lbl.className = 'tag-check';
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.value = tag.id;
+    cb.checked = activeTagIds.has(tag.id);
+    lbl.append(cb, document.createTextNode(tag.label));
+    grid.appendChild(lbl);
+  });
+}
+
+async function createTag() {
+  const input = document.getElementById('new-tag-input');
+  const label = input.value.trim();
+  if (!label) return;
+  const slug = label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').trim();
+  const { data, error } = await db.from('tags').insert({ slug, label }).select('id,slug,label').single();
+  if (error) { showBanner('Could not create tag: ' + error.message); return; }
+  allTags.push(data);
+  allTags.sort((a, b) => a.label.localeCompare(b.label));
+  input.value = '';
+  renderTags();
+  showBanner('Tag "' + label + '" created.', 'success');
+}
+
+// ── Photo upload ──────────────────────────────────────────────────────────────
+function handlePhotoSelect(input) {
+  const file = input.files[0];
+  if (!file) return;
+  if (file.size > 2 * 1024 * 1024) {
+    showBanner('Photo is over 2 MB. Please resize it first.', 'error');
+    input.value = '';
+    return;
+  }
+  // Show local preview immediately
+  const preview = document.getElementById('photo-preview');
+  preview.src = URL.createObjectURL(file);
+  preview.style.display = 'block';
+  document.getElementById('upload-status').textContent = 'Ready to upload — click Save Recipe.';
+  // Store file reference for upload-on-save
+  window._pendingPhotoFile = file;
+}
+
+async function uploadPendingPhoto() {
+  const file = window._pendingPhotoFile;
+  if (!file) return null;
+
+  const ext  = file.name.split('.').pop().toLowerCase() || 'jpg';
+  const path = `${recipeId}/${Date.now()}.${ext}`;
+
+  document.getElementById('upload-status').textContent = 'Uploading photo…';
+  const { error } = await db.storage.from('recipe-photos').upload(path, file, {
+    upsert: true,
+    contentType: file.type,
+  });
+  if (error) {
+    showBanner('Photo upload failed: ' + error.message);
+    return null;
+  }
+
+  const { data: { publicUrl } } = db.storage.from('recipe-photos').getPublicUrl(path);
+  document.getElementById('upload-status').textContent = 'Photo uploaded ✓';
+  window._pendingPhotoFile = null;
+  return publicUrl;
+}
+
+function showPhotoPreview(url, source) {
+  const preview = document.getElementById('photo-preview');
+  preview.src = url;
+  preview.style.display = 'block';
+  document.getElementById('photo-source-note').textContent = `Photo source: ${source}`;
+}
+
+// ── Save ──────────────────────────────────────────────────────────────────────
+async function saveRecipe(btn) {
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+  hideBanner();
+
+  // Sync list textareas → listState
+  syncListFromDOM('ingredients');
+  syncListFromDOM('instructions');
+  syncListFromDOM('notes');
+
+  // Upload photo if queued
+  const uploadedUrl = await uploadPendingPhoto();
+
+  // Build recipe row
+  const row = {
+    title:        document.getElementById('recipe-title').value.trim(),
+    category_id:  document.getElementById('recipe-category').value,
+    ingredients:  listState.ingredients,
+    instructions: listState.instructions,
+    notes:        listState.notes,
+  };
+  if (uploadedUrl) row.photo_url = uploadedUrl;
+
+  if (!row.title) {
+    showBanner('Title cannot be empty.', 'error');
+    btn.disabled = false; btn.textContent = 'Save Recipe';
+    return;
+  }
+
+  const { error: recipeErr } = await db.from('recipes').update(row).eq('id', recipeId);
+  if (recipeErr) {
+    showBanner('Save failed: ' + recipeErr.message);
+    btn.disabled = false; btn.textContent = 'Save Recipe';
+    return;
+  }
+
+  // Sync tags: delete all then re-insert selected ones
+  await db.from('recipe_tags').delete().eq('recipe_id', recipeId);
+  const selectedIds = Array.from(
+    document.querySelectorAll('#tags-grid input[type=checkbox]:checked')
+  ).map(cb => cb.value);
+  if (selectedIds.length) {
+    await db.from('recipe_tags').insert(
+      selectedIds.map(tagId => ({ recipe_id: recipeId, tag_id: tagId }))
+    );
+  }
+
+  // Update page title
+  document.getElementById('page-title').textContent = row.title;
+  document.title = `Edit "${row.title}" — Julie's Recipes`;
+
+  // Re-render lists (removes empty rows that were filtered out)
+  renderList('ingredients');
+  renderList('instructions');
+  renderList('notes');
+
+  showBanner('Recipe saved!', 'success');
+  const ind = document.getElementById('save-indicator');
+  ind.textContent = 'Saved ' + new Date().toLocaleTimeString();
+  btn.disabled = false; btn.textContent = 'Save Recipe';
+}
+
+// ── Delete ────────────────────────────────────────────────────────────────────
+async function deleteRecipe() {
+  const title = document.getElementById('recipe-title').value || 'this recipe';
+  if (!confirm(`Permanently delete "${title}"? This cannot be undone.`)) return;
+  const { error } = await db.from('recipes').delete().eq('id', recipeId);
+  if (error) { showBanner('Delete failed: ' + error.message); return; }
+  window.location.replace('/admin/');
+}
+</script>
+</body>
+</html>
