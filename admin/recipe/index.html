@@ -387,19 +387,25 @@ async function uploadPendingPhoto() {
 
   const ext  = file.name.split('.').pop().toLowerCase() || 'jpg';
   const path = `${recipeId}/${Date.now()}.${ext}`;
+  const statusEl = document.getElementById('upload-status');
 
-  document.getElementById('upload-status').textContent = 'Uploading photo…';
+  statusEl.textContent = 'Uploading photo…';
+  statusEl.style.color = '';
+
   const { error } = await db.storage.from('recipe-photos').upload(path, file, {
     upsert: true,
     contentType: file.type,
   });
   if (error) {
+    console.error('Storage upload error:', error);
+    statusEl.textContent = 'Upload failed: ' + error.message;
+    statusEl.style.color = '#b91c1c';
     showBanner('Photo upload failed: ' + error.message);
     return null;
   }
 
   const { data: { publicUrl } } = db.storage.from('recipe-photos').getPublicUrl(path);
-  document.getElementById('upload-status').textContent = 'Photo uploaded ✓';
+  statusEl.textContent = 'Photo uploaded ✓';
   window._pendingPhotoFile = null;
   return publicUrl;
 }
