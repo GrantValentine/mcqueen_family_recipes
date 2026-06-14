@@ -1,23 +1,37 @@
 """
-Build the static recipe website from extracted JSON files.
-Reads recipes/ and outputs HTML to site/.
+Build the static recipe website.
+
+Data source (checked in order):
+  1. SUPABASE_URL env var set → fetch from Supabase (production mode)
+  2. Fallback → read local recipes/**/*.json (development / first-run mode)
+
+Also copies admin/ → site/admin/ and writes site/admin/config.js with
+ADMIN_EMAIL and NETLIFY_BUILD_HOOK (both read from env, never hardcoded).
 """
 
 import json
+import os
 import re
 import shutil
 import sys
 from pathlib import Path
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 from jinja2 import Environment, FileSystemLoader
 
 ROOT = Path(__file__).parent.parent
-RECIPES_DIR = ROOT / "recipes"
+RECIPES_DIR   = ROOT / "recipes"
 TEMPLATES_DIR = ROOT / "templates"
-STATIC_DIR = ROOT / "static"
-SITE_DIR = ROOT / "site"
-PHOTOS_DIR = ROOT / "photos"
-PUBLIC_DIR = ROOT / "public"
+STATIC_DIR    = ROOT / "static"
+SITE_DIR      = ROOT / "site"
+PHOTOS_DIR    = ROOT / "photos"
+PUBLIC_DIR    = ROOT / "public"
+ADMIN_DIR     = ROOT / "admin"
 
 # Manually resolved mappings for photos whose filenames don't match the recipe
 # slug well enough for automatic matching.
@@ -109,6 +123,50 @@ def find_photo(recipe_slug: str, cat_slug: str,
     return None
 
 
+def load_recipes_from_supabase() -> tuple[list[dict], dict]:
+    """Fetch recipes from Supabase and return the same shape as load_recipes()."""
+    url = os.environ.get("SUPABASE_URL", "").rstrip("/")
+    key = os.environ.get("SUPABASE_ANON_KEY", "")
+    if not url or not key:
+        raise RuntimeError("SUPABASE_URL and SUPABASE_ANON_KEY must be set.")
+
+    try:
+        from supabase import create_client
+    except ImportError:
+        raise RuntimeError("supabase package not installed — run: pip install supabase")
+
+    client = create_client(url, key)
+    result = (
+        client.table("recipes")
+        .select("*, categories(id, slug, name, sort_order)")
+        .execute()
+    )
+
+    recipes: list[dict] = []
+    by_category: dict[str, list[dict]] = {}
+
+    for row in result.data:
+        cat = row.get("categories") or {}
+        cat_slug = cat.get("slug") or "uncategorised"
+        recipe = {
+            "title":           row["title"],
+            "slug":            row["slug"],
+            "category":        cat.get("name") or cat_slug,
+            "category_slug":   cat_slug,
+            "ingredients":     row.get("ingredients") or [],
+            "instructions":    row.get("instructions") or [],
+            "notes":           row.get("notes") or [],
+            "source_file":     row.get("source_file"),
+            "photo":           None,
+            # Supabase Storage photo (takes priority over local fuzzy match)
+            "_photo_url_db":   row.get("photo_url"),
+        }
+        recipes.append(recipe)
+        by_category.setdefault(cat_slug, []).append(recipe)
+
+    return recipes, by_category
+
+
 def load_recipes() -> tuple[list[dict], dict]:
     recipes = []
     by_category: dict[str, list[dict]] = {}
@@ -162,11 +220,22 @@ def build_site() -> int:
     env.globals["recipe_url"] = recipe_url
     env.globals["category_url"] = category_url
 
-    recipes, by_category = load_recipes()
+    # Choose data source
+    supabase_url = os.environ.get("SUPABASE_URL", "").strip()
+    if supabase_url:
+        print("  Data source: Supabase")
+        try:
+            recipes, by_category = load_recipes_from_supabase()
+        except Exception as exc:
+            print(f"  WARNING: Supabase load failed ({exc}); falling back to JSON files.")
+            recipes, by_category = load_recipes()
+    else:
+        recipes, by_category = load_recipes()
+
     intro_paragraphs = load_intro()
 
     if not recipes:
-        print("No recipes found in recipes/ — run extract_recipes.py first.")
+        print("No recipes found — run extract_recipes.py first or configure Supabase.")
         return 1
 
     # Category display names (slug → original name)
@@ -178,28 +247,38 @@ def build_site() -> int:
 
     photo_index = build_photo_index()
 
-    # Copy static assets
-    if STATIC_DIR.exists():
-        dest = SITE_DIR / "static"
+    # ── Copy assets ──────────────────────────────────────────────────────────
+    for src, label in [
+        (STATIC_DIR, "static"),
+        (PUBLIC_DIR, "public"),
+        (PHOTOS_DIR, "photos"),
+    ]:
+        if src.exists():
+            dest = SITE_DIR / label
+            if dest.exists():
+                shutil.rmtree(dest)
+            shutil.copytree(src, dest)
+
+    # ── Copy admin SPA and generate config.js ────────────────────────────────
+    if ADMIN_DIR.exists():
+        dest = SITE_DIR / "admin"
         if dest.exists():
             shutil.rmtree(dest)
-        shutil.copytree(STATIC_DIR, dest)
+        shutil.copytree(ADMIN_DIR, dest)
+        # config.js injects env-var values into the client-side SPA.
+        # ADMIN_EMAIL and NETLIFY_BUILD_HOOK are injected here so they never
+        # appear in source control.  config.js itself is git-ignored.
+        admin_email   = os.environ.get("ADMIN_EMAIL", "")
+        netlify_hook  = os.environ.get("NETLIFY_BUILD_HOOK", "")
+        config_js = (
+            "// Generated at build time — do not commit.\n"
+            f"window.ADMIN_EMAIL = {json.dumps(admin_email)};\n"
+            f"window.NETLIFY_BUILD_HOOK = {json.dumps(netlify_hook)};\n"
+        )
+        (dest / "config.js").write_text(config_js, encoding="utf-8")
+        print("  site/admin/")
 
-    # Copy public assets (willow artwork, etc.)
-    if PUBLIC_DIR.exists():
-        dest = SITE_DIR / "public"
-        if dest.exists():
-            shutil.rmtree(dest)
-        shutil.copytree(PUBLIC_DIR, dest)
-
-    # Copy photos
-    if PHOTOS_DIR.exists():
-        dest = SITE_DIR / "photos"
-        if dest.exists():
-            shutil.rmtree(dest)
-        shutil.copytree(PHOTOS_DIR, dest)
-
-    # Homepage
+    # ── Homepage ─────────────────────────────────────────────────────────────
     tmpl = env.get_template("index.html")
     categories_summary = [
         {
@@ -220,7 +299,7 @@ def build_site() -> int:
     (SITE_DIR / "index.html").write_text(html, encoding="utf-8")
     print("  site/index.html")
 
-    # Category pages
+    # ── Category pages ────────────────────────────────────────────────────────
     cat_tmpl = env.get_template("category.html")
     for slug, recs in sorted(by_category.items()):
         cat_dir = SITE_DIR / slug
@@ -235,13 +314,18 @@ def build_site() -> int:
         (cat_dir / "index.html").write_text(html, encoding="utf-8")
         print(f"  site/{slug}/index.html  ({len(recs)} recipes)")
 
-    # Individual recipe pages
+    # ── Individual recipe pages ───────────────────────────────────────────────
     recipe_tmpl = env.get_template("recipe.html")
+    matched = 0
     for recipe in recipes:
         page_dir = SITE_DIR / recipe["category_slug"] / recipe["slug"]
         page_dir.mkdir(parents=True, exist_ok=True)
 
-        photo_url = find_photo(recipe["slug"], recipe["category_slug"], photo_index)
+        # Supabase Storage URL takes priority; fall back to local fuzzy match.
+        db_photo = recipe.pop("_photo_url_db", None)
+        photo_url = db_photo or find_photo(recipe["slug"], recipe["category_slug"], photo_index)
+        if photo_url:
+            matched += 1
 
         html = recipe_tmpl.render(
             recipe=recipe,
@@ -251,8 +335,6 @@ def build_site() -> int:
         )
         (page_dir / "index.html").write_text(html, encoding="utf-8")
 
-    matched = sum(1 for r in recipes
-                  if find_photo(r["slug"], r["category_slug"], photo_index))
     print(f"\nBuilt {len(recipes)} recipe pages -> site/  ({matched} with photos)")
     return 0
 

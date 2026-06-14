@@ -4,3 +4,27 @@
 
 [build.environment]
   PYTHON_VERSION = "3.12"
+  # Set these in the Netlify dashboard → Site settings → Environment variables:
+  #   SUPABASE_URL          — project URL (public)
+  #   SUPABASE_ANON_KEY     — anon/public key (public)
+  #   ADMIN_EMAIL           — admin user email (maps "julie" login → real email)
+  #   NETLIFY_BUILD_HOOK    — build hook URL for "Publish Changes" button
+
+# Redirect /admin → /admin/ so direct URL visits work without trailing slash
+[[redirects]]
+  from = "/admin"
+  to   = "/admin/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "/admin/login"
+  to   = "/admin/login/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "/admin/recipe"
+  to   = "/admin/recipe/"
+  status = 301
+  force  = true

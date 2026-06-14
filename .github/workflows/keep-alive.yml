@@ -1,0 +1,29 @@
+# Pings the Supabase project twice a week to prevent free-tier auto-pause.
+# Free projects pause after ~7 days of inactivity; this keeps them warm.
+#
+# Setup:
+#   Add these two repository secrets in GitHub → Settings → Secrets → Actions:
+#     SUPABASE_URL       — your project URL (same as .env)
+#     SUPABASE_ANON_KEY  — your anon/public key (same as .env)
+
+name: Supabase keep-alive
+
+on:
+  schedule:
+    # Every Monday and Thursday at 08:00 UTC
+    - cron: '0 8 * * 1,4'
+  workflow_dispatch:   # allow manual trigger
+
+jobs:
+  ping:
+    name: Ping Supabase
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch a single category row
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+            "${{ secrets.SUPABASE_URL }}/rest/v1/categories?select=id&limit=1")
+          echo "Supabase responded with HTTP $STATUS"
+          [ "$STATUS" = "200" ] || exit 1
