@@ -4,250 +4,1353 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julie&#39;s Christmas 2025 Recipes</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cream: '#fdf6ec',
-            sage:  '#6b7f5e',
-          },
-          fontFamily: {
-            serif: ['Georgia', 'Cambria', 'serif'],
-          }
-        }
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Palette ─────────────────────────────────────────────────────────── */
+    :root {
+      --willow-blue:  #1f2ca3;
+      --porcelain:    #fffdf9;
+      --dusty-olive:  #7c7f65;
+      --dusty-rose:   #cb8589;
+      --brick-red:    #b3001b;
+      --willow-light: #e8eaf6;
+      --ink:          #1a1a2e;
+      --card-shadow:  0 2px 12px rgba(31,44,163,0.08), 0 1px 3px rgba(31,44,163,0.05);
+      --card-shadow-hover: 0 8px 28px rgba(31,44,163,0.14), 0 2px 6px rgba(31,44,163,0.07);
+    }
+
+    /* ── Base ────────────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.7;
+      background-color: var(--porcelain);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-variation-settings: 'opsz' 36, 'SOFT' 80;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    a { color: var(--willow-blue); text-decoration: none; }
+    a:hover { color: var(--dusty-rose); text-decoration: underline; }
+
+    main { flex: 1; position: relative; z-index: 1; }
+
+    /* ── First-visit card-rise animation ─────────────────────────────────── */
+    /*
+      On first visit, white content cards fade and rise gently, staggered.
+      JS sets animation-delay per element; CSS handles keyframes.
+      The wf-first class lives on <html> and is set before paint.
+    */
+    .wf-first .wf-card,
+    .wf-first .letter-wrap,
+    .wf-first .recipe-page,
+    .wf-first .plate-card,
+    .wf-first .recipe-card {
+      animation: wf-card-rise 0.48s ease-out both;
+    }
+    @keyframes wf-card-rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .wf-first .wf-card,
+      .wf-first .letter-wrap,
+      .wf-first .recipe-page,
+      .wf-first .plate-card,
+      .wf-first .recipe-card {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
       }
     }
-  </script>
-  <style>
-    body { background-color: #fdf6ec; }
-    .recipe-card:hover { transform: translateY(-2px); transition: transform 0.15s ease; }
+
+    /* ── Willow tablecloth background ───────────────────────────────────── */
+    /*
+      Fixed div rather than body background-image so we can control opacity
+      independently. z-index 0 sits above the porcelain body background but
+      below main (z-index 1) and nav (z-index 8000).
+    */
+    .wf-cloth {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: url('/public/assets/willow/willow-pattern.webp');
+      background-size: 380px 380px;
+      background-repeat: repeat;
+      opacity: 0.07;
+    }
+    .wf-first .wf-cloth {
+      opacity: 0;
+      animation: wf-cloth-fade 2s ease-out 0.15s forwards;
+    }
+    @keyframes wf-cloth-fade { to { opacity: 0.07; } }
+    @media (prefers-reduced-motion: reduce) {
+      .wf-first .wf-cloth { animation: none; opacity: 0.07; }
+    }
+
+    /* ── Delftware landscape panel ───────────────────────────────────────── */
+    .wf-toile {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      border-top: 1.5px solid rgba(31,44,163,0.15);
+      border-bottom: 1.5px solid rgba(31,44,163,0.15);
+    }
+    .wf-toile img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+      opacity: 0.88;
+      filter: saturate(0.78) contrast(0.95);
+    }
+    @media (max-width: 600px) { .wf-toile img { height: 160px; } }
+    .wf-first .wf-toile { animation: wf-card-rise 0.8s ease-out 0.05s both; }
+    @media (prefers-reduced-motion: reduce) {
+      .wf-first .wf-toile { animation: none; opacity: 1; transform: none; }
+    }
+
+    /* ── Navigation ──────────────────────────────────────────────────────── */
+    .site-nav {
+      background: var(--porcelain);
+      border-bottom: 1.5px solid var(--willow-blue);
+      position: sticky;
+      top: 0;
+      z-index: 8000;
+    }
+    .site-nav__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      gap: 1rem;
+    }
+    .site-nav__logo {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 24, 'SOFT' 90;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--willow-blue);
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .site-nav__logo:hover { color: var(--dusty-rose); text-decoration: none; }
+
+    .site-nav__links {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+      list-style: none;
+    }
+    .site-nav__links a {
+      font-family: 'Lora', serif;
+      font-size: 0.78rem;
+      color: var(--ink);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      position: relative;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .site-nav__links a:hover { color: var(--willow-blue); text-decoration: none; }
+    .site-nav__links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 50%;
+      transform: translateX(-50%);
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--willow-blue);
+    }
+
+    .site-nav__search { position: relative; flex-shrink: 0; }
+    #search-input {
+      font-family: 'Lora', serif;
+      font-size: 0.8rem;
+      width: 160px;
+      padding: 0.35rem 0.9rem;
+      border: 1.5px solid var(--willow-blue);
+      border-radius: 20px;
+      background: transparent;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.15s, width 0.2s;
+    }
+    #search-input:focus { border-color: var(--dusty-rose); width: 200px; }
+    #search-input::placeholder { color: var(--dusty-olive); }
+    #search-results {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      width: 280px;
+      background: white;
+      border: 1.5px solid var(--willow-blue);
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(31,44,163,0.12);
+      z-index: 100;
+      overflow: hidden;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    #search-results.hidden { display: none; }
+
+    @media (max-width: 900px) { .site-nav__links { display: none; } }
+
+    /* ── Hero ────────────────────────────────────────────────────────────── */
+    .wf-hero {
+      background: var(--willow-blue);
+      color: white;
+      padding: 4rem 1.5rem 5rem;
+      text-align: center;
+      position: relative;
+    }
+    .wf-hero h1 {
+      font-variation-settings: 'opsz' 72, 'SOFT' 100;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 400;
+      color: white;
+      margin-bottom: 0.75rem;
+    }
+    .wf-hero p {
+      font-family: 'Lora', serif;
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+    }
+    .wf-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 32px;
+      background: var(--porcelain);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    /* ── Vignette illustrations ──────────────────────────────────────────── */
+    /*
+      .wf-vignette wraps the <img> pointing to /public/assets/willow/*.
+      The onerror handler adds --missing when the file isn't found yet.
+      Recolor filter: converts any monochrome art to willow-blue at runtime.
+      Swap the source file without touching this CSS.
+    */
+    .wf-vignette {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      line-height: 0;
+    }
+    .wf-vignette img {
+      display: block;
+      height: auto;
+      /* Runtime recolor — tune hue-rotate if your source art has a different base hue */
+      filter: grayscale(1) sepia(0.5) saturate(6) hue-rotate(215deg);
+      opacity: 0.82;
+    }
+    .wf-vignette-header img { max-width: min(220px, 38vw); }
+    .wf-vignette-footer img { max-width: min(140px, 28vw); }
+
+    /* Placeholder when image file is missing */
+    .wf-vignette--missing img { display: none; }
+    .wf-vignette--missing::after {
+      content: '';
+      display: block;
+      border: 1.5px dashed rgba(31,44,163,0.18);
+      border-radius: 6px;
+      min-width: 120px;
+      min-height: 60px;
+    }
+    .wf-vignette-header.wf-vignette--missing::after { min-width: 180px; min-height: 90px; }
+
+    /* ── Section heading ─────────────────────────────────────────────────── */
+    .wf-section-title {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 36, 'SOFT' 80;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--willow-blue);
+      margin-bottom: 0.35rem;
+    }
+    .wf-rule {
+      display: block;
+      width: 48px;
+      height: 1.5px;
+      background: var(--dusty-rose);
+      margin: 0.5rem 0 2rem;
+    }
+
+    /* ── Mom's letter ────────────────────────────────────────────────────── */
+    .letter-wrap {
+      max-width: 62ch;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem 2.2rem;
+      box-shadow: var(--card-shadow);
+    }
+    .letter-dateline {
+      font-family: 'Lora', serif;
+      font-size: 0.82rem;
+      color: var(--dusty-olive);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+    }
+    .letter-body p {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-variation-settings: 'opsz' 14, 'SOFT' 60;
+      font-size: 1.06rem;
+      color: var(--ink);
+      line-height: 1.85;
+      margin-bottom: 1.1rem;
+    }
+    .letter-signature {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-variation-settings: 'opsz' 14, 'SOFT' 80;
+      font-size: 1.1rem;
+      color: var(--willow-blue);
+      margin-top: 1.5rem;
+    }
+    /* Thin hairline above the letter body */
+    .letter-rule {
+      border: none;
+      border-top: 1px solid var(--willow-light);
+      margin: 1.2rem 0 1.5rem;
+    }
+
+    /* ── Plate cards ─────────────────────────────────────────────────────── */
+    .plates-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .plate-link { text-decoration: none; }
+    .plate-link:hover { text-decoration: none; }
+
+    .plate-card {
+      width: 175px;
+      height: 175px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 18px rgba(31,44,163,0.13), 0 1px 4px rgba(31,44,163,0.07);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      overflow: hidden;
+    }
+    .plate-link:hover .plate-card {
+      transform: translateY(-6px) rotate(1deg);
+      box-shadow: 0 14px 36px rgba(31,44,163,0.20);
+    }
+    .plate-card-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .plate-card-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 18px;
+    }
+    .plate-card-inner h3 {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 18, 'SOFT' 80;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--willow-blue);
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+    }
+    .plate-card-inner p {
+      font-family: 'Lora', serif;
+      font-size: 0.72rem;
+      color: var(--dusty-olive);
+    }
+
+    @media (max-width: 600px) {
+      .plate-card { width: 140px; height: 140px; }
+    }
+
+    /* ── Recipe grid cards ───────────────────────────────────────────────── */
+    .recipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .recipe-card {
+      background: white;
+      border: 1.5px solid var(--willow-light);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      box-shadow: var(--card-shadow);
+    }
+    .recipe-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--willow-blue);
+      text-decoration: none;
+    }
+    .recipe-card__img {
+      height: 160px;
+      overflow: hidden;
+      background: var(--willow-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .recipe-card__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .recipe-card:hover .recipe-card__img img { transform: scale(1.04); }
+    .recipe-card__placeholder { font-size: 2.5rem; opacity: 0.2; }
+    .recipe-card__body { padding: 1.1rem 1.2rem 1.2rem; }
+    .recipe-card__title {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 18, 'SOFT' 70;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--willow-blue);
+      margin-bottom: 0.4rem;
+      line-height: 1.35;
+    }
+    .recipe-card__meta {
+      font-family: 'Lora', serif;
+      font-size: 0.75rem;
+      color: var(--dusty-olive);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--willow-light);
+      padding-top: 0.6rem;
+      margin-top: 0.6rem;
+    }
+    .recipe-card__preview {
+      font-size: 0.78rem;
+      color: var(--dusty-olive);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ── Recipe detail page ──────────────────────────────────────────────── */
+    .recipe-page {
+      max-width: 940px;
+      margin: 2rem auto 3rem;
+      padding: 2.5rem 2.5rem 3.5rem;
+      background: white;
+      border-radius: 14px;
+      box-shadow: var(--card-shadow);
+    }
+    @media (max-width: 700px) {
+      .recipe-page { margin: 0; border-radius: 0; box-shadow: none; padding: 1.5rem 1.2rem 3rem; }
+    }
+    .recipe-title {
+      font-variation-settings: 'opsz' 72, 'SOFT' 90;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--willow-blue);
+      margin-bottom: 0.5rem;
+    }
+    .recipe-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--dusty-olive);
+      margin-bottom: 2rem;
+    }
+    .recipe-category-badge {
+      display: inline-block;
+      font-family: 'Lora', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--willow-blue);
+      border: 1px solid var(--willow-blue);
+      padding: 0.15rem 0.6rem;
+      border-radius: 20px;
+    }
+    .recipe-cols {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 700px) { .recipe-cols { grid-template-columns: 1fr; } }
+
+    .ingredients-panel {
+      background: rgba(31,44,163,0.035);
+      border: 1.5px solid var(--willow-blue);
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem;
+      position: sticky;
+      top: 72px;
+    }
+    .ingredients-panel h2 {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 18, 'SOFT' 80;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--willow-blue);
+      margin-bottom: 1rem;
+    }
+    .ingredients-panel li {
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.65;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(31,44,163,0.08);
+      list-style: none;
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+    }
+    .ingredients-panel li::before {
+      content: '·';
+      color: var(--willow-blue);
+      font-size: 1.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .ingredients-panel li:last-child { border-bottom: none; }
+
+    .instructions-col h2 {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 18, 'SOFT' 80;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--willow-blue);
+      margin-bottom: 1rem;
+    }
+    .step {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--willow-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .step p { font-size: 0.92rem; color: var(--ink); line-height: 1.75; }
+
+    .floral-divider { display: block; margin: 2rem auto; opacity: 0.65; }
+
+    .notes-box {
+      background: white;
+      border-left: 3px solid var(--dusty-rose);
+      border-radius: 0 10px 10px 0;
+      padding: 1.2rem 1.4rem;
+      margin-top: 2.5rem;
+    }
+    .notes-box h2 {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 18, 'SOFT' 80;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dusty-rose);
+      margin-bottom: 0.8rem;
+    }
+    .notes-box li {
+      font-size: 0.88rem;
+      color: var(--dusty-olive);
+      line-height: 1.65;
+      margin-bottom: 0.5rem;
+      list-style: none;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .notes-box li::before { content: '—'; position: absolute; left: 0; color: var(--dusty-rose); }
+
+    .preamble-block {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--dusty-olive);
+      background: rgba(203,133,137,0.06);
+      border-left: 2px solid var(--dusty-rose);
+      padding: 0.9rem 1.2rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2rem;
+      line-height: 1.75;
+    }
+
+    /* ── Category page ───────────────────────────────────────────────────── */
+    .category-header {
+      max-width: 1100px;
+      margin: 3rem auto 0.5rem;
+      padding: 0 1.5rem;
+    }
+    .category-header h1 {
+      font-variation-settings: 'opsz' 48, 'SOFT' 90;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--willow-blue);
+    }
+    .category-count {
+      font-size: 0.85rem;
+      color: var(--dusty-olive);
+      margin-top: 0.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .category-grid-wrap {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Content wrapper (homepage) ──────────────────────────────────────── */
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* ── Breadcrumb ──────────────────────────────────────────────────────── */
+    .breadcrumb {
+      font-size: 0.78rem;
+      color: var(--dusty-olive);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--dusty-olive); }
+    .breadcrumb a:hover { color: var(--willow-blue); text-decoration: none; }
+    .breadcrumb__sep { color: var(--dusty-rose); }
+
+    /* ── Footer ──────────────────────────────────────────────────────────── */
+    .site-footer {
+      background: var(--porcelain);
+      border-top: 1.5px solid var(--willow-blue);
+      text-align: center;
+      padding: 2rem 1.5rem 0;
+      margin-top: 4rem;
+      font-size: 0.82rem;
+      color: var(--dusty-olive);
+      position: relative;
+      z-index: 1;
+    }
+    .site-footer p { margin-bottom: 0.4rem; }
+    .site-footer__love {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-variation-settings: 'opsz' 14, 'SOFT' 80;
+      color: var(--willow-blue);
+      margin-bottom: 1.5rem;
+    }
+    /* Footer vignette area */
+    .wf-vignette-footer {
+      margin-bottom: 1.5rem;
+      opacity: 0.7;
+    }
+    /* Red brick foundation */
+    .brick-foundation {
+      height: 22px;
+      margin-top: 1.5rem;
+      background-color: var(--brick-red);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='22'%3E%3Crect x='1' y='1' width='37' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3Crect x='40' y='1' width='38' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3Crect x='-19' y='12' width='37' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3Crect x='21' y='12' width='37' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3Crect x='61' y='12' width='37' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3C/svg%3E");
+    }
+
+    /* ── Print ───────────────────────────────────────────────────────────── */
     @media print {
-      nav, #search-bar, .no-print { display: none !important; }
-      .print-break { page-break-before: always; }
+      body { background: var(--porcelain); }
+      .wf-cloth, .wf-toile { display: none; }
+      .site-nav, .print-hide { display: none !important; }
+      .recipe-page { box-shadow: none; margin: 0; border-radius: 0; }
+      .recipe-cols { grid-template-columns: 1fr 1fr; }
+      .ingredients-panel { position: static; }
     }
   </style>
 </head>
-<body class="font-serif text-stone-800 min-h-screen flex flex-col">
+<body>
 
-  <!-- Nav -->
-  <nav class="bg-sage text-white shadow-md no-print">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
-      <a href="/" class="text-xl font-bold tracking-wide hover:text-amber-200 transition-colors">
-        Julie's Recipes
-      </a>
-      <div class="flex gap-4 text-sm flex-wrap justify-center sm:ml-4">
-        <a href="/" class="hover:text-amber-200 transition-colors">Home</a>
-        <a href="/appetizers/" class="hover:text-amber-200 transition-colors">Appetizers</a>
-        <a href="/bread/" class="hover:text-amber-200 transition-colors">Bread</a>
-        <a href="/cookies/" class="hover:text-amber-200 transition-colors">Cookies</a>
-        <a href="/desserts/" class="hover:text-amber-200 transition-colors">Desserts</a>
-        <a href="/main-dishes/" class="hover:text-amber-200 transition-colors">Mains</a>
-        <a href="/salads/" class="hover:text-amber-200 transition-colors">Salads</a>
-        <a href="/vegetables-and-side-dishes/" class="hover:text-amber-200 transition-colors">Sides</a>
-      </div>
-      <div class="sm:ml-auto w-full sm:w-64" id="search-bar">
-        <input
-          id="search-input"
-          type="search"
-          placeholder="Search recipes…"
-          class="w-full px-3 py-1.5 rounded text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
-          autocomplete="off"
-        >
-        <ul id="search-results" class="hidden absolute bg-white shadow-lg rounded mt-1 z-50 text-stone-800 text-sm max-h-64 overflow-y-auto w-64"></ul>
+  <!-- First-visit gate: sets wf-first class on <html> before paint -->
+  <script>
+    (function() {
+      var hasBloom = new URLSearchParams(location.search).has('bloom');
+      if (hasBloom || !sessionStorage.getItem('wfSeen')) {
+        document.documentElement.classList.add('wf-first');
+        if (!hasBloom) sessionStorage.setItem('wfSeen', '1');
+      }
+    })();
+  </script>
+
+  <!-- Willow tablecloth — fixed background layer at controlled opacity -->
+  <div class="wf-cloth" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation">
+    <div class="site-nav__inner">
+      <a class="site-nav__logo" href="/">Julie's Recipes</a>
+
+      <ul class="site-nav__links">
+        
+        
+        <li><a href="/appetizers/">Appetizers</a></li>
+        
+        <li><a href="/bread/">Bread</a></li>
+        
+        <li><a href="/cookies/">Cookies</a></li>
+        
+        <li><a href="/desserts/">Desserts</a></li>
+        
+        <li><a href="/main-dishes/">Mains</a></li>
+        
+        <li><a href="/salads/">Salads</a></li>
+        
+        <li><a href="/vegetables-and-side-dishes/">Sides</a></li>
+        
+      </ul>
+
+      <div class="site-nav__search">
+        <input id="search-input" type="search" placeholder="Search recipes…" autocomplete="off" aria-label="Search recipes">
+        <ul id="search-results" class="hidden" role="listbox"></ul>
       </div>
     </div>
   </nav>
 
   <!-- Page content -->
-  <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+  <main>
     
 
-<!-- Hero / Intro -->
-<section class="text-center py-10 border-b border-stone-200 mb-10">
-  <h1 class="text-4xl font-bold text-sage mb-2">Julie's Christmas Recipes</h1>
-  <p class="text-stone-500 text-sm mb-6">Christmas 2025 &mdash; 188 recipes across 7 categories</p>
+<!-- Hero -->
+<div class="wf-hero">
+  <p style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:0.75rem;">Christmas 2025</p>
+  <h1>Julie's Family Recipes</h1>
+  <p style="margin-top:0.5rem;">188 recipes &nbsp;·&nbsp; 7 categories</p>
+</div>
 
+<!-- Delftware landscape — transitions from the blue hero into the recipe content -->
+<div class="wf-toile" aria-hidden="true">
+  <img src="/public/assets/willow/willow-header.png" alt="">
+</div>
+
+<div class="page-wrap">
+
+  <!-- Mom's Letter -->
   
-  <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-sm px-8 py-6 text-left border border-amber-100">
-    <div class="text-amber-600 text-2xl mb-3">"</div>
-    
-    <p class="text-stone-700 leading-relaxed mb-3 text-sm italic">December 25, 2025</p>
-    
-    <p class="text-stone-700 leading-relaxed mb-3 text-sm italic">Dear Family,</p>
-    
-    <p class="text-stone-700 leading-relaxed mb-3 text-sm italic">Nearly forty years ago, in 1986, my grandmother, Elsie Solomon, created a cookbook for me—filled with her favorite recipes and dishes she knew I loved. I have cherished that cookbook ever since, returning to her recipes again and again. It has been a tangible reminder of her love, care, and presence in my life.</p>
-    
-    <p class="text-stone-700 leading-relaxed mb-3 text-sm italic">Over the past 38 years, as a mother and homemaker, I have gathered the recipes in this book—many made repeatedly at our family table, others tried during different seasons of our lives. Some will be very familiar to you; others may be new. Like life itself, what I’ve cooked has changed over the years, shaped by time, needs, celebrations, and the people I was cooking for. This book is not finished; I hope to continue adding recipes over time as new favorites are created and shared.</p>
-    
-    
-    <details class="mt-2">
-      <summary class="cursor-pointer text-sage text-sm hover:underline">Read more…</summary>
-      
-      <p class="text-stone-700 leading-relaxed mt-3 text-sm italic">Sharing these recipes with you feels like opening my heart. I believe that cooking and baking for others is one of the simplest and truest expressions of love and care. Every meal prepared, every dessert baked, has been my way of saying I love you.</p>
-      
-      <p class="text-stone-700 leading-relaxed mt-3 text-sm italic">I treasure our family tradition of cooking, baking, and celebrating together. It is my hope that these recipes will continue to be shared, adapted, and loved—carrying our family’s care for one another forward for generations to come.</p>
-      
-      <p class="text-stone-700 leading-relaxed mt-3 text-sm italic">With all my love,
+  <section style="margin-bottom:4rem;">
+
+    <!-- Floral sprig above letter -->
+    <div style="text-align:center; margin-bottom:1.5rem;">
+      <svg width="180" height="28" viewBox="0 0 180 28" fill="none" stroke="#1f2ca3" stroke-linecap="round" aria-hidden="true">
+        <path stroke-width="0.8" d="M20,18 C40,13 65,19 90,15 C115,11 140,17 160,14"/>
+        <path stroke-width="0.6" d="M55,15 C56,10 59,9 57,14"/>
+        <path stroke-width="0.6" d="M90,15 C91,10 94,9 92,14"/>
+        <path stroke-width="0.6" d="M125,14 C126,9 129,8 127,13"/>
+        <circle cx="40"  cy="18" r="2"   fill="#1f2ca3" opacity="0.45" stroke="none"/>
+        <circle cx="75"  cy="16" r="1.7" fill="#1f2ca3" opacity="0.4"  stroke="none"/>
+        <circle cx="110" cy="16" r="2"   fill="#1f2ca3" opacity="0.4"  stroke="none"/>
+        <circle cx="145" cy="15" r="1.7" fill="#1f2ca3" opacity="0.38" stroke="none"/>
+        <!-- Center bloom -->
+        <g transform="translate(90,6)">
+          <path stroke-width="0.9" d="M0,0 C-2,-4 0,-7 3,-6 C6,-5 5,-1 2,0"/>
+          <path stroke-width="0.9" d="M0,0 C2,-4 5,-5 6,-2 C7,1 4,4 1,2"/>
+          <path stroke-width="0.9" d="M0,0 C4,2 5,5 2,6 C-1,7 -4,4 -2,1"/>
+          <circle cx="0" cy="0" r="1.8" fill="#1f2ca3" opacity="0.55" stroke="none"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="letter-wrap">
+      <p class="letter-dateline">December 25, 2025</p>
+      <hr class="letter-rule">
+      <div class="letter-body">
+        
+          
+            <p>December 25, 2025</p>
+          
+        
+          
+            
+            <p>Dear Family,</p>
+            
+          
+        
+          
+            
+            <p>Nearly forty years ago, in 1986, my grandmother, Elsie Solomon, created a cookbook for me—filled with her favorite recipes and dishes she knew I loved. I have cherished that cookbook ever since, returning to her recipes again and again. It has been a tangible reminder of her love, care, and presence in my life.</p>
+            
+          
+        
+          
+            
+            <p>Over the past 38 years, as a mother and homemaker, I have gathered the recipes in this book—many made repeatedly at our family table, others tried during different seasons of our lives. Some will be very familiar to you; others may be new. Like life itself, what I’ve cooked has changed over the years, shaped by time, needs, celebrations, and the people I was cooking for. This book is not finished; I hope to continue adding recipes over time as new favorites are created and shared.</p>
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            <!-- Signature paragraph -->
+            <p class="letter-signature">With all my love,
 Julie/Mom</p>
-      
-    </details>
-    
-  </div>
+          
+        
+        
+        <details style="margin-top:1rem;">
+          <summary style="cursor:pointer; font-family:'Fraunces',serif; font-style:italic; font-size:0.88rem; color:var(--dusty-rose); list-style:none;">
+            Continue reading…
+          </summary>
+          <div style="margin-top:1rem;" class="letter-body">
+            
+            <p>Sharing these recipes with you feels like opening my heart. I believe that cooking and baking for others is one of the simplest and truest expressions of love and care. Every meal prepared, every dessert baked, has been my way of saying I love you.</p>
+            
+            <p>I treasure our family tradition of cooking, baking, and celebrating together. It is my hope that these recipes will continue to be shared, adapted, and loved—carrying our family’s care for one another forward for generations to come.</p>
+            
+          </div>
+        </details>
+        
+      </div>
+
+      <!-- Wax seal / end mark -->
+      <div style="text-align:center; margin-top:2rem;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <circle cx="18" cy="18" r="16" fill="#b3001b" opacity="0.85"/>
+          <circle cx="18" cy="18" r="12" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
+          <text x="18" y="23" text-anchor="middle" font-family="Fraunces,serif" font-size="14" font-style="italic" fill="white" opacity="0.9">J</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Floral sprig below letter -->
+    <div style="text-align:center; margin-top:1.5rem;">
+      <svg width="180" height="28" viewBox="0 0 180 28" fill="none" stroke="#1f2ca3" stroke-linecap="round" aria-hidden="true">
+        <path stroke-width="0.8" d="M20,14 C40,17 65,11 90,15 C115,19 140,13 160,16"/>
+        <circle cx="55"  cy="12" r="2"   fill="#1f2ca3" opacity="0.42" stroke="none"/>
+        <circle cx="125" cy="17" r="1.8" fill="#1f2ca3" opacity="0.38" stroke="none"/>
+      </svg>
+    </div>
+  </section>
   
-</section>
 
-<!-- Category Grid -->
-<section>
-  <h2 class="text-2xl font-bold text-stone-700 mb-6">Browse by Category</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    
-    <a href="/appetizers/" class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-5 hover:shadow-md hover:border-amber-200 transition-all">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-lg font-bold text-stone-800">Appetizers</h3>
-        <span class="text-xs bg-sage text-white px-2 py-0.5 rounded-full">16</span>
-      </div>
-      <ul class="text-sm text-stone-500 space-y-0.5">
-        
-        <li class="truncate">Brie Wrapped in Puff Pastry</li>
-        
-        <li class="truncate">Christmas Bruschetta</li>
-        
-        <li class="truncate">Cucumber Tea Sandwiches</li>
-        
-        
-        <li class="text-stone-400">+ 13 more…</li>
-        
-      </ul>
-    </a>
-    
-    <a href="/bread/" class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-5 hover:shadow-md hover:border-amber-200 transition-all">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-lg font-bold text-stone-800">Bread</h3>
-        <span class="text-xs bg-sage text-white px-2 py-0.5 rounded-full">14</span>
-      </div>
-      <ul class="text-sm text-stone-500 space-y-0.5">
-        
-        <li class="truncate">Angel Biscuits</li>
-        
-        <li class="truncate">Artisan No-Knead Crusty Bread</li>
-        
-        <li class="truncate">Best Buttermilk Biscuit Recipe</li>
-        
-        
-        <li class="text-stone-400">+ 11 more…</li>
-        
-      </ul>
-    </a>
-    
-    <a href="/cookies/" class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-5 hover:shadow-md hover:border-amber-200 transition-all">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-lg font-bold text-stone-800">Cookies</h3>
-        <span class="text-xs bg-sage text-white px-2 py-0.5 rounded-full">25</span>
-      </div>
-      <ul class="text-sm text-stone-500 space-y-0.5">
-        
-        <li class="truncate">Chocolate Chip Delta Bars</li>
-        
-        <li class="truncate">Chocolate Krinkles</li>
-        
-        <li class="truncate">Chocolate O’s</li>
-        
-        
-        <li class="text-stone-400">+ 22 more…</li>
-        
-      </ul>
-    </a>
-    
-    <a href="/desserts/" class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-5 hover:shadow-md hover:border-amber-200 transition-all">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-lg font-bold text-stone-800">Desserts</h3>
-        <span class="text-xs bg-sage text-white px-2 py-0.5 rounded-full">44</span>
-      </div>
-      <ul class="text-sm text-stone-500 space-y-0.5">
-        
-        <li class="truncate">Baklava (Recipe from Lisa Ames)</li>
-        
-        <li class="truncate">Brenton Valentine’s Chocolate Chip Coffee Cake</li>
-        
-        <li class="truncate">Butterscotch Puddings with Whipped Cream and Crushed Toffee*</li>
-        
-        
-        <li class="text-stone-400">+ 41 more…</li>
-        
-      </ul>
-    </a>
-    
-    <a href="/main-dishes/" class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-5 hover:shadow-md hover:border-amber-200 transition-all">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-lg font-bold text-stone-800">Main dishes</h3>
-        <span class="text-xs bg-sage text-white px-2 py-0.5 rounded-full">62</span>
-      </div>
-      <ul class="text-sm text-stone-500 space-y-0.5">
-        
-        <li class="truncate">Angel Hair Pasta with Fresh Tomato Sauce</li>
-        
-        <li class="truncate">Asparagus Bacon Pasta</li>
-        
-        <li class="truncate">Asparagus Soup</li>
-        
-        
-        <li class="text-stone-400">+ 59 more…</li>
-        
-      </ul>
-    </a>
-    
-    <a href="/salads/" class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-5 hover:shadow-md hover:border-amber-200 transition-all">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-lg font-bold text-stone-800">Salads</h3>
-        <span class="text-xs bg-sage text-white px-2 py-0.5 rounded-full">13</span>
-      </div>
-      <ul class="text-sm text-stone-500 space-y-0.5">
-        
-        <li class="truncate">Aunt Lori’s Quinoa Radicchio Salad</li>
-        
-        <li class="truncate">Café Rio Salad Dressing</li>
-        
-        <li class="truncate">Center Stage Salad</li>
-        
-        
-        <li class="text-stone-400">+ 10 more…</li>
-        
-      </ul>
-    </a>
-    
-    <a href="/vegetables-and-side-dishes/" class="recipe-card block bg-white rounded-xl shadow-sm border border-stone-100 p-5 hover:shadow-md hover:border-amber-200 transition-all">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-lg font-bold text-stone-800">Vegetables and Side Dishes</h3>
-        <span class="text-xs bg-sage text-white px-2 py-0.5 rounded-full">14</span>
-      </div>
-      <ul class="text-sm text-stone-500 space-y-0.5">
-        
-        <li class="truncate">“Another notch!” Emeril Lagasse Savory Spinach and Artichoke Stuffing</li>
-        
-        <li class="truncate">Baked Beans</li>
-        
-        <li class="truncate">Confetti Asparagus</li>
-        
-        
-        <li class="text-stone-400">+ 11 more…</li>
-        
-      </ul>
-    </a>
-    
-  </div>
-</section>
+  <!-- Browse by Category -->
+  <section>
+    <h2 class="wf-section-title">Browse by Category</h2>
+    <span class="wf-rule"></span>
 
+    <div class="plates-grid">
+      
+      <a class="plate-link" href="/appetizers/" title="Appetizers — 16 recipes">
+        <div class="plate-card">
+          <!-- Plate SVG rim -->
+          <svg class="plate-card-svg" viewBox="0 0 175 175" fill="none" aria-hidden="true">
+            <!-- Outer rim -->
+            <circle cx="87.5" cy="87.5" r="84" stroke="#1f2ca3" stroke-width="1.5"/>
+            <!-- Decorative ring -->
+            <circle cx="87.5" cy="87.5" r="74" stroke="#1f2ca3" stroke-width="0.5" opacity="0.4"/>
+            <!-- Inner plate edge -->
+            <circle cx="87.5" cy="87.5" r="64" stroke="#1f2ca3" stroke-width="0.8" opacity="0.6"/>
+
+            <!-- 8 small floral motifs on the rim at r≈79 -->
+            <!-- Top (87.5, 8.5) -->
+            <g transform="translate(87.5,8.5)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-right (143, 43) -->
+            <g transform="translate(143,43) rotate(45)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Right (166.5, 87.5) -->
+            <g transform="translate(166.5,87.5) rotate(90)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-right (143, 132) -->
+            <g transform="translate(143,132) rotate(135)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom (87.5, 166.5) -->
+            <g transform="translate(87.5,166.5) rotate(180)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-left (32, 132) -->
+            <g transform="translate(32,132) rotate(225)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Left (8.5, 87.5) -->
+            <g transform="translate(8.5,87.5) rotate(270)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-left (32, 43) -->
+            <g transform="translate(32,43) rotate(315)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+          </svg>
+
+          <!-- Center content -->
+          <div class="plate-card-inner">
+            <h3>Appetizers</h3>
+            <p>16 recipes</p>
+          </div>
+        </div>
+      </a>
+      
+      <a class="plate-link" href="/bread/" title="Bread — 14 recipes">
+        <div class="plate-card">
+          <!-- Plate SVG rim -->
+          <svg class="plate-card-svg" viewBox="0 0 175 175" fill="none" aria-hidden="true">
+            <!-- Outer rim -->
+            <circle cx="87.5" cy="87.5" r="84" stroke="#1f2ca3" stroke-width="1.5"/>
+            <!-- Decorative ring -->
+            <circle cx="87.5" cy="87.5" r="74" stroke="#1f2ca3" stroke-width="0.5" opacity="0.4"/>
+            <!-- Inner plate edge -->
+            <circle cx="87.5" cy="87.5" r="64" stroke="#1f2ca3" stroke-width="0.8" opacity="0.6"/>
+
+            <!-- 8 small floral motifs on the rim at r≈79 -->
+            <!-- Top (87.5, 8.5) -->
+            <g transform="translate(87.5,8.5)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-right (143, 43) -->
+            <g transform="translate(143,43) rotate(45)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Right (166.5, 87.5) -->
+            <g transform="translate(166.5,87.5) rotate(90)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-right (143, 132) -->
+            <g transform="translate(143,132) rotate(135)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom (87.5, 166.5) -->
+            <g transform="translate(87.5,166.5) rotate(180)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-left (32, 132) -->
+            <g transform="translate(32,132) rotate(225)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Left (8.5, 87.5) -->
+            <g transform="translate(8.5,87.5) rotate(270)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-left (32, 43) -->
+            <g transform="translate(32,43) rotate(315)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+          </svg>
+
+          <!-- Center content -->
+          <div class="plate-card-inner">
+            <h3>Bread</h3>
+            <p>14 recipes</p>
+          </div>
+        </div>
+      </a>
+      
+      <a class="plate-link" href="/cookies/" title="Cookies — 25 recipes">
+        <div class="plate-card">
+          <!-- Plate SVG rim -->
+          <svg class="plate-card-svg" viewBox="0 0 175 175" fill="none" aria-hidden="true">
+            <!-- Outer rim -->
+            <circle cx="87.5" cy="87.5" r="84" stroke="#1f2ca3" stroke-width="1.5"/>
+            <!-- Decorative ring -->
+            <circle cx="87.5" cy="87.5" r="74" stroke="#1f2ca3" stroke-width="0.5" opacity="0.4"/>
+            <!-- Inner plate edge -->
+            <circle cx="87.5" cy="87.5" r="64" stroke="#1f2ca3" stroke-width="0.8" opacity="0.6"/>
+
+            <!-- 8 small floral motifs on the rim at r≈79 -->
+            <!-- Top (87.5, 8.5) -->
+            <g transform="translate(87.5,8.5)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-right (143, 43) -->
+            <g transform="translate(143,43) rotate(45)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Right (166.5, 87.5) -->
+            <g transform="translate(166.5,87.5) rotate(90)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-right (143, 132) -->
+            <g transform="translate(143,132) rotate(135)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom (87.5, 166.5) -->
+            <g transform="translate(87.5,166.5) rotate(180)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-left (32, 132) -->
+            <g transform="translate(32,132) rotate(225)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Left (8.5, 87.5) -->
+            <g transform="translate(8.5,87.5) rotate(270)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-left (32, 43) -->
+            <g transform="translate(32,43) rotate(315)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+          </svg>
+
+          <!-- Center content -->
+          <div class="plate-card-inner">
+            <h3>Cookies</h3>
+            <p>25 recipes</p>
+          </div>
+        </div>
+      </a>
+      
+      <a class="plate-link" href="/desserts/" title="Desserts — 44 recipes">
+        <div class="plate-card">
+          <!-- Plate SVG rim -->
+          <svg class="plate-card-svg" viewBox="0 0 175 175" fill="none" aria-hidden="true">
+            <!-- Outer rim -->
+            <circle cx="87.5" cy="87.5" r="84" stroke="#1f2ca3" stroke-width="1.5"/>
+            <!-- Decorative ring -->
+            <circle cx="87.5" cy="87.5" r="74" stroke="#1f2ca3" stroke-width="0.5" opacity="0.4"/>
+            <!-- Inner plate edge -->
+            <circle cx="87.5" cy="87.5" r="64" stroke="#1f2ca3" stroke-width="0.8" opacity="0.6"/>
+
+            <!-- 8 small floral motifs on the rim at r≈79 -->
+            <!-- Top (87.5, 8.5) -->
+            <g transform="translate(87.5,8.5)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-right (143, 43) -->
+            <g transform="translate(143,43) rotate(45)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Right (166.5, 87.5) -->
+            <g transform="translate(166.5,87.5) rotate(90)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-right (143, 132) -->
+            <g transform="translate(143,132) rotate(135)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom (87.5, 166.5) -->
+            <g transform="translate(87.5,166.5) rotate(180)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-left (32, 132) -->
+            <g transform="translate(32,132) rotate(225)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Left (8.5, 87.5) -->
+            <g transform="translate(8.5,87.5) rotate(270)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-left (32, 43) -->
+            <g transform="translate(32,43) rotate(315)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+          </svg>
+
+          <!-- Center content -->
+          <div class="plate-card-inner">
+            <h3>Desserts</h3>
+            <p>44 recipes</p>
+          </div>
+        </div>
+      </a>
+      
+      <a class="plate-link" href="/main-dishes/" title="Main dishes — 62 recipes">
+        <div class="plate-card">
+          <!-- Plate SVG rim -->
+          <svg class="plate-card-svg" viewBox="0 0 175 175" fill="none" aria-hidden="true">
+            <!-- Outer rim -->
+            <circle cx="87.5" cy="87.5" r="84" stroke="#1f2ca3" stroke-width="1.5"/>
+            <!-- Decorative ring -->
+            <circle cx="87.5" cy="87.5" r="74" stroke="#1f2ca3" stroke-width="0.5" opacity="0.4"/>
+            <!-- Inner plate edge -->
+            <circle cx="87.5" cy="87.5" r="64" stroke="#1f2ca3" stroke-width="0.8" opacity="0.6"/>
+
+            <!-- 8 small floral motifs on the rim at r≈79 -->
+            <!-- Top (87.5, 8.5) -->
+            <g transform="translate(87.5,8.5)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-right (143, 43) -->
+            <g transform="translate(143,43) rotate(45)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Right (166.5, 87.5) -->
+            <g transform="translate(166.5,87.5) rotate(90)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-right (143, 132) -->
+            <g transform="translate(143,132) rotate(135)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom (87.5, 166.5) -->
+            <g transform="translate(87.5,166.5) rotate(180)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-left (32, 132) -->
+            <g transform="translate(32,132) rotate(225)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Left (8.5, 87.5) -->
+            <g transform="translate(8.5,87.5) rotate(270)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-left (32, 43) -->
+            <g transform="translate(32,43) rotate(315)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+          </svg>
+
+          <!-- Center content -->
+          <div class="plate-card-inner">
+            <h3>Main dishes</h3>
+            <p>62 recipes</p>
+          </div>
+        </div>
+      </a>
+      
+      <a class="plate-link" href="/salads/" title="Salads — 13 recipes">
+        <div class="plate-card">
+          <!-- Plate SVG rim -->
+          <svg class="plate-card-svg" viewBox="0 0 175 175" fill="none" aria-hidden="true">
+            <!-- Outer rim -->
+            <circle cx="87.5" cy="87.5" r="84" stroke="#1f2ca3" stroke-width="1.5"/>
+            <!-- Decorative ring -->
+            <circle cx="87.5" cy="87.5" r="74" stroke="#1f2ca3" stroke-width="0.5" opacity="0.4"/>
+            <!-- Inner plate edge -->
+            <circle cx="87.5" cy="87.5" r="64" stroke="#1f2ca3" stroke-width="0.8" opacity="0.6"/>
+
+            <!-- 8 small floral motifs on the rim at r≈79 -->
+            <!-- Top (87.5, 8.5) -->
+            <g transform="translate(87.5,8.5)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-right (143, 43) -->
+            <g transform="translate(143,43) rotate(45)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Right (166.5, 87.5) -->
+            <g transform="translate(166.5,87.5) rotate(90)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-right (143, 132) -->
+            <g transform="translate(143,132) rotate(135)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom (87.5, 166.5) -->
+            <g transform="translate(87.5,166.5) rotate(180)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-left (32, 132) -->
+            <g transform="translate(32,132) rotate(225)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Left (8.5, 87.5) -->
+            <g transform="translate(8.5,87.5) rotate(270)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-left (32, 43) -->
+            <g transform="translate(32,43) rotate(315)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+          </svg>
+
+          <!-- Center content -->
+          <div class="plate-card-inner">
+            <h3>Salads</h3>
+            <p>13 recipes</p>
+          </div>
+        </div>
+      </a>
+      
+      <a class="plate-link" href="/vegetables-and-side-dishes/" title="Vegetables and Side Dishes — 14 recipes">
+        <div class="plate-card">
+          <!-- Plate SVG rim -->
+          <svg class="plate-card-svg" viewBox="0 0 175 175" fill="none" aria-hidden="true">
+            <!-- Outer rim -->
+            <circle cx="87.5" cy="87.5" r="84" stroke="#1f2ca3" stroke-width="1.5"/>
+            <!-- Decorative ring -->
+            <circle cx="87.5" cy="87.5" r="74" stroke="#1f2ca3" stroke-width="0.5" opacity="0.4"/>
+            <!-- Inner plate edge -->
+            <circle cx="87.5" cy="87.5" r="64" stroke="#1f2ca3" stroke-width="0.8" opacity="0.6"/>
+
+            <!-- 8 small floral motifs on the rim at r≈79 -->
+            <!-- Top (87.5, 8.5) -->
+            <g transform="translate(87.5,8.5)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-right (143, 43) -->
+            <g transform="translate(143,43) rotate(45)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Right (166.5, 87.5) -->
+            <g transform="translate(166.5,87.5) rotate(90)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-right (143, 132) -->
+            <g transform="translate(143,132) rotate(135)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom (87.5, 166.5) -->
+            <g transform="translate(87.5,166.5) rotate(180)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Bottom-left (32, 132) -->
+            <g transform="translate(32,132) rotate(225)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Left (8.5, 87.5) -->
+            <g transform="translate(8.5,87.5) rotate(270)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+            <!-- Top-left (32, 43) -->
+            <g transform="translate(32,43) rotate(315)">
+              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
+              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            </g>
+          </svg>
+
+          <!-- Center content -->
+          <div class="plate-card-inner">
+            <h3>Vegetables and Side Dishes</h3>
+            <p>14 recipes</p>
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </section>
+
+</div>
 
   </main>
 
   <!-- Footer -->
-  <footer class="text-center text-stone-500 text-xs py-6 border-t border-stone-200 no-print">
-    Julie's Christmas 2025 Recipes &mdash; a family cookbook with love
+  <footer class="site-footer">
+    <p class="site-footer__love">From our red brick house, with love.</p>
+    <p>Julie's Christmas 2025 Recipes &nbsp;·&nbsp; A family cookbook</p>
+    <div class="brick-foundation" role="presentation" aria-hidden="true"></div>
   </footer>
 
-  <!-- Fuse.js search -->
+  <!-- Stagger card-rise animation delays on first visit -->
+  <script>
+  (function() {
+    if (!document.documentElement.classList.contains('wf-first')) return;
+    var SELECTORS = '.letter-wrap, .recipe-page, .plate-card, .recipe-card';
+    function stagger() {
+      var els = document.querySelectorAll(SELECTORS);
+      var delay = 80;
+      els.forEach(function(el) {
+        el.style.animationDelay = delay + 'ms';
+        delay = Math.min(delay + 55, 640); // cap so grid doesn't stretch to seconds
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', stagger);
+    } else {
+      stagger();
+    }
+  })();
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
   <script src="/static/search.js"></script>
 </body>

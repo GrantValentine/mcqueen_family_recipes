@@ -1,102 +1,129 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Breadcrumb -->
-<nav class="text-sm text-stone-400 mb-6 no-print">
-  <a href="/" class="hover:text-sage transition-colors">Home</a>
-  <span class="mx-2">/</span>
-  <a href="/{{ recipe.category_slug }}/" class="hover:text-sage transition-colors">{{ recipe.category }}</a>
-  <span class="mx-2">/</span>
-  <span class="text-stone-700">{{ recipe.title }}</span>
-</nav>
+<div class="recipe-page">
 
-<div class="max-w-2xl">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ root_path }}">Home</a>
+    <span class="breadcrumb__sep" aria-hidden="true">›</span>
+    <a href="{{ root_path }}{{ recipe.category_slug }}/">{{ recipe.category }}</a>
+    <span class="breadcrumb__sep" aria-hidden="true">›</span>
+    <span>{{ recipe.title }}</span>
+  </nav>
 
-  <!-- Title & photo -->
-  <div class="mb-6">
-    <h1 class="text-3xl font-bold text-stone-800 mb-3">{{ recipe.title }}</h1>
-    <span class="inline-block text-xs bg-sage text-white px-2 py-0.5 rounded-full mb-4">{{ recipe.category }}</span>
-
-    {% if photo_url %}
-    <img src="{{ photo_url }}" alt="{{ recipe.title }}"
-         class="w-full max-h-72 object-cover rounded-xl shadow-sm mb-4">
-    {% else %}
-    <div class="w-full h-40 bg-amber-50 rounded-xl border border-amber-100 flex items-center justify-center text-amber-200 text-5xl mb-4">
-      🍽
+  <!-- Title block -->
+  <header style="margin-bottom:1.5rem;">
+    <h1 class="recipe-title">{{ recipe.title }}</h1>
+    <div class="recipe-meta-bar">
+      <span class="recipe-category-badge">{{ recipe.category }}</span>
+      {% if recipe.ingredients %}
+      <span>{{ recipe.ingredients|length }} ingredients</span>
+      {% endif %}
+      {% if recipe.instructions %}
+      <span>{{ recipe.instructions|length }} steps</span>
+      {% endif %}
+      <button onclick="window.print()"
+              class="print-hide"
+              style="margin-left:auto; font-family:'Lora',serif; font-size:0.78rem; color:var(--dusty-olive); border:1px solid var(--dusty-olive); background:none; padding:0.25rem 0.8rem; border-radius:20px; cursor:pointer; transition:color 0.15s, border-color 0.15s;"
+              onmouseover="this.style.color='var(--willow-blue)'; this.style.borderColor='var(--willow-blue)'"
+              onmouseout="this.style.color='var(--dusty-olive)'; this.style.borderColor='var(--dusty-olive)'">
+        Print
+      </button>
     </div>
-    {% endif %}
-  </div>
+  </header>
 
-  <!-- Print button -->
-  <button onclick="window.print()" class="no-print mb-6 text-sm text-sage hover:underline border border-sage px-3 py-1 rounded">
-    Print recipe
-  </button>
-
-  <!-- Preamble / intro text -->
-  {% if recipe.preamble %}
-  <div class="mb-6 text-stone-600 leading-relaxed text-sm bg-amber-50 border border-amber-100 rounded-lg px-4 py-3">
-    {% for line in recipe.preamble %}
-    <p class="mb-1">{{ line }}</p>
-    {% endfor %}
+  <!-- Photo -->
+  {% if photo_url %}
+  <div style="margin-bottom:2rem; border-radius:10px; overflow:hidden; max-height:360px;">
+    <img src="{{ photo_url }}" alt="{{ recipe.title }}" style="width:100%; height:100%; object-fit:cover;">
   </div>
   {% endif %}
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+  <!-- Preamble -->
+  {% if recipe.preamble %}
+  <div class="preamble-block">
+    {% for line in recipe.preamble %}<p style="margin-bottom:0.5rem;">{{ line }}</p>{% endfor %}
+  </div>
+  {% endif %}
 
-    <!-- Ingredients -->
+  <!-- Ingredients + Instructions -->
+  {% if recipe.ingredients or recipe.instructions %}
+  <div class="recipe-cols">
+
+    <!-- Ingredients sidebar -->
     {% if recipe.ingredients %}
-    <section>
-      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Ingredients</h2>
-      <ul class="space-y-1.5">
-        {% for item in recipe.ingredients %}
-        <li class="flex gap-2 text-sm text-stone-700">
-          <span class="mt-1 w-2 h-2 rounded-full bg-amber-300 shrink-0"></span>
-          <span>{{ item }}</span>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
+    <aside>
+      <div class="ingredients-panel">
+        <h2>Ingredients</h2>
+        <ul>
+          {% for item in recipe.ingredients %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </aside>
     {% endif %}
 
     <!-- Instructions -->
     {% if recipe.instructions %}
-    <section>
-      <h2 class="text-lg font-bold text-sage mb-3 border-b border-amber-200 pb-1">Instructions</h2>
-      <ol class="space-y-3 list-none">
-        {% for step in recipe.instructions %}
-        <li class="flex gap-3 text-sm text-stone-700">
-          <span class="shrink-0 w-6 h-6 rounded-full bg-sage text-white text-xs flex items-center justify-center font-bold">
-            {{ loop.index }}
-          </span>
-          <span class="pt-0.5">{{ step }}</span>
-        </li>
-        {% endfor %}
-      </ol>
-    </section>
+    <div class="instructions-col">
+      <!-- Floral divider -->
+      <svg class="floral-divider" width="200" height="24" viewBox="0 0 200 24"
+           fill="none" stroke="#1f2ca3" stroke-linecap="round" aria-hidden="true">
+        <path stroke-width="0.7" d="M30,14 C50,10 70,16 100,13 C130,10 150,16 170,13"/>
+        <circle cx="55"  cy="15" r="1.6" fill="#1f2ca3" opacity="0.4" stroke="none"/>
+        <circle cx="145" cy="14" r="1.6" fill="#1f2ca3" opacity="0.4" stroke="none"/>
+        <path stroke-width="0.5" d="M70,14 C71,9 74,8 72,13"/>
+        <path stroke-width="0.5" d="M130,13 C131,8 134,7 132,12"/>
+        <!-- Center 5-petal flower -->
+        <g transform="translate(100,7)">
+          <path stroke-width="0.85" d="M0,0 C-2,-4 0,-7 2,-5 C4,-3 3,0 0,0"/>
+          <path stroke-width="0.85" d="M0,0 C3,-3 6,-2 5,1 C4,4 1,3 0,0"/>
+          <path stroke-width="0.85" d="M0,0 C4,2 4,6 1,6 C-2,6 -3,3 0,0"/>
+          <path stroke-width="0.85" d="M0,0 C-3,4 -6,3 -5,0 C-4,-3 -2,-2 0,0"/>
+          <path stroke-width="0.85" d="M0,0 C-4,-2 -4,-6 -1,-5 C2,-4 2,-1 0,0"/>
+          <circle cx="0" cy="0" r="1.8" fill="#1f2ca3" opacity="0.6" stroke="none"/>
+        </g>
+      </svg>
+
+      <div class="instructions-col">
+        <h2>Instructions</h2>
+        <ol style="list-style:none;">
+          {% for step in recipe.instructions %}
+          <li class="step">
+            <span class="step-num" aria-hidden="true">{{ loop.index }}</span>
+            <p>{{ step }}</p>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
     {% endif %}
 
   </div>
+  {% endif %}
+
+  <!-- Unstructured fallback -->
+  {% if not recipe.ingredients and not recipe.instructions %}
+  <div style="background:white; border:1.5px solid var(--willow-light); border-radius:10px; padding:1.5rem 1.8rem;">
+    {% if recipe.preamble %}
+      {% for line in recipe.preamble %}
+      <p style="font-size:0.9rem; line-height:1.75; color:var(--ink); margin-bottom:0.75rem;">{{ line }}</p>
+      {% endfor %}
+    {% endif %}
+  </div>
+  {% endif %}
 
   <!-- Notes -->
   {% if recipe.notes %}
-  <section class="mt-8 bg-amber-50 border border-amber-100 rounded-xl px-5 py-4">
-    <h2 class="text-base font-bold text-sage mb-2">Notes &amp; Tips</h2>
-    <ul class="space-y-1.5">
+  <aside class="notes-box">
+    <h2>Notes &amp; Tips</h2>
+    <ul>
       {% for note in recipe.notes %}
-      <li class="text-sm text-stone-600 italic">{{ note }}</li>
+      <li>{{ note }}</li>
       {% endfor %}
     </ul>
-  </section>
-  {% endif %}
-
-  <!-- If no structured content was parsed, show raw preamble as full text -->
-  {% if not recipe.ingredients and not recipe.instructions %}
-  <div class="mt-4 p-4 bg-amber-50 rounded-xl border border-amber-200 text-sm text-stone-600">
-    <p class="font-semibold text-stone-700 mb-2">Recipe content (unstructured):</p>
-    {% for line in recipe.preamble %}
-    <p class="mb-1">{{ line }}</p>
-    {% endfor %}
-  </div>
+  </aside>
   {% endif %}
 
 </div>
