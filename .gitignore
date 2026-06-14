@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local env vars — never commit
+.env
+
+# Generated at build time from ADMIN_EMAIL env var
+site/admin/config.js
