@@ -759,11 +759,11 @@
         {% set nav_items = [
           ('Appetizers', 'appetizers'),
           ('Bread',      'bread'),
-          ('Cookies',    'cookies'),
-          ('Desserts',   'desserts'),
-          ('Mains',      'main-dishes'),
           ('Salads',     'salads'),
           ('Sides',      'vegetables-and-side-dishes'),
+          ('Mains',      'main-dishes'),
+          ('Desserts',   'desserts'),
+          ('Cookies',    'cookies'),
         ] %}
         {% for label, slug in nav_items %}
         <li><a href="{{ root_path }}{{ slug }}/">{{ label }}</a></li>

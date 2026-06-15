@@ -244,6 +244,16 @@ def build_site() -> int:
     for r in recipes:
         cat_display[r["category_slug"]] = r["category"]
 
+    CATEGORY_ORDER = [
+        'appetizers',
+        'bread',
+        'salads',
+        'vegetables-and-side-dishes',
+        'main-dishes',
+        'desserts',
+        'cookies',
+    ]
+
     build_search_index(recipes)
 
     # Resolve photos for every recipe upfront so category pages can use them.
@@ -289,14 +299,16 @@ def build_site() -> int:
 
     # ── Homepage ─────────────────────────────────────────────────────────────
     tmpl = env.get_template("index.html")
+    ordered_slugs = [s for s in CATEGORY_ORDER if s in by_category]
+    ordered_slugs += [s for s in sorted(by_category) if s not in CATEGORY_ORDER]
     categories_summary = [
         {
             "name": cat_display[slug],
             "slug": slug,
-            "count": len(recs),
-            "sample": recs[:3],
+            "count": len(by_category[slug]),
+            "sample": by_category[slug][:3],
         }
-        for slug, recs in sorted(by_category.items())
+        for slug in ordered_slugs
     ]
     html = tmpl.render(
         intro_paragraphs=intro_paragraphs,
