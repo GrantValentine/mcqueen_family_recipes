@@ -621,6 +621,7 @@ async function deleteRecipe() {
   if (!confirm(`Permanently delete "${title}"? This cannot be undone.`)) return;
   const { error } = await db.from('recipes').delete().eq('id', recipeId);
   if (error) { showBanner('Delete failed: ' + error.message); return; }
+  await triggerRebuild(null, 'Recipe deleted. Site will update in ~1 minute!');
   window.location.replace('/admin/');
 }
 </script>
