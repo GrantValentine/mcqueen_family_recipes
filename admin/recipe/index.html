@@ -114,6 +114,20 @@
 
     /* ── Delete ── */
     .delete-row { display:flex; justify-content:flex-end; margin-top:.5rem; }
+
+    /* ── Import review ── */
+    .confidence-flag-note {
+      font-size:.75rem; color:#92400e; background:#fffbeb;
+      border:1px solid #fcd34d; border-radius:6px;
+      padding:.35rem .6rem; margin-bottom:.5rem; display:none;
+    }
+    .confidence-flag-note.visible { display:block; }
+    .card--flagged { border:2px solid #fcd34d; }
+    .use-photo-row { display:flex; align-items:center; gap:.5rem;
+      font-size:.83rem; margin-bottom:.8rem; }
+    .use-photo-row input { width:15px; height:15px; accent-color:var(--blue); }
+    #import-photo-preview { max-width:100%; border-radius:8px; margin-bottom:.8rem;
+      border:1.5px solid var(--light); display:none; }
   </style>
 </head>
 <body>
@@ -180,6 +194,12 @@
 
       <div class="card">
         <p class="card__heading">Photo</p>
+        <!-- Shown when the import source was an image -->
+        <div class="use-photo-row" id="use-import-photo-row" hidden>
+          <input type="checkbox" id="use-import-photo" checked>
+          <label for="use-import-photo" style="margin:0;font-size:.83rem;letter-spacing:0;color:var(--ink);">Use the uploaded image as this recipe's photo</label>
+        </div>
+        <img id="import-photo-preview" alt="Imported photo preview">
         <img id="photo-preview" alt="Recipe photo preview">
         <p id="photo-source-note" class="photo-source-note"></p>
         <label for="photo-file">Upload a photo (max 2 MB)</label>
@@ -204,19 +224,28 @@
 <script src="/admin/admin.js"></script>
 <script>
 // ── State ─────────────────────────────────────────────────────────────────────
-const recipeId   = new URLSearchParams(location.search).get('id');
-let   allCategories = [];
-let   allTags       = [];
-let   activeTagIds  = new Set();
-let   newPhotoUrl   = null;   // set after a successful upload
-let   listState     = { ingredients: [], instructions: [], notes: [] };
+const params   = new URLSearchParams(location.search);
+let   recipeId = params.get('id');
+const isImport = params.get('new') === 'import';
+
+let allCategories = [];
+let allTags       = [];
+let activeTagIds  = new Set();
+let listState     = { ingredients: [], instructions: [], notes: [] };
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 (async () => {
   await requireAuth();
-  if (!recipeId) { showBanner('No recipe ID in URL.'); return; }
   await Promise.all([loadCategories(), loadTags()]);
-  await loadRecipe();
+
+  if (isImport) {
+    const raw = sessionStorage.getItem('pendingImport');
+    if (!raw) { showBanner('No import data found — please start the import again.', 'error'); return; }
+    loadFromImport(JSON.parse(raw));
+  } else {
+    if (!recipeId) { showBanner('No recipe ID in URL.', 'error'); return; }
+    await loadRecipe();
+  }
 })();
 
 // ── Load data ─────────────────────────────────────────────────────────────────
@@ -273,6 +302,67 @@ async function loadRecipe() {
     document.getElementById('photo-source-note').textContent =
       'No Supabase photo set. Local photos/ matches are used at build time. Upload here to override.';
   }
+}
+
+// ── Import pre-fill ───────────────────────────────────────────────────────────
+function loadFromImport(payload) {
+  const { recipe, pendingPhotoUrl, isImage } = payload;
+
+  document.getElementById('page-title').textContent = 'Review Imported Recipe';
+  document.title = 'Review Import — Julie\'s Recipes';
+
+  // Title
+  document.getElementById('recipe-title').value = recipe.title || '';
+
+  // Category — map suggested slug → option value (category id)
+  if (recipe.suggested_category) {
+    const match = allCategories.find(c => c.slug === recipe.suggested_category);
+    if (match) document.getElementById('recipe-category').value = match.id;
+  }
+
+  // Lists
+  listState.ingredients  = recipe.ingredients  || [];
+  listState.instructions = recipe.instructions || [];
+  listState.notes        = recipe.notes        || [];
+  renderList('ingredients');
+  renderList('instructions');
+  renderList('notes');
+
+  // Tags — map suggested slugs → ids
+  if (recipe.suggested_tags && recipe.suggested_tags.length) {
+    const slugSet = new Set(recipe.suggested_tags);
+    activeTagIds = new Set(allTags.filter(t => slugSet.has(t.slug)).map(t => t.id));
+  }
+  renderTags();
+
+  // Confidence flags — highlight uncertain cards
+  const flags = new Set(recipe.confidence_flags || []);
+  const flagMap = {
+    title:        document.querySelector('.card:has(#recipe-title)'),
+    ingredients:  document.querySelector('.card:has(#ingredients-list)'),
+    instructions: document.querySelector('.card:has(#instructions-list)'),
+    notes:        document.querySelector('.card:has(#notes-list)'),
+  };
+  flags.forEach(key => {
+    const card = flagMap[key];
+    if (!card) return;
+    card.classList.add('card--flagged');
+    const note = document.createElement('p');
+    note.className = 'confidence-flag-note visible';
+    note.textContent = 'Claude wasn\'t certain about this — please double-check.';
+    card.insertBefore(note, card.firstChild);
+  });
+
+  // Photo — if source was an image offer to use it
+  if (isImage && pendingPhotoUrl) {
+    const row     = document.getElementById('use-import-photo-row');
+    const preview = document.getElementById('import-photo-preview');
+    row.hidden    = false;
+    preview.src   = pendingPhotoUrl;
+    preview.style.display = 'block';
+  }
+
+  showBanner('Recipe extracted! Review everything below, then click Save Recipe.', 'success');
 }
 
 // ── Dynamic list editors ──────────────────────────────────────────────────────
@@ -447,29 +537,67 @@ async function saveRecipe(btn) {
     return;
   }
 
-  const { error: recipeErr } = await db.from('recipes').update(row).eq('id', recipeId);
-  if (recipeErr) {
-    showBanner('Save failed: ' + recipeErr.message);
-    btn.disabled = false; btn.textContent = 'Save Recipe';
-    return;
-  }
-
-  // Sync tags: delete all then re-insert selected ones
-  await db.from('recipe_tags').delete().eq('recipe_id', recipeId);
   const selectedIds = Array.from(
     document.querySelectorAll('#tags-grid input[type=checkbox]:checked')
   ).map(cb => cb.value);
-  if (selectedIds.length) {
-    await db.from('recipe_tags').insert(
-      selectedIds.map(tagId => ({ recipe_id: recipeId, tag_id: tagId }))
-    );
+
+  if (isImport && !recipeId) {
+    // ── INSERT new recipe (import review save) ────────────────────────────
+    // Apply import photo if the checkbox is checked
+    const usePhotoBox = document.getElementById('use-import-photo');
+    const importPhotoSrc = document.getElementById('import-photo-preview').src;
+    if (usePhotoBox && usePhotoBox.closest('#use-import-photo-row') &&
+        !document.getElementById('use-import-photo-row').hidden &&
+        usePhotoBox.checked && importPhotoSrc) {
+      row.photo_url = importPhotoSrc;
+    }
+
+    const { data: created, error: insertErr } = await db
+      .from('recipes').insert(row).select('id').single();
+    if (insertErr) {
+      showBanner('Save failed: ' + insertErr.message);
+      btn.disabled = false; btn.textContent = 'Save Recipe';
+      return;
+    }
+
+    recipeId = created.id;
+    if (selectedIds.length) {
+      await db.from('recipe_tags').insert(
+        selectedIds.map(tagId => ({ recipe_id: recipeId, tag_id: tagId }))
+      );
+    }
+
+    sessionStorage.removeItem('pendingImport');
+    // Switch URL to edit mode without a page reload
+    window.history.replaceState({}, '', `/admin/recipe/?id=${recipeId}`);
+
+  } else {
+    // ── UPDATE existing recipe ─────────────────────────────────────────────
+    const { error: recipeErr } = await db.from('recipes').update(row).eq('id', recipeId);
+    if (recipeErr) {
+      showBanner('Save failed: ' + recipeErr.message);
+      btn.disabled = false; btn.textContent = 'Save Recipe';
+      return;
+    }
+
+    await db.from('recipe_tags').delete().eq('recipe_id', recipeId);
+    if (selectedIds.length) {
+      await db.from('recipe_tags').insert(
+        selectedIds.map(tagId => ({ recipe_id: recipeId, tag_id: tagId }))
+      );
+    }
   }
 
-  // Update page title
+  // ── Post-save UI ───────────────────────────────────────────────────────
   document.getElementById('page-title').textContent = row.title;
   document.title = `Edit "${row.title}" — Julie's Recipes`;
 
-  // Re-render lists (removes empty rows that were filtered out)
+  // Hide import-only chrome after first save
+  const importRow = document.getElementById('use-import-photo-row');
+  if (importRow) importRow.hidden = true;
+  document.querySelectorAll('.card--flagged').forEach(c => c.classList.remove('card--flagged'));
+  document.querySelectorAll('.confidence-flag-note').forEach(n => n.remove());
+
   renderList('ingredients');
   renderList('instructions');
   renderList('notes');

@@ -67,6 +67,9 @@
     input:focus, select:focus { border-color:var(--blue); }
     .btn--add { background:var(--blue); color:white; border-color:var(--blue);
       white-space:nowrap; align-self:flex-end; padding:.45rem 1.1rem; }
+    .btn--import { background:transparent; color:var(--blue); border-color:var(--blue);
+      white-space:nowrap; align-self:flex-end; padding:.45rem 1.1rem;
+      text-decoration:none; display:inline-flex; align-items:center; gap:.35rem; }
 
     /* ── Section heading ── */
     .section-heading {
@@ -154,6 +157,7 @@
       <select id="new-category"></select>
     </div>
     <button class="btn btn--add" onclick="addRecipe()">+ Add Recipe</button>
+    <a class="btn btn--import" href="/admin/import/">&#8593; Import from file</a>
   </div>
 
   <div id="recipe-list">
