@@ -139,6 +139,7 @@ def load_recipes_from_supabase() -> tuple[list[dict], dict]:
     result = (
         client.table("recipes")
         .select("*, categories(id, slug, name, sort_order)")
+        .order("title")
         .execute()
     )
 

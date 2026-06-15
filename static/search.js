@@ -35,10 +35,7 @@
     hits.forEach(({ item }) => {
       const li = document.createElement("li");
       li.className = "px-3 py-2 hover:bg-amber-50 cursor-pointer border-b border-stone-100 last:border-0";
-      li.innerHTML = `
-        <div class="font-medium text-stone-800">${item.title}</div>
-        <div class="text-xs text-stone-400">${item.category}</div>
-      `;
+      li.innerHTML = `<div class="font-medium text-stone-800">${item.title}</div>`;
       li.addEventListener("click", () => {
         window.location.href = `/${item.category_slug}/${item.slug}/`;
       });
