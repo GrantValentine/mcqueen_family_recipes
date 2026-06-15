@@ -446,9 +446,9 @@ function addHeading(key) {
 
 function syncListFromDOM(key) {
   document.querySelectorAll('#' + key + '-list .list-item textarea').forEach((ta, i) => {
-    listState[key][i] = ta.value;
+    const wasHeading = (listState[key][i] || '').startsWith('## ');
+    listState[key][i] = wasHeading ? '## ' + ta.value : ta.value;
   });
-  // Filter out empty entries and bare headings with no name
   listState[key] = listState[key].map(s => s.trim()).filter(s => s && s !== '##');
 }
 
