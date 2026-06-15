@@ -38,16 +38,20 @@
       font-size:1.6rem; color:var(--blue); margin-bottom:.4rem; }
     .page__sub { color:var(--olive); font-size:.9rem; margin-bottom:2rem; }
 
+    /* Ensure the HTML hidden attribute is never overridden by display rules */
+    [hidden] { display: none !important; }
+
     /* ── Drop zone ── */
     .drop-zone {
+      display:block; /* keep as block so <p> children don't escape */
       border:2px dashed rgba(31,44,163,.3); border-radius:12px;
       background:white; padding:2.8rem 2rem; text-align:center;
       transition:border-color .15s, background .15s; cursor:pointer;
     }
     .drop-zone.drag-over { border-color:var(--blue); background:var(--light); }
     .drop-zone__icon { font-size:2.4rem; margin-bottom:.8rem; }
-    .drop-zone p { color:var(--olive); font-size:.88rem; margin-bottom:.6rem; }
-    .drop-zone__hint { font-size:.78rem !important; color:#aaa !important; margin-top:.4rem !important; }
+    .drop-zone__text { display:block; color:var(--olive); font-size:.88rem; margin-bottom:.6rem; }
+    .drop-zone__hint { display:block; font-size:.78rem; color:#aaa; margin-top:.4rem; }
 
     .pick-label {
       display:inline-block; font-family:'Fraunces',serif;
@@ -113,10 +117,10 @@
   <!-- Drop zone (shown by default) -->
   <div id="main-ui">
     <label class="drop-zone" id="drop-zone" for="file-input">
-      <div class="drop-zone__icon">📄</div>
-      <p>Drag &amp; drop a file here, or</p>
+      <span class="drop-zone__icon">📄</span>
+      <span class="drop-zone__text">Drag &amp; drop a file here, or</span>
       <span class="pick-label">Choose file</span>
-      <p class="drop-zone__hint">PDF · Word (.docx) · JPEG / PNG / WebP &nbsp;—&nbsp; up to 10 MB</p>
+      <span class="drop-zone__hint">PDF · Word (.docx) · JPEG / PNG / WebP &nbsp;—&nbsp; up to 10 MB</span>
     </label>
     <input type="file" id="file-input" hidden
            accept=".pdf,.docx,.doc,.jpg,.jpeg,.png,.webp,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png,image/webp,text/plain">
