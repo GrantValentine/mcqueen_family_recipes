@@ -229,6 +229,30 @@
     #search-results li:hover { background: var(--willow-light); }
 
     @media (max-width: 900px) { .site-nav__links { display: none; } }
+    .site-nav__admin {
+      font-family: 'Lora', serif;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.65);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.25rem 0.7rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s;
+      flex-shrink: 0;
+    }
+    .site-nav__admin:hover { color: white; border-color: rgba(255,255,255,0.7); text-decoration: none; }
+    .footer-admin-link {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-variation-settings: 'opsz' 14, 'SOFT' 80;
+      font-size: 0.8rem;
+      color: var(--dusty-olive);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+    .footer-admin-link:hover { opacity: 1; color: var(--willow-blue); text-decoration: none; }
 
     /* ── Hero ────────────────────────────────────────────────────────────── */
     .wf-hero {
@@ -795,6 +819,8 @@
         {% endfor %}
       </ul>
 
+      <a class="site-nav__admin" href="/admin/">Edit</a>
+
       <div class="site-nav__search">
         <input id="search-input" type="search" placeholder="Search recipes…" autocomplete="off" aria-label="Search recipes">
         <ul id="search-results" class="hidden" role="listbox"></ul>
@@ -811,6 +837,7 @@
   <footer class="site-footer">
     <p class="site-footer__love">From our red brick house, with love.</p>
     <p>The Valentine Family Cookbook</p>
+    <p style="margin-top:0.75rem;"><a class="footer-admin-link" href="/admin/">Open the cookbook ✎</a></p>
     <div class="brick-foundation" role="presentation" aria-hidden="true"></div>
   </footer>
 
