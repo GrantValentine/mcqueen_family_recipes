@@ -522,13 +522,18 @@ async function saveRecipe(btn) {
   const uploadedUrl = await uploadPendingPhoto();
 
   // Build recipe row
+  const title = document.getElementById('recipe-title').value.trim();
   const row = {
-    title:        document.getElementById('recipe-title').value.trim(),
+    title,
     category_id:  document.getElementById('recipe-category').value,
     ingredients:  listState.ingredients,
     instructions: listState.instructions,
     notes:        listState.notes,
   };
+  if (isImport && !recipeId) {
+    row.slug = title.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
+  }
   if (uploadedUrl) row.photo_url = uploadedUrl;
 
   if (!row.title) {
