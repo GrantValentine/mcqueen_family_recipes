@@ -1,0 +1,11 @@
+{
+  "name": "family-recipes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Netlify Functions dependencies for the recipe import feature.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "@supabase/supabase-js": "^2.0.0",
+    "mammoth": "^1.8.0"
+  }
+}

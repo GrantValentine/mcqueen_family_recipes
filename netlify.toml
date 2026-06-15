@@ -9,4 +9,8 @@
   #   SUPABASE_ANON_KEY     — anon/public key (public)
   #   ADMIN_EMAIL           — admin user email (maps "julie" login → real email)
   #   NETLIFY_BUILD_HOOK    — build hook URL for "Publish Changes" button
+  #   ANTHROPIC_API_KEY     — server-side only; used by the import-recipe function
+
+[functions]
+  node_bundler = "esbuild"
 

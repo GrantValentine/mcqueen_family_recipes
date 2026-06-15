@@ -1,0 +1,217 @@
+'use strict';
+
+/**
+ * Netlify Function: import-recipe
+ *
+ * Accepts a POST from the logged-in admin with a Supabase Storage signed URL
+ * pointing to an uploaded recipe file (PDF / image / DOCX / text).
+ * Verifies the caller's Supabase session JWT, fetches the file, sends it to
+ * Claude for extraction, and returns structured JSON.
+ *
+ * Required environment variables (server-side only — never in client code):
+ *   ANTHROPIC_API_KEY
+ *   SUPABASE_URL         (same value as the public env var)
+ *   SUPABASE_ANON_KEY    (same value as the public env var)
+ *
+ * Request body (JSON):
+ *   { signedUrl, mimeType, categories: [{id,slug,name}], tags: [{id,slug,label}] }
+ *
+ * Authorization header: Bearer <supabase_access_token>
+ */
+
+const Anthropic      = require('@anthropic-ai/sdk');
+const { createClient } = require('@supabase/supabase-js');
+const mammoth        = require('mammoth');
+
+const { ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY } = process.env;
+
+const MAX_BYTES = 10 * 1024 * 1024; // 10 MB
+
+const JSON_HEADERS = { 'Content-Type': 'application/json' };
+
+// ── Entry point ───────────────────────────────────────────────────────────────
+
+exports.handler = async (event) => {
+  if (event.httpMethod === 'OPTIONS') {
+    return { statusCode: 204, headers: JSON_HEADERS, body: '' };
+  }
+  if (event.httpMethod !== 'POST') {
+    return respond(405, { error: 'Method not allowed' });
+  }
+
+  // ── 1. Verify session JWT ──────────────────────────────────────────────────
+  const rawAuth = event.headers.authorization || event.headers.Authorization || '';
+  const token   = rawAuth.replace(/^Bearer\s+/i, '').trim();
+  if (!token) return respond(401, { error: 'Missing auth token' });
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const { data: { user }, error: authErr } = await supabase.auth.getUser(token);
+  if (authErr || !user) {
+    return respond(401, { error: 'Invalid or expired session — please log in again.' });
+  }
+
+  // ── 2. Parse body ──────────────────────────────────────────────────────────
+  let body;
+  try { body = JSON.parse(event.body || '{}'); }
+  catch { return respond(400, { error: 'Invalid JSON body' }); }
+
+  const { signedUrl, mimeType, categories = [], tags = [] } = body;
+  if (!signedUrl || !mimeType) {
+    return respond(400, { error: 'signedUrl and mimeType are required' });
+  }
+
+  // ── 3. Fetch file via signed URL ───────────────────────────────────────────
+  let buffer;
+  try {
+    const res = await fetch(signedUrl);
+    if (!res.ok) throw new Error(`Storage responded ${res.status}`);
+    const ab = await res.arrayBuffer();
+    if (ab.byteLength > MAX_BYTES) {
+      return respond(400, { error: 'File exceeds the 10 MB limit.' });
+    }
+    buffer = Buffer.from(ab);
+  } catch (err) {
+    return respond(400, { error: `Could not fetch file: ${err.message}` });
+  }
+
+  // ── 4. Build Claude content block(s) by file type ─────────────────────────
+  let contentBlocks;
+  try {
+    contentBlocks = await buildContentBlocks(buffer, mimeType);
+  } catch (err) {
+    return respond(400, { error: err.message });
+  }
+
+  // ── 5. Call Claude ─────────────────────────────────────────────────────────
+  if (!ANTHROPIC_API_KEY) {
+    return respond(500, { error: 'ANTHROPIC_API_KEY is not configured on the server.' });
+  }
+
+  const anthropic = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
+
+  const catList = categories.map(c => c.slug).join(', ') || '(none)';
+  const tagList = tags.map(t => t.slug).join(', ')      || '(none)';
+
+  const systemPrompt =
+`You are a recipe extraction assistant. Extract the recipe from the provided content and \
+return ONLY a valid JSON object — no prose, no markdown fences, no commentary before or after.
+
+Return exactly this shape:
+{
+  "title": "string",
+  "ingredients": ["string", ...],
+  "instructions": ["string", ...],
+  "notes": ["string", ...],
+  "suggested_category": "one slug from the list below, or null",
+  "suggested_tags": ["slugs from the list below only"],
+  "confidence_flags": ["field names you were uncertain about"]
+}
+
+Available category slugs: ${catList}
+Available tag slugs: ${tagList}
+
+Rules:
+- ingredients, instructions, notes are arrays of plain strings — one item per entry.
+- Preserve quantities and units exactly as written; do not convert or round.
+- Keep instructions in original order; split into one action per entry where possible.
+- notes = tips, variations, storage instructions, serving suggestions — NOT cooking steps.
+- Do NOT invent, improve, or add anything absent from the source document.
+- Return [] or null for any field that is absent; never guess.
+- suggested_category: choose the single best slug from the available list, or null if unsure.
+- suggested_tags: only slugs from the available list; empty array if none clearly apply.
+- confidence_flags: list field names (e.g. "ingredients", "title") where you were uncertain.`;
+
+  let claudeResp;
+  try {
+    claudeResp = await anthropic.messages.create({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 2000,
+      system: systemPrompt,
+      messages: [{
+        role: 'user',
+        content: [
+          ...contentBlocks,
+          { type: 'text', text: 'Extract the recipe and return the JSON object.' },
+        ],
+      }],
+    });
+  } catch (err) {
+    return respond(502, { error: `Claude API error: ${err.message}` });
+  }
+
+  // ── 6. Parse response ──────────────────────────────────────────────────────
+  const textBlock = claudeResp.content.find(b => b.type === 'text');
+  if (!textBlock) return respond(502, { error: 'Claude returned no text in its response.' });
+
+  let extracted;
+  try {
+    // Strip any accidental code fences Claude might add despite instructions
+    const raw = textBlock.text
+      .replace(/^```(?:json)?\s*/i, '')
+      .replace(/\s*```\s*$/, '')
+      .trim();
+    extracted = JSON.parse(raw);
+  } catch {
+    return respond(502, {
+      error: 'Could not parse the extraction result. Try a clearer or higher-quality file.',
+    });
+  }
+
+  // Normalise arrays so the editor never receives null where it expects []
+  extracted.ingredients   = extracted.ingredients   || [];
+  extracted.instructions  = extracted.instructions  || [];
+  extracted.notes         = extracted.notes         || [];
+  extracted.suggested_tags     = extracted.suggested_tags     || [];
+  extracted.confidence_flags   = extracted.confidence_flags   || [];
+
+  return respond(200, { recipe: extracted });
+};
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function respond(status, body) {
+  return { statusCode: status, headers: JSON_HEADERS, body: JSON.stringify(body) };
+}
+
+async function buildContentBlocks(buffer, rawMime) {
+  const mime = rawMime.toLowerCase().split(';')[0].trim();
+
+  // PDF — send natively; Claude handles scanned/photographed pages via vision
+  if (mime === 'application/pdf') {
+    return [{
+      type: 'document',
+      source: { type: 'base64', media_type: 'application/pdf', data: buffer.toString('base64') },
+    }];
+  }
+
+  // Images — send natively
+  if (['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'].includes(mime)) {
+    const mediaType = mime === 'image/jpg' ? 'image/jpeg' : mime;
+    return [{
+      type: 'image',
+      source: { type: 'base64', media_type: mediaType, data: buffer.toString('base64') },
+    }];
+  }
+
+  // DOCX — extract text with mammoth, send as text block
+  if (
+    mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ||
+    mime === 'application/msword'
+  ) {
+    const { value: text } = await mammoth.extractRawText({ buffer });
+    if (!text.trim()) {
+      throw new Error('The Word document appears to be empty or image-only. Try exporting it as a PDF.');
+    }
+    return [{ type: 'text', text }];
+  }
+
+  // Plain text / markdown
+  if (mime === 'text/plain' || mime === 'text/markdown') {
+    return [{ type: 'text', text: buffer.toString('utf-8') }];
+  }
+
+  throw new Error(
+    `"${rawMime}" is not supported. Please upload a PDF, Word document (.docx), ` +
+    `image (JPEG / PNG / WebP), or plain text file.`
+  );
+}
