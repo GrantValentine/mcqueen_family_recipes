@@ -17,14 +17,21 @@
     "Sour cream, optional"
   ],
   "instructions": [
-    "Place peeled and halved avocados in bowl. Smash with pastry blender or fork. Stir in remaining ingredients. Taste and adjust seasonings and heat as desired."
+    "Peel and halve avocados and place in bowl.",
+    "Smash with pastry blender or fork.",
+    "Stir in remaining ingredients.",
+    "Taste and adjust seasonings and heat as desired."
   ],
   "notes": [
-    "Have fun with this recipe! Make it your own. Good quality salt (or can use good quality garlic salt) is a must!"
+    "Good quality salt (or can use good quality garlic salt) is a must!",
+    "When first moving to Utah, it was challenging to find good Hass avocados, so sour cream was frequently added to extend the guacamole. With better avocado availability, sour cream is usually not needed.",
+    "Have fun with this recipe! Make it your own.",
+    "Optional ingredients like jalapeños, roasted green peppers, hot sauce, pico de gallo, salsa, and cotija cheese can be added to customize the guacamole."
   ],
   "category": "Appetizers",
   "category_slug": "appetizers",
   "slug": "guacamole",
   "source_file": "Guacamole.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

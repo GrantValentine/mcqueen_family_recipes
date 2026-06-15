@@ -1,31 +1,43 @@
 {
   "title": "Grandpa Frank Reuben Sandwiches",
   "ingredients": [
-    "Grandpa Frank loved a good Reuben sandwich. His favorite was on marble rye bread and toasted. While this is not Grandpa Frank’s recipe, it is my interpretation of a delicious Reuben that he would have loved. Best eaten while playing Monopoly and watching football– his favorite games.",
-    "Good-quality pastrami, sliced very thin (I like Boar’s Head brand)",
+    "Good-quality pastrami, sliced very thin (Boar's Head brand recommended)",
     "Swiss cheese, sliced",
     "Sauerkraut, drained",
-    "Russian Dressing (adapted from Joshua Weissman, recipe below)",
-    "Marble rye bread, sliced"
+    "Marble rye bread, sliced",
+    "Butter",
+    "1 cup (210 g) mayonnaise",
+    "1/3 cup (96 g) ketchup",
+    "2 tbsp (32 g) Crystal hot sauce",
+    "1 tbsp horseradish (fresh if possible, not creamed)",
+    "2.5 tsp (15 g) Worcestershire sauce",
+    "1 tsp (3 g) smoked paprika",
+    "2-3 tbsp thinly sliced fresh chives",
+    "2 cloves garlic, minced",
+    "Salt and freshly ground black pepper to taste"
   ],
   "instructions": [
-    "Butter the outsides of the marble rye bread. On this inside, generously coat with the Russian dressing. Place sliced Swiss cheese next to the dressing on all bread slices (the cheese on both bread slices serves as the glue to hold the sandwich together). Top one slice with drained sauerkraut. Stack a generous amount of pastrami on top of the sauerkraut. Top with other slice of marble rye bread with dressing and Swiss cheese. Grill on both sides of sandwich until toasted. Serve with dill pickles and potato chips.",
-    "Russian Dressing:",
-    "1 cup (210 g.) mayonnaise",
-    "1/3 cup (96 g.) ketchup",
-    "2 tbsp (32 g.) Crystal hot sauce",
-    "1 tbsp. horseradish (fresh if possible, but not creamed horseradish)",
-    "2.5 tsp (15 g.) Worcestershire sauce",
-    "1 tsp. (3 g.) smoked paprika",
-    "2-3 Tbsp thinly sliced fresh chives – hope you are growing these in your backyard!",
-    "2 cloves garlic, minced",
-    "Salt and freshly ground black pepper to taste",
-    "Mix all ingredients in a bowl. Refrigerate until ready to use."
+    "Make Russian Dressing: Mix mayonnaise, ketchup, hot sauce, horseradish, Worcestershire sauce, smoked paprika, chives, and minced garlic in a bowl. Season with salt and pepper to taste. Refrigerate until ready to use.",
+    "Butter the outsides of two slices of marble rye bread.",
+    "Generously coat the inside of each bread slice with Russian dressing.",
+    "Place sliced Swiss cheese next to the dressing on the inside of both bread slices (cheese serves as glue to hold sandwich together).",
+    "Top one bread slice with drained sauerkraut.",
+    "Stack a generous amount of pastrami on top of the sauerkraut.",
+    "Top with the other slice of marble rye bread, dressing-side and cheese-side down.",
+    "Grill the sandwich on both sides until toasted.",
+    "Serve with dill pickles and potato chips."
   ],
-  "notes": [],
+  "notes": [
+    "This is an interpretation of a Reuben that Grandpa Frank would have loved",
+    "Best eaten while playing Monopoly and watching football – Grandpa Frank's favorite games",
+    "Use fresh horseradish if possible, not creamed horseradish",
+    "Growing fresh chives in your backyard is recommended for the Russian dressing",
+    "Make Russian dressing ahead and refrigerate until ready to use"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "grandpa-frank-reuben-sandwiches",
   "source_file": "Grandpa Frank Reuben Sandwiches.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

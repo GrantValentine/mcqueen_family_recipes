@@ -1,7 +1,6 @@
 {
   "title": "Fresh Fruit Tray with French Cream for a Party",
   "ingredients": [
-    "Fruit",
     "2 whole pineapples",
     "2 large clusters green seedless grapes",
     "6 oranges, peeled and sliced",
@@ -12,7 +11,6 @@
     "3-4 star fruit, sliced",
     "2 cups blueberries",
     "Red leaf lettuce, for lining tray",
-    "French Cream",
     "8 ounces cream cheese, softened",
     "1 cup powdered sugar",
     "1 cup whipping cream",
@@ -22,14 +20,21 @@
   ],
   "instructions": [
     "Arrange prepared fruit attractively on a platter lined with red leaf lettuce.",
-    "For the French cream, beat cream cheese until smooth. Beat in powdered sugar. In a separate bowl, whip cream with granulated sugar until soft peaks form.",
-    "Fold whipped cream into cream cheese mixture. Add lemon zest and juice. Thin with pineapple juice as needed to reach a smooth, dippable consistency. Serve alongside fruit.",
-    "Served at Katie and Patrick’s wedding reception."
+    "Beat cream cheese until smooth.",
+    "Beat in powdered sugar.",
+    "In a separate bowl, whip cream with granulated sugar until soft peaks form.",
+    "Fold whipped cream into cream cheese mixture.",
+    "Add lemon zest and juice.",
+    "Thin with pineapple juice as needed to reach a smooth, dippable consistency.",
+    "Serve French cream alongside fruit."
   ],
-  "notes": [],
+  "notes": [
+    "Served at Katie and Patrick's wedding reception."
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "fresh-fruit-tray-with-french-cream-for-a-party",
   "source_file": "Fresh Fruit Tray with French Cream for a Party.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

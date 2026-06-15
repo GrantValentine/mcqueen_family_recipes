@@ -1,15 +1,34 @@
 {
-  "title": "S’mores Ooey Gooey Bars",
+  "title": "S'mores Ooey Gooey Bars",
   "ingredients": [
-    "18 whole graham crackers, or two cellophane wrapped stacks\n1 1/2 sticks (12 tablespoons) unsalted butter, melted\n1 pinch of kosher salt\n1 14 ounce can (400g) sweetened condensed milk\n1 1/2 cups (250g) semisweet chocolate chips\n2/3 bag of large marshmallows, cut in half",
-    "1. Preheat the oven to 350 degrees. In a food processor, process graham crackers until finely ground. Stir in melted butter and salt. Press into a 13×9″ pan.  Bake for 5 minutes.  Remove from oven.\n2. Sprinkle on chocolate chips. Drizzle can of condensed milk over graham crackers; follow with marshmallows.\n3. Bake for 20 minutes more, until marshmallows are lightly browned.  (To brown marshmallows to “perfect” brown, place under broiler for a few seconds.)  Let cool completely.",
-    "I didn’t make these much at home, but often for church summer events. Super easy."
+    "18 whole graham crackers, or two cellophane wrapped stacks",
+    "1 1/2 sticks (12 tablespoons) unsalted butter, melted",
+    "1 pinch of kosher salt",
+    "1 14 ounce can (400g) sweetened condensed milk",
+    "1 1/2 cups (250g) semisweet chocolate chips",
+    "2/3 bag of large marshmallows, cut in half"
   ],
-  "instructions": [],
-  "notes": [],
+  "instructions": [
+    "Preheat the oven to 350 degrees.",
+    "In a food processor, process graham crackers until finely ground.",
+    "Stir in melted butter and salt.",
+    "Press mixture into a 13×9″ pan.",
+    "Bake for 5 minutes and remove from oven.",
+    "Sprinkle chocolate chips over the crust.",
+    "Drizzle condensed milk over graham crackers.",
+    "Top with marshmallows.",
+    "Bake for 20 minutes more, until marshmallows are lightly browned.",
+    "Let cool completely."
+  ],
+  "notes": [
+    "To brown marshmallows to 'perfect' brown, place under broiler for a few seconds.",
+    "Super easy recipe.",
+    "Often made for church summer events."
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "smores-ooey-gooey-bars",
   "source_file": "S’mores Ooey Gooey Bars.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

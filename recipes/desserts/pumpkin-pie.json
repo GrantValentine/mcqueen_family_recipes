@@ -7,23 +7,33 @@
     "2 cups canned pureed pumpkin",
     "1 tsp ground ginger",
     "1 ½ tsp cinnamon",
-    "½ tsp each cloves, allspice, and cardamom",
+    "½ tsp cloves",
+    "½ tsp allspice",
+    "½ tsp cardamom",
     "Pinch of salt",
     "¾ cup heavy cream",
     "¾ cup half-n-half",
     "Unbaked piecrust"
   ],
   "instructions": [
-    "Preheat oven to 450 degrees F. Beat eggs and sugar together until light and fluffy. Stir in pumpkin, spices, and salt; mix thoroughly. Stir in cream and half-n-half.",
-    "Place piecrust in 9-inch pie tin. Pour in filling.",
-    "Bake at 450 degrees F for 8 minutes, then reduce heat to 325 degrees F and bake for another 40-45 minutes or until filling is just set.",
-    "Let cool and serve with freshly whipped cream.",
-    "Mark’s favorite pie that I make at Thanksgiving. Adapted from Silver Palate cookbook."
+    "Preheat oven to 450 degrees F.",
+    "Beat eggs and sugar together until light and fluffy.",
+    "Stir in pumpkin, spices, and salt; mix thoroughly.",
+    "Stir in cream and half-n-half.",
+    "Place piecrust in 9-inch pie tin.",
+    "Pour filling into piecrust.",
+    "Bake at 450 degrees F for 8 minutes.",
+    "Reduce heat to 325 degrees F and bake for another 40-45 minutes or until filling is just set.",
+    "Let cool and serve with freshly whipped cream."
   ],
-  "notes": [],
+  "notes": [
+    "Mark's favorite pie that is made at Thanksgiving.",
+    "Adapted from Silver Palate cookbook."
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "pumpkin-pie",
   "source_file": "Pumpkin Pie.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

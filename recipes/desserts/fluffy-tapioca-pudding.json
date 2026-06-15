@@ -1,9 +1,6 @@
 {
   "title": "Fluffy Tapioca Pudding",
-  "ingredients": [],
-  "instructions": [],
-  "notes": [
-    "My Grandmother’s (Oma’s) recipe",
+  "ingredients": [
     "3 tbsp. Minute Tapioca",
     "3 tbsp. sugar",
     "1 egg yolk",
@@ -11,13 +8,32 @@
     "1/8 tsp. salt",
     "2 cups milk",
     "1 egg white",
-    "¾ tsp. vanilla",
-    "Mix tapioca, salt, 3 tbsp. sugar, milk and egg yolk in heavy saucepan (or use double boiler).  Let stand for 5 minutes.  Beat egg white until foamy; gradually beat in 2 tbsp. sugar, beating to soft peaks.  Set aside.  Cook tapioca mixture over medium heat to a full boil, stirring constantly.  Remove from heat as soon as mixture reaches full boiling point.  Gradually add to beaten white, stirring quickly just until blended.  Stir in vanilla.  Cool 20 minutes to thicken.  Stir.  Serve warm or chilled with freshly whipped, lightly sweetened cream. (I always triple or quadruple the recipe.)",
-    "This is my ultimate comfort food – as a child and now!"
+    "¾ tsp. vanilla"
+  ],
+  "instructions": [
+    "Mix tapioca, salt, 3 tbsp. sugar, milk and egg yolk in heavy saucepan (or use double boiler).",
+    "Let stand for 5 minutes.",
+    "Beat egg white until foamy.",
+    "Gradually beat in 2 tbsp. sugar, beating to soft peaks.",
+    "Set aside the beaten egg white.",
+    "Cook tapioca mixture over medium heat to a full boil, stirring constantly.",
+    "Remove from heat as soon as mixture reaches full boiling point.",
+    "Gradually add the hot tapioca mixture to the beaten egg white, stirring quickly just until blended.",
+    "Stir in vanilla.",
+    "Cool for 20 minutes to thicken.",
+    "Stir.",
+    "Serve warm or chilled with freshly whipped, lightly sweetened cream."
+  ],
+  "notes": [
+    "My Grandmother's (Oma's) recipe",
+    "This is my ultimate comfort food – as a child and now!",
+    "I always triple or quadruple the recipe.",
+    "Can be served warm or chilled"
   ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "fluffy-tapioca-pudding",
   "source_file": "Fluffy Tapioca Pudding.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

@@ -7,17 +7,8 @@
     "½ red onion, thinly sliced",
     "3 scallions, thinly sliced",
     "4 slices bacon, cooked crisp and crumbled (optional)",
-    "Cayenne nuts (see recipe below)",
-    "Raspberry vinaigrette (see recipe below)",
-    "½ cup olive oil",
-    "3 tablespoons raspberry vinegar",
-    "1 tablespoon minced shallots (optional)",
-    "¼ teaspoon salt",
-    "⅛ teaspoon white pepper"
-  ],
-  "instructions": [
-    "Tear lettuces into bite-size pieces and place in a large bowl. Chill. When ready to serve, add cheese, onion, scallions, bacon (if using), and cayenne nuts. Toss with vinaigrette and serve immediately.",
-    "Cayenne Nuts",
+    "Cayenne nuts",
+    "Raspberry vinaigrette",
     "⅓ cup sugar",
     "4 tablespoons butter",
     "¼ cup fresh orange juice",
@@ -26,14 +17,33 @@
     "¼–½ teaspoon cayenne pepper",
     "¼ teaspoon ground mace",
     "1 pound pecan halves",
-    "Preheat oven to 250°F. Line a jelly roll pan with foil.\nIn a heavy skillet over low heat, combine sugar, butter, orange juice, salt, cinnamon, cayenne, and mace. Stir until butter melts and sugar dissolves. Increase heat to medium, add pecans, and toss until coated.\nSpread nuts in a single layer on prepared pan. Bake for 1 hour, stirring every 15 minutes. Remove to rack and separate nuts with a fork. Cool completely.\nStore in an airtight container up to 5 days or freeze up to 1 month. Bring to room temperature before serving. If sticky, reheat on a foil-lined pan at 250°F until crisp.",
-    "Raspberry Vinaigrette",
-    "Combine all ingredients in a blender or jar and blend or shake until emulsified."
+    "½ cup olive oil",
+    "3 tablespoons raspberry vinegar",
+    "1 tablespoon minced shallots (optional)",
+    "¼ teaspoon salt",
+    "⅛ teaspoon white pepper"
   ],
-  "notes": [],
+  "instructions": [
+    "Tear Boston lettuce and green leaf lettuce into bite-size pieces and place in a large bowl. Chill.",
+    "Preheat oven to 250°F and line a jelly roll pan with foil.",
+    "In a heavy skillet over low heat, combine sugar, butter, orange juice, salt, cinnamon, cayenne, and mace. Stir until butter melts and sugar dissolves.",
+    "Increase heat to medium, add pecans, and toss until coated.",
+    "Spread nuts in a single layer on prepared pan and bake for 1 hour, stirring every 15 minutes.",
+    "Remove nuts to rack and separate with a fork. Cool completely.",
+    "Combine olive oil, raspberry vinegar, minced shallots, salt, and white pepper in a blender or jar and blend or shake until emulsified.",
+    "When ready to serve the salad, add cheese, onion, scallions, bacon (if using), and cayenne nuts to the chilled lettuce.",
+    "Toss with vinaigrette and serve immediately."
+  ],
+  "notes": [
+    "Cayenne nuts can be stored in an airtight container up to 5 days or frozen up to 1 month.",
+    "Bring cayenne nuts to room temperature before serving.",
+    "If cayenne nuts become sticky, reheat on a foil-lined pan at 250°F until crisp.",
+    "Bacon is optional in the salad."
+  ],
   "category": "Salads",
   "category_slug": "salads",
   "slug": "center-stage-salad",
   "source_file": "Center Stage Salad.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

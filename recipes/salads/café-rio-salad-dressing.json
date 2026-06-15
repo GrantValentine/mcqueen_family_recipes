@@ -2,11 +2,11 @@
   "title": "Café Rio Salad Dressing",
   "ingredients": [
     "1 pkg. Ranch dressing mix",
-    "4 tomatillos (remove papery skin), rough chop",
+    "4 tomatillos, papery skin removed, rough chopped",
     "1/2 cup cottage cheese",
-    "½ cup sour cream",
+    "1/2 cup sour cream",
     "1/2 cup buttermilk",
-    "1 cup (or more) cilantro, rough chop",
+    "1 cup (or more) cilantro, rough chopped",
     "3 cloves garlic",
     "1/8 tsp cayenne pepper",
     "1-2 tsp green Tabasco sauce",
@@ -20,5 +20,6 @@
   "category_slug": "salads",
   "slug": "café-rio-salad-dressing",
   "source_file": "Café Rio Salad Dressing.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

@@ -6,21 +6,34 @@
     "1 TBSP vanilla",
     "3 cups flour",
     "¼ cup heavy cream",
-    "1 cup semisweet choc chips",
-    "2 tsp light corn syrum"
+    "1 cup semisweet chocolate chips",
+    "2 tsp light corn syrup"
   ],
   "instructions": [
-    "Preheat oven to 325 degrees.  Blend butter until smooth in a large bowl using an electric mixer set on medium speed.  Slowly blend in the powdered sugar.  Scrape down the sides of the bowl, then add vanilla extract and combine thoroughly.  Add flour and mix at low speed until well blended.",
-    "Divide dough into 2 roughly equal pieces.  Flatten each piece into a disk and wrap in plastic wrap.  Refrigerate until firm, about 1 ½ hours.",
-    "On a floured board using a floured rolling pin, roll out disks to 1/8 inch thickness.  Cut out with heart cookie cutter.  Bake on ungreased cookie sheet for 16-18 minutes.  Transfer cookies to a cool, flat surface until completely cool.",
-    "Chocolate glaze:",
-    "Heat cream until scalded.  Stir in choc chips and corn syrup, cover and let stand for 15 minutes.  Whisk until well blended.  Dip in ½ of cookie.",
+    "Preheat oven to 325 degrees.",
+    "Blend butter until smooth in a large bowl using an electric mixer set on medium speed.",
+    "Slowly blend in the powdered sugar.",
+    "Scrape down the sides of the bowl, then add vanilla extract and combine thoroughly.",
+    "Add flour and mix at low speed until well blended.",
+    "Divide dough into 2 roughly equal pieces.",
+    "Flatten each piece into a disk and wrap in plastic wrap.",
+    "Refrigerate until firm, about 1 ½ hours.",
+    "On a floured board using a floured rolling pin, roll out disks to 1/8 inch thickness.",
+    "Cut out with heart cookie cutter.",
+    "Bake on ungreased cookie sheet for 16-18 minutes.",
+    "Transfer cookies to a cool, flat surface until completely cool.",
+    "Heat cream until scalded.",
+    "Stir in chocolate chips and corn syrup, cover and let stand for 15 minutes.",
+    "Whisk chocolate glaze until well blended.",
+    "Dip half of each cookie into the chocolate glaze."
+  ],
+  "notes": [
     "Hide cookies if Grant is around unless someone else likes to only eat the undipped side."
   ],
-  "notes": [],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "shortbread-hearts-dipped-in-chocolate",
   "source_file": "Shortbread Hearts dipped in chocolate.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

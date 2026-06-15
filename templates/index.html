@@ -3,7 +3,6 @@
 
 <!-- Hero -->
 <div class="wf-hero">
-  <p style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:0.75rem;">Christmas 2025</p>
   <h1>Julie's Family Recipes</h1>
   <p style="margin-top:0.5rem;">{{ total }} recipes &nbsp;·&nbsp; {{ categories|length }} categories</p>
 </div>
@@ -15,25 +14,9 @@
   {% if intro_paragraphs %}
   <section style="margin-bottom:4rem;">
 
-    <!-- Floral sprig above letter -->
+    <!-- Floral motif above letter -->
     <div style="text-align:center; margin-bottom:1.5rem;">
-      <svg width="180" height="28" viewBox="0 0 180 28" fill="none" stroke="#1f2ca3" stroke-linecap="round" aria-hidden="true">
-        <path stroke-width="0.8" d="M20,18 C40,13 65,19 90,15 C115,11 140,17 160,14"/>
-        <path stroke-width="0.6" d="M55,15 C56,10 59,9 57,14"/>
-        <path stroke-width="0.6" d="M90,15 C91,10 94,9 92,14"/>
-        <path stroke-width="0.6" d="M125,14 C126,9 129,8 127,13"/>
-        <circle cx="40"  cy="18" r="2"   fill="#1f2ca3" opacity="0.45" stroke="none"/>
-        <circle cx="75"  cy="16" r="1.7" fill="#1f2ca3" opacity="0.4"  stroke="none"/>
-        <circle cx="110" cy="16" r="2"   fill="#1f2ca3" opacity="0.4"  stroke="none"/>
-        <circle cx="145" cy="15" r="1.7" fill="#1f2ca3" opacity="0.38" stroke="none"/>
-        <!-- Center bloom -->
-        <g transform="translate(90,6)">
-          <path stroke-width="0.9" d="M0,0 C-2,-4 0,-7 3,-6 C6,-5 5,-1 2,0"/>
-          <path stroke-width="0.9" d="M0,0 C2,-4 5,-5 6,-2 C7,1 4,4 1,2"/>
-          <path stroke-width="0.9" d="M0,0 C4,2 5,5 2,6 C-1,7 -4,4 -2,1"/>
-          <circle cx="0" cy="0" r="1.8" fill="#1f2ca3" opacity="0.55" stroke="none"/>
-        </g>
-      </svg>
+      <img src="/public/assets/willow/blue-flower-motif.png" alt="" aria-hidden="true" class="floral-divider" style="max-width:260px;">
     </div>
 
     <div class="letter-wrap">
@@ -42,28 +25,11 @@
       <div class="letter-body">
         {% for para in intro_paragraphs %}
           {% if loop.last and intro_paragraphs|length > 1 %}
-            <!-- Signature paragraph -->
             <p class="letter-signature">{{ para }}</p>
-          {% elif not loop.first or intro_paragraphs|length == 1 %}
-            {% if loop.index <= 4 %}
-            <p>{{ para }}</p>
-            {% endif %}
           {% else %}
             <p>{{ para }}</p>
           {% endif %}
         {% endfor %}
-        {% if intro_paragraphs|length > 5 %}
-        <details style="margin-top:1rem;">
-          <summary style="cursor:pointer; font-family:'Fraunces',serif; font-style:italic; font-size:0.88rem; color:var(--dusty-rose); list-style:none;">
-            Continue reading…
-          </summary>
-          <div style="margin-top:1rem;" class="letter-body">
-            {% for para in intro_paragraphs[4:-1] %}
-            <p>{{ para }}</p>
-            {% endfor %}
-          </div>
-        </details>
-        {% endif %}
       </div>
 
       <!-- Wax seal / end mark -->
@@ -76,13 +42,9 @@
       </div>
     </div>
 
-    <!-- Floral sprig below letter -->
+    <!-- Floral motif below letter -->
     <div style="text-align:center; margin-top:1.5rem;">
-      <svg width="180" height="28" viewBox="0 0 180 28" fill="none" stroke="#1f2ca3" stroke-linecap="round" aria-hidden="true">
-        <path stroke-width="0.8" d="M20,14 C40,17 65,11 90,15 C115,19 140,13 160,16"/>
-        <circle cx="55"  cy="12" r="2"   fill="#1f2ca3" opacity="0.42" stroke="none"/>
-        <circle cx="125" cy="17" r="1.8" fill="#1f2ca3" opacity="0.38" stroke="none"/>
-      </svg>
+      <img src="/public/assets/willow/blue-flower-motif.png" alt="" aria-hidden="true" class="floral-divider" style="max-width:260px;">
     </div>
   </section>
   {% endif %}
@@ -97,54 +59,68 @@
       <a class="plate-link" href="{{ root_path }}{{ cat.slug }}/" title="{{ cat.name }} — {{ cat.count }} recipes">
         <div class="plate-card">
           <!-- Plate SVG rim -->
-          <svg class="plate-card-svg" viewBox="0 0 175 175" fill="none" aria-hidden="true">
-            <!-- Outer rim -->
-            <circle cx="87.5" cy="87.5" r="84" stroke="#1f2ca3" stroke-width="1.5"/>
-            <!-- Decorative ring -->
-            <circle cx="87.5" cy="87.5" r="74" stroke="#1f2ca3" stroke-width="0.5" opacity="0.4"/>
-            <!-- Inner plate edge -->
-            <circle cx="87.5" cy="87.5" r="64" stroke="#1f2ca3" stroke-width="0.8" opacity="0.6"/>
-
-            <!-- 8 small floral motifs on the rim at r≈79 -->
-            <!-- Top (87.5, 8.5) -->
-            <g transform="translate(87.5,8.5)">
-              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
-              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+          <svg class="plate-card-svg" viewBox="0 0 185 185" fill="none" aria-hidden="true">
+            <!-- Solid blue rim -->
+            <circle cx="92.5" cy="92.5" r="91" fill="#1f2ca3"/>
+            <!-- Outer edge highlight -->
+            <circle cx="92.5" cy="92.5" r="91" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <!-- Geometric cell border across the rim: white dashes -->
+            <circle cx="92.5" cy="92.5" r="84" fill="none"
+              stroke="rgba(255,255,255,0.32)" stroke-width="11" stroke-dasharray="8.5 5.5"/>
+            <!-- Fine separator line at inner edge of rim -->
+            <circle cx="92.5" cy="92.5" r="78.5" fill="none"
+              stroke="rgba(255,255,255,0.6)" stroke-width="0.9"/>
+            <!-- White plate well -->
+            <circle cx="92.5" cy="92.5" r="78" fill="white"/>
+            <!-- Bold outer ring of well -->
+            <circle cx="92.5" cy="92.5" r="78" stroke="#1f2ca3" stroke-width="2"/>
+            <!-- First inner decorative ring -->
+            <circle cx="92.5" cy="92.5" r="73.5" stroke="#1f2ca3" stroke-width="0.7" opacity="0.5"/>
+            <!-- Second inner decorative ring -->
+            <circle cx="92.5" cy="92.5" r="70" stroke="#1f2ca3" stroke-width="0.4" opacity="0.28"/>
+            <!-- 8 accent dots between the inner rings (at r=71.75) -->
+            <g fill="#1f2ca3" opacity="0.38">
+              <circle cx="92.5"  cy="20.75" r="2"/>
+              <circle cx="143.2" cy="41.8"  r="2"/>
+              <circle cx="164.25" cy="92.5" r="2"/>
+              <circle cx="143.2" cy="143.2" r="2"/>
+              <circle cx="92.5"  cy="164.25" r="2"/>
+              <circle cx="41.8"  cy="143.2" r="2"/>
+              <circle cx="20.75" cy="92.5"  r="2"/>
+              <circle cx="41.8"  cy="41.8"  r="2"/>
             </g>
-            <!-- Top-right (143, 43) -->
-            <g transform="translate(143,43) rotate(45)">
-              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
-              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
-            </g>
-            <!-- Right (166.5, 87.5) -->
-            <g transform="translate(166.5,87.5) rotate(90)">
-              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
-              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
-            </g>
-            <!-- Bottom-right (143, 132) -->
-            <g transform="translate(143,132) rotate(135)">
-              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
-              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
-            </g>
-            <!-- Bottom (87.5, 166.5) -->
-            <g transform="translate(87.5,166.5) rotate(180)">
-              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
-              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
-            </g>
-            <!-- Bottom-left (32, 132) -->
-            <g transform="translate(32,132) rotate(225)">
-              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
-              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
-            </g>
-            <!-- Left (8.5, 87.5) -->
-            <g transform="translate(8.5,87.5) rotate(270)">
-              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
-              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
-            </g>
-            <!-- Top-left (32, 43) -->
-            <g transform="translate(32,43) rotate(315)">
-              <path d="M0,0 C-2,3 -1,6 0,5 C1,6 2,3 0,0" stroke="#1f2ca3" stroke-width="0.7"/>
-              <circle cx="0" cy="5" r="1.3" fill="#1f2ca3" opacity="0.45" stroke="none"/>
+            <!-- Subtle willow sprigs at 4 quadrant positions -->
+            <g stroke="#1f2ca3" stroke-linecap="round" opacity="0.13" fill="none">
+              <!-- Top -->
+              <path stroke-width="1" d="M92.5,48 C90,44 87,44 88,47"/>
+              <path stroke-width="1" d="M92.5,48 C95,44 98,44 97,47"/>
+              <path stroke-width="0.7" d="M90,46 C88,43 89,41 91,43"/>
+              <path stroke-width="0.7" d="M95,46 C97,43 96,41 94,43"/>
+              <circle cx="92.5" cy="49" r="1.2" fill="#1f2ca3" stroke="none"/>
+              <!-- Right -->
+              <g transform="translate(92.5,92.5) rotate(90) translate(-92.5,-92.5)">
+                <path stroke-width="1" d="M92.5,48 C90,44 87,44 88,47"/>
+                <path stroke-width="1" d="M92.5,48 C95,44 98,44 97,47"/>
+                <path stroke-width="0.7" d="M90,46 C88,43 89,41 91,43"/>
+                <path stroke-width="0.7" d="M95,46 C97,43 96,41 94,43"/>
+                <circle cx="92.5" cy="49" r="1.2" fill="#1f2ca3" stroke="none"/>
+              </g>
+              <!-- Bottom -->
+              <g transform="translate(92.5,92.5) rotate(180) translate(-92.5,-92.5)">
+                <path stroke-width="1" d="M92.5,48 C90,44 87,44 88,47"/>
+                <path stroke-width="1" d="M92.5,48 C95,44 98,44 97,47"/>
+                <path stroke-width="0.7" d="M90,46 C88,43 89,41 91,43"/>
+                <path stroke-width="0.7" d="M95,46 C97,43 96,41 94,43"/>
+                <circle cx="92.5" cy="49" r="1.2" fill="#1f2ca3" stroke="none"/>
+              </g>
+              <!-- Left -->
+              <g transform="translate(92.5,92.5) rotate(270) translate(-92.5,-92.5)">
+                <path stroke-width="1" d="M92.5,48 C90,44 87,44 88,47"/>
+                <path stroke-width="1" d="M92.5,48 C95,44 98,44 97,47"/>
+                <path stroke-width="0.7" d="M90,46 C88,43 89,41 91,43"/>
+                <path stroke-width="0.7" d="M95,46 C97,43 96,41 94,43"/>
+                <circle cx="92.5" cy="49" r="1.2" fill="#1f2ca3" stroke="none"/>
+              </g>
             </g>
           </svg>
 

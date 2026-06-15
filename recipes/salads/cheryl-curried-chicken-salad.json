@@ -1,24 +1,35 @@
 {
-  "title": "Cheryl’s Curried Chicken Salad",
+  "title": "Cheryl's Curried Chicken Salad",
   "ingredients": [
-    "Cheryl gave me this recipe in the early 1990s. It quickly became a staple recipe when I hosted baby and bridal showers. I made a massive amount for Tiffany Valentine’s wedding reception, served in mini croissants. This recipe is yummy as a salad with greens, avocado slices, and fresh tomatoes; or a salad with greens, fresh fruit (grapes, pineapple, strawberries, cantaloupe) and avocado; or served in croissants with avocado and sliced iceberg lettuce; or served in butter lettuce cups.",
-    "2/3 cup mayonnaise (my favorite is Best Foods)",
+    "2/3 cup mayonnaise",
     "2 Tbsp fresh lemon juice",
-    "1 tsp. salt",
-    "1 tsp. curry powder",
-    "¼ tsp. fresh ground pepper",
-    "In a larger bowl, place",
-    "2 ½ cups cooked chicken breast, diced",
-    "¾-1 cup diced celery."
+    "1 tsp salt",
+    "1 tsp curry powder",
+    "1/4 tsp fresh ground pepper",
+    "2 1/2 cups cooked chicken breast, diced",
+    "3/4-1 cup diced celery",
+    "1/4 cup toasted, slivered almonds"
   ],
   "instructions": [
-    "In a small bowl, whisk together the following ingredients to make the curry dressing:",
-    "Add the dressing and stir well. Serve on platter with ¼ cup toasted, slivered almonds (if not serving to Grant)."
+    "In a small bowl, whisk together the mayonnaise, lemon juice, salt, curry powder, and pepper to make the curry dressing.",
+    "In a larger bowl, place the diced cooked chicken breast and diced celery.",
+    "Add the dressing to the chicken and celery and stir well.",
+    "Serve on a platter topped with toasted, slivered almonds."
   ],
-  "notes": [],
+  "notes": [
+    "Cheryl gave this recipe in the early 1990s and it became a staple for baby and bridal showers.",
+    "A massive amount was made for Tiffany Valentine's wedding reception, served in mini croissants.",
+    "Can be served as a salad with greens, avocado slices, and fresh tomatoes.",
+    "Can be served as a salad with greens and fresh fruit such as grapes, pineapple, strawberries, and cantaloupe with avocado.",
+    "Can be served in croissants with avocado and sliced iceberg lettuce.",
+    "Can be served in butter lettuce cups.",
+    "Best Foods is the preferred mayonnaise brand.",
+    "Omit almonds if serving to Grant."
+  ],
   "category": "Salads",
   "category_slug": "salads",
   "slug": "cheryl-curried-chicken-salad",
   "source_file": "Cheryl Curried Chicken Salad.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

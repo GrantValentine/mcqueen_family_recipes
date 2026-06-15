@@ -8,17 +8,29 @@
     "¼ cup chicken broth",
     "¼ cup heavy cream",
     "1 tbsp canned crushed tomatoes",
-    "16 raspberries",
-    "Melt the butter in heavy skillet, turn heat to medium high. Sear each side of chicken breast. Remove from skillet and reserve."
+    "16 raspberries"
   ],
   "instructions": [
-    "Add onion to the pan and cook over low heat until tender. Add the vinegar, raise the heat and cook uncovered until vinegar is reduced to a syrupy spoonful. Whisk in the chicken broth, heavy cream and crushed tomatoes, simmer for 1 minute.",
-    "Return chicken breasts to skillet and simmer gently in sauce, basting often, until they are just done and sauce is reduced and slightly thickened, about 5 minutes. Remove chicken from skillet and place on platter or plates. Add raspberries to the sauce and cook over low heat for 1 minute. Do not stir, swirl to avoid breaking raspberries. Pour sauce over chicken and serve with rice pilaf or wild rice."
+    "Melt the butter in a heavy skillet and turn heat to medium high.",
+    "Sear each side of the chicken breasts.",
+    "Remove chicken from skillet and reserve.",
+    "Add onion to the pan and cook over low heat until tender.",
+    "Add the vinegar, raise the heat, and cook uncovered until vinegar is reduced to a syrupy spoonful.",
+    "Whisk in the chicken broth, heavy cream, and crushed tomatoes.",
+    "Simmer for 1 minute.",
+    "Return chicken breasts to skillet and simmer gently in sauce, basting often, until they are just done and sauce is reduced and slightly thickened, about 5 minutes.",
+    "Remove chicken from skillet and place on a platter or plates.",
+    "Add raspberries to the sauce and cook over low heat for 1 minute, swirling gently to avoid breaking the raspberries.",
+    "Pour sauce over chicken and serve with rice pilaf or wild rice."
   ],
-  "notes": [],
+  "notes": [
+    "Do not stir the raspberries in the sauce; swirl instead to avoid breaking them.",
+    "Serve with rice pilaf or wild rice."
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "raspberry-chicken",
   "source_file": "Raspberry Chicken.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

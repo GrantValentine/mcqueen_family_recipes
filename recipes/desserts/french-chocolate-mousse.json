@@ -11,16 +11,26 @@
     "Whipped cream and chocolate shavings, for garnish"
   ],
   "instructions": [
-    "Melt chocolate and butter together in a heatproof bowl set over barely simmering water, stirring until smooth. Remove from heat and cool slightly. Whisk in egg yolks one at a time. Set aside.",
-    "In a separate bowl, beat egg whites until foamy. Add cream of tartar and continue beating. Gradually add ¼ cup sugar and beat until stiff peaks form.",
-    "In another bowl, whip cream until slightly thickened. Add remaining 2 tablespoons sugar and vanilla; whip to soft peaks.",
-    "Fold egg whites gently into the chocolate mixture to lighten it, then fold in whipped cream just until combined.",
-    "Divide into serving glasses, cover, and refrigerate several hours. Garnish with whipped cream and chocolate shavings before serving."
+    "Melt chocolate and butter together in a heatproof bowl set over barely simmering water, stirring until smooth.",
+    "Remove from heat and cool slightly.",
+    "Whisk in egg yolks one at a time.",
+    "Set aside the chocolate mixture.",
+    "In a separate bowl, beat egg whites until foamy.",
+    "Add cream of tartar and continue beating.",
+    "Gradually add ¼ cup sugar and beat until stiff peaks form.",
+    "In another bowl, whip cold cream until slightly thickened.",
+    "Add remaining 2 tablespoons sugar and vanilla to the cream; whip to soft peaks.",
+    "Fold egg whites gently into the chocolate mixture to lighten it.",
+    "Fold in whipped cream just until combined.",
+    "Divide into serving glasses and cover.",
+    "Refrigerate several hours.",
+    "Garnish with whipped cream and chocolate shavings before serving."
   ],
   "notes": [],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "french-chocolate-mousse",
   "source_file": "French Chocolate Mousse.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

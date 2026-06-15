@@ -1,33 +1,47 @@
 {
   "title": "Salted Caramel Butter Bars",
   "ingredients": [
-    "For the Crust:",
-    "1 lb. salted butter room temp",
+    "1 lb. salted butter, room temperature",
     "1 cup sugar",
     "1½ cups powdered sugar",
-    "2 Tbs vanilla",
+    "2 tablespoons vanilla",
     "4 cups flour",
-    "For the Filling:",
     "1 bag (14 oz.) caramel candies (about 50 individual caramels), unwrapped",
     "⅓ cup cream",
     "½ teaspoon vanilla",
-    "*1 T. coarse sea salt (optional)",
-    "To make the crust:",
-    "Preheat oven to 325°"
+    "1 tablespoon coarse sea salt (optional)"
   ],
   "instructions": [
-    "In a large bowl, combine the butter and sugars. Using mixer on medium speed, beat together until creamy. Add the vanilla and beat until combined. Sift the flour into the butter mixture and beat on low speed until a smooth soft dough forms.",
-    "Spray a 9x13 inch baking pan lightly with non-stick cooking spray. Press one-third of the dough evenly into the pan to form a bottom crust. Wrap remaining dough in plastic wrap and chill in refrigerator.",
-    "Bake crust until firm and the edges are a pale golden brown approx 20 minutes. Transfer pan to a wire rack and let cool about 15 minutes.",
-    "While the bottom crust is baking and the remaining dough is chilling, make the caramel filling. Place the unwrapped caramels in a microwave-safe bowl. Add the cream. Microwave on high for 1 minute. Remove from the microwave and stir until smooth. If caramels are not completely melted, microwave on high for 30-second intervals, stirring after each interval, until smooth.  Once the caramel is melted add in your 1/2 tsp vanilla and stir until combined.",
-    "Pour the caramel filling over the crust. If you are going to salt the caramel sprinkle it on caramel layer now.  Remove the remaining chilled dough from the refrigerator and crumble it evenly over the caramel.  Return the pan to the oven and bake until the filling is bubbly and the crumbled shortbread topping is firm and lightly golden, about 25 - 30 minutes.",
-    "Let cool before cutting into squares.",
-    "Read more: http://cookiesandcups.com/dont-hate-me-because-im-butter-ful/#ixzz390TYXNv4"
+    "Preheat oven to 325°.",
+    "In a large bowl, combine the butter and sugars.",
+    "Using mixer on medium speed, beat together until creamy.",
+    "Add the vanilla and beat until combined.",
+    "Sift the flour into the butter mixture and beat on low speed until a smooth soft dough forms.",
+    "Spray a 9x13 inch baking pan lightly with non-stick cooking spray.",
+    "Press one-third of the dough evenly into the pan to form a bottom crust.",
+    "Wrap remaining dough in plastic wrap and chill in refrigerator.",
+    "Place the unwrapped caramels in a microwave-safe bowl and add the cream.",
+    "Microwave on high for 1 minute.",
+    "Remove from the microwave and stir until smooth.",
+    "If caramels are not completely melted, microwave on high for 30-second intervals, stirring after each interval, until smooth.",
+    "Once the caramel is melted, add in the ½ teaspoon vanilla and stir until combined.",
+    "Bake crust until firm and the edges are a pale golden brown, approximately 20 minutes.",
+    "Transfer pan to a wire rack and let cool about 15 minutes.",
+    "Pour the caramel filling over the crust.",
+    "If using salt, sprinkle the coarse sea salt on the caramel layer.",
+    "Remove the remaining chilled dough from the refrigerator and crumble it evenly over the caramel.",
+    "Return the pan to the oven and bake until the filling is bubbly and the crumbled shortbread topping is firm and lightly golden, about 25-30 minutes.",
+    "Let cool before cutting into squares."
   ],
-  "notes": [],
+  "notes": [
+    "The coarse sea salt is optional and adds a nice contrast to the sweet caramel filling.",
+    "Make sure to let the bottom crust cool before adding the caramel filling to prevent it from melting.",
+    "Cut the bars after they have cooled completely for cleaner edges."
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "salted-caramel-butter-bars",
   "source_file": "Salted Caramel Butter Bars.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

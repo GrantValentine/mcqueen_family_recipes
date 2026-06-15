@@ -1,7 +1,6 @@
 {
   "title": "Porcupine Meatballs",
   "ingredients": [
-    "From Oma’s Cookbook",
     "1 pound lean ground beef",
     "½ cup uncooked rice",
     "½ cup bread crumbs",
@@ -9,17 +8,25 @@
     "½ tsp sage",
     "1 tsp salt",
     "1 egg",
-    "1 can Campbell’s tomato soup",
+    "1 can Campbell's tomato soup",
     "½ can water"
   ],
   "instructions": [
-    "Mix all ingredients except soup and water together. Shape into 10 meatballs and place in greased casserole. Mix soup and water together and pour over meatballs. Bake, covered for 1 hour at 350 degrees F.",
+    "Mix ground beef, rice, bread crumbs, diced onion, sage, salt, and egg together.",
+    "Shape mixture into 10 meatballs.",
+    "Place meatballs in a greased casserole dish.",
+    "Mix tomato soup and water together.",
+    "Pour soup mixture over meatballs.",
+    "Bake covered at 350 degrees F for 1 hour."
+  ],
+  "notes": [
+    "From Oma's Cookbook",
     "This was much more of a first family recipe."
   ],
-  "notes": [],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "porcupine-meatballs",
   "source_file": "Porcupine Meatballs.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

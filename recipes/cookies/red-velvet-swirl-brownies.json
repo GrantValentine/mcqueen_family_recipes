@@ -1,31 +1,40 @@
 {
   "title": "Red Velvet Swirl Brownies",
   "ingredients": [
-    "Red Velvet Brownie Layer:",
     "1 stick unsalted butter",
     "1 cup sugar",
-    "1 tsp. vanilla",
-    "¼ cup cocoa",
+    "1 tsp vanilla",
+    "¼ cup cocoa powder",
     "pinch salt",
     "1 tbsp red food coloring",
     "1 tsp vinegar",
     "2 eggs",
-    "¾ c. flour",
-    "Cream Cheese Layer:",
-    "8 oz. cream cheese, softened",
-    "¼ C. sugar",
+    "¾ cup flour",
+    "8 oz cream cheese, softened",
+    "¼ cup sugar",
     "1 egg",
-    "1/8 tsp vanilla"
+    "⅛ tsp vanilla"
   ],
   "instructions": [
-    "Preheat oven to 350 degrees.  Butter an 8x8 inch pan and set aside.",
-    "Brownie layer: In a saucepan on medium heat melt the butter.  Remove the butter to a large bowl and add the sugar, vanilla, cocoa powder, salt, food coloring, and vinegar.  In that order, mixing between additions.  Whisk the eggs in a small bowl and stir it into the cocoa mix.  Fold in the flour until lightly combined.  Pour the batter into the prepared baking pan, saving ¼ cup of the batter for the top.",
-    "Cream cheese layer: Blend together the cream cheese, sugar, egg, and vanilla in a medium bowl.  Gently spread the cream cheese layer on top of the brownie batter in the pan.  Dollop the remaining brownie batter over the cream cheese layer.  Using a skewer or the tip of a knife, drag the tip through the cream cheese mixture to create a swirl pattern.  Bake the brownies for 30 minutes.  Remove to a cooling rack and let cool."
+    "Preheat oven to 350 degrees.",
+    "Butter an 8x8 inch pan and set aside.",
+    "In a saucepan on medium heat, melt the butter.",
+    "Remove the butter to a large bowl and add the sugar, vanilla, cocoa powder, salt, food coloring, and vinegar in that order, mixing between additions.",
+    "Whisk the eggs in a small bowl and stir into the cocoa mixture.",
+    "Fold in the flour until lightly combined.",
+    "Pour the batter into the prepared baking pan, saving ¼ cup of the batter for the top.",
+    "In a medium bowl, blend together the cream cheese, sugar, egg, and vanilla.",
+    "Gently spread the cream cheese layer on top of the brownie batter in the pan.",
+    "Dollop the remaining brownie batter over the cream cheese layer.",
+    "Using a skewer or the tip of a knife, drag through the cream cheese mixture to create a swirl pattern.",
+    "Bake the brownies for 30 minutes.",
+    "Remove to a cooling rack and let cool."
   ],
   "notes": [],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "red-velvet-swirl-brownies",
   "source_file": "Red Velvet Swirl Brownies.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

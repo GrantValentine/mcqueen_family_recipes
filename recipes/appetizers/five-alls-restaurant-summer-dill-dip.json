@@ -9,17 +9,22 @@
     "½ tsp salt",
     "2 tsp Worcestershire sauce",
     "Dash of fresh ground pepper",
-    "Juice from one lemon",
-    "Five Alls is an English-themed restaurant on Highland Blvd. in Salt Lake City. It used to be famous for its prime rib and Yorkshire pudding, but the menu has now changed. This dip was served as a first course with vegetables and bread."
+    "Juice from one lemon"
   ],
   "instructions": [
-    "Combine all ingredients. Chill for flavors to blend.",
-    "This was served at Katie and Patrick’s wedding reception with the vegetable tray."
+    "Combine all ingredients.",
+    "Chill for flavors to blend."
   ],
-  "notes": [],
+  "notes": [
+    "This was served at Katie and Patrick's wedding reception with the vegetable tray.",
+    "Five Alls is an English-themed restaurant on Highland Blvd. in Salt Lake City.",
+    "It used to be famous for its prime rib and Yorkshire pudding, but the menu has now changed.",
+    "This dip was served as a first course with vegetables and bread."
+  ],
   "category": "Appetizers",
   "category_slug": "appetizers",
   "slug": "five-alls-restaurant-summer-dill-dip",
   "source_file": "Five Alls Restaurant Summer Dill Dip.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

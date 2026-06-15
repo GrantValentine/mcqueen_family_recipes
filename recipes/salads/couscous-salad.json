@@ -7,7 +7,6 @@
     "½ cup chopped fresh parsley",
     "1 large tomato, diced",
     "½ cup sliced ripe black olives",
-    "Dressing:",
     "¼ cup extra virgin olive oil",
     "¼ cup fresh lemon juice",
     "1 tsp. salt",
@@ -16,13 +15,24 @@
     "2 dashes cayenne pepper"
   ],
   "instructions": [
-    "Heat chicken broth to boiling in medium saucepan.  Turn off heat.  Quickly stir in couscous.  Cover for 5 minutes.  Fluff couscous with fork.  Place in large bowl to cool stirring occasionally with fork to prevent clumping while cooling.  Add remaining salad ingredients.  Pour amount of dressing as desired on top and stir well.  Serves 4 – 6.",
-    "(May use additional chopped vegetables or leftover chopped meat to salad as desired.)"
+    "Heat chicken broth to boiling in medium saucepan.",
+    "Turn off heat.",
+    "Quickly stir in couscous.",
+    "Cover for 5 minutes.",
+    "Fluff couscous with fork.",
+    "Place in large bowl to cool, stirring occasionally with fork to prevent clumping while cooling.",
+    "Add remaining salad ingredients (scallions, parsley, tomato, and olives).",
+    "In a separate bowl, whisk together olive oil, lemon juice, salt, minced garlic, oregano, and cayenne pepper to make dressing.",
+    "Pour desired amount of dressing on top of couscous mixture and stir well."
   ],
-  "notes": [],
+  "notes": [
+    "Serves 4-6",
+    "May use additional chopped vegetables or leftover chopped meat to salad as desired"
+  ],
   "category": "Salads",
   "category_slug": "salads",
   "slug": "couscous-salad",
   "source_file": "Couscous Salad.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

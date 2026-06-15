@@ -3,7 +3,6 @@
   "ingredients": [
     "2 pork tenderloins",
     "¼ cup butter",
-    "Dry rub:",
     "2 tbsp. brown sugar",
     "1 tsp. smoked paprika",
     "1 tsp. garlic powder",
@@ -11,18 +10,27 @@
     "1 tsp. chili powder",
     "1-2 tsp. Kosher Salt",
     "½ tsp. coarsely ground black pepper",
-    "Take tenderloins out of refrigerator 30-45 minutes before cooking.",
-    "Preheat oven to 400 degrees F."
+    "chopped parsley for serving"
   ],
   "instructions": [
-    "Mix all dry rub ingredients in small bowl. Pat tenderloins dry. Cover tenderloins with spice rub – can do right before baking or a couple of hours (refrigerator if over 45 minutes).",
-    "Place the tenderloins in a baking dish and top with butter pats. Bake, uncovered, for about 25 minutes or until pork has reached 145 degrees. Remove from oven and let rest of 10-15 minutes before slicing.",
+    "Take tenderloins out of refrigerator 30-45 minutes before cooking.",
+    "Preheat oven to 400 degrees F.",
+    "Mix all dry rub ingredients (brown sugar, smoked paprika, garlic powder, onion powder, chili powder, Kosher Salt, and black pepper) in a small bowl.",
+    "Pat tenderloins dry.",
+    "Cover tenderloins with spice rub.",
+    "Place the tenderloins in a baking dish and top with butter pats.",
+    "Bake, uncovered, for about 25 minutes or until pork has reached 145 degrees.",
+    "Remove from oven and let rest for 10-15 minutes before slicing.",
     "Slice into medallions, sprinkle with chopped parsley and serve."
   ],
-  "notes": [],
+  "notes": [
+    "Dry rub can be applied right before baking or up to a couple of hours ahead; if applying more than 45 minutes in advance, refrigerate the tenderloins.",
+    "Letting the meat rest after cooking allows juices to redistribute for more tender, juicy results."
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "easy-baked-pork-tenderloin",
   "source_file": "Easy Baked Pork Tenderloin.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

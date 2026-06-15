@@ -1,17 +1,14 @@
 {
   "title": "Cilantro Lime Shrimp Salad",
   "ingredients": [
-    "Adapted from Nordstrom Family Table Cookbook",
-    "Cilantro Lime Vinaigrette",
     "½ cup seasoned rice wine vinegar",
     "¼ cup fresh lime juice",
     "2 tbsp honey",
     "2 cloves garlic, minced",
-    "1 ½ tsp. minced canned chipotley chile in adobe sauce",
-    "½ tsp. kosher salt",
+    "1 ½ tsp minced canned chipotle chile in adobo sauce",
+    "½ tsp kosher salt",
     "¾ cup canola oil",
     "1 cup tightly packed fresh cilantro leaves",
-    "To make vinaigrette, combine the rice vinegar, lime juice, honey, garlic, chipotle and salt in a blender or a food processor. With the machine running, gradually add the canola oil. Add the cilantro and process until the vinaigrette is smooth.",
     "30 extra-large (16/20 count) shrimp, preferably wild caught, about 1 2/3 pounds, peeled and deveined",
     "¼ cup EVOO",
     "3 cloves garlic, minced",
@@ -22,19 +19,40 @@
     "2 cups shredded Monterey Jack Cheese",
     "Roasted red pepper slices",
     "Diced tomatoes",
-    "Avocado slices"
+    "Avocado slices",
+    "Crushed tortilla chips"
   ],
   "instructions": [
-    "Toss the shrimp with EVOO, garlic, ¾ tsp salt, and ¼ tsp pepper in a shallow dish. Cover and refrigerate for 30-60 minutes. Preheat a gas grill to cast iron grill pan to high. Put the corn on the grill and cover. Grill, turning occasionally, until corn is hot and most of the kernels are deep brown, about 6 minutes. Transfer to platter and let cool until easy to handle. Cut corn off cobs.",
-    "Drain the shrimp, discarding the oil. Cook shrimp on medium-heat about 2 minutes per side. Transfer to plate.",
-    "Combine greens, corn, cheese, tomatoes, and roasted red pepper in bowl. Drizzle dressing and toss. Season salad with salt and pepper. Place salad on plates, top with shrimp, and serve with remaining dressing. Top with avocado slices and crushed tortilla chips."
+    "Combine the rice vinegar, lime juice, honey, garlic, chipotle and salt in a blender or food processor.",
+    "With the machine running, gradually add the canola oil.",
+    "Add the cilantro and process until the vinaigrette is smooth.",
+    "Toss the shrimp with EVOO, garlic, ¾ tsp salt, and ¼ tsp pepper in a shallow dish.",
+    "Cover and refrigerate for 30-60 minutes.",
+    "Preheat a gas grill or cast iron grill pan to high.",
+    "Put the corn on the grill and cover.",
+    "Grill, turning occasionally, until corn is hot and most of the kernels are deep brown, about 6 minutes.",
+    "Transfer corn to platter and let cool until easy to handle.",
+    "Cut corn off cobs.",
+    "Drain the shrimp, discarding the oil.",
+    "Cook shrimp on medium-heat about 2 minutes per side.",
+    "Transfer shrimp to plate.",
+    "Combine greens, corn, cheese, tomatoes, and roasted red pepper in bowl.",
+    "Drizzle dressing and toss.",
+    "Season salad with salt and pepper.",
+    "Place salad on plates and top with shrimp.",
+    "Top with avocado slices and crushed tortilla chips.",
+    "Serve with remaining dressing."
   ],
   "notes": [
-    "When out shopping, this salad is a delicious treat at Nordstrom Cafes."
+    "Adapted from Nordstrom Family Table Cookbook",
+    "Use preferably wild caught shrimp",
+    "Marinate shrimp for 30-60 minutes before grilling",
+    "This salad is available as a delicious treat at Nordstrom Cafes"
   ],
   "category": "Salads",
   "category_slug": "salads",
   "slug": "cilantro-lime-shrimp-salad",
   "source_file": "Cilantro Lime Shrimp Salad.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

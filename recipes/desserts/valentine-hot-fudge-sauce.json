@@ -4,22 +4,31 @@
     "10 ounces good quality semi-sweet chocolate, chopped",
     "1/3 cup sifted Dutch-process cocoa",
     "1/3 cup sugar",
-    "¾ cup light corn syrup",
+    "3/4 cup light corn syrup",
     "1/3 cup heavy cream",
     "Pinch of salt",
     "1/3 cup water",
     "1 tsp. vanilla",
-    "3 tbsp. butter, cut into pieces",
-    "Melt the chocolate in a small bowl, stirring every 30-60 seconds, in the microwave.  When melted, whisk in the cocoa until dissolve, set aside."
+    "3 tbsp. butter, cut into pieces"
   ],
   "instructions": [
-    "Place the sugar, corn syrup, cream, salt and water in a medium saucepan.  Warm over low heat, without stirring, until the sugar dissolves.  Increase the heat to medium-high; simmer the mixture, stirring frequently, about 4 minutes.",
-    "Turn off the heat and whisk in the butter and vanilla.  Cool the mixture slightly, about 2 minutes, then whisk in the melted chocolate.  Serve warm over delicious ice cream."
+    "Melt the chocolate in a small bowl, stirring every 30-60 seconds, in the microwave.",
+    "When melted, whisk in the cocoa until dissolved and set aside.",
+    "Place the sugar, corn syrup, cream, salt and water in a medium saucepan.",
+    "Warm over low heat, without stirring, until the sugar dissolves.",
+    "Increase the heat to medium-high and simmer the mixture, stirring frequently, about 4 minutes.",
+    "Turn off the heat and whisk in the butter and vanilla.",
+    "Cool the mixture slightly, about 2 minutes.",
+    "Whisk in the melted chocolate.",
+    "Serve warm over ice cream."
   ],
-  "notes": [],
+  "notes": [
+    "This sauce is a Valentine favorite, perfect for serving over ice cream"
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "valentine-hot-fudge-sauce",
   "source_file": "Valentine Hot Fudge Sauce.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

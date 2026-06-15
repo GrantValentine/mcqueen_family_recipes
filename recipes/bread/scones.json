@@ -1,24 +1,34 @@
 {
   "title": "Scones",
   "ingredients": [
-    "Makes enough for 40 people (can be cut in half)",
-    "Proof 4 tbsp. yeast and 1 cup water.  Add 1 tbsp. sugar to water.",
-    "2 tbsp. salt",
+    "4 tbsp yeast",
+    "1 cup water",
+    "1 tbsp sugar",
+    "2 tbsp salt",
     "½ cup sugar",
     "1 cup oil",
     "1 cup powdered milk",
-    "4 cup water",
-    "12 cup flour",
+    "4 cups water",
+    "12 cups flour",
     "4 eggs"
   ],
   "instructions": [
-    "Mix all of the above ingredients.  Let sit ½ hour.  Roll out ½ inch thick and cut out. Drop into hot oil to cook until puffed and golden. Sprinkle with powdered sugar and serve with butter and jam. OR – can be used as a base for tacos/tostadas.",
+    "Proof 4 tbsp yeast and 1 cup water. Add 1 tbsp sugar to water.",
+    "Mix all ingredients together.",
+    "Let sit ½ hour.",
+    "Roll out ½ inch thick and cut out.",
+    "Drop into hot oil to cook until puffed and golden.",
+    "Sprinkle with powdered sugar and serve with butter and jam."
+  ],
+  "notes": [
+    "Makes enough for 40 people (can be cut in half)",
+    "Can be used as a base for tacos/tostadas",
     "Recipe from Mary Ann Back – her traditional Halloween night treat!"
   ],
-  "notes": [],
   "category": "Bread",
   "category_slug": "bread",
   "slug": "scones",
   "source_file": "Scones.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

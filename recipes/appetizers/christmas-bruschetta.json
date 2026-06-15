@@ -4,21 +4,30 @@
     "1/3 cup butter, softened",
     "1 clove garlic, minced",
     "1 can small artichoke hearts, drained and chopped",
-    "1 large seeded and diced tomato",
+    "1 large tomato, seeded and diced",
     "2 scallions (green onions), sliced",
-    "½ tsp. dried oregano",
-    "½ tsp. Cavendar’s Greek seasoning",
-    "½ cup crumbled feta cheese",
-    "¼ cup freshly grated parmesan cheese and more for topping",
-    "Baguette, sliced (“Marie, the baguettes!” IYKYK)"
+    "1/2 tsp. dried oregano",
+    "1/2 tsp. Cavendar's Greek seasoning",
+    "1/2 cup crumbled feta cheese",
+    "1/4 cup freshly grated parmesan cheese, plus more for topping",
+    "Baguette, sliced"
   ],
   "instructions": [
-    "In small bowl, blend butter and garlic. Spread garlic butter on baguette slices and toast under broiler. Mix remaining ingredients together in a separate bowl. Spoon artichoke/feta mixture on baguette slices. Sprinkle with additional parmesan cheese. Broil until bubbly and lightly browned."
+    "In a small bowl, blend softened butter and minced garlic.",
+    "Spread garlic butter on baguette slices.",
+    "Toast the buttered baguette slices under the broiler.",
+    "In a separate bowl, mix together the artichoke hearts, tomato, scallions, oregano, Greek seasoning, feta cheese, and 1/4 cup parmesan cheese.",
+    "Spoon the artichoke and feta mixture onto the toasted baguette slices.",
+    "Sprinkle additional parmesan cheese on top of each slice.",
+    "Broil until bubbly and lightly browned."
   ],
-  "notes": [],
+  "notes": [
+    "\"Marie, the baguettes!\" IYKYK"
+  ],
   "category": "Appetizers",
   "category_slug": "appetizers",
   "slug": "christmas-bruschetta",
   "source_file": "Christmas Bruschetta.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

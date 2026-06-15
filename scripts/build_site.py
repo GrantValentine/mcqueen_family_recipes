@@ -302,7 +302,7 @@ def build_site() -> int:
         intro_paragraphs=intro_paragraphs,
         categories=categories_summary,
         total=len(recipes),
-        page_title="Julie's Christmas 2025 Recipes",
+        page_title="The Valentine Family Cookbook",
         root_path="/",
     )
     (SITE_DIR / "index.html").write_text(html, encoding="utf-8")

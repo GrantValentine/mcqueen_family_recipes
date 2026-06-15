@@ -1,27 +1,36 @@
 {
   "title": "Crustless Crab Quiche",
   "ingredients": [
-    "Adapted from Pinch of Salt Lake Cookbook",
     "4 eggs",
     "1 cup sour cream",
     "½ cup grated Parmesan cheese",
     "½ cup flour",
     "¼ tsp salt",
     "4-6 drops Tabasco sauce",
-    "1 6 ½ ounce canned crabmeat, drained",
+    "1 6½ ounce canned crabmeat, drained",
     "2 tbsp butter",
     "2 shallots, minced",
     "1 cup chopped fresh mushrooms",
-    "2 cups grated Swiss cheese",
-    "A fast dish to put together, so was on our weeknight rotation list for many years!"
+    "2 cups grated Swiss cheese"
   ],
   "instructions": [
-    "Preheat oven to 350 degrees F. Combine eggs, sour cream, Parmesan cheese, flour, salt, and Tabasco sauce in large bowl and mix until thoroughly blended and smooth. Stir in crabmeat. Saute mushrooms and shallots in butter until soft and add to crab egg mixture. Pour into ungreased 10-inch pie plate or quiche pan. Bake for 45 minutes. Cool 5 minutes before serving."
+    "Preheat oven to 350 degrees F.",
+    "Combine eggs, sour cream, Parmesan cheese, flour, salt, and Tabasco sauce in large bowl and mix until thoroughly blended and smooth.",
+    "Stir in crabmeat.",
+    "Saute mushrooms and shallots in butter until soft.",
+    "Add sautéed mushrooms and shallots to crab egg mixture.",
+    "Pour mixture into ungreased 10-inch pie plate or quiche pan.",
+    "Bake for 45 minutes.",
+    "Cool 5 minutes before serving."
   ],
-  "notes": [],
+  "notes": [
+    "Adapted from Pinch of Salt Lake Cookbook",
+    "A fast dish to put together, so was on our weeknight rotation list for many years!"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "crustless-crab-quiche",
   "source_file": "Crustless Crab Quiche.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }
