@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Import Recipe — Julie's Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue:#1f2ca3; --porcelain:#fffdf9; --olive:#7c7f65; --ink:#1a1a2e; --light:#e8eaf6; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Lora',Georgia,serif; background:var(--porcelain); color:var(--ink); min-height:100vh; }
+
+    /* ── Top bar ── */
+    .top-bar {
+      background:var(--blue); color:white; padding:0 1.5rem;
+      display:flex; align-items:center; justify-content:space-between;
+      height:52px; position:sticky; top:0; z-index:100;
+    }
+    .top-bar__left { display:flex; align-items:center; gap:.9rem; }
+    .back-link { color:rgba(255,255,255,.65); font-size:.8rem; text-decoration:none; }
+    .back-link:hover { color:white; }
+    .top-bar__title { font-family:'Fraunces',serif; font-variation-settings:'opsz' 18,'SOFT' 80; font-size:1rem; }
+    .btn--ghost { font-family:'Lora',serif; font-size:.8rem; padding:.38rem .9rem; border-radius:6px;
+      border:1.5px solid rgba(255,255,255,.45); background:transparent; color:white; cursor:pointer; }
+    .btn--ghost:hover { opacity:.8; }
+
+    /* ── Banner ── */
+    .admin-banner { display:none; padding:.65rem 1.2rem; font-size:.83rem; border-radius:6px; margin:1rem 1.5rem 0; }
+    .admin-banner--error   { background:#fef2f2; border:1px solid #fca5a5; color:#b91c1c; }
+    .admin-banner--success { background:#f0fdf4; border:1px solid #86efac; color:#166534; }
+
+    /* ── Page ── */
+    .page { max-width:560px; margin:3rem auto; padding:0 1.5rem 4rem; }
+    .page__heading { font-family:'Fraunces',serif; font-variation-settings:'opsz' 36,'SOFT' 80;
+      font-size:1.6rem; color:var(--blue); margin-bottom:.4rem; }
+    .page__sub { color:var(--olive); font-size:.9rem; margin-bottom:2rem; }
+
+    /* ── Drop zone ── */
+    .drop-zone {
+      border:2px dashed rgba(31,44,163,.3); border-radius:12px;
+      background:white; padding:2.8rem 2rem; text-align:center;
+      transition:border-color .15s, background .15s; cursor:pointer;
+    }
+    .drop-zone.drag-over { border-color:var(--blue); background:var(--light); }
+    .drop-zone__icon { font-size:2.4rem; margin-bottom:.8rem; }
+    .drop-zone p { color:var(--olive); font-size:.88rem; margin-bottom:.6rem; }
+    .drop-zone__hint { font-size:.78rem !important; color:#aaa !important; margin-top:.4rem !important; }
+
+    .pick-label {
+      display:inline-block; font-family:'Fraunces',serif;
+      font-variation-settings:'opsz' 14,'SOFT' 80; font-size:.88rem;
+      background:var(--blue); color:white; padding:.42rem 1.1rem;
+      border-radius:6px; cursor:pointer; transition:opacity .15s;
+    }
+    .pick-label:hover { opacity:.85; }
+
+    /* ── File info chip ── */
+    .file-chip {
+      display:flex; align-items:center; gap:.6rem; margin-top:1.2rem;
+      background:var(--light); border-radius:8px; padding:.55rem .9rem;
+    }
+    .file-chip__name { font-size:.85rem; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .file-chip__rm { background:none; border:none; font-size:1rem; color:var(--olive);
+      cursor:pointer; line-height:1; padding:.1rem .3rem; border-radius:4px; }
+    .file-chip__rm:hover { color:#b91c1c; }
+
+    /* ── Import button ── */
+    .import-btn {
+      display:block; width:100%; margin-top:1.4rem;
+      font-family:'Fraunces',serif; font-variation-settings:'opsz' 18,'SOFT' 80;
+      font-size:1rem; font-weight:500; padding:.72rem;
+      background:var(--blue); color:white; border:none; border-radius:8px;
+      cursor:pointer; transition:opacity .15s;
+    }
+    .import-btn:hover:not(:disabled) { opacity:.88; }
+    .import-btn:disabled { opacity:.4; cursor:default; }
+
+    /* ── Loading state ── */
+    .loading-box {
+      text-align:center; padding:3rem 1rem;
+    }
+    .spinner {
+      width:40px; height:40px; border:3px solid var(--light);
+      border-top-color:var(--blue); border-radius:50%;
+      animation:spin .8s linear infinite; margin:0 auto 1.2rem;
+    }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .loading-box p { color:var(--olive); font-size:.92rem; }
+    .loading-box strong { display:block; font-family:'Fraunces',serif;
+      font-variation-settings:'opsz' 18,'SOFT' 80; font-size:1.1rem;
+      color:var(--blue); margin-bottom:.4rem; }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar__left">
+    <a class="back-link" href="/admin/">← Dashboard</a>
+    <span class="top-bar__title">Import Recipe</span>
+  </div>
+  <button class="btn--ghost" onclick="logout()">Log out</button>
+</div>
+
+<div id="admin-banner" class="admin-banner"></div>
+
+<div class="page">
+  <h1 class="page__heading">Import a Recipe</h1>
+  <p class="page__sub">Upload a PDF, Word document, or photo and Claude will extract the recipe for you to review before saving.</p>
+
+  <!-- Drop zone (shown by default) -->
+  <div id="main-ui">
+    <label class="drop-zone" id="drop-zone" for="file-input">
+      <div class="drop-zone__icon">📄</div>
+      <p>Drag &amp; drop a file here, or</p>
+      <span class="pick-label">Choose file</span>
+      <p class="drop-zone__hint">PDF · Word (.docx) · JPEG / PNG / WebP &nbsp;—&nbsp; up to 10 MB</p>
+    </label>
+    <input type="file" id="file-input" hidden
+           accept=".pdf,.docx,.doc,.jpg,.jpeg,.png,.webp,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png,image/webp,text/plain">
+
+    <div class="file-chip" id="file-chip" hidden>
+      <span>📎</span>
+      <span class="file-chip__name" id="file-chip-name"></span>
+      <button class="file-chip__rm" onclick="clearFile()" title="Remove file">✕</button>
+    </div>
+
+    <button class="import-btn" id="import-btn" onclick="startImport()" disabled>
+      Extract Recipe
+    </button>
+  </div>
+
+  <!-- Loading state (shown during processing) -->
+  <div class="loading-box" id="loading-box" hidden>
+    <div class="spinner"></div>
+    <strong>Reading your recipe…</strong>
+    <p>This usually takes 10–20 seconds.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/admin/config.js" onerror="window.ADMIN_EMAIL=null;window.NETLIFY_BUILD_HOOK=null"></script>
+<script src="/admin/admin.js"></script>
+<script>
+const ALLOWED_MIME = new Set([
+  'application/pdf',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/msword',
+  'image/jpeg', 'image/jpg', 'image/png', 'image/webp',
+  'text/plain',
+]);
+const MAX_BYTES = 10 * 1024 * 1024;
+
+let selectedFile = null;
+
+// ── Auth ──────────────────────────────────────────────────────────────────────
+(async () => { await requireAuth(); })();
+
+// ── Drop zone wiring ──────────────────────────────────────────────────────────
+const dropZone  = document.getElementById('drop-zone');
+const fileInput = document.getElementById('file-input');
+
+fileInput.addEventListener('change', e => handleFiles(e.target.files));
+
+dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  handleFiles(e.dataTransfer.files);
+});
+
+function handleFiles(files) {
+  const file = files && files[0];
+  if (!file) return;
+
+  if (!ALLOWED_MIME.has(file.type)) {
+    showBanner('Unsupported file type. Please upload a PDF, Word doc (.docx), image (JPEG/PNG/WebP), or plain text file.', 'error');
+    return;
+  }
+  if (file.size > MAX_BYTES) {
+    showBanner('File is over 10 MB. Please use a smaller or compressed version.', 'error');
+    return;
+  }
+
+  selectedFile = file;
+  document.getElementById('file-chip-name').textContent = file.name;
+  document.getElementById('file-chip').hidden = false;
+  document.getElementById('import-btn').disabled = false;
+  hideBanner();
+}
+
+function clearFile() {
+  selectedFile = null;
+  fileInput.value = '';
+  document.getElementById('file-chip').hidden = true;
+  document.getElementById('import-btn').disabled = true;
+}
+
+// ── Import flow ───────────────────────────────────────────────────────────────
+async function startImport() {
+  if (!selectedFile) return;
+
+  const { data: { session } } = await db.auth.getSession();
+  if (!session) { window.location.replace('/admin/login/'); return; }
+
+  // Fetch category + tag lists to pass into the extraction prompt
+  const [{ data: categories }, { data: tags }] = await Promise.all([
+    db.from('categories').select('id,slug,name').order('sort_order'),
+    db.from('tags').select('id,slug,label').order('label'),
+  ]);
+
+  // Switch to loading UI
+  document.getElementById('main-ui').hidden   = true;
+  document.getElementById('loading-box').hidden = false;
+  hideBanner();
+
+  try {
+    // 1. Upload file to imports bucket
+    const ext  = (selectedFile.name.split('.').pop() || 'bin').toLowerCase();
+    const path = `${Date.now()}.${ext}`;
+
+    const { error: uploadErr } = await db.storage
+      .from('imports')
+      .upload(path, selectedFile, { contentType: selectedFile.type, upsert: false });
+    if (uploadErr) throw new Error('Storage upload failed: ' + uploadErr.message);
+
+    // 2. Short-lived signed URL for the function to fetch the file
+    const { data: { signedUrl }, error: signErr } = await db.storage
+      .from('imports')
+      .createSignedUrl(path, 120);
+    if (signErr) throw new Error('Could not create signed URL: ' + signErr.message);
+
+    // 3. If it's an image, also store it in recipe-photos for potential re-use as the recipe photo
+    let pendingPhotoUrl = null;
+    const isImage = selectedFile.type.startsWith('image/');
+    if (isImage) {
+      const photoPath = `pending/${Date.now()}.${ext}`;
+      const { error: photoErr } = await db.storage
+        .from('recipe-photos')
+        .upload(photoPath, selectedFile, { contentType: selectedFile.type, upsert: false });
+      if (!photoErr) {
+        const { data: { publicUrl } } = db.storage.from('recipe-photos').getPublicUrl(photoPath);
+        pendingPhotoUrl = publicUrl;
+      }
+    }
+
+    // 4. Call the Netlify function
+    const resp = await fetch('/.netlify/functions/import-recipe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${session.access_token}`,
+      },
+      body: JSON.stringify({
+        signedUrl,
+        mimeType: selectedFile.type,
+        categories: categories || [],
+        tags:       tags       || [],
+      }),
+    });
+
+    const result = await resp.json();
+    if (!resp.ok) throw new Error(result.error || `Server error (${resp.status})`);
+
+    // 5. Store extracted data and hand off to the recipe editor for review
+    sessionStorage.setItem('pendingImport', JSON.stringify({
+      recipe:         result.recipe,
+      pendingPhotoUrl,
+      isImage,
+    }));
+
+    window.location.href = '/admin/recipe/?new=import';
+
+  } catch (err) {
+    // Restore UI so the user can try again
+    document.getElementById('main-ui').hidden   = false;
+    document.getElementById('loading-box').hidden = true;
+    showBanner('Import failed: ' + err.message, 'error');
+  }
+}
+</script>
+</body>
+</html>
