@@ -575,6 +575,8 @@ async function saveRecipe(btn) {
     sessionStorage.removeItem('pendingImport');
     // Switch URL to edit mode without a page reload
     window.history.replaceState({}, '', `/admin/recipe/?id=${recipeId}`);
+    // Auto-publish so the new recipe appears on the site without a manual rebuild
+    triggerRebuild(null, 'Recipe saved. Will show up in ~1 minute!');
 
   } else {
     // ── UPDATE existing recipe ─────────────────────────────────────────────

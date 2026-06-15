@@ -63,7 +63,7 @@ function escHtml(str) {
 
 // ── Netlify rebuild trigger ───────────────────────────────────────────────────
 
-async function triggerRebuild(btn) {
+async function triggerRebuild(btn, successMsg) {
   const hook = window.NETLIFY_BUILD_HOOK;
   if (!hook) {
     showBanner('NETLIFY_BUILD_HOOK is not configured — set it in your .env and rebuild.', 'error');
@@ -72,7 +72,7 @@ async function triggerRebuild(btn) {
   if (btn) { btn.disabled = true; btn.textContent = 'Triggering…'; }
   try {
     await fetch(hook, { method: 'POST' });
-    showBanner('Build triggered! Public site updates in ~1 minute.', 'success');
+    showBanner(successMsg || 'Build triggered! Public site updates in ~1 minute.', 'success');
   } catch {
     showBanner('Could not reach Netlify — check your build hook URL.', 'error');
   } finally {
