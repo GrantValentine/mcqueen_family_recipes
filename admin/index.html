@@ -369,7 +369,7 @@ async function addRecipe() {
     return;
   }
   document.getElementById('new-title').value = '';
-  triggerRebuild(null, 'Recipe added. Will show up in ~1 minute!');
+  await triggerRebuild(null, 'Recipe added. Will show up in ~1 minute!');
   window.location.href = `/admin/recipe/?id=${data.id}`;
 }
 
