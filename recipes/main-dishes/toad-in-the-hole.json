@@ -3,18 +3,27 @@
   "ingredients": [
     "Eggs",
     "White bread",
+    "Butter",
     "Salt & pepper"
   ],
   "instructions": [
-    "Cut out circle from piece of white bread, melt butter in frying pan or griddle, put bread in pan, crack egg and put in center hole of bread, place circle in pan and toast on both sides.  Once lightly set, flip bread over and cook on other side.  Salt and pepper as desired. Serve with toasted middle."
+    "Cut out a circle from a piece of white bread.",
+    "Melt butter in a frying pan or griddle.",
+    "Put the bread in the pan.",
+    "Crack an egg and put it in the center hole of the bread.",
+    "Place the bread circle in the pan and toast on both sides.",
+    "Once lightly set, flip the bread over and cook on the other side.",
+    "Salt and pepper as desired.",
+    "Serve with the toasted middle."
   ],
   "notes": [
-    "My grandpa, Henry Solomon, did not do a lot of cooking but had some fast meal specialties from his days as a short order cook in a diner. He took this job when the depression hit and he lost his job as an insurance salesman. He quickly learned about restaurant management and climbed the ladder as a restaurant manager. Before he retired, he was president of the company that owned Foster’s Diners (with the nickel cup of coffee), Foster’s Freezes, and the Cliff House in San Francisco.",
-    "This was one of my Grandpa’s quick meals. I loved when he made it for me."
+    "This was a quick meal specialty of Henry Solomon, who was a short order cook at a diner during the Great Depression and later became a restaurant manager and president of Foster's Diners.",
+    "A family favorite passed down from grandpa Henry."
   ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "toad-in-the-hole",
   "source_file": "Toad in the Hole.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

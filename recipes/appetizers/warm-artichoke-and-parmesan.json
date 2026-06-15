@@ -12,17 +12,24 @@
     "Salt and Pepper"
   ],
   "instructions": [
-    "Preheat oven to 400 degrees. Place 1 wonton skin in each cup of 2 mini muffin pans and gently press to form a cup. Bake 5-7 minutes until wontons just start to turn a pale golden color. Remove from oven and allow to cool.",
-    "In a food processor with steel blade attached, combine artichoke hearts, ½ cup parmesan cheese, mayo, sour cream, shallot, garlic and Tabasco sauce. Pulse until combined but small chunks of artichoke still remain.",
-    "Spoon 1 tbsp of artichoke mixture into each wonton cup then top with more freshly grated parmesan cheese. Return to oven and bake until cups turn golden brown and are warmed through. Carefully remove to serving platter and serve warm or at room temperature.",
-    "These can be made ahead and frozen. Place in 350 degree oven until warm."
+    "Preheat oven to 400 degrees.",
+    "Place 1 wonton skin in each cup of 2 mini muffin pans and gently press to form a cup.",
+    "Bake 5-7 minutes until wontons just start to turn a pale golden color.",
+    "Remove from oven and allow to cool.",
+    "In a food processor with steel blade attached, combine artichoke hearts, ½ cup parmesan cheese, mayo, sour cream, shallot, garlic and Tabasco sauce.",
+    "Pulse until combined but small chunks of artichoke still remain.",
+    "Spoon 1 tbsp of artichoke mixture into each wonton cup then top with more freshly grated parmesan cheese.",
+    "Return to oven and bake until cups turn golden brown and are warmed through.",
+    "Carefully remove to serving platter and serve warm or at room temperature."
   ],
   "notes": [
-    "I made hundreds of these for Katie and Patrick’s wedding reception."
+    "These can be made ahead and frozen. Place in 350 degree oven until warm.",
+    "Perfect for entertaining - the author made hundreds of these for a wedding reception."
   ],
   "category": "Appetizers",
   "category_slug": "appetizers",
   "slug": "warm-artichoke-and-parmesan",
   "source_file": "Warm Artichoke and Parmesan.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

@@ -1,29 +1,40 @@
 {
   "title": "Lemon and White Chocolate Mousse Parfaits with Strawberries",
   "ingredients": [
-    "Lemon Mousse",
     "5 large egg yolks",
     "½ cup sugar",
     "½ cup fresh lemon juice",
     "4 teaspoons finely grated lemon zest",
     "Pinch of salt",
-    "White Chocolate Mousse",
     "¼ cup heavy whipping cream",
     "3.5 ounces high-quality white chocolate, finely chopped",
-    "Whipped Cream & Assembly",
     "2⅔ cups heavy whipping cream, chilled",
     "Strawberries, hulled and sliced"
   ],
   "instructions": [
-    "In a heatproof bowl, whisk egg yolks, sugar, lemon juice, lemon zest, and salt. Set bowl over a saucepan of gently simmering water. Whisk constantly until mixture thickens and a thermometer reads 160–170°F, about 6 minutes. Remove from heat and cool to room temperature.",
-    "In another heatproof bowl, combine ¼ cup cream and white chocolate. Set over barely simmering water and stir until smooth and melted. Remove from heat and cool to room temperature.",
-    "Whip remaining cream to firm peaks. Divide whipped cream evenly between the lemon base and white chocolate base, folding gently until incorporated.",
-    "Layer about ¼ cup lemon mousse into each parfait glass. Top with strawberries, then ¼ cup white chocolate mousse. Repeat layers once more. Cover and refrigerate until ready to serve. Garnish with additional strawberries if desired."
+    "In a heatproof bowl, whisk egg yolks, sugar, lemon juice, lemon zest, and salt.",
+    "Set bowl over a saucepan of gently simmering water and whisk constantly until mixture thickens and a thermometer reads 160–170°F, about 6 minutes.",
+    "Remove lemon mixture from heat and cool to room temperature.",
+    "In another heatproof bowl, combine ¼ cup cream and white chocolate.",
+    "Set white chocolate bowl over barely simmering water and stir until smooth and melted.",
+    "Remove white chocolate mixture from heat and cool to room temperature.",
+    "Whip remaining chilled cream to firm peaks.",
+    "Divide whipped cream evenly between the lemon base and white chocolate base, folding gently until incorporated.",
+    "Layer about ¼ cup lemon mousse into each parfait glass.",
+    "Top with strawberries, then ¼ cup white chocolate mousse.",
+    "Repeat layers once more.",
+    "Cover and refrigerate until ready to serve.",
+    "Garnish with additional strawberries if desired."
   ],
-  "notes": [],
+  "notes": [
+    "Use a thermometer to ensure the lemon mixture reaches 160–170°F for food safety when using raw eggs",
+    "Cool both mousse bases to room temperature before folding in whipped cream to prevent deflating the cream",
+    "Whipped cream should be divided evenly between the two mousse mixtures for balanced flavor in each parfait"
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "lemon-and-white-chocolate-mousse-parfaits-with-strawberries",
   "source_file": "Lemon and White Chocolate Mousse Parfaits with Strawberries.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

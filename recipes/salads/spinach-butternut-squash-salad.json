@@ -5,24 +5,37 @@
     "1 tbsp olive oil",
     "1 tbsp honey",
     "kosher salt and freshly ground black pepper",
-    "For the vinaigrette:",
     "1 1/2 tbsp olive oil",
     "1 1/2 tbsp white balsamic vinegar",
     "1 tbsp honey",
     "1/2 tbsp minced shallots",
     "2 tsp Dijon mustard",
     "salt and fresh black pepper",
-    "For the salad:",
     "5 oz baby spinach, washed and spun dry",
     "1/4 cup raw, hulled pumpkin seeds",
     "3 tbsp dried cherries",
     "1/4 cup reduced fat crumbled gorgonzola"
   ],
-  "instructions": [],
-  "notes": [],
+  "instructions": [
+    "Preheat the oven to 400°.",
+    "In a large bowl, toss the butternut squash with 1 tablespoon of olive oil, 1 tablespoon honey, salt and fresh ground pepper.",
+    "Place the squash mixture on a baking sheet and roast in the center of the oven for 20-25 minutes, turning halfway through, or until tender.",
+    "Remove the roasted squash from the oven and let it cool to room temperature.",
+    "Meanwhile, combine the vinegar, shallots, remaining honey, and mustard in a bowl.",
+    "Whisk in the oil, a pinch of salt, and black pepper to make the vinaigrette.",
+    "Divide the spinach among 4 plates.",
+    "Top each salad with the roasted butternut squash, pumpkin seeds, dried cherries, and crumbled gorgonzola cheese.",
+    "Drizzle the dressing over each salad and serve immediately."
+  ],
+  "notes": [
+    "Make sure to wash and spin dry the spinach before using to remove excess moisture",
+    "The roasted squash can be prepared ahead and stored in the refrigerator until ready to assemble the salad",
+    "For a variation, substitute the gorgonzola with feta or goat cheese if preferred"
+  ],
   "category": "Salads",
   "category_slug": "salads",
   "slug": "spinach-butternut-squash-salad",
   "source_file": "Spinach Butternut Squash Salad .docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

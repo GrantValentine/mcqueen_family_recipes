@@ -1,9 +1,8 @@
 {
   "title": "Creamy Brownie Wafers",
   "ingredients": [
-    "For Brownie Layer:",
     "5 ounces (5 squares) unsweetened chocolate",
-    "2 ½ cubes of butter",
+    "2 ½ cubes butter",
     "5 eggs",
     "2 ½ cups sugar",
     "1 1/3 cup flour",
@@ -12,19 +11,37 @@
     "3/8 cup cream",
     "1 ¼ teaspoon vanilla extract",
     "4 ounces semisweet chocolate (2/3 cup chocolate chips)",
-    "4 tablespoons butter",
-    "Melt the chocolate and butter together in microwave.  Stir well.  Drizzle over the buttercream layer in a lacy pattern.  Chill 1 hour or longer.  Cut into squares and serve."
+    "4 tablespoons butter"
   ],
   "instructions": [
-    "Preheat oven to 350 degrees.  Lightly spray sides of jelly-roll pan with Pam.  Place parchment paper in bottom of pan.  Melt the chocolate and butter in microwave, stirring every 30 seconds to preheat chocolate from seizing.  Cool chocolate mixture slightly.  In a separate bowl, beat eggs until light and lemon-colored.  Gradually add sugar to the egg mixture.  Add the chocolate/butter mixture, stir in the flour.  Pour into prepared pan.  Bake for 15 to 20 minutes or until a toothpick poked in the center comes out clean.  Cool and chill in refrigerator.",
-    "For Vanilla Buttercream Layer:",
-    "Cream the butter thoroughly with an electric mixer.  Gradually add the powdered sugar alternately with the cream.  Add the vanilla and beat until very light and fluffy.  Spread evenly over the cooled brownie layer.  Chill in the refrigerator at least 10 minutes.",
-    "For Chocolate Glaze:"
+    "Preheat oven to 350 degrees.",
+    "Lightly spray sides of jelly-roll pan with Pam and place parchment paper in bottom of pan.",
+    "Melt the chocolate and butter in microwave, stirring every 30 seconds to prevent chocolate from seizing.",
+    "Cool chocolate mixture slightly.",
+    "In a separate bowl, beat eggs until light and lemon-colored.",
+    "Gradually add sugar to the egg mixture.",
+    "Add the chocolate/butter mixture and stir in the flour.",
+    "Pour into prepared pan.",
+    "Bake for 15 to 20 minutes or until a toothpick poked in the center comes out clean.",
+    "Cool and chill brownie layer in refrigerator.",
+    "Cream the softened butter thoroughly with an electric mixer.",
+    "Gradually add the powdered sugar alternately with the cream.",
+    "Add the vanilla and beat until very light and fluffy.",
+    "Spread buttercream evenly over the cooled brownie layer.",
+    "Chill in the refrigerator at least 10 minutes.",
+    "Melt the semisweet chocolate and butter together in microwave.",
+    "Stir well.",
+    "Drizzle chocolate glaze over the buttercream layer in a lacy pattern.",
+    "Chill 1 hour or longer.",
+    "Cut into squares and serve."
   ],
-  "notes": [],
+  "notes": [
+    "Stir chocolate every 30 seconds while melting to prevent seizing"
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "creamy-brownie-wafers",
   "source_file": "Creamy Brownie Wafers.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

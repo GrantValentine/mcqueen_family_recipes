@@ -12,19 +12,30 @@
     "¼ cup brown sugar",
     "¼ cup chicken broth",
     "1 tsp lemon extract",
-    "1 lemons, sliced paper-thin"
+    "1 lemon, sliced paper-thin"
   ],
   "instructions": [
     "Combine chicken pieces and lemon juice in bowl and marinate overnight.",
-    "Drain chicken thoroughly and pat dry. Fill a plastic bag with flour, salt, paprika, and pepper and shake well to mix. Put 2 pieces of chicken in at a time and shake, coating completely.",
-    "Preheat oven to 350 degrees F. Heat corn oil in cast iron Dutch oven until hot. Fry chicken pieces, a few at a time, until well browned and crisp, about 5 minutes on each side.",
-    "Arrange browned chicken in a single layer in a large baking sheet. Sprinkle with lemon zest and brown sugar. Mix chicken stock and lemon extract together and pour around chicken pieces. Set a thin lemon slice on the top of each piece of chicken. Bake for 35 minutes or until tender. Yummy not or cold.",
+    "Drain chicken thoroughly and pat dry.",
+    "Fill a plastic bag with flour, salt, paprika, and pepper and shake well to mix.",
+    "Put 2 pieces of chicken in the bag at a time and shake, coating completely.",
+    "Preheat oven to 350 degrees F.",
+    "Heat corn oil in cast iron Dutch oven until hot.",
+    "Fry chicken pieces, a few at a time, until well browned and crisp, about 5 minutes on each side.",
+    "Arrange browned chicken in a single layer on a large baking sheet.",
+    "Sprinkle chicken with lemon zest and brown sugar.",
+    "Mix chicken stock and lemon extract together and pour around chicken pieces.",
+    "Set a thin lemon slice on the top of each piece of chicken.",
+    "Bake for 35 minutes or until tender."
+  ],
+  "notes": [
+    "Can be served hot or cold",
     "Adapted from Silver Palate cookbook"
   ],
-  "notes": [],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "lemon-chicken",
   "source_file": "Lemon Chicken.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

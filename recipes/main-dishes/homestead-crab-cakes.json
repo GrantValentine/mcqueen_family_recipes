@@ -1,10 +1,9 @@
 {
   "title": "Homestead Crab Cakes",
   "ingredients": [
-    "1 pound jumbo crabmeat (Chef recommended can of Phillips Crabmeat – found in refrigerator section at Costco and some supermarkets), drained well",
+    "1 pound jumbo crabmeat, drained well",
     "½ cup unseasoned bread crumbs",
     "2 egg yolks, beaten",
-    "Sauce:",
     "4 ounces high quality mayonnaise",
     "½ tsp. Dijon mustard",
     "1 tsp. Worcestershire sauce",
@@ -15,6 +14,9 @@
     "1 ounce (2 tbsp.) fresh lemon juice",
     "Tabasco sauce to taste",
     "Dash of Old Bay fish seasoning",
+    "Butter and olive oil for sautéing",
+    "Spring greens mix",
+    "Sliced avocado",
     "2 cups high quality mayonnaise",
     "½ cup diced celery",
     "½ cup diced scallions",
@@ -23,7 +25,7 @@
     "¼ cup Dijon mustard",
     "¼ cup chili sauce",
     "2 tbsp white wine vinegar",
-    "2 dashes Tabasco sauce (or to taste)",
+    "2 dashes Tabasco sauce",
     "2 cloves garlic, crushed",
     "1 tsp. paprika",
     "¼ tsp cayenne pepper",
@@ -31,19 +33,32 @@
     "Juice of 1 lemon",
     "½ tsp. chopped fresh thyme",
     "1 tsp chopped fresh basil",
-    "Pinch of salt"
+    "Pinch of salt",
+    "Lemon wedges for serving"
   ],
   "instructions": [
-    "Combine all sauce ingredients well in separate bowl. To make crab cakes, place drained crabmeat in large bowl. Add bread crumbs and mix well. Add beaten egg yolks and mix thoroughly. Stir sauce into crabmeat mixture. Form into rounded patties . Saute in butter and olive oil mixture.",
-    "To serve, place crab cakes on top of spring greens mix with sliced avocado. Drizzle Spicy Remoulade Sauce on top. Serve with additional remoulade sauce and lemon wedges. Serves 4-6.",
-    "Spicy Remoulade Sauce",
-    "Mix all the above ingredients. Store in refrigerator. Also serve with other fish.",
-    "Recipe from the Homestead Resort in Virginia. Mark and I went there for a medical conference many years ago. I took a cooking class from the chef."
+    "Combine all sauce ingredients (mayonnaise through Old Bay seasoning) well in a separate bowl.",
+    "Place drained crabmeat in a large bowl.",
+    "Add bread crumbs to the crabmeat and mix well.",
+    "Add beaten egg yolks and mix thoroughly.",
+    "Stir the sauce into the crabmeat mixture.",
+    "Form the mixture into rounded patties.",
+    "Sauté the crab cakes in a butter and olive oil mixture until golden.",
+    "Mix all Spicy Remoulade Sauce ingredients together.",
+    "Place crab cakes on top of spring greens mix with sliced avocado.",
+    "Drizzle Spicy Remoulade Sauce on top of the crab cakes.",
+    "Serve with additional remoulade sauce and lemon wedges."
   ],
-  "notes": [],
+  "notes": [
+    "Chef recommended Phillips Crabmeat found in the refrigerator section at Costco and some supermarkets",
+    "Recipe from the Homestead Resort in Virginia; author took a cooking class from the chef at a medical conference",
+    "Spicy Remoulade Sauce can be stored in refrigerator and also serves well with other fish",
+    "Serves 4-6"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "homestead-crab-cakes",
   "source_file": "Homestead Crab Cakes.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

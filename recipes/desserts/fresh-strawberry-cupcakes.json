@@ -1,7 +1,6 @@
 {
   "title": "Fresh Strawberry Mini-Cupcakes with White Chocolate Frosting",
   "ingredients": [
-    "(Makes 12-16  regular-sized cupcakes)",
     "1 stick unsalted butter, room temperature",
     "1 cup sugar",
     "2 eggs",
@@ -13,19 +12,40 @@
     "1 1/2 cup fresh strawberries, chopped",
     "4 ounces white chocolate, chopped (do not use chips)",
     "12 ounces softened cream cheese",
-    "1 1/2 cups powdered sugar, divided into 2 ¾ cup amounts",
-    "1 cups chilled heavy whipping cream."
+    "1 1/2 cups powdered sugar",
+    "1 cup chilled heavy whipping cream"
   ],
   "instructions": [
-    "Preheat oven to 350 degrees.  Insert cupcake liners into 40 mini-muffin cups.  Cream butter and sugar in medium bowl for 3-5 minutes or until fluffy.  Add eggs, one at a time, beating well after each addition.  Combine dry ingredients and add to creamed mixture, alternating with milk, and mix for 3 minutes.  Fold in vanilla and strawberries.  Fill each mini-muffin cup with a generous 1 tablespoon of batter.  Bake for 16-18 minutes.  Cool and Frost. (For regular size muffins, bake for 20 – 24 minutes)",
-    "White Chocolate Frosting:",
-    "Place white chocolate in top of double boiler set over barely simmering water.  Stir just until chocolate is melted, smooth and just warm (white chocolate seizes easily - do not overheat).  White chocolate can be melted in microwave, but watch very carefully, stirring every 20 seconds.  Beat cream cheese in large bowl until fluffy.  Beat in 3/4 cup sugar, then warm chocolate.  In separate bowl, beat whipping cream until beginning to thicken.  Beat in 3/4 cup powdered sugar until medium-firm peaks form.  Fold into cream cheese mixture in 2 additions.  Cover, chill in refrigerator for 1-2 hours or up to 4 days prior to using frosting.  Frost cupcakes and top each with strawberry slice.",
-    "Hundreds of these were made as mini cupcakes for Katie and Patrick’s wedding reception."
+    "Preheat oven to 350 degrees.",
+    "Insert cupcake liners into 40 mini-muffin cups.",
+    "Cream butter and sugar in medium bowl for 3-5 minutes or until fluffy.",
+    "Add eggs, one at a time, beating well after each addition.",
+    "Combine dry ingredients (flour, baking powder, salt) and add to creamed mixture, alternating with milk, and mix for 3 minutes.",
+    "Fold in vanilla and strawberries.",
+    "Fill each mini-muffin cup with a generous 1 tablespoon of batter.",
+    "Bake for 16-18 minutes (or 20-24 minutes for regular-sized cupcakes).",
+    "Cool cupcakes completely.",
+    "Place white chocolate in top of double boiler set over barely simmering water and stir just until melted, smooth and just warm.",
+    "Beat cream cheese in large bowl until fluffy.",
+    "Beat in 3/4 cup powdered sugar, then warm chocolate.",
+    "In separate bowl, beat whipping cream until beginning to thicken.",
+    "Beat in 3/4 cup powdered sugar until medium-firm peaks form.",
+    "Fold whipped cream mixture into cream cheese mixture in 2 additions.",
+    "Cover and chill frosting in refrigerator for 1-2 hours or up to 4 days before using.",
+    "Frost cooled cupcakes and top each with a strawberry slice."
   ],
-  "notes": [],
+  "notes": [
+    "Makes 12-16 regular-sized cupcakes or approximately 40 mini-cupcakes",
+    "White chocolate seizes easily - do not overheat when melting",
+    "White chocolate can be melted in microwave instead of double boiler, but watch very carefully and stir every 20 seconds",
+    "Do not use white chocolate chips - use chopped white chocolate instead",
+    "Frosting can be made 1-2 hours ahead or up to 4 days in advance",
+    "Originally made for a wedding reception"
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "fresh-strawberry-cupcakes",
   "source_file": "Fresh Strawberry cupcakes.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

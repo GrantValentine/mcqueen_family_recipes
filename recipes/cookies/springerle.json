@@ -1,23 +1,37 @@
 {
   "title": "Springerle",
   "ingredients": [
-    "(Adapted from Oma’s Cookbook)",
     "5 large eggs",
     "4 cups powdered sugar",
-    "Scant 5 cups sifted flour (I usually use about 4 ¾ cups)",
-    "1 tsp ammonium carbonate (Special order this ingredient. My grandma and great grandma used to buy this at the pharmacy. Can substitute with 1 ½ tsp baking powder but cookies will not be as good.)",
-    "Parchment paper",
+    "Scant 5 cups sifted flour (about 4 ¾ cups)",
+    "1 tsp ammonium carbonate",
+    "½ tsp anise oil",
     "Anise seeds",
-    "½ tsp Anise oil (Special order)"
+    "Parchment paper"
   ],
   "instructions": [
-    "Beat eggs until light. Gradually add in powdered sugar and beat at medium high speed for 20 minutes. Add ammonium carbonate. Add flour and anise oil, knead on lightly floured board until smooth. Roll out ¼ inch thick. Press well-floured wooden springerle molds into dough and cut into squares. Place cookies on parchment lined baking sheets on top of sprinkled anise seeds. Let dry on baking sheets for at least 12 hours. Bake at 275 degrees for 25-30 minutes. Do not open oven door! Remove from oven and cool on racks.",
-    "Hide from Mason if you leave the house."
+    "Beat eggs until light.",
+    "Gradually add powdered sugar and beat at medium high speed for 20 minutes.",
+    "Add ammonium carbonate.",
+    "Add flour and anise oil, then knead on lightly floured board until smooth.",
+    "Roll out dough ¼ inch thick.",
+    "Press well-floured wooden springerle molds into dough and cut into squares.",
+    "Place cookies on parchment lined baking sheets on top of sprinkled anise seeds.",
+    "Let dry on baking sheets for at least 12 hours.",
+    "Bake at 275 degrees for 25-30 minutes, keeping oven door closed.",
+    "Remove from oven and cool on racks."
   ],
-  "notes": [],
+  "notes": [
+    "Adapted from Oma's Cookbook",
+    "Ammonium carbonate should be special ordered (traditionally bought at pharmacies). Can substitute with 1 ½ tsp baking powder, but cookies will not be as good.",
+    "Anise oil should be special ordered",
+    "Do not open oven door during baking",
+    "Hide from Mason if you leave the house"
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "springerle",
   "source_file": "Springerle.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

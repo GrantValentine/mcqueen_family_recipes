@@ -1,13 +1,10 @@
 {
   "title": "Honeypots",
   "ingredients": [
-    "(from Rosie’s All Butter, Fresh Cream, Sugar-Packed Cookbook)",
-    "Base",
     "1 cup flour",
     "½ cup powdered sugar",
     "8 tbsp unsalted butter, room temp, cut into 8 pieces",
     "1 egg white for glazing",
-    "Topping",
     "6 tbsp unsalted butter",
     "½ cup (lightly packed) light brown sugar",
     "½ cup honey",
@@ -16,16 +13,35 @@
     "1 tsp vanilla"
   ],
   "instructions": [
-    "Preheat oven to 350 degrees F. Lightly grease 8-inch square pan with butter.",
-    "For the base, process flour and sugar in food processor for 20 seconds. Add the butter and process until dough comes together, about 20-30 seconds. Pat the dough gently over bottom of the prepared pan and glaze it with the egg white: Pour the egg white on the dough and tip the pan from side to side so that the white spreads over the surface. Pour off the excess. Bake the base on the center oven rack until golden, about 25 minutes. Place the base in the refrigerator for 15 minutes to cool. Keep the oven on.",
-    "Prepare the topping: combine butter, brown sugar, and honey in a medium-size saucepan. Heat, stirring the mixture with a wooden spoon, over medium-low heat until it begins to boil. Boil without stirring for 5 minutes. While the mixture is boiling, put the nuts in a medium-sized bowl; and the cream and the vanilla and stir to combine.",
-    "Add the boiled honey mixture to the nuts mixture and stir the ingredients together. Pour the topping evenly over the cooled base. Bake the bars on the center oven until the entire surface is bubbling, about 25 minutes.",
-    "Remove from oven and cool on rack for 1 hour. Run sharp knife around the sides of the pan and let cool completely. Cook into bars with a cleaver or strong knife."
+    "Preheat oven to 350 degrees F.",
+    "Lightly grease 8-inch square pan with butter.",
+    "Process flour and sugar in food processor for 20 seconds.",
+    "Add the butter and process until dough comes together, about 20-30 seconds.",
+    "Pat the dough gently over bottom of the prepared pan.",
+    "Glaze the dough with egg white by pouring it on the dough and tipping the pan from side to side so that the white spreads over the surface.",
+    "Pour off the excess egg white.",
+    "Bake the base on the center oven rack until golden, about 25 minutes.",
+    "Place the base in the refrigerator for 15 minutes to cool.",
+    "Keep the oven on.",
+    "Combine butter, brown sugar, and honey in a medium-size saucepan.",
+    "Heat the mixture, stirring with a wooden spoon, over medium-low heat until it begins to boil.",
+    "Boil without stirring for 5 minutes.",
+    "While the mixture is boiling, put the nuts in a medium-sized bowl.",
+    "Add the cream and vanilla to the nuts and stir to combine.",
+    "Add the boiled honey mixture to the nuts mixture and stir the ingredients together.",
+    "Pour the topping evenly over the cooled base.",
+    "Bake the bars on the center oven until the entire surface is bubbling, about 25 minutes.",
+    "Remove from oven and cool on rack for 1 hour.",
+    "Run sharp knife around the sides of the pan and let cool completely.",
+    "Cut into bars with a cleaver or strong knife."
   ],
-  "notes": [],
+  "notes": [
+    "From Rosie's All Butter, Fresh Cream, Sugar-Packed Cookbook"
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "honeypots",
   "source_file": "Honeypots.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

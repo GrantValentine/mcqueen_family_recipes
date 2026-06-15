@@ -1,13 +1,15 @@
 {
-  "title": "Mini Brownie Cupcakes Gourmet | December 1999",
-  "ingredients": [
-    "Read More http://www.epicurious.com/recipes/food/printerfriendly/Mini-Brownie-Cupcakes-102748#ixzz1ESlQD43R"
-  ],
+  "title": "Mini Brownie Cupcakes Gourmet",
+  "ingredients": [],
   "instructions": [],
-  "notes": [],
+  "notes": [
+    "From December 1999",
+    "Source: Epicurious.com"
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "mini-brownie-cupcakes-gourmet",
   "source_file": "Mini Brownie Cupcakes Gourmet.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

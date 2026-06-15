@@ -5,14 +5,25 @@
     "1 ½ cups water"
   ],
   "instructions": [
-    "Place corn masa flour in bowl, add water, and blend thoroughly with clean hands for about 5 minutes to make a dough. Adjust water if needed.",
-    "Divide dough into about 18 balls, about 1 ounce each, cover to prevent drying out. Line a tortilla press with plastic wrap and press until tortilla is about 5 inches in diameter. Heat skillet on medium-high heat. Cook each tortilla about 30 seconds per side, turning the tortilla 3 times. Keep warm and serve.",
-    "I was taught how to make these in Guatemala. They do not use a tortilla press, but shape the tortillas with their hands. They thought it was very funny that I used a tortilla press!"
+    "Place corn masa flour in a bowl and add water.",
+    "Blend thoroughly with clean hands for about 5 minutes to make a dough.",
+    "Adjust water if needed.",
+    "Divide dough into about 18 balls, about 1 ounce each.",
+    "Cover dough balls to prevent drying out.",
+    "Line a tortilla press with plastic wrap.",
+    "Press each dough ball until tortilla is about 5 inches in diameter.",
+    "Heat skillet on medium-high heat.",
+    "Cook each tortilla about 30 seconds per side, turning the tortilla 3 times.",
+    "Keep warm and serve."
   ],
-  "notes": [],
+  "notes": [
+    "This recipe was taught in Guatemala, where tortillas are traditionally shaped by hand instead of using a tortilla press.",
+    "The Guatemalan method of hand-shaping the tortillas is an authentic alternative to using a press."
+  ],
   "category": "Bread",
   "category_slug": "bread",
   "slug": "homemade-corn-tortillas",
   "source_file": "Homemade Corn Tortillas.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

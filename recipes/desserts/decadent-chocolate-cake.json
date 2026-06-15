@@ -11,7 +11,6 @@
     "½ cup sour cream",
     "2 cups less 2 tablespoons all-purpose flour, sifted",
     "1 teaspoon baking powder",
-    "Chocolate frosting (recipe follows)",
     "2 tablespoons unsalted butter",
     "¾ cup semisweet chocolate chips",
     "6 tablespoons heavy cream",
@@ -19,20 +18,30 @@
     "1 teaspoon vanilla extract"
   ],
   "instructions": [
-    "Preheat oven to 350 degrees.  Grease and flour a 10-inch tube pan.  Knock out excess.",
-    "Pour boiling water over chocolate and butter; let stand until melted.  Stir in vanilla and sugar, then whisk in egg yolks, one at a time, blending well after each addition.",
+    "Preheat oven to 350 degrees.",
+    "Grease and flour a 10-inch tube pan and knock out excess.",
+    "Pour boiling water over chocolate and butter and let stand until melted.",
+    "Stir vanilla and sugar into the chocolate mixture.",
+    "Whisk in egg yolks one at a time, blending well after each addition.",
     "Mix baking soda and sour cream together and whisk into chocolate mixture.",
     "Sift flour and baking powder together and add to batter, mixing thoroughly.",
-    "Beat egg whites until stiff but not dry.  Stir a quarter of the egg whites thoroughly into the batter.  Scoop remaining egg whites on top of the batter and gently fold together.",
-    "Pour batter into the prepared pan.  Set on the middle rack of the oven and bake for 40 – 50 minutes, or until the edges have pulled away from the sides of the pan and a cake tester inserted into the center comes out clean.  Cool in pan for 10 minutes; unmold and cool completely before frosting.",
-    "Chocolate Frosting",
-    "Place all ingredients in a heavy saucepan over low heat and whisk until smooth.  Cool slightly; add more sugar if necessary to achieve a spreading consistency.  Spread on cake while frosting is still warm.",
-    "*The traditional birthday cake especially for first family."
+    "Beat egg whites until stiff but not dry.",
+    "Stir a quarter of the egg whites thoroughly into the batter.",
+    "Scoop remaining egg whites on top of the batter and gently fold together.",
+    "Pour batter into the prepared pan and set on the middle rack of the oven.",
+    "Bake for 40 to 50 minutes, or until the edges have pulled away from the sides of the pan and a cake tester inserted into the center comes out clean.",
+    "Cool in pan for 10 minutes, then unmold and cool completely before frosting.",
+    "For frosting: place all frosting ingredients in a heavy saucepan over low heat and whisk until smooth.",
+    "Cool frosting slightly and add more sugar if necessary to achieve a spreading consistency.",
+    "Spread frosting on cake while still warm."
   ],
-  "notes": [],
+  "notes": [
+    "The traditional birthday cake especially for first family."
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "decadent-chocolate-cake",
   "source_file": "Decadent Chocolate Cake.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

@@ -9,29 +9,41 @@
     "½ teaspoon salt",
     "⅓ cup milk",
     "1 teaspoon vanilla extract",
-    "1½ cups fresh strawberries, sliced"
-  ],
-  "instructions": [
-    "Preheat oven to 350°F. Line a cupcake pan with liners.",
-    "Cream butter and sugar on medium speed for 3–5 minutes, until fluffy. Add eggs one at a time, beating well after each addition.",
-    "Combine dry ingredients. Add to creamed mixture alternately with milk, mixing until smooth. Fold in vanilla and strawberries.",
-    "Fill liners ½ to ¾ full. Bake 20–25 minutes, until a toothpick inserted comes out clean. Cool completely before frosting.",
-    "White Chocolate Frosting",
+    "1½ cups fresh strawberries, sliced",
     "8 ounces white chocolate, chopped (do not use chips)",
     "3 packages (8 ounces each) cream cheese, room temperature",
     "2½ cups powdered sugar",
     "2 cups heavy whipping cream, chilled",
-    "Strawberry slices for garnish",
-    "Melt white chocolate over a double boiler just until smooth and warm. Do not overheat. Remove from heat.",
-    "Beat cream cheese until fluffy. Beat in 1¼ cups powdered sugar, then warm white chocolate.",
-    "Whip cream separately until beginning to thicken, then add remaining powdered sugar and beat to medium-firm peaks. Fold whipped cream into cream cheese mixture in three additions.",
-    "Cover and refrigerate several hours before using. Garnish with strawberry slice.",
-    "Served at Katie and Patrick’s wedding reception."
+    "Strawberry slices for garnish"
   ],
-  "notes": [],
+  "instructions": [
+    "Preheat oven to 350°F and line a cupcake pan with liners.",
+    "Cream butter and sugar on medium speed for 3–5 minutes, until fluffy.",
+    "Add eggs one at a time, beating well after each addition.",
+    "Combine flour, baking powder, and salt.",
+    "Add dry ingredients to creamed mixture alternately with milk, mixing until smooth.",
+    "Fold in vanilla and strawberries.",
+    "Fill cupcake liners ½ to ¾ full.",
+    "Bake 20–25 minutes, until a toothpick inserted comes out clean.",
+    "Cool cupcakes completely before frosting.",
+    "Melt white chocolate over a double boiler just until smooth and warm, being careful not to overheat, then remove from heat.",
+    "Beat cream cheese until fluffy.",
+    "Beat in 1¼ cups powdered sugar, then warm white chocolate.",
+    "Whip chilled heavy whipping cream separately until beginning to thicken.",
+    "Add remaining powdered sugar to whipped cream and beat to medium-firm peaks.",
+    "Fold whipped cream into cream cheese mixture in three additions.",
+    "Cover frosting and refrigerate several hours before using.",
+    "Garnish cupcakes with strawberry slices."
+  ],
+  "notes": [
+    "Do not use white chocolate chips for the frosting; use chopped white chocolate instead",
+    "Frosting should be refrigerated several hours before using",
+    "This recipe was served at Katie and Patrick's wedding reception"
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "fresh-strawberry-cupcakes-with-white-chocolate-frosting",
   "source_file": "Fresh Strawberry Cupcakes with White Chocolate Frosting.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

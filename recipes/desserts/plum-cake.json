@@ -1,25 +1,36 @@
 {
   "title": "Plum cake",
   "ingredients": [
-    "From Oma’s Cookbook",
     "1 ½ cup flour",
     "2 tsp baking powder",
     "½ cup sugar",
     "¼ tsp salt",
-    "1 egg, broken into measuring cup",
+    "1 egg",
     "Enough milk to fill measuring cup to 1 cup line",
     "2 tbsp canola or olive oil",
     "1 cup sliced fresh plums (can also use berries)",
     "¾ cup sugar"
   ],
   "instructions": [
-    "Sift together first 4 dry ingredients. Break egg into measuring cup and beat slightly. Add enough milk to the 1 cup line. Add egg/milk mixture with oil to dry ingredients. Mix well. Put batter into lightly greased 13x9 inch pan. Layer fruit in rows, sprinkle with sugar. Bake at 375 degrees for 35-40 minutes. Serve warm or cold. Yummy served warm with ice cream.",
-    "This is a very old recipe from my great-grandmother. My grandma would make this frequently in the summer when fruit was freshly picked."
+    "Sift together flour, baking powder, ½ cup sugar, and salt.",
+    "Break egg into measuring cup and beat slightly.",
+    "Add enough milk to reach the 1 cup line.",
+    "Add egg and milk mixture with oil to dry ingredients and mix well.",
+    "Pour batter into lightly greased 13x9 inch pan.",
+    "Layer fruit in rows and sprinkle with ¾ cup sugar.",
+    "Bake at 375 degrees for 35-40 minutes.",
+    "Serve warm or cold."
   ],
-  "notes": [],
+  "notes": [
+    "This is a very old recipe from my great-grandmother.",
+    "My grandma would make this frequently in the summer when fruit was freshly picked.",
+    "Yummy served warm with ice cream.",
+    "From Oma's Cookbook"
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "plum-cake",
   "source_file": "Plum cake.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

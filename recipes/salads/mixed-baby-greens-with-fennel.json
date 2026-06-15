@@ -8,23 +8,34 @@
     "2 large navel oranges, skinned and sliced into thin circles",
     "½ cup toasted chopped pecans",
     "½ cup crumbled feta cheese",
-    "Dressing",
     "½ cup olive oil",
     "2 tbsp balsamic vinegar",
     "1 tsp Dijon mustard",
     "¼ cup chopped fresh chives",
     "½ tsp salt",
     "¼ tsp black pepper",
-    "Garnish: fresh pansies"
+    "fresh pansies for garnish"
   ],
   "instructions": [
-    "In medium skillet, saute onion in butter on low heat until golden and caramelized, about 20 minutes. Place greens, fennel, oranges, pecans, and feta cheese in a bowl. Toss gently. Combine all ingredients for dressing in small bowl or container. Mix well. Drizzle most of dressing over greens. Toss gently. Top with caramelized onions. Drizzle remaining dressing as needed. Place pansy garnished on top of salad. Serves 6.",
-    "If you want to omit the onions, I suggest adding avocado to recipe."
+    "In a medium skillet, sauté onion in butter on low heat until golden and caramelized, about 20 minutes.",
+    "Place greens, fennel, oranges, pecans, and feta cheese in a bowl.",
+    "Toss gently.",
+    "Combine olive oil, balsamic vinegar, Dijon mustard, chopped fresh chives, salt, and black pepper in a small bowl or container.",
+    "Mix dressing well.",
+    "Drizzle most of the dressing over the greens.",
+    "Toss gently.",
+    "Top with caramelized onions.",
+    "Drizzle remaining dressing as needed.",
+    "Garnish the top of the salad with fresh pansies."
   ],
-  "notes": [],
+  "notes": [
+    "Serves 6",
+    "If you want to omit the onions, add avocado to the recipe instead"
+  ],
   "category": "Salads",
   "category_slug": "salads",
   "slug": "mixed-baby-greens-with-fennel",
   "source_file": "Mixed Baby Greens with Fennel.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

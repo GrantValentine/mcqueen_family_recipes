@@ -1,34 +1,41 @@
 {
   "title": "The Best Blueberry Muffins",
   "ingredients": [
-    "1/2 cup butter or 1/2 cup margarine, at room temp",
+    "1/2 cup butter or margarine, at room temperature",
     "1 cup granulated sugar",
     "2 large eggs",
     "1 teaspoon vanilla",
     "2 teaspoons baking powder",
     "1/4 teaspoon salt",
-    "2 1/2 cups fresh blueberries or 2 1/2 cups frozen blueberries",
+    "2 1/2 cups fresh blueberries or frozen blueberries",
     "2 cups all-purpose flour",
     "1/2 cup milk",
-    "For Topping",
-    "1 tablespoon granulated sugar, mixed with",
-    "1/4 teaspoon ground nutmeg"
+    "1 tablespoon granulated sugar for topping",
+    "1/4 teaspoon ground nutmeg for topping"
   ],
   "instructions": [
     "Heat oven to 375°.",
-    "Grease 18 regular-size muffin cups (or 12 large size muffins) or use muffin cups.",
-    "In bowl, mix butter until creamy. Add sugar and beat until pale and fluffy.",
-    "Add eggs one at a time, beating after each.",
-    "Beat in vanilla, baking powder and salt.",
-    "With spoon, fold in half of flour then half of milk into batter; repeat.",
+    "Grease 18 regular-size muffin cups (or 12 large size muffin cups) or use muffin liners.",
+    "In a bowl, mix butter until creamy.",
+    "Add sugar and beat until pale and fluffy.",
+    "Add eggs one at a time, beating after each addition.",
+    "Beat in vanilla, baking powder, and salt.",
+    "Fold in half of the flour, then half of the milk into the batter.",
+    "Fold in the remaining flour and remaining milk.",
     "Fold in blueberries.",
-    "Spoon into muffin cups and sprinkle topping onto each muffin.",
-    "Bake 20 to 30 minutes, until golden brown and springy to touch."
+    "Spoon batter into muffin cups.",
+    "Sprinkle sugar and nutmeg topping onto each muffin.",
+    "Bake for 20 to 30 minutes, until golden brown and springy to touch."
   ],
-  "notes": [],
+  "notes": [
+    "Makes 18 regular-size muffins or 12 large muffins",
+    "Can use fresh or frozen blueberries",
+    "Butter or margarine should be at room temperature for best mixing results"
+  ],
   "category": "Bread",
   "category_slug": "bread",
   "slug": "the-best-blueberry-muffins",
   "source_file": "The Best Blueberry Muffins.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

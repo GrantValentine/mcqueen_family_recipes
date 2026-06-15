@@ -1,13 +1,39 @@
 {
   "title": "Asparagus Bacon Pasta",
   "ingredients": [
-    "1 pkg. bow tie pasta\n1/2 c. (1 cube) butter (the real stuff)\n2-3 cloves garlic, minced\n3/4 c. grated Parmesan cheese\n1-2 chicken bouillon cubes\n1 pint heavy cream\nsalt & pepper to taste\n10-15 spears asparagus, blanched\n1/2 c. bacon, crumbled\n1/2 c. toasted pinenuts (or to taste)\nParsley, to taste\nParmesan cheese, to taste\n\nBoil bow tie pasta in salted water until al dente. Do NOT over cook.\nIn wok or heavy skillet melt butter. Add minced garlic and saute a minute or so.\nAdd Parmesan Cheese and bouillon cube(s). When the bouillon cube is dissolved, slowly stir in heavy cream and salt & pepper. Add cooked pasta to cream sauce and toss until pasta is well covered. Add blanched asparagus. Sprinkle with crumbled bacon, toasted pinenuts, parsley & Parmesan cheese and toss together. Serve immediately."
+    "1 pkg. bow tie pasta",
+    "1/2 c. (1 cube) butter",
+    "2-3 cloves garlic, minced",
+    "3/4 c. grated Parmesan cheese",
+    "1-2 chicken bouillon cubes",
+    "1 pint heavy cream",
+    "salt & pepper to taste",
+    "10-15 spears asparagus, blanched",
+    "1/2 c. bacon, crumbled",
+    "1/2 c. toasted pinenuts",
+    "Parsley, to taste",
+    "Parmesan cheese, to taste"
   ],
-  "instructions": [],
-  "notes": [],
+  "instructions": [
+    "Boil bow tie pasta in salted water until al dente.",
+    "In a wok or heavy skillet, melt butter.",
+    "Add minced garlic and sauté for about a minute.",
+    "Add Parmesan cheese and bouillon cube(s).",
+    "Once the bouillon cube is dissolved, slowly stir in heavy cream and salt & pepper.",
+    "Add cooked pasta to the cream sauce and toss until pasta is well covered.",
+    "Add blanched asparagus.",
+    "Sprinkle with crumbled bacon, toasted pinenuts, parsley, and Parmesan cheese.",
+    "Toss everything together and serve immediately."
+  ],
+  "notes": [
+    "Do not overcook the pasta",
+    "Use real butter for best results",
+    "Serve immediately for best texture"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "asparagus-bacon-pasta",
   "source_file": "Asparagus Bacon Pasta.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

@@ -1,21 +1,37 @@
 {
   "title": "Best Buttermilk Biscuit Recipe",
   "ingredients": [
-    "2 cups all-purpose flour (can substitute 1:1 GF flour)",
-    "2 teaspoons baking powder",
-    "¼ teaspoon baking soda",
-    "1 teaspoon salt",
-    "7 tablespoons unsalted butter, chilled in freezer and cut into thin slices",
-    "¾ cup cold buttermilk",
-    "2 tablespoons buttermilk for brushing"
+    "2 cups all-purpose flour (can substitute 1:1 GF flour)",
+    "2 teaspoons baking powder",
+    "¼ teaspoon baking soda",
+    "1 teaspoon salt",
+    "7 tablespoons unsalted butter, chilled in freezer and cut into thin slices",
+    "¾ cup cold buttermilk",
+    "2 tablespoons buttermilk for brushing"
   ],
   "instructions": [
-    "Mix together dry ingredients. Cut in butter until crumbly mixture using pastry blender or your hands. Lightly stir in cold buttermilk until forms a dough. Place on flour covered board and form into a rectangle. Fold the rectangle in thirds. Turn dough a half turn, gather any crumbs, and flatten back into a rectangle. Repeat twice more, folding and pressing the dough a total of three times. If you have time, refrigerate the dough for 30 minutes or more. Roll out the dough in a rectangle about ½ inch thick. Cut into biscuits, makes a dozen. Place biscuits on parchment lined baking sheet, brush tops with buttermilk and bake at 400 degrees F for 15-16 minutes."
+    "Mix together dry ingredients.",
+    "Cut in butter until crumbly mixture using pastry blender or your hands.",
+    "Lightly stir in cold buttermilk until forms a dough.",
+    "Place on flour covered board and form into a rectangle.",
+    "Fold the rectangle in thirds.",
+    "Turn dough a half turn, gather any crumbs, and flatten back into a rectangle.",
+    "Repeat folding and pressing the dough two more times for a total of three folds.",
+    "If you have time, refrigerate the dough for 30 minutes or more.",
+    "Roll out the dough in a rectangle about ½ inch thick.",
+    "Cut into biscuits, making a dozen.",
+    "Place biscuits on parchment lined baking sheet.",
+    "Brush tops with buttermilk and bake at 400 degrees F for 15-16 minutes."
   ],
-  "notes": [],
+  "notes": [
+    "All-purpose flour can be substituted 1:1 with gluten-free flour",
+    "Butter should be chilled in freezer and cut into thin slices for best results",
+    "Dough can be refrigerated for 30 minutes or more before rolling out"
+  ],
   "category": "Bread",
   "category_slug": "bread",
   "slug": "best-buttermilk-biscuit-recipe",
   "source_file": "Best Buttermilk Biscuit Recipe.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

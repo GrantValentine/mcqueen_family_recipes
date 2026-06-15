@@ -9,7 +9,7 @@
     "1 tbsp curry powder",
     "1 28-ounce can plum tomatoes, undrained",
     "¼ cup water",
-    "2 tsp. sugar",
+    "2 tsp sugar",
     "1 ½ tsp kosher salt",
     "1/8-1/4 tsp red pepper flakes",
     "1 pound white fish (flounder, sole, orange roughy)",
@@ -17,12 +17,25 @@
     "Fresh parsley, chopped"
   ],
   "instructions": [
-    "Heat oil in large pot over medium heat. Stir in flour, cook, stirring constantly until flour is dark brown – about 10 minutes. Add celery, green pepper, onion, and garlic. Cook until vegetables are lightly browned and tender, about 10-15 minutes. Stir in curry powder, cook 1 minute. Add tomatoes, water, sugar, red pepper flakes and salt. Heat to a boil, then reduce heat to low and keep warm. Preheat oven to 350 degrees F. Cut fish into bite-sized chunks. Pour sauce into 2-quart casserole dish, arrange fish and shrimp in sauce. Bake casserole, uncovered 30-35 minutes. Sprinkle with fresh parsley. Serve with good crusty bread to dip in stew."
+    "Heat oil in large pot over medium heat.",
+    "Stir in flour and cook, stirring constantly until flour is dark brown, about 10 minutes.",
+    "Add celery, green pepper, garlic, and cook until vegetables are lightly browned and tender, about 10-15 minutes.",
+    "Stir in curry powder and cook 1 minute.",
+    "Add tomatoes, water, sugar, red pepper flakes, and salt.",
+    "Heat to a boil, then reduce heat to low and keep warm.",
+    "Preheat oven to 350 degrees F.",
+    "Cut fish into bite-sized chunks.",
+    "Pour sauce into 2-quart casserole dish and arrange fish and shrimp in sauce.",
+    "Bake casserole uncovered for 30-35 minutes.",
+    "Sprinkle with fresh parsley and serve with crusty bread."
   ],
-  "notes": [],
+  "notes": [
+    "Serve with good crusty bread to dip in stew"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "seafood-stew",
   "source_file": "Seafood Stew.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

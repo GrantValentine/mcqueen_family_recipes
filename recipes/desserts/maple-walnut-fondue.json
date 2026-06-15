@@ -6,17 +6,25 @@
     "2 tbsp pure maple syrup",
     "½ tsp pure maple extract",
     "½ tsp cinnamon",
-    "½ tsp freshly grated nutmet",
+    "½ tsp freshly grated nutmeg",
     "¼ tsp cardamom",
     "½ cup chopped toasted walnuts"
   ],
   "instructions": [
-    "In a double boiler, heat white chocolate and cream on low heat, stirring constantly, until mixture is smooth and creamy. (White chocolate can easily burn.) Add maple syrup, maple extract, and spices. Stir in walnuts, transfer to fondue pot and keep warm over low heat. Serve with gingersnap cookies, cubed gingerbread, apples, pears, etc."
+    "In a double boiler, heat white chocolate and cream on low heat, stirring constantly, until mixture is smooth and creamy.",
+    "Add maple syrup, maple extract, and spices.",
+    "Stir in walnuts.",
+    "Transfer to fondue pot and keep warm over low heat.",
+    "Serve with gingersnap cookies, cubed gingerbread, apples, pears, or other dippers."
   ],
-  "notes": [],
+  "notes": [
+    "White chocolate can easily burn, so stir constantly and use low heat.",
+    "Suggested dippers: gingersnap cookies, cubed gingerbread, apples, pears"
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "maple-walnut-fondue",
   "source_file": "Maple Walnut Fondue.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

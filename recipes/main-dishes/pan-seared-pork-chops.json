@@ -1,10 +1,10 @@
 {
-  "title": "Pan Seared, Oven Roasted Thick-cut Pork Chops with",
+  "title": "Pan Seared, Oven Roasted Thick-cut Pork Chops with Spicy Tomato Pan Sauce",
   "ingredients": [
-    "Spicy Tomato Pan Sauce",
     "¾ cup packed light brown sugar",
     "¼ cup kosher salt",
-    "4 1 ½ inch thick pork chops (about 12 ounces each)",
+    "6 cups cold water",
+    "4 pork chops, 1½ inches thick (about 12 ounces each)",
     "½ tsp ground black pepper",
     "1 tbsp vegetable oil",
     "½ tsp dried crushed red pepper",
@@ -15,17 +15,33 @@
     "Salt and pepper to taste"
   ],
   "instructions": [
-    "Dissolve brown sugar and salt in 6 cups cold water. Place in gallon-size plastic bag. Add pork chops and seal the bag, pressing out as much air as possible. Refrigerate for about 1 hour. Remove the chops from the brine, rinse, and pat thoroughly dry with paper towels. Season chops with the pepper.",
-    "Adjust oven rack to the lower middle position, place a shallow roasting pan or rimmed baking pan on the rack and heat oven to 450 degrees. When the oven reaches 450 degrees F, heat the oil in a heavy skillet over high heat. Lay the chops in the skillet and cook until well browned and a nice crust has formed on the surface, about 3 minutes. Turn the chops over and cook until well browned with nice crust on other side.",
-    "Using tongs, transfer the chops to the preheated pan in the oven. Roast until 130 degrees, about 12-15 minutes. Transfer chops to a platter, tent loosely with foil and let rest for 5 minutes, temperature should be 145 degrees.",
-    "To serve, place on platter and spoon Spicy Tomato Pan Sauce on top.",
-    "Spicy Tomato Pan Sauce",
-    "Add red pepper and parsley to same skillet that pork was cooked. Saute for 1 minute, scraping up bits from the skillet. Add tomatoes, olives, and garlic. Saute for 2-3 minutes. Season with salt and pepper. Spoon over meat."
+    "Dissolve brown sugar and salt in 6 cups cold water.",
+    "Place brine in a gallon-size plastic bag and add pork chops, then seal the bag, pressing out as much air as possible.",
+    "Refrigerate for about 1 hour.",
+    "Remove the chops from the brine, rinse, and pat thoroughly dry with paper towels.",
+    "Season chops with the ground black pepper.",
+    "Adjust oven rack to the lower middle position and place a shallow roasting pan or rimmed baking pan on the rack.",
+    "Heat oven to 450 degrees F.",
+    "When the oven reaches 450 degrees F, heat the oil in a heavy skillet over high heat.",
+    "Lay the chops in the skillet and cook until well browned with a nice crust on the surface, about 3 minutes.",
+    "Turn the chops over and cook until well browned with a nice crust on the other side.",
+    "Using tongs, transfer the chops to the preheated pan in the oven.",
+    "Roast until the internal temperature reaches 130 degrees F, about 12-15 minutes.",
+    "Transfer chops to a platter, tent loosely with foil, and let rest for 5 minutes (temperature should rise to 145 degrees F).",
+    "Add red pepper and parsley to the same skillet that the pork was cooked in and sauté for 1 minute, scraping up browned bits from the skillet.",
+    "Add tomatoes, olives, and garlic, and sauté for 2-3 minutes.",
+    "Season the sauce with salt and pepper to taste.",
+    "Place pork chops on a serving platter and spoon Spicy Tomato Pan Sauce over the top."
   ],
-  "notes": [],
+  "notes": [
+    "The pork chops should reach an internal temperature of 145 degrees F when fully cooked; resting allows the temperature to rise from 130 to 145 degrees F.",
+    "Make sure to pat the pork chops completely dry after brining to ensure a proper crust forms during searing.",
+    "The sauce is made in the same skillet as the pork to capture all the flavorful browned bits."
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "pan-seared-pork-chops",
   "source_file": "Pan Seared Pork Chops.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

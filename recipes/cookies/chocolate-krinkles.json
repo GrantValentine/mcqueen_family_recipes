@@ -1,26 +1,38 @@
 {
   "title": "Chocolate Krinkles",
   "ingredients": [
-    "Adapted From Oma’s Cookbook",
     "1/2 cup (1 cube) butter",
     "1 2/3 cups sugar",
     "2 tsp vanilla",
     "2 eggs",
     "2 ounces unsweetened chocolate, melted and slightly cooled",
-    "½ cup chopped walnuts (optional)",
+    "1/2 cup chopped walnuts (optional)",
     "2 cups sifted flour",
     "2 tsp baking powder",
-    "½ tsp salt",
+    "1/2 tsp salt",
     "1/3 cup milk",
     "Powdered sugar"
   ],
   "instructions": [
-    "Cream butter, sugar, and vanilla. Beat in eggs, one at a time. Add melted chocolate. Blend in half sifted dry ingredients with half of milk and repeat. Stir in walnuts if used. Refrigerate for 3-4 hours. Roll into 1 inch balls and roll in powdered sugar. Place on parchment lined baking sheets and bake at 350 degrees for 12-13 minutes."
+    "Cream butter, sugar, and vanilla together.",
+    "Beat in eggs, one at a time.",
+    "Add melted chocolate.",
+    "Blend in half of the sifted dry ingredients with half of the milk.",
+    "Repeat by blending in the remaining dry ingredients with the remaining milk.",
+    "Stir in walnuts if using.",
+    "Refrigerate for 3-4 hours.",
+    "Roll dough into 1 inch balls and roll in powdered sugar.",
+    "Place on parchment lined baking sheets.",
+    "Bake at 350 degrees for 12-13 minutes."
   ],
-  "notes": [],
+  "notes": [
+    "Adapted from Oma's Cookbook",
+    "Walnuts are optional"
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "chocolate-krinkles",
   "source_file": "Chocolate Krinkles.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

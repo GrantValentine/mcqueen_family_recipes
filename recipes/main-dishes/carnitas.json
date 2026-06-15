@@ -1,28 +1,52 @@
 {
   "title": "Carnitas",
   "ingredients": [
-    "1 tsp chili powder, paprika, cumin, and black pepper",
+    "1 tsp chili powder",
+    "1 tsp paprika",
+    "1 tsp cumin",
+    "1 tsp black pepper",
     "¼ tsp cayenne pepper",
     "2 tsp kosher salt",
     "1 medium white onion, chopped",
     "3 cloves garlic, whole",
     "1 jalapeno, seeded and minced",
-    "1 chipotle pepper in adobo sauce, minced (add more if you want more heat)",
+    "1 chipotle pepper in adobo sauce, minced",
     "3 pound pork shoulder",
     "12 ounces Corona lager",
     "Juice of 1 lime and 1 orange",
     "Freshly cooked corn tortillas",
-    "Condiments of choice: fresh cilantro, chopped cabbage or lettuce, lime wedges, guacamole, Café Rio dressing, tomatoes, salsa, pico de gallo, grated cheese"
+    "Fresh cilantro",
+    "Chopped cabbage or lettuce",
+    "Lime wedges",
+    "Guacamole",
+    "Café Rio dressing",
+    "Tomatoes",
+    "Salsa",
+    "Pico de gallo",
+    "Grated cheese"
   ],
   "instructions": [
-    "Preheat oven to 350 degrees. In a small bowl, combine spices to make a dry rub. Pat pork shoulder dry. Cut into 3-4 pieces. Cover with dry rub. Let sit at room temperature for 30 minutes.",
-    "In a large Dutch oven, combine onion, garlic, jalapeno, chipotle pepper in adobo sauce. Add seasoned pork to Dutch oven. Pour beer, lime juice, and orange juice over top. Cover. Roast in the oven for about 4 hours or until completely tender. When cooked through, remove pork from Dutch oven and shred.",
-    "To serve, place pork in a large baking sheet and pour about ½ cup of braising liquid over pork. Set oven to broil and broil pork until edges are brown with some crispy spots. Serve with warm tortillas and condiments."
+    "Preheat oven to 350 degrees.",
+    "In a small bowl, combine chili powder, paprika, cumin, black pepper, and cayenne pepper to make a dry rub.",
+    "Pat pork shoulder dry and cut into 3-4 pieces.",
+    "Cover pork with dry rub and let sit at room temperature for 30 minutes.",
+    "In a large Dutch oven, combine chopped onion, garlic, jalapeno, and chipotle pepper in adobo sauce.",
+    "Add seasoned pork to the Dutch oven.",
+    "Pour beer, lime juice, and orange juice over the pork.",
+    "Cover the Dutch oven and roast in the oven for about 4 hours or until the pork is completely tender.",
+    "Remove pork from Dutch oven and shred.",
+    "Place shredded pork in a large baking sheet and pour about ½ cup of braising liquid over it.",
+    "Set oven to broil and broil pork until edges are brown with some crispy spots.",
+    "Serve with warm tortillas and condiments of choice."
   ],
-  "notes": [],
+  "notes": [
+    "Add more chipotle pepper if you want more heat",
+    "Condiments include: fresh cilantro, chopped cabbage or lettuce, lime wedges, guacamole, Café Rio dressing, tomatoes, salsa, pico de gallo, and grated cheese"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "carnitas",
   "source_file": "Carnitas.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

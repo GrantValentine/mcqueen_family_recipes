@@ -4,19 +4,29 @@
     "2 pounds golden potatoes, peeled and cut into medium-large cubes",
     "2-3 cloves garlic",
     "1 tbsp kosher salt",
-    "4 tbsp. butter",
+    "4 tbsp butter",
     "2 cups half-and-half, warm",
     "½ cup freshly grated Parmesan cheese",
     "Salt and white pepper to taste",
     "Optional: truffle or porcini mushroom oil"
   ],
   "instructions": [
-    "Boil potatoes with garlic and salt until tender. Drain well. Return to pan. Heat on low until all water is evaporated. Mash potatoes well. (May also use a potato ricer.) Add butter, half and half, and cheese. Mix until smooth. Add salt and pepper to taste."
+    "Boil potatoes with garlic and salt until tender.",
+    "Drain well and return to pan.",
+    "Heat on low until all water is evaporated.",
+    "Mash potatoes well (may also use a potato ricer).",
+    "Add butter, half-and-half, and cheese.",
+    "Mix until smooth.",
+    "Add salt and pepper to taste."
   ],
-  "notes": [],
+  "notes": [
+    "May use a potato ricer instead of mashing by hand",
+    "Optional drizzle of truffle or porcini mushroom oil for extra flavor"
+  ],
   "category": "Vegetables and Side Dishes",
   "category_slug": "vegetables-and-side-dishes",
   "slug": "parmesan-garlic-mashed-potatoes",
   "source_file": "Parmesan Garlic Mashed Potatoes.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

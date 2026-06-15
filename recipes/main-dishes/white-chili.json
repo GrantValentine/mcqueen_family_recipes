@@ -23,7 +23,8 @@
   "instructions": [
     "If using fresh beans, soak beans overnight, then drain.",
     "Cook beans in fresh water until tender; drain and set aside.",
-    "Heat oil in a large pot. Sauté onion and garlic until softened.",
+    "Heat oil in a large pot.",
+    "Sauté onion and garlic until softened.",
     "Stir in flour and cook briefly, stirring constantly.",
     "Gradually whisk in chicken broth until smooth.",
     "Add cumin, coriander, oregano, salt and cayenne.",
@@ -35,5 +36,6 @@
   "category_slug": "main-dishes",
   "slug": "white-chili",
   "source_file": "White Chili.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

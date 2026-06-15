@@ -2,25 +2,35 @@
   "title": "Congo Bars",
   "ingredients": [
     "1 1/3 cups flour",
-    "1 ½ tsp. baking soda",
-    "½ tsp. salt",
-    "9 tbsp unsalted butter, room temp",
+    "1 ½ tsp baking soda",
+    "½ tsp salt",
+    "9 tbsp unsalted butter, room temperature",
     "1 ½ cups light brown sugar",
     "1 ¼ tsp vanilla extract",
-    "2 large eggs, room temp",
-    "1 ¼ cup dark chocolate chips",
-    "½ cup chopped walnuts (optional)",
-    "A family favorite! From Rosie’s All Butter, Fresh Cream, Sugar-Packed cookbook."
+    "2 large eggs, room temperature",
+    "1 ¼ cups dark chocolate chips",
+    "½ cup chopped walnuts (optional)"
   ],
   "instructions": [
-    "Preheat oven to 350 degrees F. Lightly grease 13x9x2 inch baking pan with butter.",
-    "Blend the flour, baking soda, and salt in a small bowl with whisk. Set aside.",
-    "Using an electric mixer on medium speed, cream butter, sugar, and vanilla until light and fluffy, about 2 minutes. Stop the mixer a couple of times once or twice to scrape the bowl with a rubber spatula.  Add eggs and mix on high speed for 10 second, then on medium speed until blended, about 10 more seconds. Add the flour mixture and mix on low speed until almost blended. Add chocolate chips and nuts (optional) and fold in. Spread the batter in the prepared pan and bake for 30 minutes. Remove from oven and let cool for 30 minutes before serving."
+    "Preheat oven to 350 degrees F.",
+    "Lightly grease 13x9x2 inch baking pan with butter.",
+    "Blend the flour, baking soda, and salt in a small bowl with whisk and set aside.",
+    "Using an electric mixer on medium speed, cream butter, sugar, and vanilla until light and fluffy, about 2 minutes.",
+    "Stop the mixer a couple of times to scrape the bowl with a rubber spatula.",
+    "Add eggs and mix on high speed for 10 seconds, then on medium speed until blended, about 10 more seconds.",
+    "Add the flour mixture and mix on low speed until almost blended.",
+    "Add chocolate chips and nuts (optional) and fold in.",
+    "Spread the batter in the prepared pan and bake for 30 minutes.",
+    "Remove from oven and let cool for 30 minutes before serving."
   ],
-  "notes": [],
+  "notes": [
+    "A family favorite!",
+    "From Rosie's All Butter, Fresh Cream, Sugar-Packed cookbook."
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "congo-bars",
   "source_file": "Congo Bars.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

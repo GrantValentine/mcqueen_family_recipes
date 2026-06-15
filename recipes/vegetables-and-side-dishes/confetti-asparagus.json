@@ -1,8 +1,7 @@
 {
   "title": "Confetti Asparagus",
   "ingredients": [
-    "(Recipe courtesy of Marguerite Henderson)",
-    "2 lb. fresh asparagus, tough ends removed (allow 5 – 6 spears per person)",
+    "2 lb. fresh asparagus, tough ends removed",
     "Water",
     "1 tsp. salt",
     "1 tsp. olive oil",
@@ -12,13 +11,20 @@
     "Pinch of salt and pepper"
   ],
   "instructions": [
-    "Place cleaned asparagus in 2 inches of boiling water with salt and oil.  Cook for 2-3 minutes or until tender; drain.",
-    "Mix together olive oil, red and yellow peppers, salt and pepper.  Top 5 – 6 spears per person with pepper mixture."
+    "Place cleaned asparagus in 2 inches of boiling water with salt and oil.",
+    "Cook for 2-3 minutes or until tender.",
+    "Drain the asparagus.",
+    "Mix together olive oil, red and yellow peppers, salt and pepper.",
+    "Top 5-6 spears per person with pepper mixture."
   ],
-  "notes": [],
+  "notes": [
+    "Recipe courtesy of Marguerite Henderson",
+    "Allow 5-6 spears per person"
+  ],
   "category": "Vegetables and Side Dishes",
   "category_slug": "vegetables-and-side-dishes",
   "slug": "confetti-asparagus",
   "source_file": "Confetti Asparagus.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

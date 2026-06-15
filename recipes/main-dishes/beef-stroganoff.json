@@ -1,10 +1,10 @@
 {
   "title": "Beef Stroganoff",
   "ingredients": [
-    "From Oma’s cookbook",
     "1 ½ pounds top round steak, cut into 2-inch strips (can use other tender steak cut)",
     "1 large onion, minced",
-    "2 tbsp butter + 3 tbsp",
+    "2 tbsp butter",
+    "3 tbsp butter",
     "3 tbsp flour",
     "1 can beef broth",
     "1 tbsp tomato paste",
@@ -13,16 +13,32 @@
     "½ tsp freshly grated nutmeg",
     "Salt and pepper",
     "½ pound sliced mushrooms",
-    "1 cup sour cream, room temp"
+    "1 cup sour cream, room temperature"
   ],
   "instructions": [
-    "In a skillet, saute mushrooms dry until brown and soft. Stir in 2 tbsp butter and season with salt and pepper. Set aside.",
-    "Saute onion in 3 tbsp butter until pale yellow, stir in flour and then broth to make a roux. Add tomato paste, Worcestershire sauce, basil, nutmeg and salt and pepper to taste (be generous with pepper). Slowly simmer for 15 minutes, stirring occasionally. Meanwhile, in another skillet, brown the meat strips. Add meat and cooked mushrooms to sauce. Taste to adjust salt and pepper. Just before serving, stir in sour cream but do not allow it to boil. Serve with wide egg noodles."
+    "In a skillet, sauté mushrooms dry until brown and soft.",
+    "Stir in 2 tbsp butter and season mushrooms with salt and pepper. Set aside.",
+    "In another skillet, sauté onion in 3 tbsp butter until pale yellow.",
+    "Stir in flour and then broth to make a roux.",
+    "Add tomato paste, Worcestershire sauce, basil, nutmeg, and salt and pepper to taste (be generous with pepper).",
+    "Slowly simmer the sauce for 15 minutes, stirring occasionally.",
+    "Meanwhile, in another skillet, brown the meat strips.",
+    "Add browned meat and cooked mushrooms to the sauce.",
+    "Taste and adjust salt and pepper as needed.",
+    "Just before serving, stir in sour cream but do not allow it to boil.",
+    "Serve with wide egg noodles."
   ],
-  "notes": [],
+  "notes": [
+    "From Oma's cookbook",
+    "Can use other tender steak cuts besides top round steak",
+    "Be generous with pepper when seasoning the sauce",
+    "Sour cream must be at room temperature to prevent curdling",
+    "Do not boil the stroganoff after adding sour cream"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "beef-stroganoff",
   "source_file": "Beef Stroganoff.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

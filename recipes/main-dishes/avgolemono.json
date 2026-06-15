@@ -1,7 +1,6 @@
 {
-  "title": "Avgolemono",
+  "title": "Avgolemono - Greek Lemon Chicken Soup",
   "ingredients": [
-    "Greek Lemon Chicken Soup",
     "1 tablespoon olive oil",
     "1 medium onion, diced",
     "1 medium carrot, diced",
@@ -9,8 +8,8 @@
     "2-3 garlic cloves, finely chopped",
     "2 bay leaves",
     "2 chicken breasts (about 12 oz / 350 g total)",
-    "6 cups (1.5 liter) chicken stock or broth",
-    "¾ cup (175 g) orzo pasta orzo",
+    "6 cups (1.5 liter) chicken stock or broth",
+    "¾ cup (175 g) orzo pasta",
     "Kosher salt and pepper",
     "Juice of 1 lemon",
     "2 egg yolks",
@@ -18,16 +17,28 @@
     "Salt and freshly ground black pepper to taste"
   ],
   "instructions": [
-    "Heat the olive oil in a large stock pot and cook the onion, carrot and celery for 8-10 minutes over medium heat until softened. Add the garlic and cook for another minute, then add the bay leaves, chicken and chicken broth or stock. Bring to a boil, then lower the heat to medium-low, cover with a lid and simmer for 15 minutes.",
-    "Take out the chicken breasts and bay leaves. Add the orzo to the pot and continue to cook for 10 minutes. Shred the chicken with two forks and add it back to the pot. Add kosher salt and pepper to taste.",
-    "While the orzo is cooking, whisk the egg yolks and lemon juice in a bowl. Take out 1-2 ladles of soup and pour it over the egg-lemon mixture to temper it. Add this mix to the pot and continue to cook for 5 minutes.",
-    "Stir in the fresh dill, adjust the seasoning and serve immediately.",
-    "From Skinny Spatula website. Brenton loves this soup."
+    "Heat the olive oil in a large stock pot and cook the onion, carrot and celery for 8-10 minutes over medium heat until softened.",
+    "Add the garlic and cook for another minute.",
+    "Add the bay leaves, chicken and chicken broth or stock to the pot.",
+    "Bring to a boil, then lower the heat to medium-low, cover with a lid and simmer for 15 minutes.",
+    "Take out the chicken breasts and bay leaves from the pot.",
+    "Add the orzo to the pot and continue to cook for 10 minutes.",
+    "While the orzo is cooking, whisk the egg yolks and lemon juice in a bowl.",
+    "Take out 1-2 ladles of soup and pour it over the egg-lemon mixture to temper it.",
+    "Shred the chicken with two forks and add it back to the pot.",
+    "Add the tempered egg-lemon mixture to the pot and continue to cook for 5 minutes.",
+    "Add kosher salt and pepper to taste.",
+    "Stir in the fresh dill, adjust the seasoning and serve immediately."
   ],
-  "notes": [],
+  "notes": [
+    "From Skinny Spatula website",
+    "Brenton loves this soup",
+    "When adding egg yolks to hot soup, temper them first by slowly pouring hot soup into the egg mixture to prevent curdling"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "avgolemono",
   "source_file": "Avgolemono.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

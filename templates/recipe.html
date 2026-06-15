@@ -58,7 +58,8 @@
         <h2>Ingredients</h2>
         <ul>
           {% for item in recipe.ingredients %}
-          <li>{{ item }}</li>
+          {% if item[:3] == '## ' %}<li class="ingredient-heading">{{ item[3:] }}</li>
+          {% else %}<li>{{ item }}</li>{% endif %}
           {% endfor %}
         </ul>
       </div>
@@ -74,11 +75,14 @@
       <div class="instructions-col">
         <h2>Instructions</h2>
         <ol style="list-style:none;">
+          {% set step_num = namespace(value=0) %}
           {% for step in recipe.instructions %}
+          {% if step[:3] == '## ' %}<li class="step-heading">{{ step[3:] }}</li>
+          {% else %}{% set step_num.value = step_num.value + 1 %}
           <li class="step">
-            <span class="step-num" aria-hidden="true">{{ loop.index }}</span>
+            <span class="step-num" aria-hidden="true">{{ step_num.value }}</span>
             <p>{{ step }}</p>
-          </li>
+          </li>{% endif %}
           {% endfor %}
         </ol>
       </div>
@@ -187,10 +191,15 @@
         cols.insertBefore(aside, cols.firstChild);
         panel = aside.querySelector('ul');
       }
-      panel.innerHTML = r.ingredients
-        .map(function (i) { return '<li>' + escHtml(i) + '</li>'; }).join('');
+      panel.innerHTML = r.ingredients.map(function (item) {
+        if (item.slice(0, 3) === '## ') {
+          return '<li class="ingredient-heading">' + escHtml(item.slice(3)) + '</li>';
+        }
+        return '<li>' + escHtml(item) + '</li>';
+      }).join('');
+      var ingCount = r.ingredients.filter(function(i) { return i.slice(0,3) !== '## '; }).length;
       var count = page.querySelector('.recipe-meta-bar span:nth-child(2)');
-      if (count) count.textContent = r.ingredients.length + ' ingredients';
+      if (count) count.textContent = ingCount + ' ingredients';
     }
 
     // Instructions — create the ol if it wasn't rendered statically
@@ -204,12 +213,17 @@
         cols.appendChild(instCol);
         ol = instCol.querySelector('ol');
       }
-      ol.innerHTML = r.instructions.map(function (step, idx) {
+      var stepNum = 0;
+      ol.innerHTML = r.instructions.map(function (step) {
+        if (step.slice(0, 3) === '## ') {
+          return '<li class="step-heading">' + escHtml(step.slice(3)) + '</li>';
+        }
+        stepNum++;
         return '<li class="step"><span class="step-num" aria-hidden="true">'
-          + (idx + 1) + '</span><p>' + escHtml(step) + '</p></li>';
+          + stepNum + '</span><p>' + escHtml(step) + '</p></li>';
       }).join('');
-      var stepCount = page.querySelector('.recipe-meta-bar span:nth-child(3)');
-      if (stepCount) stepCount.textContent = r.instructions.length + ' steps';
+      var stepCountEl = page.querySelector('.recipe-meta-bar span:nth-child(3)');
+      if (stepCountEl) stepCountEl.textContent = stepNum + ' steps';
     }
   })
   .catch(function () { /* silent — static HTML is the fallback */ });

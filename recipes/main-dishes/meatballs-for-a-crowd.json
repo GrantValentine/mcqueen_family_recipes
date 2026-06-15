@@ -1,5 +1,5 @@
 {
-  "title": "Meatballs for a Crowd*",
+  "title": "Meatballs for a Crowd",
   "ingredients": [
     "2 large bags meatballs (the huge bags sold at Costco)",
     "6 bottles chili sauce",
@@ -9,13 +9,17 @@
     "½ jar (4.25 ounce) crushed garlic"
   ],
   "instructions": [
-    "Place all ingredients in a large roaster. Cook at 250 degrees for 8-12 hours.",
-    "*I will admit, I am not a fan of this recipe, but have served it at many mission farewells, homecomings, wedding receptions, and other large events. Always a huge crowd pleaser."
+    "Place all ingredients in a large roaster.",
+    "Cook at 250 degrees for 8-12 hours."
   ],
-  "notes": [],
+  "notes": [
+    "This recipe is always a huge crowd pleaser, despite not being the recipe creator's personal favorite.",
+    "Great for large events such as mission farewells, homecomings, and wedding receptions."
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "meatballs-for-a-crowd",
   "source_file": "Meatballs for a Crowd.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

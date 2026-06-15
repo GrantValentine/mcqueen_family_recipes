@@ -10,14 +10,19 @@
   ],
   "instructions": [
     "Whip cream in a bowl until soft peaks form.",
-    "In a separate bowl, combine mayonnaise, horseradish, and Dijon mustard. Gently fold in whipped cream using a rubber spatula.",
-    "Season with sugar, salt, and pepper. Stir gently and transfer to a serving bowl.",
-    "Excellent with prime rib or corned beef – standard accompaniment to our Christmas Eve Prime Rib Dinner."
+    "In a separate bowl, combine mayonnaise, horseradish, and Dijon mustard.",
+    "Gently fold in whipped cream using a rubber spatula.",
+    "Season with sugar, salt, and pepper.",
+    "Stir gently and transfer to a serving bowl."
   ],
-  "notes": [],
+  "notes": [
+    "Excellent with prime rib or corned beef",
+    "Standard accompaniment to Christmas Eve Prime Rib Dinner"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "horseradish-cream-sauce",
   "source_file": "Horseradish Cream Sauce.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

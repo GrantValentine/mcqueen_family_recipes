@@ -1,34 +1,44 @@
 {
-  "title": "Julie’s Marble Brownies",
+  "title": "Julie's Marble Brownies",
   "ingredients": [
-    "Brownie Batter",
     "7 ounces unsweetened chocolate",
     "3 sticks unsalted butter",
     "3 cups sugar",
     "6 large eggs",
     "2 teaspoons vanilla extract",
     "1¾ cups all-purpose flour, sifted",
-    "Cheesecake Batter",
     "12 ounces cream cheese, room temperature",
     "2 teaspoons flour",
     "½ cup sugar",
     "1 large egg",
     "1 teaspoon vanilla extract",
-    "Topping",
     "¾ cup dark chocolate chips"
   ],
   "instructions": [
-    "Preheat oven to 325°F. Lightly butter a 4-quart oblong pan (15 × 10½ × 2 inches).",
-    "Melt chocolate and butter together (double boiler or microwave, stirring every 30 seconds). Cool 5–10 minutes. Add sugar and mix well. Add eggs one at a time, beating after each. Add vanilla. Fold in flour by hand. Set aside.",
+    "Preheat oven to 325°F.",
+    "Lightly butter a 4-quart oblong pan (15 × 10½ × 2 inches).",
+    "Melt chocolate and butter together using a double boiler or microwave, stirring every 30 seconds.",
+    "Cool the chocolate mixture for 5–10 minutes.",
+    "Add sugar and mix well.",
+    "Add eggs one at a time, beating after each addition.",
+    "Add vanilla.",
+    "Fold in flour by hand and set aside.",
     "In a separate bowl, beat all cheesecake ingredients until smooth.",
-    "Spread ⅔ of the brownie batter into the pan. Drop spoonfuls of cheesecake batter evenly over the surface. Drop remaining brownie batter between cheesecake mounds (not directly on top).",
-    "Using the handle of a wooden spoon or chopstick, drag lines through the batter lengthwise, then crosswise, to create a marble pattern. Gently shake pan to level batter. Sprinkle chocolate chips on top.",
+    "Spread ⅔ of the brownie batter into the prepared pan.",
+    "Drop spoonfuls of cheesecake batter evenly over the surface.",
+    "Drop remaining brownie batter between cheesecake mounds, not directly on top.",
+    "Using the handle of a wooden spoon or chopstick, drag lines through the batter lengthwise, then crosswise, to create a marble pattern.",
+    "Gently shake pan to level batter.",
+    "Sprinkle chocolate chips on top.",
     "Bake 45–50 minutes, until set."
   ],
-  "notes": [],
+  "notes": [
+    "Cheesecake batter ingredients should be at room temperature for best results."
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "julie-s-marble-brownies",
   "source_file": "Julie_s Marble Brownies.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

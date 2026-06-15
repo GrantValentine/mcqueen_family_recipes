@@ -1,5 +1,5 @@
 {
-  "title": "Julie’s Spaghetti with Meat Sauce",
+  "title": "Julie's Spaghetti with Meat Sauce",
   "ingredients": [
     "1 medium onion, diced (about ½ cup)",
     "3 cloves garlic, minced",
@@ -36,5 +36,6 @@
   "category_slug": "main-dishes",
   "slug": "julie-s-spaghetti-with-meat-sauce",
   "source_file": "Julie_s Spaghetti with Meat Sauce.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

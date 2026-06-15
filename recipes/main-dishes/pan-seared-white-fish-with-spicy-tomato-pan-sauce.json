@@ -5,22 +5,30 @@
     "2 pounds tilapia, red snapper, or orange roughy fillets",
     "Old Bay fish seasoning",
     "Salt and pepper",
-    "Wash and dry fish fillets. Heat oil in heavy large skillet over medium-high heat. Sprinkle fish with Old Bay seasoning, salt and pepper. Add fish to skillet and saute until just opaque in center, about 3 minutes per side. Cook in batches if needed. Transfer fish to platter. Keep warm in oven at lowest setting while you make the pan sauce. To serve, ladle sauce over fish.",
-    "Spicy Tomato Pan Sauce",
     "½ tsp dried crushed red pepper",
     "½ cup chopped fresh parsley",
     "4 cups grape tomatoes, halved",
     "1 cup Kalamata olives, pitted and coarsely chopped",
-    "6 garlic cloves",
-    "Salt and pepper to taste"
+    "6 garlic cloves"
   ],
   "instructions": [
-    "Add red pepper and parsley to same skillet that fish was cooked. Saute for 1 minute, scraping up bits from the skillet. Add tomatoes, olives, and garlic. Saute for 2-3 minutes. Season with salt and pepper. Spoon over meat."
+    "Wash and dry fish fillets.",
+    "Heat oil in heavy large skillet over medium-high heat.",
+    "Sprinkle fish with Old Bay seasoning, salt and pepper.",
+    "Add fish to skillet and saute until just opaque in center, about 3 minutes per side, cooking in batches if needed.",
+    "Transfer fish to platter and keep warm in oven at lowest setting.",
+    "Add red pepper and parsley to same skillet, saute for 1 minute while scraping up bits from the skillet.",
+    "Add tomatoes, olives, and garlic to skillet and saute for 2-3 minutes.",
+    "Season sauce with salt and pepper to taste.",
+    "Ladle sauce over fish to serve."
   ],
-  "notes": [],
+  "notes": [
+    "Keep cooked fish warm in the oven while making the pan sauce to prevent it from cooling."
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "pan-seared-white-fish-with-spicy-tomato-pan-sauce",
   "source_file": "Pan Seared White Fish with Spicy Tomato Pan Sauce.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

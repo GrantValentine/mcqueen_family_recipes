@@ -18,16 +18,22 @@
     "4-6 hamburger buns, lightly buttered and toasted under broiler"
   ],
   "instructions": [
-    "In a food processor, combine onion, peppers, garlic. Pulse until very finely minced.",
-    "Heat oil in large skillet, add the onion mixture and saute 4-5 minutes. Add the spices, stir well and saute another 4 minutes or until onions are very soft.",
-    "Add the ground meat and saute, breaking up clumps with a spoon until the meat is browned, about 5 minutes.",
-    "In a large measuring cup, whisk together the ketchup, tomato puree, and vinegar. Add this to the meat, bring to a simmer, and cook uncovered for 10 minutes or until slightly thickened.",
-    "Season with salt and pepper. Scoop sloppy joes onto each bun bottom, top, and serve. Good eaten with dill pickles."
+    "In a food processor, combine onion, peppers, and garlic, then pulse until very finely minced.",
+    "Heat oil in a large skillet, add the onion mixture, and sauté for 4-5 minutes.",
+    "Add the spices and stir well, then sauté for another 4 minutes or until onions are very soft.",
+    "Add the ground meat and sauté, breaking up clumps with a spoon, until the meat is browned, about 5 minutes.",
+    "In a large measuring cup, whisk together the ketchup, tomato puree, and vinegar.",
+    "Add the ketchup mixture to the meat, bring to a simmer, and cook uncovered for 10 minutes or until slightly thickened.",
+    "Season with salt and pepper.",
+    "Scoop sloppy joes onto each bun bottom, add the top, and serve."
   ],
-  "notes": [],
+  "notes": [
+    "Good eaten with dill pickles."
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "sloppy-joes",
   "source_file": "Sloppy Joes.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

@@ -12,25 +12,31 @@
     "1 tsp pure vanilla extract"
   ],
   "instructions": [
-    "Pre-heat your waffle iron to its hottest setting. Placing a cookie-sheet under it can help catch any batter drippage during cooking.",
+    "Pre-heat your waffle iron to its hottest setting.",
+    "Place a cookie-sheet under the waffle iron to catch any batter drippage during cooking.",
     "Pre-heat oven to 200°F.",
     "Sift together flour, baking powder and salt.",
-    "Separate the eggs. Place the whites in a small mixing bowl and the yolks in another.",
+    "Separate the eggs, placing the whites in a small mixing bowl and the yolks in another.",
     "Melt the butter over a low heat, then remove it and let it cool (but not solidify).",
-    "Beat the yolks thoroughly. Whisk in the milk, oil and melted butter.",
-    "Beat the egg whites until stiff. Then add the sugar slowly and continue mixing until you get nice stiff peaks.",
-    "Add liquid ingredients to dry ingredients and mix gently until combined. Don't overmix!",
-    "Use a rubber spatula to gently fold the beaten egg whites into the batter — and again, be careful not to overmix.",
+    "Beat the yolks thoroughly, then whisk in the milk, oil and melted butter.",
+    "Beat the egg whites until stiff, then add the sugar slowly and continue mixing until you get nice stiff peaks.",
+    "Add liquid ingredients to dry ingredients and mix gently until combined, being careful not to overmix.",
+    "Use a rubber spatula to gently fold the beaten egg whites into the batter, again being careful not to overmix.",
     "Spray both surfaces of your waffle iron with cooking spray.",
-    "Ladle ½ to ¾ cup (depending on your waffle iron) batter onto the iron and close it. It's not unusual for a bit of batter to seep out of the edges of the iron. If there's excessive leakage, use less batter for the next waffle.",
-    "Cook until the waffle iron's indicator light shows that cooking is complete, or until no more steam comes out. The finished waffle should be golden brown and crispy.",
-    "Lift the waffle out of the iron with a pair of tongs and either serve right away or transfer it to the oven to keep warm.",
-    "Makes about 4-5 waffles."
+    "Ladle ½ to ¾ cup batter onto the iron and close it.",
+    "Cook until the waffle iron's indicator light shows that cooking is complete, or until no more steam comes out.",
+    "Lift the waffle out of the iron with a pair of tongs and either serve right away or transfer it to the oven to keep warm."
   ],
-  "notes": [],
+  "notes": [
+    "Makes about 4-5 waffles.",
+    "It's not unusual for a bit of batter to seep out of the edges of the iron. If there's excessive leakage, use less batter for the next waffle.",
+    "The finished waffle should be golden brown and crispy.",
+    "Do not overmix the batter to maintain fluffiness."
+  ],
   "category": "Bread",
   "category_slug": "bread",
   "slug": "fluffy-waffle-recipe",
   "source_file": "Fluffy Waffle Recipe.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

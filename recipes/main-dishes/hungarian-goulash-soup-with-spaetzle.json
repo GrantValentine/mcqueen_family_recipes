@@ -15,20 +15,31 @@
     "1 tomato, seeded and chopped",
     "½ green bell pepper, seeded and minced",
     "¼ cup minced fresh parsley",
-    "Spaetzle",
     "½ cup flour",
     "1 egg",
     "1/8 tsp salt"
   ],
   "instructions": [
-    "In a Dutch oven, saute the onion and garlic in oil for 5 minutes or until soft. Stir in the paprika and then the cubed beef. Add ½ cup of water. Bring to a boil over moderate heat and cook for 5 minutes. Stir in the caraway seed mixed with ¼ cup water and cook the mixture until the liquid has evaporated. Add 10 cups of water and salt and pepper. Bring to a boil. Reduce heat and simmer, partially covered for 1 ½ -2 hours or until meat is tender. Add the potatoes, carrot, parsnip, tomato, and green pepper and simmer another 30 minutes. Meanwhile, make spaetzle dough.",
-    "To prepare the spaetzle, mix the flour with the egg, salt, and about 2 tbsp of water to form a soft dough. Cover and set aside for 30 minutes. Pinch the dough into pieces the size of peas and drop into the simmering soup, lifting the spaetzle from the bottom of the pan. Add parsley, simmer for 5 more minutes and until all spaetzle is cooked. Add salt and pepper to taste.",
-    "Sometimes I made the GHOULASH soup for Halloween. I told the kids that the spaetzle were little ghosts."
+    "In a Dutch oven, sauté the onion and garlic in oil for 5 minutes or until soft.",
+    "Stir in the paprika and then the cubed beef.",
+    "Add ½ cup of water and bring to a boil over moderate heat and cook for 5 minutes.",
+    "Stir in the caraway seeds mixed with ¼ cup water and cook the mixture until the liquid has evaporated.",
+    "Add 10 cups of water, salt, and pepper and bring to a boil.",
+    "Reduce heat and simmer, partially covered, for 1½–2 hours or until meat is tender.",
+    "Add the potatoes, carrot, parsnip, tomato, and green pepper and simmer another 30 minutes.",
+    "While the soup simmers, prepare the spaetzle dough by mixing the flour with the egg, salt, and about 2 tbsp of water to form a soft dough.",
+    "Cover the spaetzle dough and set aside for 30 minutes.",
+    "Pinch the dough into pieces the size of peas and drop into the simmering soup, lifting the spaetzle from the bottom of the pan.",
+    "Add parsley and simmer for 5 more minutes until all spaetzle is cooked.",
+    "Add salt and pepper to taste."
   ],
-  "notes": [],
+  "notes": [
+    "This goulash soup makes a fun Halloween dish—the spaetzle pieces can be called 'little ghosts' for children."
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "hungarian-goulash-soup-with-spaetzle",
   "source_file": "Hungarian Goulash Soup with Spaetzle.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

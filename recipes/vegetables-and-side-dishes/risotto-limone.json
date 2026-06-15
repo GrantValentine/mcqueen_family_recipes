@@ -1,9 +1,9 @@
 {
   "title": "Risotto Limone",
   "ingredients": [
-    "Stop and Smell the Rosemary",
     "6 cups chicken broth",
-    "4 tbsp. plus 4 tbsp. unsalted butter",
+    "4 tbsp. unsalted butter",
+    "4 tbsp. unsalted butter",
     "1 small onion, chopped",
     "2 cups raw Italian Arborio rice",
     "8 ounces Parmesan cheese, freshly grated (2 cups)",
@@ -13,13 +13,29 @@
     "Freshly ground pepper"
   ],
   "instructions": [
-    "Bring chicken broth to a slow boil in a medium saucepan.  Set aside.  Melt 4 tbsp. butter in a large saucepan over medium heat.  Add onion.  Saute until translucent.  Add rice and stir to coat, 1 to 2 minutes.  Add ½ cup broth.  Stir while cooking until rice absorbs liquid.  When the rice dries out, add another ½ cup broth.  Continue to stir.  Continue adding broth until all is used.  Never drown rice.  (Risotto is done when rice is tender but al dente.)  When rice is cooked, stir in Parmesan, remaining 4 tbsp. butter, parsley, lemon juice, and zest.  Season with salt and pepper.  Cover and let stand a few minutes before serving.  Risotto Limone should have a creamy porridge-like consistency.",
-    "Correct heat is very important.  If the liquid evaporates too rapidly, the rice cannot cook evenly.  Regulate heat so risotto will cook in 30 minutes time.  After 20 minutes, reduce the amount of broth to ¼ cup at a time."
+    "Bring chicken broth to a slow boil in a medium saucepan and set aside.",
+    "Melt 4 tbsp. butter in a large saucepan over medium heat.",
+    "Add chopped onion and sauté until translucent.",
+    "Add rice and stir to coat, 1 to 2 minutes.",
+    "Add ½ cup broth and stir while cooking until rice absorbs the liquid.",
+    "When the rice dries out, add another ½ cup broth and continue to stir.",
+    "Continue adding broth ½ cup at a time, stirring continuously and waiting until the rice absorbs each addition before adding more (after 20 minutes, reduce to ¼ cup at a time).",
+    "Cook until all broth is used and rice is tender but al dente, about 30 minutes total.",
+    "Stir in Parmesan, remaining 4 tbsp. butter, parsley, lemon juice, and zest.",
+    "Season with salt and pepper to taste.",
+    "Cover and let stand a few minutes before serving."
   ],
-  "notes": [],
+  "notes": [
+    "From Stop and Smell the Rosemary",
+    "Correct heat is very important—if the liquid evaporates too rapidly, the rice cannot cook evenly.",
+    "Regulate heat so risotto will cook in 30 minutes time.",
+    "Never drown the rice.",
+    "Risotto Limone should have a creamy porridge-like consistency."
+  ],
   "category": "Vegetables and Side Dishes",
   "category_slug": "vegetables-and-side-dishes",
   "slug": "risotto-limone",
   "source_file": "Risotto Limone.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

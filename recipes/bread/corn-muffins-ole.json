@@ -10,15 +10,31 @@
     "½ cup plus 1 tablespoon milk",
     "¼ cup corn oil",
     "1 17-ounce can creamed corn",
-    "¼ cup jalepeno pepper jelly (optional)"
+    "¼ cup jalapeno pepper jelly (optional)",
+    "vegetable oil spray"
   ],
   "instructions": [
-    "In large bowl mix together flour, cornmeal, sugar, baking powder and pepper flakes.  Whisk together egg, milk, oil and corn in a separate bowl.  Pour liquid mixture over dry ingredients and stir lightly, using no more thatn 15 – 20 strokes to mix.  Coat 12 2 ½-inch muffin cups with vegetable oil spray.  Fill each muffin cup ½ full with batter.  Reserve 1/3 of batter.  Make a small depression in center of each muffin filling with a teaspoon.  Drop in 1 teaspoon of jalepeno jelly.  Divide reserved batter over muffins to cover jelly.  Bake in preheated oven at 375 degrees for 25 minutes or until light golden brown.  Let muffins rest in pan for 3 – 5 minutes.  Carefully lift muffins out of pan.  Let cool for 10 -15 minutes before serving."
+    "In a large bowl, mix together flour, cornmeal, sugar, baking powder, and pepper flakes.",
+    "In a separate bowl, whisk together egg, milk, oil, and corn.",
+    "Pour the liquid mixture over the dry ingredients and stir lightly, using no more than 15-20 strokes to mix.",
+    "Coat 12 2½-inch muffin cups with vegetable oil spray.",
+    "Fill each muffin cup ½ full with batter and reserve 1/3 of the remaining batter.",
+    "Make a small depression in the center of each muffin filling with a teaspoon.",
+    "Drop 1 teaspoon of jalapeno jelly into each depression.",
+    "Divide the reserved batter over the muffins to cover the jelly.",
+    "Bake in a preheated oven at 375 degrees for 25 minutes or until light golden brown.",
+    "Let muffins rest in the pan for 3-5 minutes.",
+    "Carefully lift muffins out of the pan.",
+    "Let cool for 10-15 minutes before serving."
   ],
-  "notes": [],
+  "notes": [
+    "Jalapeno pepper jelly is optional for those who prefer less spice",
+    "Do not overmix the batter to keep muffins tender"
+  ],
   "category": "Bread",
   "category_slug": "bread",
   "slug": "corn-muffins-ole",
   "source_file": "Corn Muffins Ole.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

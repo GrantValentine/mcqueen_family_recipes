@@ -17,16 +17,30 @@
     "¾ cup Guittard or Ghiradelli regular semi-sweet chocolate chips"
   ],
   "instructions": [
-    "Preheat oven to 350 degrees.  Line 3 baking sheets with parchment paper.",
-    "In separate bowl, mix together flour, oats, cornstarch, baking powder, baking soda, and salt.  Set aside.",
-    "In large mixing bowl, thoroughly combine white and brown sugars.  Cream butter into the sugars and beat well  (about 3-4 minutes).  Add eggs and beat 4-5 minutes until light and fluffy.",
-    "Add flour/oat mixture and mix on low until just combined (don’t overmix at this point or cookies will be tough).  Stir in chocolate chips and vanilla.  When chocolate chips are almost incorporated, stir in crispy rice cereal (can use granola if preferred or a combo).",
-    "Using a ¼ cup scooper, make cookie balls and place on parchment lined cookie sheets.  Or, roll dough into large balls.  (Recipe should make about 27 cookies, 9 large cookies on 3 sheets.)  Bake at 350 degrees for 10-11 minutes.  Remove from oven when they look not quite done.  Keep on hot cookie sheets for 3 minutes, then slide parchment paper with cookies off cookie sheet onto counter to cool."
+    "Preheat oven to 350 degrees.",
+    "Line 3 baking sheets with parchment paper.",
+    "In a separate bowl, mix together flour, oats, cornstarch, baking powder, baking soda, and salt. Set aside.",
+    "In a large mixing bowl, thoroughly combine white and brown sugars.",
+    "Cream butter into the sugars and beat well for about 3-4 minutes.",
+    "Add eggs and beat for 4-5 minutes until light and fluffy.",
+    "Add the flour/oat mixture and mix on low until just combined, being careful not to overmix.",
+    "Stir in chocolate chips and vanilla.",
+    "When chocolate chips are almost incorporated, stir in crispy rice cereal.",
+    "Using a ¼ cup scooper, make cookie balls and place on parchment-lined cookie sheets, spacing 9 large cookies on each of the 3 sheets.",
+    "Bake at 350 degrees for 10-11 minutes, removing from oven when cookies look not quite done.",
+    "Keep cookies on hot cookie sheets for 3 minutes.",
+    "Slide parchment paper with cookies off cookie sheet onto counter to cool."
   ],
-  "notes": [],
+  "notes": [
+    "Recipe should make about 27 cookies total.",
+    "Can use granola instead of crispy rice cereal, or use a combination of both.",
+    "Don't overmix the dough after adding the flour/oat mixture or cookies will be tough.",
+    "Remove cookies from oven slightly underdone for better texture."
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "grant-solomon-valentine-cookies",
   "source_file": "Grant Solomon Valentine Cookies.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

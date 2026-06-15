@@ -1,28 +1,34 @@
 {
   "title": "Crème Anglaise",
   "ingredients": [
-    "1 cup (8floz/225ml) cream",
-    "1 1/2 cups (12floz/340ml) whole milk",
-    "1/2 cup (4oz/115g) sugar, divided",
-    "1 vanilla bean, split lengthwise and scraped or 1 1/2 tsp vanilla bean paste",
-    "6 egg yolks"
+    "1 cup (8 fl oz/225 ml) cream",
+    "1 1/2 cups (12 fl oz/340 ml) whole milk",
+    "1/2 cup (4 oz/115 g) sugar, divided",
+    "1 vanilla bean, split lengthwise and scraped, or 1 1/2 tsp vanilla bean paste",
+    "6 egg yolks"
   ],
   "instructions": [
-    "In a medium heavy bottomed saucepan add the cream, milk, 1/4 cup sugar, vanilla pod and beans.",
-    "Simmer over medium heat until the mixture starts to bubble around the edge of the pan, for about 2 minutes, do not let it boil. Remove from the heat and let stand for 20 minutes.",
+    "In a medium heavy bottomed saucepan add the cream, milk, 1/4 cup sugar, vanilla pod and beans.",
+    "Simmer over medium heat until the mixture starts to bubble around the edge of the pan for about 2 minutes, do not let it boil.",
+    "Remove from the heat and let stand for 20 minutes.",
     "While the cream mixture is infusing, whisk the egg yolks with remaining 1/4 cup of sugar in a medium bowl.",
-    "Ladle some of the hot cream mixture into the egg yolk mixture, then swiftly whisk to combine. Add another ladle of the infused milk to the eggs until the egg mixture is warm to the touch.",
+    "Ladle some of the hot cream mixture into the egg yolk mixture, then swiftly whisk to combine.",
+    "Add another ladle of the infused milk to the eggs until the egg mixture is warm to the touch.",
     "Pour the tempered cream and egg mixture into the remaining cream in the saucepan, then return the pan to the heat.",
-    "Continue to cook over medium heat while constantly stirring until the custard coats the back of a spoon, this will take about 5 to 7 minutes.",
-    "Once the custard has thickened, remove from the heat and strain through a sieve into a medium bowl to remove any lumps and the vanilla pod. If using vanilla bean paste, add it at this point.",
-    "Place the custard in an ice bath to cool it down quickly and prevent overcooking.",
-    "Once cooled, cover and store in the fridge in an airtight container for up 4 days. Serve with pies, crisps and over ice cream with fresh fruit.",
-    "I made multiple batches of this for Joy and Nick’s wedding reception. We served this over vanilla ice cream with fresh peaches in martini glasses – yummy and pretty."
+    "Continue to cook over medium heat while constantly stirring until the custard coats the back of a spoon, about 5 to 7 minutes.",
+    "Remove from the heat and strain through a sieve into a medium bowl to remove any lumps and the vanilla pod.",
+    "If using vanilla bean paste, add it at this point.",
+    "Place the custard in an ice bath to cool it down quickly and prevent overcooking."
   ],
-  "notes": [],
+  "notes": [
+    "Once cooled, cover and store in the fridge in an airtight container for up to 4 days.",
+    "Serve with pies, crisps and over ice cream with fresh fruit.",
+    "Perfect served over vanilla ice cream with fresh peaches in martini glasses."
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "crème-anglaise",
   "source_file": "Crème Anglaise.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

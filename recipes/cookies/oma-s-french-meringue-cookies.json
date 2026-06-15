@@ -1,23 +1,34 @@
 {
-  "title": "Oma’s French Meringue Cookies",
+  "title": "Oma's French Meringue Cookies",
   "ingredients": [
     "4 egg whites, room temperature",
     "¼ tsp. cream of tartar",
     "¼ tsp. salt",
     "2 tsp. vanilla extract or vanilla extract powder",
-    "1 ½ cup granulated sugar (Baker’s fine sugar is best)",
+    "1 ½ cup granulated sugar (Baker's fine sugar is best)",
     "1 10-12 oz. container of mini semisweet chocolate chips"
   ],
   "instructions": [
-    "Preheat oven to 300 degrees. Line baking sheets with parchment paper.",
-    "Whip egg whites until white, add in cream of tartar, salt, and vanilla. Whip until stiff peaks just begin to form. SLOWLY add the sugar and whip thoroughly, mixture should be very light with stiff peaks.",
-    "Drop dough by teaspoons or pipe onto prepared baking sheets to form small cookies. Bake at 300 degrees for ~25 minutes. Meringues should not brown, so move sheets’ rack location if needed. Before removing from oven, make sure meringues have cooked enough to hold together if lifted off baking pan. Cool. To store, do not cover with plastic wrap or in closed container as will turn gummy.",
-    "If humidity is high, then the meringues may not turn out as well."
+    "Preheat oven to 300 degrees.",
+    "Line baking sheets with parchment paper.",
+    "Whip egg whites until white.",
+    "Add cream of tartar, salt, and vanilla to egg whites and whip until stiff peaks just begin to form.",
+    "Slowly add the sugar and whip thoroughly until mixture is very light with stiff peaks.",
+    "Drop dough by teaspoons or pipe onto prepared baking sheets to form small cookies.",
+    "Bake at 300 degrees for approximately 25 minutes, moving sheets' rack location if needed to prevent browning.",
+    "Before removing from oven, verify meringues have cooked enough to hold together if lifted off baking pan.",
+    "Cool completely."
   ],
-  "notes": [],
+  "notes": [
+    "Baker's fine sugar is best for this recipe",
+    "Meringues should not brown during baking",
+    "Do not cover with plastic wrap or store in closed container after cooling, as they will turn gummy",
+    "High humidity may affect how well the meringues turn out"
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "oma-s-french-meringue-cookies",
   "source_file": "Oma_s French Meringue Cookies.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

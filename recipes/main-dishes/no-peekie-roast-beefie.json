@@ -1,19 +1,34 @@
 {
   "title": "No Peekie Roast Beefie",
   "ingredients": [
-    "Rib Roast",
-    "Kosher Salt",
-    "Fresh Ground Pepper",
+    "1 rib roast",
+    "Kosher salt",
+    "Fresh ground pepper",
     "Parsley sprigs for garnish"
   ],
   "instructions": [
-    "Allow the rib roast to stand at room temperature for 1 hour.  Preheat oven to 375 degrees.  Season the meat well with Kosher Salt and fresh ground pepper, rubbing into the surface.  Place meat in roasting pan.  Cook in oven for 1 ½ hour.  Turn off the heat, but do no open the oven door.",
-    "Let roast stay in oven for 2 hours and 15 minutes.  Turn oven back on to 325 degrees.  Cook for 30 to 35 minutes.  Internal temp should read about 128 to 130 degrees – this is for medium rare to medium.  Take roast out.  Get drippings from pan for Yorkshire pudding.  Cover roast well with aluminum foil and let rest for 20 minutes.  Carve roast and place on platter with parsley as garnish.  At this point Yorkshire pudding should be done."
+    "Allow the rib roast to stand at room temperature for 1 hour.",
+    "Preheat oven to 375 degrees.",
+    "Season the meat well with kosher salt and fresh ground pepper, rubbing into the surface.",
+    "Place meat in roasting pan.",
+    "Cook in oven for 1½ hours.",
+    "Turn off the heat, but do not open the oven door.",
+    "Let roast stay in oven for 2 hours and 15 minutes.",
+    "Turn oven back on to 325 degrees.",
+    "Cook for 30 to 35 minutes until internal temperature reads about 128 to 130 degrees (medium rare to medium).",
+    "Take roast out and get drippings from pan for Yorkshire pudding.",
+    "Cover roast well with aluminum foil and let rest for 20 minutes.",
+    "Carve roast and place on platter with parsley as garnish."
   ],
-  "notes": [],
+  "notes": [
+    "This recipe uses a no-peek method where the oven is turned off and not opened during cooking.",
+    "Internal temperature should read 128 to 130 degrees for medium rare to medium doneness.",
+    "Yorkshire pudding can be prepared to finish at the same time as the roast resting period."
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "no-peekie-roast-beefie",
   "source_file": "No Peekie Roast Beefie.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

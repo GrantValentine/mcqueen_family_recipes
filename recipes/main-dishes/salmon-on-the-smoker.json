@@ -1,25 +1,33 @@
 {
   "title": "Salmon on the Smoker",
   "ingredients": [
-    "1-½ to 2 pounds salmon, rinsed and patted dry",
+    "1½ to 2 pounds salmon, rinsed and patted dry",
     "3 tablespoons butter, softened",
     "1 medium shallot, chopped small",
     "1 tablespoon fresh chives, chopped small",
     "1 tablespoon fresh parsley, chopped",
     "2 cloves garlic, minced or pressed",
-    "1/2 teaspoon sea salt",
+    "½ teaspoon sea salt",
     "½ teaspoon Old Bay seasoning",
     "½ teaspoon ground black pepper",
     "fresh lemon wedges (optional, for serving)"
   ],
   "instructions": [
-    "Mix softened butter with herbs, shallot, and onion. Place salmon on baking sheet. Cover salmon with butter mixture. Place on Traeger grill set at 275 for about 35 minutes. Remove, tent and let rest for 5 minutes. Serve with lemon wedges.",
+    "Mix softened butter with herbs, shallot, and garlic.",
+    "Place salmon on baking sheet.",
+    "Cover salmon with butter mixture.",
+    "Place on Traeger grill set at 275°F for about 35 minutes.",
+    "Remove salmon and tent with foil.",
+    "Let rest for 5 minutes.",
+    "Serve with lemon wedges."
+  ],
+  "notes": [
     "Frank loves this salmon."
   ],
-  "notes": [],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "salmon-on-the-smoker",
   "source_file": "Salmon on the Smoker.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

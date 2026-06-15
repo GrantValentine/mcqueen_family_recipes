@@ -1,26 +1,35 @@
 {
   "title": "Spaghetti Alla Puttanesca",
   "ingredients": [
-    "¼ cup EVOO",
+    "¼ cup extra virgin olive oil",
     "4 large garlic cloves, minced",
-    "1 28-oz crushed tomatoes",
+    "1 28-oz can crushed tomatoes",
     "1 14-oz can chopped tomatoes, drained",
     "4-6 anchovy fillets, chopped",
     "½ cup Kalamata olives, roughly chopped",
-    "2 TB drained capers",
-    "1 tsp. dried oregano",
-    "1 tsp. dried basil",
-    "½ tsp crushed red pepper flakes",
+    "2 tablespoons drained capers",
+    "1 teaspoon dried oregano",
+    "1 teaspoon dried basil",
+    "½ teaspoon crushed red pepper flakes",
     "1 pound spaghetti",
-    "Freshly grated Parmesan cheese"
+    "Freshly grated Parmesan cheese",
+    "Salt to taste"
   ],
   "instructions": [
-    "Heat oil in large pot over medium heat.  Add garlic and sauté until fragrant, about 1 minute.  Add crushed tomatoes, chopped tomatoes, Kalamata olives, anchovies, capers, oregano, basil and red pepper flakes.  Simmer over medium low heat until thickened, stirring occasionally, for 10 minutes.  Season with salt if needed.  While sauce is cooking, heat water and cook spaghetti al dente.  Drain pasta and serve sauce over top.  Sprinkle cheese on top."
+    "Heat oil in large pot over medium heat.",
+    "Add garlic and sauté until fragrant, about 1 minute.",
+    "Add crushed tomatoes, chopped tomatoes, Kalamata olives, anchovies, capers, oregano, basil and red pepper flakes.",
+    "Simmer over medium low heat until thickened, stirring occasionally, for 10 minutes.",
+    "Season with salt if needed.",
+    "While sauce is cooking, heat water and cook spaghetti al dente.",
+    "Drain pasta and serve sauce over top.",
+    "Sprinkle cheese on top."
   ],
   "notes": [],
   "category": "Salads",
   "category_slug": "salads",
   "slug": "spaghetti-alla-puttanesca",
   "source_file": "Spaghetti Alla Puttanesca.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

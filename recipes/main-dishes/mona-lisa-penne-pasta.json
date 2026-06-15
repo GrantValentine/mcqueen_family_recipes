@@ -1,5 +1,5 @@
 {
-  "title": "Mona Lisa’s Chicken and Penne Pasta",
+  "title": "Mona Lisa's Chicken and Penne Pasta",
   "ingredients": [
     "Chicken breast tenders, cut into bite-size pieces",
     "1–2 cloves garlic, crushed",
@@ -7,27 +7,35 @@
     "1–2 small jars marinated artichoke hearts",
     "1 can black olives",
     "Fresh mushrooms, cut into large chunks",
-    "Sauce",
     "1 quart half-and-half",
     "¼ cup butter",
     "About 1 cup grated Asiago cheese",
     "About 1 cup grated Parmesan cheese",
-    "About 1 tablespoon Cavender’s Greek Seasoning",
+    "About 1 tablespoon Cavender's Greek Seasoning",
     "2–3 tablespoons white wine",
     "Salt, to taste"
   ],
   "instructions": [
     "Cook penne pasta according to package directions; drain and set aside.",
-    "Pour the marinade from one jar of artichoke hearts into a large skillet. Add chicken and crushed garlic and cook until chicken is fully cooked.",
-    "Break olives in half. Cut artichokes and mushrooms into large chunks. Add olives, artichokes, mushrooms, and cooked pasta to the chicken mixture.",
-    "To make the sauce, melt butter in a saucepan over medium heat. Add half-and-half and heat until warm. Stir in Asiago, Parmesan, Greek seasoning, wine, and salt to taste. Heat just until hot and cheeses are melted—do not boil.",
-    "Pour sauce over chicken and pasta mixture. Stir well and serve immediately.",
-    "This recipe was created by my dear friend Lisa Ames and her mom (Mona)."
+    "Pour the marinade from one jar of artichoke hearts into a large skillet.",
+    "Add chicken and crushed garlic to the skillet and cook until chicken is fully cooked.",
+    "Break olives in half.",
+    "Cut artichokes and mushrooms into large chunks.",
+    "Add olives, artichokes, mushrooms, and cooked pasta to the chicken mixture.",
+    "Melt butter in a saucepan over medium heat.",
+    "Add half-and-half and heat until warm.",
+    "Stir in Asiago, Parmesan, Greek seasoning, wine, and salt to taste.",
+    "Heat just until hot and cheeses are melted—do not boil.",
+    "Pour sauce over chicken and pasta mixture.",
+    "Stir well and serve immediately."
   ],
-  "notes": [],
+  "notes": [
+    "This recipe was created by Mona Lisa Ames and her mom"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "mona-lisa-penne-pasta",
   "source_file": "Mona Lisa Penne Pasta.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

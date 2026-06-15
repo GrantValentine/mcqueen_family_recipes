@@ -15,12 +15,21 @@
     "½ cup chopped fresh parsley"
   ],
   "instructions": [
-    "Heat the oil in a heavy pot. Add meat and brown. Add the onions and carrots. Saute for 5-7 minues. Add the tomatoes, seasonings, barley and 7 cups of water. Bring to a boil, lower heat and simmer for around 2 hours, until meat is starting to fall off the bones. Remove the meat and bones from the soup and cut meat into 1-inch pieces. Add the meat and mushrooms to soup. Cook for 5-10 more minutes or until mushrooms are tender. Stir in parsley and serve."
+    "Heat the oil in a heavy pot.",
+    "Add meat and brown.",
+    "Add the onions and carrots and saute for 5-7 minutes.",
+    "Add the tomatoes, seasonings, barley and 7 cups of water.",
+    "Bring to a boil, then lower heat and simmer for around 2 hours, until meat is starting to fall off the bones.",
+    "Remove the meat and bones from the soup and cut meat into 1-inch pieces.",
+    "Add the meat and mushrooms back to the soup.",
+    "Cook for 5-10 more minutes or until mushrooms are tender.",
+    "Stir in parsley and serve."
   ],
   "notes": [],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "short-rib-barley-soup",
   "source_file": "Short Rib Barley Soup.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

@@ -10,17 +10,28 @@
     "1 tsp baking powder",
     "½ tsp salt",
     "2 ½ cups flour",
-    "2 ½ cups small dark chocolate peanut butter cups, cut in quarters (best from Trader Joe’s)",
+    "2 ½ cups small dark chocolate peanut butter cups, cut in quarters",
     "¾ cup dark chocolate chips"
   ],
   "instructions": [
-    "Beat butter, peanut butter, and brown sugar until well blended and fluffy. Add eggs and vanilla and beat well. Mix flour with baking soda, baking powder, and salt, add to butter/peanut butter mixture. Stir in peanut butter cups and chocolate chips. Drop by rounded balls on parchment lined baking sheets. Bake at 375 degrees F for 10-11 minutes. Remove from oven and let rest on baking sheets for 1-2 minutes, then slide parchment paper with cookies off baking sheets to cool.",
-    "This adapted from Lisa Riddle’s recipe in an old ward cookbook."
+    "Beat butter, peanut butter, and brown sugar until well blended and fluffy.",
+    "Add eggs and vanilla and beat well.",
+    "Mix flour with baking soda, baking powder, and salt.",
+    "Add flour mixture to butter/peanut butter mixture.",
+    "Stir in peanut butter cups and chocolate chips.",
+    "Drop by rounded balls onto parchment lined baking sheets.",
+    "Bake at 375 degrees F for 10-11 minutes.",
+    "Remove from oven and let rest on baking sheets for 1-2 minutes.",
+    "Slide parchment paper with cookies off baking sheets to cool."
   ],
-  "notes": [],
+  "notes": [
+    "Small dark chocolate peanut butter cups from Trader Joe's work best",
+    "Adapted from Lisa Riddle's recipe in an old ward cookbook"
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "dark-chocolate-peanut-butter-cookies",
   "source_file": "Dark Chocolate Peanut Butter Cookies.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

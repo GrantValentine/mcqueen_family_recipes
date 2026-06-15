@@ -19,13 +19,23 @@
     "¼ cup chopped fresh flat-leaf parsley"
   ],
   "instructions": [
-    "Season chicken with half the salt and pepper. Heat oil in a large skillet over medium heat. Brown chicken on both sides; remove and set aside.\nIn same pan, cook peppers and prosciutto until peppers soften and prosciutto is crisp. Add garlic and cook briefly. Add tomatoes, wine, herbs, and stock, scraping up browned bits.\nReturn chicken to pan. Bring to a boil, then reduce heat, cover, and simmer until cooked through.\nStir in capers and parsley just before serving.",
+    "Season chicken with half the salt and pepper.",
+    "Heat oil in a large skillet over medium heat.",
+    "Brown chicken on both sides; remove and set aside.",
+    "In same pan, cook peppers and prosciutto until peppers soften and prosciutto is crisp.",
+    "Add garlic and cook briefly.",
+    "Add tomatoes, wine, herbs, and stock, scraping up browned bits.",
+    "Return chicken to pan.",
+    "Bring to a boil, then reduce heat, cover, and simmer until cooked through.",
+    "Stir in capers and parsley just before serving."
+  ],
+  "notes": [
     "Serve with pasta, mashed potatoes or polenta."
   ],
-  "notes": [],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "roman-chicken",
   "source_file": "Roman Chicken.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

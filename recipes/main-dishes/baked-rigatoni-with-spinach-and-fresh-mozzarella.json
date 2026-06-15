@@ -1,15 +1,13 @@
 {
   "title": "Baked Rigatoni with Spinach and Fresh Mozzarella",
   "ingredients": [
-    "Garlic Tomato Sauce:",
     "2 tbsp EVOO",
     "8 cloves garlic, thinly sliced",
     "2 cans (28 ounce each) plum tomatoes in tomato puree, preferably San Marzano",
     "¼ cup coarsely chopped fresh basil",
     "2 tsp kosher salt",
-    "1 tsp. freshly ground black pepper",
+    "1 tsp freshly ground black pepper",
     "½ tsp red pepper flakes",
-    "Remaining ingredients:",
     "2 tbsp EVOO",
     "1 small yellow onion, chopped",
     "2 cloves garlic, minced",
@@ -17,18 +15,40 @@
     "1 pound rigatoni pasta",
     "1 pound fresh mozzarella cheese, cut into ½ inch cubes",
     "Kosher salt",
-    "½ cup freshly grated Parmesan cheese plus more for serving."
+    "½ cup freshly grated Parmesan cheese plus more for serving"
   ],
   "instructions": [
-    "Warm the oil in large saucepan, add garlic and stir until pale gold, about 1 minute. Add tomatoes and cook until the sauce thickens, about 30 minutes. Using a potato masher, break up the tomatoes into chunky pieces. Add the basil and seasoning.  Keep warm.",
-    "Preheat oven to 350 degrees F. Lightly oil a 13x9 inch pan with olive oil.",
-    "Heat oil in large skillet over medium heat. Add the onion and cook until softened, about 3-4 minutes. Stir in the garlic and cook until aromatic, about 1 minute. In batches, stir in the spinach, letting each batch wilt before adding the next. Remove from the heat.",
-    "Meanwhile, bring a large pot of lightly salted water to a boil over high heat. Add the pasta and cook according to the package directions until very al dente. Drain the pasta well and return to the pot. Add tomato sauce, spinach, and ¾ of the mozzarella and mix well. Season generously with salt and pepper. Top with remaining mozzarella and Parmesan. Bake for 25-30 minutes."
+    "Warm 2 tbsp EVOO in a large saucepan over medium heat.",
+    "Add thinly sliced garlic and stir until pale gold, about 1 minute.",
+    "Add the canned plum tomatoes and cook until the sauce thickens, about 30 minutes.",
+    "Using a potato masher, break up the tomatoes into chunky pieces.",
+    "Stir in the basil, kosher salt, black pepper, and red pepper flakes. Keep warm.",
+    "Preheat oven to 350 degrees F.",
+    "Lightly oil a 13x9 inch baking pan with olive oil.",
+    "Heat 2 tbsp EVOO in a large skillet over medium heat.",
+    "Add the chopped onion and cook until softened, about 3-4 minutes.",
+    "Stir in the minced garlic and cook until aromatic, about 1 minute.",
+    "In batches, stir in the spinach, letting each batch wilt before adding the next.",
+    "Remove the spinach mixture from the heat.",
+    "Bring a large pot of lightly salted water to a boil over high heat.",
+    "Add the rigatoni pasta and cook according to package directions until very al dente.",
+    "Drain the pasta well and return to the pot.",
+    "Add the tomato sauce, spinach mixture, and ¾ of the mozzarella cubes to the pasta and mix well.",
+    "Season generously with salt and pepper.",
+    "Transfer the mixture to the prepared baking pan.",
+    "Top with the remaining mozzarella cubes and Parmesan cheese.",
+    "Bake for 25-30 minutes until heated through and cheese is melted."
   ],
-  "notes": [],
+  "notes": [
+    "Use San Marzano tomatoes for best flavor",
+    "Spinach should be well rinsed but not dried before adding to allow residual moisture to help cook it",
+    "Cook pasta until very al dente since it will finish cooking in the oven",
+    "Fresh mozzarella cubes add creaminess to the dish"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "baked-rigatoni-with-spinach-and-fresh-mozzarella",
   "source_file": "Baked Rigatoni with Spinach and Fresh Mozzarella.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

@@ -1,8 +1,7 @@
 {
   "title": "Chicken Artichoke Piccata",
   "ingredients": [
-    "Sauce:",
-    "½ cup butter divided in half",
+    "½ cup butter, divided in half",
     "1 package sliced mushrooms",
     "2-3 cloves garlic, crushed or minced",
     "¼ cup flour",
@@ -11,26 +10,46 @@
     "2 tbsp fresh lemon juice",
     "1-2 tbsp capers, drained",
     "1 can (14-oz) quartered artichoke hearts, water packed, drained well",
-    "1 ½ tsp Cavendar’s Greek seasoning",
+    "1 ½ tsp Cavendar's Greek seasoning",
     "Salt and pepper to taste",
     "Chopped Italian parsley for garnish",
-    "Chicken:",
-    "20-24 frozen chicken tenders (the type sold at Costco in large bag)",
+    "20-24 frozen chicken tenders",
     "Olive oil to drizzle (1-2 tbsp)",
-    "Kosher salt and Coarse black pepper",
-    "For sauce: Add mushrooms to large skillet. Cook dry until water is released and mushrooms are brown, stirring often. Stir in ¼ cup butter until mushrooms are well coated with butter. Season mushrooms with salt and pepper. Remove mushrooms from pan. Place remaining butter in pan and melt, add garlic and cook for 20-30 seconds or until fragrant. Whisk in ¼ cup flour to make a roux. Cook for 3 minutes while stirring. Add chicken broth, blend well, and stir until thickened (about 3-4 minutes). Add in ¼ cup parmesan cheese. Stir until melted. Turn off heat. Stir in lemon juice, capers, artichoke hearts, Cavendar’s Greek Seasoning, salt and pepper to taste.",
-    "For chicken: Preheat oven to 400 degrees. Place about 24 frozen chicken tenders on large jelly roll pan lined with aluminum foil. Drizzle with olive oil. Sprinkle with kosher salt and pepper. Bake for 20-22 minutes until done. Remove from oven. Drain chicken and add to sauce."
+    "Kosher salt and coarse black pepper"
   ],
   "instructions": [
-    "Place in serving platter or chafing dish, sprinkle with remaining parmesan cheese and parsley.",
+    "Add mushrooms to large skillet and cook dry until water is released and mushrooms are brown, stirring often.",
+    "Stir in ¼ cup butter until mushrooms are well coated with butter.",
+    "Season mushrooms with salt and pepper.",
+    "Remove mushrooms from pan and set aside.",
+    "Place remaining butter in pan and melt.",
+    "Add garlic and cook for 20-30 seconds or until fragrant.",
+    "Whisk in ¼ cup flour to make a roux.",
+    "Cook roux for 3 minutes while stirring.",
+    "Add chicken broth, blend well, and stir until thickened, about 3-4 minutes.",
+    "Add in ¼ cup Parmesan cheese and stir until melted.",
+    "Turn off heat and stir in lemon juice, capers, artichoke hearts, Cavendar's Greek Seasoning, salt and pepper to taste.",
+    "Stir cooked mushrooms back into sauce.",
+    "Preheat oven to 400 degrees.",
+    "Place about 24 frozen chicken tenders on large jelly roll pan lined with aluminum foil.",
+    "Drizzle chicken with olive oil.",
+    "Sprinkle with kosher salt and pepper.",
+    "Bake for 20-22 minutes until done.",
+    "Remove chicken from oven and drain.",
+    "Add cooked chicken to sauce and mix well.",
+    "Place in serving platter or chafing dish.",
+    "Sprinkle with remaining Parmesan cheese and parsley.",
     "Serve over pasta, rice, rice pilaf, couscous, polenta, or garlic cheesy mashed potatoes."
   ],
   "notes": [
-    "This recipe serves about 8 people. I have multiplied this recipe and made for multiple large events, served in large chafing dishes."
+    "This recipe serves about 8 people.",
+    "This recipe can be multiplied and made for multiple large events, served in large chafing dishes.",
+    "Serve over pasta, rice, rice pilaf, couscous, polenta, or garlic cheesy mashed potatoes."
   ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "chicken-artichoke-piccata",
   "source_file": "Chicken Artichoke Piccata.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

@@ -7,23 +7,43 @@
     "1 cup minced shallots",
     "1 cup minced leeks, whites only, well rinsed",
     "1 tbsp minced garlic",
-    "1/2 tsp. kosher salt",
-    "¼ tsp. ground white pepper",
-    "½ tsp Cavendars Greek seasoning",
+    "1/2 tsp kosher salt",
+    "1/4 tsp ground white pepper",
+    "1/2 tsp Cavendars Greek seasoning",
     "Juice from 1 lemon",
-    "½ cup heavy cream",
-    "¼ cup freshly grated Parmesan cheese",
-    "Trim asparagus, cutting the pretty top tips about 1 ½ inch in length. Cut the woody stem pieces from each spear and reserve. Cut the remaining tender stalks into ½ inch pieces."
+    "1/2 cup heavy cream",
+    "1/4 cup freshly grated Parmesan cheese"
   ],
   "instructions": [
-    "In medium pot, bring stock to boil. Add the tough woody asparagus stems and cook at a simmer until tender, about 30 minutes. Remove with a slotted spoon and discard the stems. Reserve the broth/stock.",
-    "Add the decorative tips to the stock and blanch for no more than 1 minute. Remove with strainer and place in ice water bath. Drain on paper towels and reserve for the garnish.",
-    "In a medium stockpot, melt the butter and add shallots and leeks, cooking until tender, about 3-5 minutes. Add garlic and cook until fragrant, about 1 minutes. Add the chopped tender asparagus stalks, salt, pepper, and Cavendar’s Greek seasoning. Cook for 2 minutes. Add the broth to the asparagus and cook until asparagus is tender, about 20 minutes. Remove from heat. Using immersion blender, puree the soup until smooth. Add lemon juice. Adjust seasonings to taste. Stir in cream and heat until warm. Ladle in soup bowls and top with reserved asparagus tips and freshly grated Parmesan cheese on top."
+    "Trim asparagus, cutting the pretty top tips about 1 1/2 inch in length.",
+    "Cut the woody stem pieces from each spear and reserve.",
+    "Cut the remaining tender stalks into 1/2 inch pieces.",
+    "In a medium pot, bring stock to boil.",
+    "Add the tough woody asparagus stems and cook at a simmer until tender, about 30 minutes.",
+    "Remove the stems with a slotted spoon and discard them, reserving the broth/stock.",
+    "Add the decorative asparagus tips to the stock and blanch for no more than 1 minute.",
+    "Remove the tips with a strainer and place in an ice water bath.",
+    "Drain the tips on paper towels and reserve for garnish.",
+    "In a medium stockpot, melt the butter and add shallots and leeks, cooking until tender, about 3-5 minutes.",
+    "Add garlic and cook until fragrant, about 1 minute.",
+    "Add the chopped tender asparagus stalks, salt, pepper, and Cavendar's Greek seasoning.",
+    "Cook for 2 minutes.",
+    "Add the broth to the asparagus and cook until asparagus is tender, about 20 minutes.",
+    "Remove from heat.",
+    "Using an immersion blender, puree the soup until smooth.",
+    "Add lemon juice and adjust seasonings to taste.",
+    "Stir in cream and heat until warm.",
+    "Ladle soup into bowls and top with reserved asparagus tips and freshly grated Parmesan cheese."
   ],
-  "notes": [],
+  "notes": [
+    "The woody asparagus stems flavor the broth but are discarded after cooking.",
+    "Blanching the asparagus tips briefly preserves their color and texture for garnish.",
+    "An immersion blender creates a smooth, creamy texture without requiring straining."
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "asparagus-soup",
   "source_file": "Asparagus Soup.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

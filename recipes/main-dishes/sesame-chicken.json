@@ -13,14 +13,27 @@
     "Hot, cooked rice"
   ],
   "instructions": [
-    "Combine the sugar and soy sauce in a small saucepan and heat until sugar dissolves completely.  Remove from heat.  Stir in sesame oil and sesame seeds.  Cover to keep warm.",
-    "Place flour in large plastic bag.  Season with salt and pepper.  Dredge chicken pieces with flour mixture.  In a large frying pan heat the oil.  Shake excess flour off of chicken pieces.  Working in batches, fry chicken pieces until golden on all sides, about 3 – 4 minutes.  Drain the cooked chicken on paper towels and set aside, cover to keep warm until all chicken is cooked.",
-    "Toss the chicken with the sauce to coat well.  Place on platter to serve.  Top with chopped scallions.  Serve with rice."
+    "Combine the sugar and soy sauce in a small saucepan and heat until sugar dissolves completely.",
+    "Remove from heat and stir in sesame oil and sesame seeds.",
+    "Cover the sauce to keep warm.",
+    "Place flour in a large plastic bag and season with salt and pepper.",
+    "Dredge chicken pieces with the flour mixture.",
+    "Heat the oil in a large frying pan.",
+    "Shake excess flour off of chicken pieces.",
+    "Working in batches, fry chicken pieces until golden on all sides, about 3-4 minutes.",
+    "Drain the cooked chicken on paper towels and set aside, covering to keep warm until all chicken is cooked.",
+    "Toss the chicken with the sauce to coat well.",
+    "Place on platter to serve and top with chopped scallions.",
+    "Serve with rice."
   ],
-  "notes": [],
+  "notes": [
+    "Work in batches when frying to avoid overcrowding the pan",
+    "Cover cooked chicken to keep it warm while cooking remaining batches"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "sesame-chicken",
   "source_file": "Sesame Chicken.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

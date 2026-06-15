@@ -1,7 +1,6 @@
 {
   "title": "Mahogany Chicken Wings",
   "ingredients": [
-    "(Adapted from Pacific Northwest Palate Cookbook by Susan Bradley, 1989)",
     "40 pieces of separated chicken wings (no wing tips)",
     "1 cup orange juice",
     "1 cup soy sauce",
@@ -9,17 +8,28 @@
     "1 cup brown sugar",
     "Zest of 2 oranges",
     "6-8 cloves garlic, minced",
-    "2 quarter size pieces of fresh ginger, minced"
+    "2 quarter size pieces of fresh ginger, minced",
+    "Orange slices for garnish",
+    "Chopped scallions for garnish"
   ],
   "instructions": [
-    "Combine OJ, soy sauce, water, brown sugar, orange zest, garlic and ginger in large bowl. Stir well to dissolve sugar. Add the chicken wing pieces, stir to coat. Cover with plastic wrap and refrigerate overnight, stirring once or twice. Make sure marinade is thoroughly covering all wing pieces.",
-    "Remove wings from the marinade and arrange them on well-oiled baking sheets. Bake at 375 degrees for 50-55 minutes, turning the wings half way through the cooking time, until glossy and a little sticky. If there is still liquid on the baking pan, keep baking a bit to evaporate it.",
-    "Mound the wings on a serving platter and garnish with orange slices and chopped scallions. Yummy hot or at room temperature."
+    "Combine orange juice, soy sauce, water, brown sugar, orange zest, garlic and ginger in large bowl.",
+    "Stir well to dissolve sugar.",
+    "Add the chicken wing pieces and stir to coat.",
+    "Cover with plastic wrap and refrigerate overnight, stirring once or twice to ensure marinade thoroughly covers all wing pieces.",
+    "Remove wings from the marinade and arrange them on well-oiled baking sheets.",
+    "Bake at 375 degrees for 50-55 minutes, turning the wings halfway through the cooking time, until glossy and a little sticky.",
+    "If there is still liquid on the baking pan, continue baking to evaporate it.",
+    "Mound the wings on a serving platter and garnish with orange slices and chopped scallions."
   ],
-  "notes": [],
+  "notes": [
+    "Adapted from Pacific Northwest Palate Cookbook by Susan Bradley, 1989",
+    "Wings are delicious served hot or at room temperature"
+  ],
   "category": "Appetizers",
   "category_slug": "appetizers",
   "slug": "mahogany-chicken-wings",
   "source_file": "Mahogany Chicken Wings.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

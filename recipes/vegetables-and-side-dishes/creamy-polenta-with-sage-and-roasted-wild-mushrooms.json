@@ -1,7 +1,6 @@
 {
   "title": "Creamy Polenta with Sage and Roasted Wild Mushrooms",
   "ingredients": [
-    "Polenta",
     "1¾ cups water",
     "1¾ cups chicken broth",
     "1 teaspoon minced garlic",
@@ -12,11 +11,9 @@
     "3 tablespoons unsalted butter, melted",
     "¼ teaspoon salt",
     "⅛ teaspoon freshly ground black pepper",
-    "Crispy Sage",
     "½ cup extra-virgin olive oil",
     "⅓ cup fresh sage leaves",
     "Salt",
-    "Roasted Wild Mushrooms",
     "8 cloves garlic, thinly sliced",
     "3 tablespoons olive oil",
     "3 tablespoons balsamic vinegar or red wine vinegar",
@@ -28,21 +25,31 @@
   ],
   "instructions": [
     "Preheat oven to 350°F.",
-    "Bring water, chicken broth, and garlic to a boil in a large ovenproof saucepan. Slowly whisk in polenta.",
-    "Reduce heat to medium and cook, stirring constantly, for about 5 minutes. Cover and place pan in oven.",
-    "Bake until thick but still creamy, stirring occasionally, about 45 minutes. Add additional water if mixture seems dry.",
-    "Heat olive oil in a small skillet over medium-high heat. Fry sage leaves until crisp, about 10 seconds. Drain on paper towels and season lightly with salt. Set aside.",
+    "Bring water, chicken broth, and garlic to a boil in a large ovenproof saucepan.",
+    "Slowly whisk in polenta.",
+    "Reduce heat to medium and cook, stirring constantly, for about 5 minutes.",
+    "Cover and place pan in oven.",
+    "Bake until thick but still creamy, stirring occasionally, about 45 minutes, adding additional water if mixture seems dry.",
+    "Heat olive oil in a small skillet over medium-high heat.",
+    "Fry sage leaves until crisp, about 10 seconds.",
+    "Drain sage on paper towels and season lightly with salt, then set aside.",
+    "Preheat oven to 425°F and line two baking sheets with foil.",
+    "Toss garlic, olive oil, vinegar, rosemary, thyme, and mushrooms in a large bowl.",
+    "Season mushroom mixture with salt and pepper.",
+    "Arrange mushrooms in a single layer on prepared baking sheets and roast until tender and slightly crisp at edges, about 25 minutes.",
     "Stir crème fraîche, Monterey Jack, Parmesan, butter, salt, and pepper into the polenta until smooth.",
-    "Spoon polenta onto serving plates, top with roasted mushrooms, garnish with sage, and serve immediately.",
-    "Roasted Wild Mushrooms",
-    "Preheat oven to 425°F. Line two baking sheets with foil.",
-    "Toss garlic, olive oil, vinegar, rosemary, thyme, and mushrooms in a large bowl. Season with salt and pepper.",
-    "Arrange mushrooms in a single layer and roast until tender and slightly crisp at edges, about 25 minutes. Serve immediately."
+    "Spoon polenta onto serving plates, top with roasted mushrooms, garnish with crispy sage, and serve immediately."
   ],
-  "notes": [],
+  "notes": [
+    "For the polenta, add additional water during baking if the mixture seems too dry",
+    "The crispy sage leaves can be made ahead and stored in an airtight container",
+    "Roasted mushrooms should be served immediately after roasting for best texture",
+    "Wild mushroom varieties like shiitake, oyster, or cremini work best for this dish"
+  ],
   "category": "Vegetables and Side Dishes",
   "category_slug": "vegetables-and-side-dishes",
   "slug": "creamy-polenta-with-sage-and-roasted-wild-mushrooms",
   "source_file": "Creamy Polenta with Sage and Roasted Wild Mushrooms.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

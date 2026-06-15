@@ -14,13 +14,18 @@
     "2 dashes of cayenne pepper"
   ],
   "instructions": [
-    "Mix corn, butter, eggs, cornmeal, salt, pimiento, celery, sour cream, cheese, chilies, and cayenne pepper together in a large bowl.  Pour into buttered 9” x 13” pan.  Bake at 350 degrees for 50 minutes or until brown and set.  Serves 12.",
-    "Grandma Carol’s recipe!"
+    "Mix corn, butter, eggs, cornmeal, salt, pimiento, celery, sour cream, cheese, chilies, and cayenne pepper together in a large bowl.",
+    "Pour into buttered 9\" x 13\" pan.",
+    "Bake at 350 degrees for 50 minutes or until brown and set."
   ],
-  "notes": [],
+  "notes": [
+    "Serves 12.",
+    "Grandma Carol's recipe!"
+  ],
   "category": "Vegetables and Side Dishes",
   "category_slug": "vegetables-and-side-dishes",
   "slug": "corn-custard",
   "source_file": "Corn Custard.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

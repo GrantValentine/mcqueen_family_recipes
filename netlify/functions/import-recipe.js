@@ -110,11 +110,24 @@ Return exactly this shape:
 Available category slugs: ${catList}
 Available tag slugs: ${tagList}
 
-Rules:
+Rules — ingredients & instructions:
 - ingredients, instructions, notes are arrays of plain strings — one item per entry.
 - Preserve quantities and units exactly as written; do not convert or round.
 - Keep instructions in original order; split into one action per entry where possible.
-- notes = tips, variations, storage instructions, serving suggestions — NOT cooking steps.
+- Sections: whenever the recipe has a named component (Frosting, Icing, Glaze, Filling, Sauce, Dough, Crust, Topping, Syrup, Ganache, or any other named part), insert a heading entry "## Section Name" at the start of that section in BOTH ingredients and instructions. Use the exact name from the document. Apply this even if the document just uses a bold label or a line like "For the frosting:" — strip the "For the" and use the noun as the heading.
+
+Rules — notes:
+- notes captures everything that is NOT a core ingredient or instruction step. Cast a wide net:
+  - Explicit tip/note/hint blocks (labelled "Note:", "Tip:", "Cook's note:", etc.)
+  - Make-ahead, storage, and freezing guidance
+  - Serving suggestions and plating ideas
+  - Substitution options ("you can use X instead of Y")
+  - Yield, pan size, or altitude adjustments
+  - Explanatory asides the author included (e.g. "This is our family's favourite…")
+- Each note is one self-contained sentence or short phrase — split compound notes into separate entries.
+- Do NOT put cooking steps or timing instructions in notes.
+
+Rules — other:
 - Do NOT invent, improve, or add anything absent from the source document.
 - Return [] or null for any field that is absent; never guess.
 - suggested_category: choose the single best slug from the available list, or null if unsure.

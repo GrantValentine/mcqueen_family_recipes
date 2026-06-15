@@ -8,7 +8,6 @@
     "1 tablespoon lemon juice",
     "20 sun-dried tomatoes, soaked 10 minutes and drained",
     "¾ cup diced sweet onion (Walla Walla or Vidalia preferred)",
-    "Dressing",
     "¼ cup red wine vinegar",
     "½ cup extra-virgin olive oil",
     "½ teaspoon salt",
@@ -16,12 +15,24 @@
     "¼ cup chopped fresh parsley"
   ],
   "instructions": [
-    "Bring wild rice and broth to a boil. Cover and simmer until tender but firm. Transfer to a bowl and cool completely.\nAdd turkey, tomatoes, and onion. Toss avocado with lemon juice and add gently.\nWhisk dressing ingredients together and add to salad. Toss gently and serve."
+    "Bring wild rice and broth to a boil.",
+    "Cover and simmer until rice is tender but firm.",
+    "Transfer rice to a bowl and cool completely.",
+    "Add turkey, tomatoes, and onion to the cooled rice.",
+    "Toss avocado with lemon juice and add gently to the salad.",
+    "Whisk together red wine vinegar, olive oil, salt, black pepper, and parsley.",
+    "Add dressing to salad and toss gently.",
+    "Serve immediately."
   ],
-  "notes": [],
+  "notes": [
+    "Walla Walla or Vidalia onions are preferred for their sweetness",
+    "Soak sun-dried tomatoes for 10 minutes before using",
+    "Handle avocado gently to avoid breaking it up too much"
+  ],
   "category": "Salads",
   "category_slug": "salads",
   "slug": "smoked-turkey-grain-salad",
   "source_file": "Smoked Turkey Grain Salad.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

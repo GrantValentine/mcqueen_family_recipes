@@ -1,7 +1,7 @@
 {
   "title": "Fillet of Beef on Bruschetta",
   "ingredients": [
-    "Beef tenderloin, cooked rare and thinly sliced (or Boar's Head rare roast beef)",
+    "Beef tenderloin, cooked rare and thinly sliced",
     "Maldon salt",
     "Freshly ground black pepper",
     "Baguette, thinly sliced",
@@ -12,15 +12,14 @@
   ],
   "instructions": [
     "Place herbs in food processor and pulse.",
-    "Add softened butter until well combined to make herb butter.",
+    "Add softened butter to herbs and mix until well combined.",
     "Spread herb butter on baguette slices.",
     "Toast baguette slices lightly under broiler.",
-    "Top each baguette slice with a slice of beef and watercress.",
-    "Serve immediately."
+    "Top each baguette slice with a slice of beef and watercress."
   ],
   "notes": [
-    "The recipe suggests using Boar's Head rare roast beef as a convenient alternative to cooking beef tenderloin from scratch.",
-    "Season the beef with Maldon salt and freshly ground black pepper to taste."
+    "The author uses Boar's Head rare roast beef",
+    "Herb butter can be made in advance and stored"
   ],
   "category": "Appetizers",
   "category_slug": "appetizers",

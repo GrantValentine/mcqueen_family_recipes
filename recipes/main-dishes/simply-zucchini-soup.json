@@ -4,7 +4,7 @@
     "8 small zucchini, cut into 1-inch pieces",
     "1 large onion, chopped",
     "1/2 cup butter",
-    "2 10 3/4- ounce cans chicken broth",
+    "2 10 3/4-ounce cans chicken broth",
     "1 1/2 cup evaporated milk",
     "1/8 teaspoon cayenne pepper",
     "Salt to taste",
@@ -12,13 +12,22 @@
     "Freshly grated Parmesan cheese, optional"
   ],
   "instructions": [
-    "In a medium size saucepan, melt butter.  Add zucchini and onion and cook, stirring occasionally, until transparent and liquid is absorbed.  Puree zucchini and onions in a blender or food processor until smooth.  Return to pan and add chicken broth, evaporated milk and pepper.  Heat thoroughly.  Taste and add salt as needed.  Ladle into bowls.  Sprinkle with freshly ground nutmeg when served if desired.  Top with each bowl with 1 tablespoon of freshly grated Parmesan cheese if desired.",
+    "In a medium size saucepan, melt butter.",
+    "Add zucchini and onion and cook, stirring occasionally, until transparent and liquid is absorbed.",
+    "Puree zucchini and onions in a blender or food processor until smooth.",
+    "Return to pan and add chicken broth, evaporated milk and pepper.",
+    "Heat thoroughly.",
+    "Taste and add salt as needed.",
+    "Ladle into bowls.",
+    "Sprinkle with freshly ground nutmeg when served if desired and top each bowl with 1 tablespoon of freshly grated Parmesan cheese if desired."
+  ],
+  "notes": [
     "Serves 6 - 8"
   ],
-  "notes": [],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "simply-zucchini-soup",
   "source_file": "Simply Zucchini Soup.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

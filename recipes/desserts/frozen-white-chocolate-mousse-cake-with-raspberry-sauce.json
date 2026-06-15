@@ -1,10 +1,8 @@
 {
   "title": "Frozen White Chocolate Mousse Cake with Raspberry Sauce",
   "ingredients": [
-    "Crust",
     "1 cup vanilla or chocolate wafer crumbs",
     "3 tablespoons unsalted butter, melted",
-    "Mousse",
     "6 ounces plus 2 ounces white chocolate, chopped",
     "¾ cup sugar",
     "¼ cup water",
@@ -14,27 +12,48 @@
     "1 tablespoon Grand Marnier",
     "1 teaspoon vanilla extract",
     "3 tablespoons chopped pistachios",
-    "Raspberry Sauce",
     "2 cups fresh or frozen unsweetened raspberries",
     "¼ cup sugar",
-    "2 tsp vanilla extract",
-    "Fresh raspberries and white chocolate shavings for garnish"
+    "2 teaspoons vanilla extract",
+    "Fresh raspberries for garnish",
+    "White chocolate shavings for garnish"
   ],
   "instructions": [
-    "Combine crumbs and butter. (Do not use food processor.) Press evenly into bottom of a 9-inch springform pan. Refrigerate.",
-    "Melt 6 ounces white chocolate in top of a double boiler, stirring until smooth. Cool slightly. Bring sugar and water to a boil in a small saucepan, stirring until sugar dissolves. Continue boiling, without stirring, until a candy thermometer reads 238°F (soft-ball stage).",
-    "Beat egg whites and cream of tartar until soft peaks form. Gradually beat hot sugar syrup into egg whites. Continue beating until mixture is stiff and glossy, about 3 minutes. Fold in warm chocolate. Refrigerate chocolate mixture until cool but not set, about 5 minutes.",
-    "Whip cream, Grand Marnier, and vanilla in a large bowl until soft peaks form. Gently fold cream into chocolate mixture. Fold in remaining 2 ounces white chocolate. Pour mousse into prepared crust and smooth top. Sprinkle with pistachios. Freeze until firm, about 6 hours. Cover with plastic wrap and return to freezer.",
-    "Raspberry Sauce",
-    "Purée raspberries in a blender. Strain purée to remove seeds. Stir in sugar and Grand Marnier. Refrigerate sauce at least 1 hour.",
-    "To Serve",
-    "Remove mousse cake from freezer just before serving. Spoon sauce onto individual plates and place a slice of cake on each. Top with fresh raspberries and white chocolate shavings.",
-    "(Both mousse cake and raspberry sauce can be prepared up to 3 days before serving.)"
+    "Combine wafer crumbs and melted butter without using a food processor.",
+    "Press the mixture evenly into the bottom of a 9-inch springform pan.",
+    "Refrigerate the crust.",
+    "Melt 6 ounces of white chocolate in the top of a double boiler, stirring until smooth, then cool slightly.",
+    "Bring sugar and water to a boil in a small saucepan, stirring until sugar dissolves.",
+    "Continue boiling without stirring until a candy thermometer reads 238°F (soft-ball stage).",
+    "Beat egg whites and cream of tartar until soft peaks form.",
+    "Gradually beat the hot sugar syrup into the egg whites.",
+    "Continue beating until the mixture is stiff and glossy, about 3 minutes.",
+    "Fold the warm chocolate into the egg white mixture.",
+    "Refrigerate the chocolate mixture until cool but not set, about 5 minutes.",
+    "Whip the chilled cream, Grand Marnier, and vanilla extract in a large bowl until soft peaks form.",
+    "Gently fold the whipped cream into the chocolate mixture.",
+    "Fold the remaining 2 ounces of white chocolate into the mousse.",
+    "Pour the mousse into the prepared crust and smooth the top.",
+    "Sprinkle the pistachios over the mousse.",
+    "Freeze until firm, about 6 hours.",
+    "Cover with plastic wrap and return to freezer.",
+    "Purée the raspberries in a blender.",
+    "Strain the purée through a fine sieve to remove seeds.",
+    "Stir in sugar and Grand Marnier.",
+    "Refrigerate the raspberry sauce at least 1 hour.",
+    "Remove the mousse cake from freezer just before serving.",
+    "Spoon sauce onto individual plates and place a slice of cake on each.",
+    "Top with fresh raspberries and white chocolate shavings."
   ],
-  "notes": [],
+  "notes": [
+    "Do not use a food processor when combining crust ingredients.",
+    "Both mousse cake and raspberry sauce can be prepared up to 3 days before serving.",
+    "The mousse cake should be covered with plastic wrap after freezing to prevent freezer burn."
+  ],
   "category": "Desserts",
   "category_slug": "desserts",
   "slug": "frozen-white-chocolate-mousse-cake-with-raspberry-sauce",
   "source_file": "Frozen White Chocolate Mousse Cake with Raspberry Sauce.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

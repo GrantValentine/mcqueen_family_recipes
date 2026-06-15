@@ -17,13 +17,25 @@
     "2 (22 ounce) cans baked beans"
   ],
   "instructions": [
-    "Preheat oven to 400 degrees F. Cook bacon in a large Dutch oven. Remove when crisp and drain, break into pieces. Stir onion, pepper, and garlic into bacon fat. Cook, stirring often, until vegetables are softened, about 5 minutes. Stir in paprika, chili powder, salt and pepper. Cook for 1-2 minutes. Stir in the vinegar, BBQ sauce, ketchup, mustard and brown sugar until combined. Stir in the baked beans, bring to a boil. Taste and adjust seasoning. Transfer Dutch oven to preheated oven and bake for 30 minutes.",
-    "I often serve this dish with Honeybaked Ham and Carol’s corn custard recipe for parties."
+    "Preheat oven to 400 degrees F.",
+    "Cook bacon in a large Dutch oven.",
+    "Remove bacon when crisp and drain, then break into pieces.",
+    "Stir onion, pepper, and garlic into bacon fat.",
+    "Cook, stirring often, until vegetables are softened, about 5 minutes.",
+    "Stir in paprika, chili powder, salt and pepper.",
+    "Cook for 1-2 minutes.",
+    "Stir in the vinegar, BBQ sauce, ketchup, mustard and brown sugar until combined.",
+    "Stir in the baked beans and bring to a boil.",
+    "Taste and adjust seasoning.",
+    "Transfer Dutch oven to preheated oven and bake for 30 minutes."
   ],
-  "notes": [],
+  "notes": [
+    "Often served with Honeybaked Ham and Carol's corn custard recipe for parties."
+  ],
   "category": "Vegetables and Side Dishes",
   "category_slug": "vegetables-and-side-dishes",
   "slug": "baked-beans",
   "source_file": "Baked Beans.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

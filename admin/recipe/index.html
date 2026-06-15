@@ -88,6 +88,18 @@
       padding:.35rem .8rem; cursor:pointer; margin-top:.3rem;
       transition:border-color .15s, background .15s; width:100%; }
     .add-item-btn:hover { border-color:var(--blue); background:var(--light); }
+    .add-item-row { display:flex; gap:.4rem; }
+    .add-item-row .add-item-btn { flex:1; }
+    .list-item--heading {
+      background:rgba(31,44,163,.05); border-radius:6px;
+      padding:.15rem .4rem .15rem .3rem;
+      border:1.5px dashed rgba(31,44,163,.3);
+    }
+    .list-item--heading textarea {
+      font-family:'Fraunces',serif; font-weight:600; color:var(--blue);
+      background:transparent; border-color:transparent;
+    }
+    .list-item--heading textarea:focus { border-color:var(--blue); }
 
     /* ── Tags ── */
     .tags-grid { display:flex; flex-wrap:wrap; gap:.5rem; }
@@ -165,13 +177,19 @@
       <div class="card">
         <p class="card__heading">Ingredients</p>
         <div id="ingredients-list"></div>
-        <button class="add-item-btn" onclick="addItem('ingredients')">+ Add ingredient</button>
+        <div class="add-item-row">
+          <button class="add-item-btn" onclick="addItem('ingredients')">+ Add ingredient</button>
+          <button class="add-item-btn" onclick="addHeading('ingredients')" style="flex:0 0 auto;">+ Section</button>
+        </div>
       </div>
 
       <div class="card">
         <p class="card__heading">Instructions</p>
         <div id="instructions-list"></div>
-        <button class="add-item-btn" onclick="addItem('instructions')">+ Add step</button>
+        <div class="add-item-row">
+          <button class="add-item-btn" onclick="addItem('instructions')">+ Add step</button>
+          <button class="add-item-btn" onclick="addHeading('instructions')" style="flex:0 0 auto;">+ Section</button>
+        </div>
       </div>
 
       <div class="card">
@@ -371,13 +389,17 @@ function renderList(key) {
   container.innerHTML = '';
   const items = listState[key];
   items.forEach((text, i) => {
+    const isHeading = text.startsWith('## ');
+    const displayText = isHeading ? text.slice(3) : text;
+
     const row = document.createElement('div');
-    row.className = 'list-item';
+    row.className = 'list-item' + (isHeading ? ' list-item--heading' : '');
 
     const ta = document.createElement('textarea');
-    ta.rows = text.length > 80 ? 3 : 2;
-    ta.value = text;
-    ta.oninput = () => { listState[key][i] = ta.value; };
+    ta.rows = displayText.length > 80 ? 3 : 2;
+    ta.value = displayText;
+    ta.placeholder = isHeading ? 'Section name…' : '';
+    ta.oninput = () => { listState[key][i] = isHeading ? '## ' + ta.value : ta.value; };
 
     const btns = document.createElement('div');
     btns.className = 'list-item__btns';
@@ -410,17 +432,24 @@ function swapItems(key, i, j) {
 function addItem(key) {
   listState[key].push('');
   renderList(key);
-  // Focus new textarea
   const tas = document.querySelectorAll('#' + key + '-list .list-item textarea');
   tas[tas.length - 1]?.focus();
+}
+
+function addHeading(key) {
+  listState[key].push('## ');
+  renderList(key);
+  const tas = document.querySelectorAll('#' + key + '-list .list-item textarea');
+  const last = tas[tas.length - 1];
+  if (last) { last.focus(); last.setSelectionRange(0, 0); }
 }
 
 function syncListFromDOM(key) {
   document.querySelectorAll('#' + key + '-list .list-item textarea').forEach((ta, i) => {
     listState[key][i] = ta.value;
   });
-  // Filter out empty entries
-  listState[key] = listState[key].map(s => s.trim()).filter(Boolean);
+  // Filter out empty entries and bare headings with no name
+  listState[key] = listState[key].map(s => s.trim()).filter(s => s && s !== '##');
 }
 
 // ── Tags ──────────────────────────────────────────────────────────────────────

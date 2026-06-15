@@ -16,15 +16,24 @@
     "2 dashes cayenne pepper"
   ],
   "instructions": [
-    "Place bulgur wheat in bowl.  Pour boiling water over bulgur and mix.  Let sit for 30 minutes.  In separate bowl, mix olive oil, lemon juice, salt, oregano and cayenne pepper.  Add scallions, parsley, tomato, and olives to bulgur.  Pour oil mixture over bulgur and vegetables.  Stir well.  Best if refrigerated at least 2 hours before serving.",
-    "OPTIONS –",
-    "Use couscous instead of bulgur wheat.  Heat 1 ½ cups of chicken broth in saucepan.  Stir in 1 ½ cups of couscous.  Stir quickly.  Place lid on saucepan and let sit for 5 minutes.  Fluff with fork and let cool.",
+    "Place bulgur wheat in bowl.",
+    "Pour boiling water over bulgur and mix.",
+    "Let sit for 30 minutes.",
+    "In separate bowl, mix olive oil, lemon juice, salt, oregano and cayenne pepper.",
+    "Add scallions, parsley, tomato, and olives to bulgur.",
+    "Pour oil mixture over bulgur and vegetables.",
+    "Stir well.",
+    "Refrigerate at least 2 hours before serving."
+  ],
+  "notes": [
+    "Best if refrigerated at least 2 hours before serving.",
+    "Couscous variation: Heat 1 ½ cups of chicken broth in saucepan, stir in 1 ½ cups of couscous, stir quickly, cover and let sit for 5 minutes, then fluff with fork and let cool.",
     "Add chopped, cooked chicken to salad to make a main dish salad."
   ],
-  "notes": [],
   "category": "Salads",
   "category_slug": "salads",
   "slug": "tabouli",
   "source_file": "Tabouli.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

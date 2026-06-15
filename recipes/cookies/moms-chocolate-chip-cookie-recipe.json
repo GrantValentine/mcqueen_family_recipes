@@ -1,7 +1,6 @@
 {
-  "title": "Julie’s Chocolate Chip Cookie Recipe",
+  "title": "Julie's Chocolate Chip Cookie Recipe",
   "ingredients": [
-    "Preheat oven to 350 degrees.",
     "1 cup light brown sugar",
     "¾ cup granulated sugar",
     "1 cup (2 sticks) softened butter",
@@ -14,12 +13,25 @@
     "2 cups semi-sweet chocolate chips"
   ],
   "instructions": [
-    "In a large mixing bowl, place both sugars.  Blend until well combined.  Add butter.  Cream until light and fluffy (about 3 minutes).  Add eggs, one at a time.  Beat until well combined (about 3 minutes).  Add dry ingredients and mix well.  Stir in chocolate chips.  Stir in vanilla.  Shape dough into balls and place on lightly greased cookie sheet.  Bake for 10 minutes.  Cookies should be slightly underbaked.  Leave on cookie sheet for 3 minutes to cool and set.  Remove from cookie sheet and place on aluminum foil or parchment paper to cool."
+    "Preheat oven to 350 degrees.",
+    "In a large mixing bowl, place both sugars and blend until well combined.",
+    "Add butter and cream until light and fluffy, about 3 minutes.",
+    "Add eggs one at a time and beat until well combined, about 3 minutes.",
+    "Add dry ingredients and mix well.",
+    "Stir in chocolate chips.",
+    "Stir in vanilla.",
+    "Shape dough into balls and place on lightly greased cookie sheet.",
+    "Bake for 10 minutes.",
+    "Leave cookies on cookie sheet for 3 minutes to cool and set.",
+    "Remove from cookie sheet and place on aluminum foil or parchment paper to cool completely."
   ],
-  "notes": [],
+  "notes": [
+    "Cookies should be slightly underbaked for best texture"
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "moms-chocolate-chip-cookie-recipe",
   "source_file": "Mom’s Chocolate Chip Cookie Recipe.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

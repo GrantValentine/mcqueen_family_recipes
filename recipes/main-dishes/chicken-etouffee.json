@@ -14,16 +14,23 @@
     "¼ cup minced fresh parsley"
   ],
   "instructions": [
-    "Heat oil in a heavy kettle over medium heat. Stir in flour and cook, stirring constantly, until the roux turns a dark red-brown color, about 10 minutes.",
-    "Add onion, celery, and bell pepper. Cook about 5 minutes. Add garlic and cook 1 minute more.",
-    "Stir in tomatoes, clam juice, Cajun seasoning, and chicken. Simmer for 10–15 minutes. Remove from heat and stir in parsley.",
-    "Serve over rice. (Optional: season the rice cooking water with a small amount of Cajun seasoning.)",
+    "Heat oil in a heavy kettle over medium heat.",
+    "Stir in flour and cook, stirring constantly, until the roux turns a dark red-brown color, about 10 minutes.",
+    "Add onion, celery, and bell pepper and cook about 5 minutes.",
+    "Add garlic and cook 1 minute more.",
+    "Stir in tomatoes, clam juice, Cajun seasoning, and chicken.",
+    "Simmer for 10–15 minutes.",
+    "Remove from heat and stir in parsley.",
+    "Serve over rice."
+  ],
+  "notes": [
+    "Season the rice cooking water with a small amount of Cajun seasoning (optional).",
     "This recipe was often served on Halloween night!"
   ],
-  "notes": [],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "chicken-etouffee",
   "source_file": "Chicken Etouffee.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

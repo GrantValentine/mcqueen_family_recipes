@@ -1,35 +1,43 @@
 {
   "title": "Chocolate Chip Delta Bars",
   "ingredients": [
-    "For bars:",
     "1 cup softened butter",
     "½ cup sugar",
     "½ cup light brown sugar",
-    "2 egg yolks (slightly beaten with 1 tbsp water)",
+    "2 egg yolks, slightly beaten with 1 tbsp water",
     "1 tsp vanilla",
     "2 cups sifted flour",
     "¼ tsp baking soda",
     "1 tsp baking powder",
     "¼ tsp salt",
     "1 (12-oz) package semisweet chocolate chips",
-    "For topping:",
     "2 egg whites",
-    "1 cup light brown sugar",
-    "1.  Preheat oven to 350 degrees.",
-    "2.  In a large mixing bowl, with an electric mixer on high speed, beat butter until creamy.  Add sugars and beat well.  Beat in egg yolks and vanilla extract.",
-    "3.  In a separate bowl, sift together flour, baking soda, baking powder, and salt.  Add to creamed mixture.  Dough will be stiff.",
-    "4.  Press dough flat onto a greased 10 by 14 inch sheet, cover with chocolate chips, and bake for 10 minutes.",
-    "5.  Reduce oven heat to 325 degrees.  Make meringue topping:  Beat egg whites until very stiff; add brown sugar and beat well.",
-    "6.  Spread meringue across top of dough (don’t spread all the way to the edges).",
-    "7.  Return to oven for 12-15 minutes or until meringue is very light brown and dough is set.",
-    "8.  Let cool; cut into bars.",
-    "The one cookie that my mom (Elly or Gma) used to make were called Delta Bars. The base was made with shortening and then topped with a meringue with brown sugar. This is an adaptation of her cookie."
+    "1 cup light brown sugar"
   ],
-  "instructions": [],
-  "notes": [],
+  "instructions": [
+    "Preheat oven to 350 degrees.",
+    "In a large mixing bowl, beat butter with an electric mixer on high speed until creamy.",
+    "Add sugars and beat well.",
+    "Beat in egg yolks and vanilla extract.",
+    "In a separate bowl, sift together flour, baking soda, baking powder, and salt.",
+    "Add dry ingredients to creamed mixture and mix until stiff dough forms.",
+    "Press dough flat onto a greased 10 by 14 inch sheet and cover with chocolate chips.",
+    "Bake for 10 minutes.",
+    "Reduce oven heat to 325 degrees.",
+    "Beat egg whites until very stiff.",
+    "Add brown sugar to egg whites and beat well to make meringue topping.",
+    "Spread meringue across top of dough, leaving the edges uncovered.",
+    "Return to oven for 12-15 minutes or until meringue is very light brown and dough is set.",
+    "Let cool and cut into bars."
+  ],
+  "notes": [
+    "This is an adaptation of a family recipe originally made by Elly/Gma using shortening instead of butter and topped with a meringue with brown sugar.",
+    "The dough will be stiff after mixing the dry ingredients."
+  ],
   "category": "Cookies",
   "category_slug": "cookies",
   "slug": "chocolate-chip-delta-bars",
   "source_file": "Chocolate Chip Delta Bars.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

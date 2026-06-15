@@ -19,13 +19,15 @@
     "Stir in basil, salt, and pepper.",
     "Add cream and simmer until sauce reduces by about one-third, 5–7 minutes.",
     "Stir in Parmesan cheese, reduce heat to low, and return shrimp to sauce. Heat gently for 1–2 minutes.",
-    "Toss sauce with warm pasta and serve immediately.",
+    "Toss sauce with warm pasta and serve immediately."
+  ],
+  "notes": [
     "Dad/Mark loves this recipe."
   ],
-  "notes": [],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "shrimp-pasta",
   "source_file": "Shrimp Pasta.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

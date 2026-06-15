@@ -1,15 +1,15 @@
 {
   "title": "Indian Mulligatawney",
   "ingredients": [
-    "1 tbsp. oil",
-    "2 tbsp. butter",
+    "1 tbsp oil",
+    "2 tbsp butter",
     "¾ cup chopped onion",
     "¾ cup chopped carrot",
     "¾ cup chopped celery",
     "2/3 cup chopped green pepper",
     "½ cup chopped turnip",
-    "¾ cup chopped apple (I use Granny Smith)",
-    "2 tsp. salt",
+    "¾ cup chopped apple (Granny Smith)",
+    "2 tsp salt",
     "½ tsp crushed red pepper",
     "1 ½ tsp curry powder",
     "6 cups chicken stock",
@@ -17,17 +17,28 @@
     "¼ cup cold water",
     "¼ cup tomato paste",
     "2 cups diced cooked chicken",
-    "1 ½ cup pureed garbanzo beans (use canned, drained garbanzo beans-puree in food processor or blender)",
+    "1 ½ cup pureed garbanzo beans (canned, drained)",
     "Chopped fresh parsley"
   ],
   "instructions": [
-    "Heat oil and butter in saucepan.  Add chopped vegetables and apples, salt, red pepper and curry powder.  Cook, stirring frequently, until onions are almost tender.",
-    "Meanwhile, heat stock to boiling point.  Make a smooth paste of cornstarch and water.  Add to stock, stirring constantly, until stock returns to boil.  Add sauteed vegetables and remaining ingredients, except parsley.  Heat to serving temperature.  Serve garnished with chopped parsley."
+    "Heat oil and butter in saucepan.",
+    "Add chopped vegetables, apples, salt, red pepper, and curry powder to the saucepan.",
+    "Cook, stirring frequently, until onions are almost tender.",
+    "Meanwhile, heat stock to boiling point.",
+    "Make a smooth paste of cornstarch and cold water.",
+    "Add cornstarch paste to boiling stock, stirring constantly, until stock returns to boil.",
+    "Add sauteed vegetables and remaining ingredients (tomato paste, chicken, and garbanzo beans) to the stock, except parsley.",
+    "Heat to serving temperature.",
+    "Serve garnished with chopped parsley."
   ],
-  "notes": [],
+  "notes": [
+    "Use Granny Smith apples for the best flavor",
+    "Use canned, drained garbanzo beans and puree in food processor or blender"
+  ],
   "category": "Main dishes",
   "category_slug": "main-dishes",
   "slug": "indian-mulligatawney",
   "source_file": "Indian Mulligatawney.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }

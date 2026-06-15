@@ -1,28 +1,34 @@
 {
   "title": "Cherries and Cream Scones",
   "ingredients": [
-    "Combine the following in a large bowl:",
     "2 cups flour",
     "1/3 cup sugar",
-    "½ tsp salt",
-    "Cut in:",
-    "6 TB chilled, unsalted butter cut into 12 pieces",
-    "Use a pastry blender or fingers until dough resembles coarse meal.",
-    "Stir in:",
+    "1/2 tsp salt",
+    "6 tablespoons chilled, unsalted butter, cut into 12 pieces",
     "1 cup heavy cream",
-    "lightly with a fork",
-    "Fold in:",
     "2/3 cup dried cherries"
   ],
   "instructions": [
-    "Let dough rest 2 minutes.  Preheat oven to 400 degrees.  Transfer dough onto lightly floured surface.  Sprinkle with 2-3 tablespoons flour.  Gently roll dough into a round, about ¾ - 1 inch thick.  Using a 3” heart shaped cookie cutter, cut out scones and place on ungreased baking sheets about 2” apart.  Bake until pale golden, about 15 minutes.  Serve warm with freshly whipped cream and raspberry jam (homemade raspberry freezer jam is best)."
+    "Combine flour, sugar, and salt in a large bowl.",
+    "Cut in the chilled butter pieces using a pastry blender or your fingers until the dough resembles coarse meal.",
+    "Stir in the heavy cream lightly with a fork.",
+    "Fold in the dried cherries.",
+    "Let dough rest for 2 minutes.",
+    "Preheat oven to 400 degrees.",
+    "Transfer dough onto a lightly floured surface and sprinkle with 2-3 tablespoons flour.",
+    "Gently roll dough into a round about 3/4 to 1 inch thick.",
+    "Using a 3-inch heart-shaped cookie cutter, cut out scones and place them on ungreased baking sheets about 2 inches apart.",
+    "Bake until pale golden, about 15 minutes.",
+    "Serve warm with freshly whipped cream and raspberry jam."
   ],
   "notes": [
-    "This recipe is from my dear friend Cheryl Peirce."
+    "This recipe is from dear friend Cheryl Peirce.",
+    "Homemade raspberry freezer jam is best for serving."
   ],
   "category": "Bread",
   "category_slug": "bread",
   "slug": "cherries-and-cream-scones",
   "source_file": "Cherries and Cream Scones.docx",
-  "photo": null
+  "photo": null,
+  "ai_parsed": true
 }
