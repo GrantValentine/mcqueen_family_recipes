@@ -1,5 +1,5 @@
 [build]
-  command = "pip install -r requirements.txt && python main.py"
+  command = "npm install && pip install -r requirements.txt && python main.py"
   publish = "site"
 
 [build.environment]
@@ -13,4 +13,7 @@
 
 [functions]
   node_bundler = "esbuild"
+
+[functions."import-recipe"]
+  timeout = 26
 
