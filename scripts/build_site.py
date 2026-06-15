@@ -245,7 +245,15 @@ def build_site() -> int:
 
     build_search_index(recipes)
 
+    # Resolve photos for every recipe upfront so category pages can use them.
     photo_index = build_photo_index()
+    matched = 0
+    for recipe in recipes:
+        db_photo = recipe.pop("_photo_url_db", None)
+        photo_url = db_photo or find_photo(recipe["slug"], recipe["category_slug"], photo_index)
+        recipe["photo"] = photo_url  # category template reads recipe.photo
+        if photo_url:
+            matched += 1
 
     # ── Copy assets ──────────────────────────────────────────────────────────
     for src, label in [
@@ -316,20 +324,12 @@ def build_site() -> int:
 
     # ── Individual recipe pages ───────────────────────────────────────────────
     recipe_tmpl = env.get_template("recipe.html")
-    matched = 0
     for recipe in recipes:
         page_dir = SITE_DIR / recipe["category_slug"] / recipe["slug"]
         page_dir.mkdir(parents=True, exist_ok=True)
-
-        # Supabase Storage URL takes priority; fall back to local fuzzy match.
-        db_photo = recipe.pop("_photo_url_db", None)
-        photo_url = db_photo or find_photo(recipe["slug"], recipe["category_slug"], photo_index)
-        if photo_url:
-            matched += 1
-
         html = recipe_tmpl.render(
             recipe=recipe,
-            photo_url=photo_url,
+            photo_url=recipe.get("photo"),
             page_title=f"{recipe['title']} — Julie's Recipes",
             root_path="/",
         )
