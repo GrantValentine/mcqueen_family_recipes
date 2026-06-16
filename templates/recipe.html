@@ -44,8 +44,8 @@
 
   <!-- Photo -->
   {% if photo_url %}
-  <div class="recipe-photo-wrap" style="margin-bottom:2rem; border-radius:10px; overflow:hidden; max-height:360px;">
-    <img src="{{ photo_url }}" alt="{{ recipe.title }}" style="width:100%; height:100%; object-fit:cover;">
+  <div class="recipe-photo-wrap" style="margin-bottom:2rem; border-radius:10px; overflow:hidden; height:360px;">
+    <img src="{{ photo_url }}" alt="{{ recipe.title }}" style="width:100%; height:100%; object-fit:cover; object-position:center;">
   </div>
   {% endif %}
 
@@ -168,11 +168,11 @@
       if (!photoWrap) {
         photoWrap = document.createElement('div');
         photoWrap.className = 'recipe-photo-wrap';
-        photoWrap.style.cssText = 'margin-bottom:2rem;border-radius:10px;overflow:hidden;max-height:360px;';
+        photoWrap.style.cssText = 'margin-bottom:2rem;border-radius:10px;overflow:hidden;height:360px;';
         var header = page.querySelector('header');
         if (header) header.after(photoWrap);
       }
-      photoWrap.innerHTML = '<img src="' + r.photo_url + '" alt="' + escHtml(r.title || '') + '" style="width:100%;height:100%;object-fit:cover;">';
+      photoWrap.innerHTML = '<img src="' + r.photo_url + '" alt="' + escHtml(r.title || '') + '" style="width:100%;height:100%;object-fit:cover;object-position:center;">';
     }
 
     var hasIngredients  = r.ingredients  && r.ingredients.length;
