@@ -33,6 +33,15 @@
     </div>
   </header>
 
+  <!-- Tags -->
+  {% if recipe.tags %}
+  <div class="recipe-tag-list">
+    {% for tag in recipe.tags %}
+    <span class="recipe-tag-badge">{{ tag.label }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <!-- Photo -->
   {% if photo_url %}
   <div class="recipe-photo-wrap" style="margin-bottom:2rem; border-radius:10px; overflow:hidden; max-height:360px;">

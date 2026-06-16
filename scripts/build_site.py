@@ -36,6 +36,13 @@ ADMIN_DIR     = ROOT / "admin"
 # Manually resolved mappings for photos whose filenames don't match the recipe
 # slug well enough for automatic matching.
 # Key: (category_slug, photo_stem_normalized)  Value: recipe slug
+TAG_ORDER = [
+    "vegetarian", "vegan", "dairy-free", "gluten-free", "nut-free", "egg-free",
+    "easy", "quick", "make-ahead", "kid-friendly", "holiday",
+    "no-bake", "one-pot", "slow-cooker", "grill-bbq", "freezer-friendly",
+    "5-ingredients", "spicy", "comfort-food", "potluck",
+]
+
 PHOTO_OVERRIDES: dict[tuple[str, str], str] = {
     ("appetizers", "christmas-bruscetta"): "christmas-bruschetta",        # typo in filename
     ("appetizers", "italian-cannelini-dip"): "italian-cannellini-dip",   # typo in filename
@@ -138,7 +145,7 @@ def load_recipes_from_supabase() -> tuple[list[dict], dict]:
     client = create_client(url, key)
     result = (
         client.table("recipes")
-        .select("*, categories(id, slug, name, sort_order)")
+        .select("*, categories(id, slug, name, sort_order), recipe_tags(tags(slug, label))")
         .order("title")
         .execute()
     )
@@ -149,6 +156,17 @@ def load_recipes_from_supabase() -> tuple[list[dict], dict]:
     for row in result.data:
         cat = row.get("categories") or {}
         cat_slug = cat.get("slug") or "uncategorised"
+
+        # Extract and sort tags
+        raw_tags = [
+            rt["tags"] for rt in (row.get("recipe_tags") or [])
+            if rt.get("tags")
+        ]
+        def _tag_sort_key(t):
+            slug = t.get("slug", "")
+            return TAG_ORDER.index(slug) if slug in TAG_ORDER else len(TAG_ORDER)
+        tags = sorted(raw_tags, key=_tag_sort_key)
+
         recipe = {
             "title":           row["title"],
             "slug":            row["slug"],
@@ -158,8 +176,8 @@ def load_recipes_from_supabase() -> tuple[list[dict], dict]:
             "instructions":    row.get("instructions") or [],
             "notes":           row.get("notes") or [],
             "source_file":     row.get("source_file"),
+            "tags":            tags,   # [{"slug": "easy", "label": "Easy"}, ...]
             "photo":           None,
-            # Supabase Storage photo (takes priority over local fuzzy match)
             "_photo_url_db":   row.get("photo_url"),
         }
         recipes.append(recipe)
@@ -174,6 +192,7 @@ def load_recipes() -> tuple[list[dict], dict]:
 
     for json_file in sorted(RECIPES_DIR.glob("*/*.json")):
         data = json.loads(json_file.read_text(encoding="utf-8"))
+        data.setdefault("tags", [])
         recipes.append(data)
         cat = data["category_slug"]
         by_category.setdefault(cat, [])
@@ -325,10 +344,23 @@ def build_site() -> int:
     for slug, recs in sorted(by_category.items()):
         cat_dir = SITE_DIR / slug
         cat_dir.mkdir(exist_ok=True)
+        sorted_recs = sorted(recs, key=lambda r: r["title"])
+        seen_slugs: set[str] = set()
+        cat_tags_unsorted: list[dict] = []
+        for r in sorted_recs:
+            for t in r.get("tags", []):
+                if t["slug"] not in seen_slugs:
+                    seen_slugs.add(t["slug"])
+                    cat_tags_unsorted.append(t)
+        category_tags = sorted(
+            cat_tags_unsorted,
+            key=lambda t: TAG_ORDER.index(t["slug"]) if t["slug"] in TAG_ORDER else len(TAG_ORDER),
+        )
         html = cat_tmpl.render(
             category_name=cat_display[slug],
             category_slug=slug,
-            recipes=sorted(recs, key=lambda r: r["title"]),
+            recipes=sorted_recs,
+            category_tags=category_tags,
             page_title=f"{cat_display[slug]} — Julie's Recipes",
             root_path="/",
         )

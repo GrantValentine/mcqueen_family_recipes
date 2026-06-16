@@ -533,6 +533,53 @@
       color: var(--dusty-olive);
       margin-bottom: 2rem;
     }
+    .recipe-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+    }
+    .recipe-tag-badge {
+      font-family: 'Lora', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      color: var(--willow-blue);
+      background: var(--willow-light);
+      padding: 0.18rem 0.6rem;
+      border-radius: 20px;
+    }
+    /* Category page tag filter bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0 auto 1.5rem;
+      max-width: 900px;
+      padding: 0 1rem;
+    }
+    .filter-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--willow-blue);
+      background: transparent;
+      border: 1.5px solid var(--willow-blue);
+      border-radius: 20px;
+      padding: 0.25rem 0.85rem;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      line-height: 1.4;
+    }
+    .filter-btn:hover {
+      background: var(--willow-light);
+    }
+    .filter-btn--active {
+      background: var(--willow-blue);
+      color: #fff;
+    }
+    .filter-btn--active:hover {
+      background: var(--willow-blue);
+    }
     .recipe-category-badge {
       display: inline-block;
       font-family: 'Lora', serif;

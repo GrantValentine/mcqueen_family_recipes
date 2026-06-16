@@ -9,13 +9,24 @@
   </nav>
 
   <h1>{{ category_name }}</h1>
-  <p class="category-count">{{ recipes|length }} recipe{{ 's' if recipes|length != 1 }}</p>
+  <p class="category-count" id="recipe-count">{{ recipes|length }} recipe{{ 's' if recipes|length != 1 }}</p>
 </div>
 
+{% if category_tags %}
+<div class="filter-bar" role="group" aria-label="Filter by tag">
+  <button class="filter-btn filter-btn--active" data-slug="all">All</button>
+  {% for tag in category_tags %}
+  <button class="filter-btn" data-slug="{{ tag.slug }}">{{ tag.label }}</button>
+  {% endfor %}
+</div>
+{% endif %}
+
 <div class="category-grid-wrap">
-  <div class="recipe-grid">
+  <div class="recipe-grid" id="recipe-grid">
     {% for recipe in recipes %}
-    <a class="recipe-card" href="{{ root_path }}{{ category_slug }}/{{ recipe.slug }}/">
+    <a class="recipe-card"
+       data-tags="{{ recipe.tags | map(attribute='slug') | join(' ') }}"
+       href="{{ root_path }}{{ category_slug }}/{{ recipe.slug }}/">
 
       <div class="recipe-card__img">
         {% if recipe.photo %}
@@ -40,6 +51,63 @@
     </a>
     {% endfor %}
   </div>
+
+  <p id="no-filter-results" hidden style="text-align:center; color:var(--dusty-olive); font-family:'Lora',serif; font-size:0.9rem; padding:2rem 0;">
+    No recipes match those filters.
+  </p>
 </div>
+
+{% if category_tags %}
+<script>
+(function () {
+  var btns    = document.querySelectorAll('.filter-btn[data-slug]');
+  var cards   = document.querySelectorAll('.recipe-card[data-tags]');
+  var countEl = document.getElementById('recipe-count');
+  var noRes   = document.getElementById('no-filter-results');
+  var total   = cards.length;
+  var active  = new Set();
+
+  function update() {
+    var visible = 0;
+    cards.forEach(function (card) {
+      var cardTags = new Set(card.dataset.tags.split(' ').filter(Boolean));
+      var show = active.size === 0 || Array.from(active).every(function (t) { return cardTags.has(t); });
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (countEl) {
+      countEl.textContent = active.size === 0
+        ? total + ' recipe' + (total !== 1 ? 's' : '')
+        : visible + ' of ' + total + ' recipe' + (total !== 1 ? 's' : '');
+    }
+    if (noRes) noRes.hidden = visible > 0;
+  }
+
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var slug = btn.dataset.slug;
+      if (slug === 'all') {
+        active.clear();
+        btns.forEach(function (b) { b.classList.remove('filter-btn--active'); });
+        btn.classList.add('filter-btn--active');
+      } else {
+        document.querySelector('.filter-btn[data-slug="all"]').classList.remove('filter-btn--active');
+        if (active.has(slug)) {
+          active.delete(slug);
+          btn.classList.remove('filter-btn--active');
+          if (active.size === 0) {
+            document.querySelector('.filter-btn[data-slug="all"]').classList.add('filter-btn--active');
+          }
+        } else {
+          active.add(slug);
+          btn.classList.add('filter-btn--active');
+        }
+      }
+      update();
+    });
+  });
+})();
+</script>
+{% endif %}
 
 {% endblock %}
