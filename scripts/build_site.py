@@ -179,6 +179,7 @@ def load_recipes_from_supabase() -> tuple[list[dict], dict]:
             "tags":            tags,   # [{"slug": "easy", "label": "Easy"}, ...]
             "photo":           None,
             "_photo_url_db":   row.get("photo_url"),
+            "photo_is_stock":  bool(row.get("photo_is_stock", True)),
         }
         recipes.append(recipe)
         by_category.setdefault(cat_slug, []).append(recipe)

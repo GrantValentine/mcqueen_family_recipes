@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page_title }}</title>
-  <link rel="icon" type="image/png" href="/public/assets/favicon/cookbook.png">
+  <link rel="icon" type="image/png" href="/public/assets/favicon/chef.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -549,6 +549,21 @@
       background: var(--willow-light);
       padding: 0.18rem 0.6rem;
       border-radius: 20px;
+    }
+    /* Stock photo badge on recipe pages */
+    .recipe-photo-wrap { position: relative; }
+    .stock-photo-badge {
+      position: absolute;
+      bottom: 0.65rem;
+      left: 0.75rem;
+      background: rgba(0,0,0,0.42);
+      color: rgba(255,255,255,0.88);
+      font-family: 'Lora', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+      padding: 0.18rem 0.55rem;
+      border-radius: 20px;
+      pointer-events: none;
     }
     /* Category page tag filter bar */
     .filter-bar {

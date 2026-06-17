@@ -224,6 +224,12 @@
         <input id="photo-file" type="file" accept="image/jpeg,image/png,image/webp"
                onchange="handlePhotoSelect(this)">
         <p id="upload-status"></p>
+        <div id="photo-stock-toggle" hidden style="margin-top:.3rem;">
+          <label style="display:flex; align-items:center; gap:.4rem; font-size:.8rem; color:var(--olive); cursor:pointer;">
+            <input type="checkbox" id="photo-is-stock">
+            Mark as stock / generic photo
+          </label>
+        </div>
       </div>
 
       <div class="card">
@@ -378,6 +384,8 @@ function loadFromImport(payload) {
     row.hidden    = false;
     preview.src   = pendingPhotoUrl;
     preview.style.display = 'block';
+    document.getElementById('photo-stock-toggle').hidden = false;
+    document.getElementById('photo-is-stock').checked = false;
   }
 
   showBanner('Recipe extracted! Review everything below, then click Save Recipe.', 'success');
@@ -498,6 +506,8 @@ function handlePhotoSelect(input) {
   document.getElementById('upload-status').textContent = 'Ready to upload — click Save Recipe.';
   // Store file reference for upload-on-save
   window._pendingPhotoFile = file;
+  document.getElementById('photo-stock-toggle').hidden = false;
+  document.getElementById('photo-is-stock').checked = false;
 }
 
 async function uploadPendingPhoto() {
@@ -563,7 +573,10 @@ async function saveRecipe(btn) {
     row.slug = title.toLowerCase()
       .replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
   }
-  if (uploadedUrl) row.photo_url = uploadedUrl;
+  if (uploadedUrl) {
+    row.photo_url = uploadedUrl;
+    row.photo_is_stock = document.getElementById('photo-is-stock').checked;
+  }
 
   if (!row.title) {
     showBanner('Title cannot be empty.', 'error');
@@ -584,6 +597,7 @@ async function saveRecipe(btn) {
         !document.getElementById('use-import-photo-row').hidden &&
         usePhotoBox.checked && importPhotoSrc) {
       row.photo_url = importPhotoSrc;
+      row.photo_is_stock = document.getElementById('photo-is-stock').checked;
     }
 
     const { data: created, error: insertErr } = await db
