@@ -39,7 +39,7 @@
       <div class="recipe-card__body">
         <h2 class="recipe-card__title">{{ recipe.title }}</h2>
         {% if recipe.ingredients %}
-        <p class="recipe-card__preview">{{ recipe.ingredients[:3] | join(' · ') }}</p>
+        <p class="recipe-card__preview">{{ (recipe.ingredients | skip_headings)[:3] | join(' · ') }}</p>
         {% endif %}
         <div class="recipe-card__meta">
           <span>{{ category_name }}</span>

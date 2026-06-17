@@ -239,6 +239,7 @@ def build_site() -> int:
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
     env.globals["recipe_url"] = recipe_url
     env.globals["category_url"] = category_url
+    env.filters["skip_headings"] = lambda items: [i for i in items if not i.startswith("## ")]
 
     # Choose data source
     supabase_url = os.environ.get("SUPABASE_URL", "").strip()
