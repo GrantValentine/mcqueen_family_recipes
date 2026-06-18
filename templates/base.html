@@ -243,6 +243,74 @@
       flex-shrink: 0;
     }
     .site-nav__admin:hover { color: white; border-color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    /* ── Hamburger (mobile only) ─────────────────────────────────────────── */
+    .site-nav__hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.4rem;
+      flex-shrink: 0;
+      margin-left: 0.25rem;
+    }
+    .site-nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 2px;
+      transition: transform 0.22s ease, opacity 0.18s ease;
+    }
+    .site-nav__hamburger[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .site-nav__hamburger[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .site-nav__hamburger[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ── Mobile nav drawer ───────────────────────────────────────────────── */
+    .site-nav__drawer {
+      display: none;
+      background: var(--willow-blue);
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .site-nav__drawer.is-open { display: block; }
+    .site-nav__drawer ul {
+      list-style: none;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.4rem 1.5rem 0.75rem;
+    }
+    .site-nav__drawer li a {
+      display: block;
+      font-family: 'Lora', serif;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.82);
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      text-decoration: none;
+      transition: color 0.12s;
+    }
+    .site-nav__drawer li:last-child a { border-bottom: none; }
+    .site-nav__drawer li a:hover { color: white; text-decoration: none; }
+    .site-nav__drawer .drawer-edit a {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    @media (max-width: 900px) {
+      .site-nav__hamburger { display: flex; }
+      .site-nav__admin { display: none; }
+      #search-input { width: 120px; }
+      #search-input:focus { width: 150px; }
+    }
     .footer-admin-link {
       font-family: 'Fraunces', serif;
       font-style: italic;
@@ -889,6 +957,28 @@
         <input id="search-input" type="search" placeholder="Search recipes…" autocomplete="off" aria-label="Search recipes">
         <ul id="search-results" class="hidden" role="listbox"></ul>
       </div>
+
+      <button class="site-nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="site-nav__drawer" id="nav-drawer" aria-hidden="true">
+      <ul>
+        {% set nav_items = [
+          ('Appetizers', 'appetizers'),
+          ('Bread',      'bread'),
+          ('Salads',     'salads'),
+          ('Sides',      'vegetables-and-side-dishes'),
+          ('Mains',      'main-dishes'),
+          ('Desserts',   'desserts'),
+          ('Cookies',    'cookies'),
+        ] %}
+        {% for label, slug in nav_items %}
+        <li><a href="{{ root_path }}{{ slug }}/">{{ label }}</a></li>
+        {% endfor %}
+        <li class="drawer-edit"><a href="/admin/">Edit</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -928,5 +1018,33 @@
 
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
   <script src="{{ root_path }}static/search.js"></script>
+
+  <script>
+  (function () {
+    var btn    = document.getElementById('nav-hamburger');
+    var drawer = document.getElementById('nav-drawer');
+    if (!btn || !drawer) return;
+
+    function setOpen(open) {
+      drawer.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', open);
+      drawer.setAttribute('aria-hidden', !open);
+    }
+
+    btn.addEventListener('click', function () {
+      setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    });
+
+    // Close when any link inside the drawer is clicked
+    drawer.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') setOpen(false);
+    });
+
+    // Close when clicking outside the nav
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.site-nav')) setOpen(false);
+    });
+  })();
+  </script>
 </body>
 </html>
