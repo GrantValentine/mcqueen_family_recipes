@@ -13,15 +13,15 @@
   <style>
     /* ── Palette ─────────────────────────────────────────────────────────── */
     :root {
-      --willow-blue:  #1f2ca3;
-      --porcelain:    #fffdf9;
-      --dusty-olive:  #7c7f65;
-      --dusty-rose:   #cb8589;
-      --brick-red:    #b3001b;
-      --willow-light: #e8eaf6;
-      --ink:          #1a1a2e;
-      --card-shadow:  0 2px 12px rgba(31,44,163,0.08), 0 1px 3px rgba(31,44,163,0.05);
-      --card-shadow-hover: 0 8px 28px rgba(31,44,163,0.14), 0 2px 6px rgba(31,44,163,0.07);
+      --willow-blue:  #3d6b4f;
+      --porcelain:    #faf8f4;
+      --dusty-olive:  #7a705a;
+      --dusty-rose:   #c07a84;
+      --brick-red:    #8b5e52;
+      --willow-light: #e6ede7;
+      --ink:          #2a2820;
+      --card-shadow:  0 2px 12px rgba(61,107,79,0.08), 0 1px 3px rgba(61,107,79,0.05);
+      --card-shadow-hover: 0 8px 28px rgba(61,107,79,0.14), 0 2px 6px rgba(61,107,79,0.07);
     }
 
     /* ── Base ────────────────────────────────────────────────────────────── */
@@ -90,8 +90,8 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      background-image: url('/public/assets/willow/willow-pattern.webp');
-      background-size: 380px 380px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cg stroke='%233d6b4f' fill='none'%3E%3Cpath d='M80,140 Q80,115 80,80' stroke-width='1.2'/%3E%3Cpath d='M80,120 Q93,110 95,97 Q83,105 80,120' fill='%233d6b4f' stroke='none'/%3E%3Cpath d='M80,120 Q67,110 65,97 Q77,105 80,120' fill='%233d6b4f' stroke='none'/%3E%3Cpath d='M80,98 Q93,88 95,75 Q83,83 80,98' fill='%233d6b4f' stroke='none'/%3E%3Cpath d='M80,98 Q67,88 65,75 Q77,83 80,98' fill='%233d6b4f' stroke='none'/%3E%3C/g%3E%3Ccircle cx='80' cy='78' r='5' fill='%23c07a84' opacity='0.7'/%3E%3Ccircle cx='80' cy='70' r='3' fill='%23c07a84' opacity='0.6'/%3E%3Ccircle cx='87' cy='74' r='3' fill='%23c07a84' opacity='0.6'/%3E%3Ccircle cx='73' cy='74' r='3' fill='%23c07a84' opacity='0.6'/%3E%3Ccircle cx='87' cy='83' r='3' fill='%23c07a84' opacity='0.6'/%3E%3Ccircle cx='73' cy='83' r='3' fill='%23c07a84' opacity='0.6'/%3E%3C/svg%3E");
+      background-size: 160px 160px;
       background-repeat: repeat;
       opacity: 0.07;
     }
@@ -109,8 +109,8 @@
       width: 100%;
       overflow: hidden;
       line-height: 0;
-      border-top: 1.5px solid rgba(31,44,163,0.15);
-      border-bottom: 1.5px solid rgba(31,44,163,0.15);
+      border-top: 1.5px solid rgba(61,107,79,0.15);
+      border-bottom: 1.5px solid rgba(61,107,79,0.15);
     }
     .wf-toile img {
       width: 100%;
@@ -206,7 +206,7 @@
       background: white;
       border: 1.5px solid var(--willow-blue);
       border-radius: 10px;
-      box-shadow: 0 8px 28px rgba(31,44,163,0.14);
+      box-shadow: 0 8px 28px rgba(61,107,79,0.14);
       z-index: 100;
       overflow: hidden;
       max-height: 340px;
@@ -326,8 +326,8 @@
     /* ── Hero ────────────────────────────────────────────────────────────── */
     .wf-hero {
       background:
-        linear-gradient(rgba(20,28,110,0.62), rgba(20,28,110,0.72)),
-        url('/public/assets/willow/willow-header.png') center 35% / cover no-repeat;
+        linear-gradient(rgba(30,75,50,0.62), rgba(20,55,35,0.72)),
+        url('/public/assets/garden/garden-header.jpg') center 35% / cover no-repeat;
       color: white;
       padding: 4rem 1.5rem 7rem;
       text-align: center;
@@ -366,7 +366,7 @@
       display: block;
       height: auto;
       /* Runtime recolor — tune hue-rotate if your source art has a different base hue */
-      filter: grayscale(1) sepia(0.5) saturate(6) hue-rotate(215deg);
+      filter: grayscale(1) sepia(0.5) saturate(5) hue-rotate(90deg);
       opacity: 0.82;
     }
     .wf-vignette-header img { max-width: min(220px, 38vw); }
@@ -461,17 +461,17 @@
       justify-content: center;
       position: relative;
       box-shadow:
-        0 6px 24px rgba(31,44,163,0.18),
-        0 2px 6px rgba(31,44,163,0.10),
-        inset 0 0 0 1px rgba(31,44,163,0.08);
+        0 6px 24px rgba(61,107,79,0.18),
+        0 2px 6px rgba(61,107,79,0.10),
+        inset 0 0 0 1px rgba(61,107,79,0.08);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       overflow: hidden;
     }
     .plate-link:hover .plate-card {
       transform: translateY(-7px) rotate(1deg);
       box-shadow:
-        0 18px 42px rgba(31,44,163,0.22),
-        0 4px 10px rgba(31,44,163,0.12);
+        0 18px 42px rgba(61,107,79,0.22),
+        0 4px 10px rgba(61,107,79,0.12);
     }
     .plate-card-svg {
       position: absolute;
@@ -542,7 +542,14 @@
       transition: transform 0.3s;
     }
     .recipe-card:hover .recipe-card__img img { transform: scale(1.04); }
-    .recipe-card__placeholder { font-size: 2.5rem; opacity: 0.2; }
+    .recipe-card__placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, var(--willow-light) 0%, #f0f5f0 100%);
+    }
     .recipe-card__body { padding: 1.1rem 1.2rem 1.2rem; }
     .recipe-card__title {
       font-family: 'Fraunces', serif;
@@ -685,7 +692,7 @@
     @media (max-width: 700px) { .recipe-cols { grid-template-columns: 1fr; } }
 
     .ingredients-panel {
-      background: rgba(31,44,163,0.035);
+      background: rgba(61,107,79,0.035);
       border: 1.5px solid var(--willow-blue);
       border-radius: 10px;
       padding: 1.4rem 1.5rem;
@@ -705,7 +712,7 @@
       color: var(--ink);
       line-height: 1.65;
       padding: 0.35rem 0;
-      border-bottom: 1px solid rgba(31,44,163,0.08);
+      border-bottom: 1px solid rgba(61,107,79,0.08);
       list-style: none;
       display: flex;
       gap: 0.6rem;
@@ -887,10 +894,10 @@
     }
     /* Red brick foundation */
     .brick-foundation {
-      height: 22px;
+      height: 20px;
       margin-top: 1.5rem;
-      background-color: var(--brick-red);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='22'%3E%3Crect x='1' y='1' width='37' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3Crect x='40' y='1' width='38' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3Crect x='-19' y='12' width='37' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3Crect x='21' y='12' width='37' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3Crect x='61' y='12' width='37' height='9' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='0.8' rx='0.5'/%3E%3C/svg%3E");
+      background-color: var(--willow-blue);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='20'%3E%3Cpath d='M0,10 Q6,4 12,10 Q18,16 24,10 Q30,4 36,10 Q42,16 48,10' stroke='rgba(255,255,255,0.22)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
     }
 
     /* ── Print ───────────────────────────────────────────────────────────── */
@@ -934,17 +941,16 @@
   <!-- Navigation -->
   <nav class="site-nav" role="navigation">
     <div class="site-nav__inner">
-      <a class="site-nav__logo" href="{{ root_path }}">Julie's Recipes</a>
+      <a class="site-nav__logo" href="{{ root_path }}">Jolene's Family Recipes</a>
 
       <ul class="site-nav__links">
         {% set nav_items = [
           ('Appetizers', 'appetizers'),
+          ('Soups',      'soups'),
           ('Bread',      'bread'),
-          ('Salads',     'salads'),
-          ('Sides',      'vegetables-and-side-dishes'),
           ('Mains',      'main-dishes'),
+          ('Sides',      'sides-and-vegetables'),
           ('Desserts',   'desserts'),
-          ('Cookies',    'cookies'),
         ] %}
         {% for label, slug in nav_items %}
         <li><a href="{{ root_path }}{{ slug }}/">{{ label }}</a></li>
@@ -967,12 +973,11 @@
       <ul>
         {% set nav_items = [
           ('Appetizers', 'appetizers'),
+          ('Soups',      'soups'),
           ('Bread',      'bread'),
-          ('Salads',     'salads'),
-          ('Sides',      'vegetables-and-side-dishes'),
           ('Mains',      'main-dishes'),
+          ('Sides',      'sides-and-vegetables'),
           ('Desserts',   'desserts'),
-          ('Cookies',    'cookies'),
         ] %}
         {% for label, slug in nav_items %}
         <li><a href="{{ root_path }}{{ slug }}/">{{ label }}</a></li>
@@ -989,8 +994,8 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p class="site-footer__love">From our red brick house, with love.</p>
-    <p>The Valentine Family Cookbook</p>
+    <p class="site-footer__love">From our garden, with love.</p>
+    <p>Jolene's Family Recipes</p>
     <p style="margin-top:0.75rem;"><a class="footer-admin-link" href="/admin/">Open the cookbook ✎</a></p>
     <div class="brick-foundation" role="presentation" aria-hidden="true"></div>
   </footer>

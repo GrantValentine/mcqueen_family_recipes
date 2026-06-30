@@ -32,7 +32,21 @@
         {% if recipe.photo %}
         <img src="{{ recipe.photo }}" alt="{{ recipe.title }}" loading="lazy">
         {% else %}
-        <div class="recipe-card__placeholder" aria-hidden="true">🍽</div>
+        <div class="recipe-card__placeholder" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="56" viewBox="0 0 48 56" fill="none">
+            <path d="M24 52 Q23 40 24 22" stroke="#3d6b4f" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M24 41 Q33 35 34 26 Q26 31 24 41" fill="#3d6b4f" opacity="0.55"/>
+            <path d="M24 41 Q15 35 14 26 Q22 31 24 41" fill="#3d6b4f" opacity="0.55"/>
+            <path d="M24 27 Q33 21 34 12 Q26 17 24 27" fill="#3d6b4f" opacity="0.38"/>
+            <path d="M24 27 Q15 21 14 12 Q22 17 24 27" fill="#3d6b4f" opacity="0.38"/>
+            <circle cx="24" cy="10" r="5"   fill="#c07a84" opacity="0.65"/>
+            <circle cx="24" cy="3.5" r="3.2" fill="#c07a84" opacity="0.5"/>
+            <circle cx="29.8" cy="6.5"  r="3.2" fill="#c07a84" opacity="0.5"/>
+            <circle cx="18.2" cy="6.5"  r="3.2" fill="#c07a84" opacity="0.5"/>
+            <circle cx="29.8" cy="13.5" r="3.2" fill="#c07a84" opacity="0.5"/>
+            <circle cx="18.2" cy="13.5" r="3.2" fill="#c07a84" opacity="0.5"/>
+          </svg>
+        </div>
         {% endif %}
       </div>
 

@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Edit Recipe — Julie's Recipes</title>
+  <title>Edit Recipe — Jolene's Family Recipes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
-    :root { --blue:#1f2ca3; --porcelain:#fffdf9; --rose:#cb8589;
-            --olive:#7c7f65; --ink:#1a1a2e; --light:#e8eaf6; }
+    :root { --blue:#3d6b4f; --porcelain:#faf8f4; --rose:#c07a84;
+            --olive:#7a705a; --ink:#2a2820; --light:#e6ede7; }
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:'Lora',Georgia,serif; background:var(--porcelain);
            color:var(--ink); min-height:100vh; }
@@ -333,7 +333,7 @@ function loadFromImport(payload) {
   const { recipe, pendingPhotoUrl, isImage } = payload;
 
   document.getElementById('page-title').textContent = 'Review Imported Recipe';
-  document.title = 'Review Import — Julie\'s Recipes';
+  document.title = 'Review Import — Jolene\'s Family Recipes';
 
   // Title
   document.getElementById('recipe-title').value = recipe.title || '';
@@ -640,7 +640,7 @@ async function saveRecipe(btn) {
 
   // ── Post-save UI ───────────────────────────────────────────────────────
   document.getElementById('page-title').textContent = row.title;
-  document.title = `Edit "${row.title}" — Julie's Recipes`;
+  document.title = `Edit "${row.title}" — Jolene's Family Recipes`;
 
   // Hide import-only chrome after first save
   const importRow = document.getElementById('use-import-photo-row');

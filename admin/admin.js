@@ -11,8 +11,8 @@
  *   - The password is never stored in code or in this repo.
  */
 
-const SUPABASE_URL      = 'https://jiouygrsqxbhtapyffbm.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_REjkQ00uDAp_laGS6rYsmA_KBnDkiv9';
+const SUPABASE_URL      = 'https://fopiypjadkjzamblnzmt.supabase.co';       // ← paste from Supabase → Project Settings → API
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvcGl5cGphZGtqemFtYmxuem10Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3NjYyMzIsImV4cCI6MjA5ODM0MjIzMn0.TW_KqQo8UEYEdZSbSYXgjsXS9ADYVwg7OYGBf0w9cAQ'; // ← anon/public key, safe for client-side
 
 const { createClient } = supabase;
 const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);

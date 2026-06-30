@@ -1,5 +1,5 @@
 -- ============================================================
--- Julie's Family Recipes — Supabase schema
+-- Jolene's Family Recipes — Supabase schema
 -- Run this in the Supabase SQL editor (Project → SQL editor → New query)
 -- ============================================================
 
@@ -91,13 +91,12 @@ create policy "admin write recipe_tags" on recipe_tags for all
 -- ── Seed data ────────────────────────────────────────────────
 
 insert into categories (slug, name, sort_order) values
-  ('appetizers',                  'Appetizers',                  1),
-  ('bread',                       'Bread',                       2),
-  ('cookies',                     'Cookies',                     3),
-  ('desserts',                    'Desserts',                    4),
-  ('main-dishes',                 'Main Dishes',                 5),
-  ('salads',                      'Salads',                      6),
-  ('vegetables-and-side-dishes',  'Vegetables and Side Dishes',  7)
+  ('appetizers',           'Appetizers',        1),
+  ('soups',                'Soups',             2),
+  ('bread',                'Bread',             3),
+  ('main-dishes',          'Main Dishes',       4),
+  ('sides-and-vegetables', 'Sides & Vegetables',5),
+  ('desserts',             'Desserts',          6)
 on conflict (slug) do nothing;
 
 insert into tags (slug, label) values

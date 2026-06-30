@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Admin Login — Julie's Recipes</title>
+  <title>Admin Login — Jolene's Family Recipes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --blue: #1f2ca3; --porcelain: #fffdf9; --rose: #cb8589;
-      --olive: #7c7f65; --ink: #1a1a2e;
+      --blue: #3d6b4f; --porcelain: #faf8f4; --rose: #c07a84;
+      --olive: #7a705a; --ink: #2a2820;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -116,12 +116,12 @@
 <body>
 
 <div class="login-card">
-  <p class="login-logo">Julie's Recipes</p>
+  <p class="login-logo">Jolene's Family Recipes</p>
   <p class="login-sub">Admin</p>
 
   <form id="login-form" onsubmit="handleLogin(event)">
     <label for="username">Username</label>
-    <input id="username" type="text" placeholder="julie"
+    <input id="username" type="text" placeholder="jolene"
            autocomplete="username" spellcheck="false" required>
 
     <label for="password">Password</label>
@@ -142,8 +142,8 @@
 <script src="/admin/config.js" onerror="window.ADMIN_EMAIL=null"></script>
 
 <script>
-const SUPABASE_URL      = 'https://jiouygrsqxbhtapyffbm.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_REjkQ00uDAp_laGS6rYsmA_KBnDkiv9';
+const SUPABASE_URL      = 'https://fopiypjadkjzamblnzmt.supabase.co';       // ← paste from Supabase → Project Settings → API
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvcGl5cGphZGtqemFtYmxuem10Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3NjYyMzIsImV4cCI6MjA5ODM0MjIzMn0.TW_KqQo8UEYEdZSbSYXgjsXS9ADYVwg7OYGBf0w9cAQ'; // ← anon/public key, safe for client-side
 const { createClient } = supabase;
 const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
@@ -164,7 +164,7 @@ async function handleLogin(e) {
   btn.disabled = true;
   btn.textContent = 'Signing in…';
 
-  // Map "julie" → configured admin email.
+  // Map "jolene" → configured admin email.
   // If ADMIN_EMAIL wasn't injected at build time, fall back to treating the
   // username field as an email address directly.
   let email = window.ADMIN_EMAIL || null;
@@ -176,7 +176,7 @@ async function handleLogin(e) {
       btn.disabled = false; btn.textContent = 'Sign in';
       return;
     }
-  } else if (user !== 'julie') {
+  } else if (user !== 'jolene') {
     showError('Unknown username.');
     btn.disabled = false; btn.textContent = 'Sign in';
     return;

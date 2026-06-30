@@ -44,13 +44,6 @@ TAG_ORDER = [
 ]
 
 PHOTO_OVERRIDES: dict[tuple[str, str], str] = {
-    ("appetizers", "christmas-bruscetta"): "christmas-bruschetta",        # typo in filename
-    ("appetizers", "italian-cannelini-dip"): "italian-cannellini-dip",   # typo in filename
-    ("appetizers", "parmesan-and-artichoke-wonton-cups"): "warm-artichoke-and-parmesan",
-    ("bread", "condensed-sourdough-recipe-for-crusty-artisan-loaf"): "sourdough-for-instructing-groups",
-    ("bread", "valentine-waffles"): "fluffy-waffle-recipe",
-    ("cookies", "julies-chocolate-chip-cookies"): "moms-chocolate-chip-cookie-recipe",
-    ("cookies", "sinckerdoodles"): "snickerdoodles-sandwich-cookies",
 }
 
 
@@ -267,12 +260,11 @@ def build_site() -> int:
 
     CATEGORY_ORDER = [
         'appetizers',
+        'soups',
         'bread',
-        'salads',
-        'vegetables-and-side-dishes',
         'main-dishes',
+        'sides-and-vegetables',
         'desserts',
-        'cookies',
     ]
 
     build_search_index(recipes)
@@ -335,7 +327,7 @@ def build_site() -> int:
         intro_paragraphs=intro_paragraphs,
         categories=categories_summary,
         total=len(recipes),
-        page_title="The Valentine Family Cookbook",
+        page_title="Jolene's Family Recipes",
         root_path="/",
     )
     (SITE_DIR / "index.html").write_text(html, encoding="utf-8")
@@ -363,7 +355,7 @@ def build_site() -> int:
             category_slug=slug,
             recipes=sorted_recs,
             category_tags=category_tags,
-            page_title=f"{cat_display[slug]} — Julie's Recipes",
+            page_title=f"{cat_display[slug]} — Jolene's Family Recipes",
             root_path="/",
         )
         (cat_dir / "index.html").write_text(html, encoding="utf-8")
@@ -377,7 +369,7 @@ def build_site() -> int:
         html = recipe_tmpl.render(
             recipe=recipe,
             photo_url=recipe.get("photo"),
-            page_title=f"{recipe['title']} — Julie's Recipes",
+            page_title=f"{recipe['title']} — Jolene's Family Recipes",
             root_path="/",
         )
         (page_dir / "index.html").write_text(html, encoding="utf-8")
