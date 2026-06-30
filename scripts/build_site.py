@@ -250,8 +250,8 @@ def build_site() -> int:
     intro_paragraphs = load_intro()
 
     if not recipes:
-        print("No recipes found — run extract_recipes.py first or configure Supabase.")
-        return 1
+        print("  No recipes in database yet — building empty site.")
+        recipes, by_category = [], {}
 
     # Category display names (slug → original name)
     cat_display: dict[str, str] = {}
