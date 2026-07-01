@@ -7,36 +7,38 @@
   <title>Edit Recipe — JoLene's Family Recipes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
   <style>
-    :root { --blue:#3d6b4f; --porcelain:#faf8f4; --rose:#c07a84;
-            --olive:#7a705a; --ink:#2a2820; --light:#e6ede7; }
+    :root { --paper:#f4eee1; --paper-dark:#e8dfc8; --card-bg:#fffdf8;
+            --garden-ink:#3a4630; --sage:#8f9c7c; --fern:#4f6e44;
+            --terracotta:#9a4f35; --bloom:#d18a86; --ink:#2a2820; }
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'Lora',Georgia,serif; background:var(--porcelain);
+    body { font-family:'Spectral',Georgia,serif; background:var(--paper);
            color:var(--ink); min-height:100vh; }
 
     /* ── Top bar ── */
     .top-bar {
-      background:var(--blue); color:white; padding:0 1.5rem;
+      background:var(--paper); color:var(--garden-ink); padding:0 1.5rem;
       display:flex; align-items:center; justify-content:space-between;
       height:52px; position:sticky; top:0; z-index:100;
+      border-bottom:2px solid var(--terracotta);
     }
     .top-bar__left { display:flex; align-items:center; gap:.9rem; }
-    .back-link { color:rgba(255,255,255,.65); font-size:.8rem;
+    .back-link { color:rgba(58,70,48,.55); font-size:.8rem;
       text-decoration:none; }
-    .back-link:hover { color:white; }
-    .top-bar__title { font-family:'Fraunces',serif;
-      font-variation-settings:'opsz' 18,'SOFT' 80; font-size:1rem; }
+    .back-link:hover { color:var(--garden-ink); }
+    .top-bar__title { font-family:'Cormorant Garamond',serif; font-style:italic;
+      font-size:1rem; }
     .top-bar__actions { display:flex; gap:.6rem; align-items:center; }
-    .btn { font-family:'Lora',serif; font-size:.8rem; padding:.38rem .9rem;
+    .btn { font-family:'Spectral',serif; font-size:.8rem; padding:.38rem .9rem;
       border-radius:6px; border:1.5px solid; cursor:pointer;
       transition:opacity .15s; }
     .btn:hover:not(:disabled) { opacity:.8; }
     .btn:disabled { opacity:.45; cursor:default; }
-    .btn--primary { background:white; color:var(--blue); border-color:white; }
-    .btn--ghost { background:transparent; color:white;
-      border-color:rgba(255,255,255,.45); }
-    .btn--danger { background:white; color:#b91c1c; border-color:#fca5a5; }
+    .btn--primary { background:var(--garden-ink); color:var(--paper); border-color:var(--garden-ink); }
+    .btn--ghost { background:transparent; color:var(--garden-ink);
+      border-color:rgba(58,70,48,.3); }
+    .btn--danger { background:var(--card-bg); color:#b91c1c; border-color:#fca5a5; }
 
     /* ── Banner ── */
     .admin-banner { display:none; padding:.65rem 1.2rem; font-size:.83rem;
@@ -51,23 +53,23 @@
     @media(max-width:700px) { .two-col { grid-template-columns:1fr; } }
 
     /* ── Card ── */
-    .card { background:white; border-radius:10px;
-      box-shadow:0 2px 10px rgba(31,44,163,.07); padding:1.4rem 1.5rem;
+    .card { background:var(--card-bg); border-radius:10px;
+      border:1.5px solid var(--paper-dark);
+      box-shadow:0 2px 12px rgba(58,70,48,.09); padding:1.4rem 1.5rem;
       margin-bottom:1.2rem; }
-    .card__heading { font-family:'Fraunces',serif;
-      font-variation-settings:'opsz' 18,'SOFT' 80; font-size:.95rem;
-      font-weight:500; color:var(--blue); margin-bottom:1rem; }
+    .card__heading { font-family:'Cormorant Garamond',serif; font-style:italic;
+      font-size:.95rem; font-weight:500; color:var(--garden-ink); margin-bottom:1rem; }
 
     /* ── Fields ── */
-    label { display:block; font-size:.76rem; color:var(--olive);
+    label { display:block; font-size:.76rem; color:var(--sage);
       letter-spacing:.05em; margin-bottom:.3rem; }
     input[type=text], textarea, select {
-      width:100%; font-family:'Lora',serif; font-size:.88rem;
-      padding:.45rem .75rem; border:1.5px solid #dde; border-radius:6px;
-      background:var(--porcelain); color:var(--ink); outline:none;
+      width:100%; font-family:'Spectral',serif; font-size:.88rem;
+      padding:.45rem .75rem; border:1.5px solid rgba(58,70,48,.22); border-radius:6px;
+      background:rgba(58,70,48,.04); color:var(--garden-ink); outline:none;
       transition:border-color .15s; resize:vertical;
     }
-    input:focus, textarea:focus, select:focus { border-color:var(--blue); }
+    input:focus, textarea:focus, select:focus { border-color:var(--garden-ink); }
     .field-group { margin-bottom:1rem; }
 
     /* ── Dynamic list editor ── */
@@ -76,52 +78,52 @@
     .list-item textarea { flex:1; rows:2; min-height:2.4rem; }
     .list-item__btns { display:flex; flex-direction:column; gap:.2rem;
       flex-shrink:0; }
-    .list-btn { background:none; border:1.5px solid #dde; border-radius:4px;
-      width:24px; height:24px; font-size:.75rem; cursor:pointer; color:var(--olive);
+    .list-btn { background:none; border:1.5px solid rgba(58,70,48,.22); border-radius:4px;
+      width:24px; height:24px; font-size:.75rem; cursor:pointer; color:var(--sage);
       display:flex; align-items:center; justify-content:center;
       transition:border-color .1s, color .1s; }
-    .list-btn:hover { border-color:var(--blue); color:var(--blue); }
+    .list-btn:hover { border-color:var(--garden-ink); color:var(--garden-ink); }
     .list-btn--rm:hover { border-color:#fca5a5; color:#b91c1c; }
     .list-btn:disabled { opacity:.3; cursor:default; }
-    .add-item-btn { font-family:'Lora',serif; font-size:.8rem; color:var(--blue);
-      background:none; border:1.5px dashed rgba(31,44,163,.3); border-radius:6px;
+    .add-item-btn { font-family:'Spectral',serif; font-size:.8rem; color:var(--garden-ink);
+      background:none; border:1.5px dashed rgba(58,70,48,.3); border-radius:6px;
       padding:.35rem .8rem; cursor:pointer; margin-top:.3rem;
       transition:border-color .15s, background .15s; width:100%; }
-    .add-item-btn:hover { border-color:var(--blue); background:var(--light); }
+    .add-item-btn:hover { border-color:var(--garden-ink); background:var(--paper-dark); }
     .add-item-row { display:flex; gap:.4rem; }
     .add-item-row .add-item-btn { flex:1; }
     .list-item--heading {
-      background:rgba(31,44,163,.05); border-radius:6px;
+      background:rgba(58,70,48,.05); border-radius:6px;
       padding:.15rem .4rem .15rem .3rem;
-      border:1.5px dashed rgba(31,44,163,.3);
+      border:1.5px dashed rgba(58,70,48,.3);
     }
     .list-item--heading textarea {
-      font-family:'Fraunces',serif; font-weight:600; color:var(--blue);
+      font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; color:var(--garden-ink);
       background:transparent; border-color:transparent;
     }
-    .list-item--heading textarea:focus { border-color:var(--blue); }
+    .list-item--heading textarea:focus { border-color:var(--garden-ink); }
 
     /* ── Tags ── */
     .tags-grid { display:flex; flex-wrap:wrap; gap:.5rem; }
     .tag-check { display:flex; align-items:center; gap:.35rem; cursor:pointer;
       font-size:.82rem; }
-    .tag-check input { width:15px; height:15px; accent-color:var(--blue); }
+    .tag-check input { width:15px; height:15px; accent-color:var(--garden-ink); }
     .new-tag-row { display:flex; gap:.5rem; margin-top:.8rem; }
     .new-tag-row input { flex:1; font-size:.82rem; }
-    .new-tag-row button { white-space:nowrap; background:var(--blue); color:white;
-      border:none; border-radius:6px; padding:.4rem .8rem; font-family:'Lora',serif;
+    .new-tag-row button { white-space:nowrap; background:var(--garden-ink); color:var(--paper);
+      border:none; border-radius:6px; padding:.4rem .8rem; font-family:'Spectral',serif;
       font-size:.8rem; cursor:pointer; }
 
     /* ── Photo ── */
     #photo-preview { max-width:100%; border-radius:8px; margin-bottom:.8rem;
-      display:none; border:1.5px solid var(--light); }
-    .photo-source-note { font-size:.75rem; color:var(--olive); font-style:italic;
+      display:none; border:1.5px solid var(--paper-dark); }
+    .photo-source-note { font-size:.75rem; color:var(--sage); font-style:italic;
       margin-bottom:.8rem; }
-    input[type=file] { font-family:'Lora',serif; font-size:.8rem;
-      border:1.5px dashed #dde; border-radius:6px; padding:.4rem .6rem;
-      width:100%; cursor:pointer; background:var(--porcelain); }
-    input[type=file]:hover { border-color:var(--blue); }
-    #upload-status { font-size:.78rem; color:var(--olive); margin-top:.4rem;
+    input[type=file] { font-family:'Spectral',serif; font-size:.8rem;
+      border:1.5px dashed rgba(58,70,48,.22); border-radius:6px; padding:.4rem .6rem;
+      width:100%; cursor:pointer; background:rgba(58,70,48,.04); }
+    input[type=file]:hover { border-color:var(--garden-ink); }
+    #upload-status { font-size:.78rem; color:var(--sage); margin-top:.4rem;
       min-height:1.2em; }
 
     /* ── Delete ── */
@@ -137,9 +139,9 @@
     .card--flagged { border:2px solid #fcd34d; }
     .use-photo-row { display:flex; align-items:center; gap:.5rem;
       font-size:.83rem; margin-bottom:.8rem; }
-    .use-photo-row input { width:15px; height:15px; accent-color:var(--blue); }
+    .use-photo-row input { width:15px; height:15px; accent-color:var(--garden-ink); }
     #import-photo-preview { max-width:100%; border-radius:8px; margin-bottom:.8rem;
-      border:1.5px solid var(--light); display:none; }
+      border:1.5px solid var(--paper-dark); display:none; }
   </style>
 </head>
 <body>
@@ -233,7 +235,7 @@
       </div>
 
       <div class="card">
-        <p class="card__heading" style="color:var(--rose)">Danger Zone</p>
+        <p class="card__heading" style="color:var(--bloom)">Danger Zone</p>
         <div class="delete-row">
           <button class="btn btn--danger" onclick="deleteRecipe()">Delete this recipe</button>
         </div>

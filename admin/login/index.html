@@ -7,16 +7,16 @@
   <title>Admin Login — JoLene's Family Recipes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --blue: #3d6b4f; --porcelain: #faf8f4; --rose: #c07a84;
-      --olive: #7a705a; --ink: #2a2820;
+      --paper:#f4eee1; --paper-dark:#e8dfc8; --card-bg:#fffdf8;
+      --garden-ink:#3a4630; --sage:#8f9c7c; --bloom:#d18a86; --ink:#2a2820;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Lora', Georgia, serif;
-      background: var(--porcelain);
+      font-family: 'Spectral', Georgia, serif;
+      background: var(--paper);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -25,26 +25,27 @@
       padding: 2rem;
     }
     .login-card {
-      background: white;
+      background: var(--card-bg);
+      border: 1.5px solid var(--paper-dark);
       border-radius: 14px;
-      box-shadow: 0 4px 24px rgba(31,44,163,0.1), 0 1px 4px rgba(31,44,163,0.06);
+      box-shadow: 0 2px 12px rgba(58,70,48,0.09);
       padding: 2.8rem 2.4rem 2.4rem;
       width: 100%;
       max-width: 380px;
     }
     .login-logo {
-      font-family: 'Fraunces', serif;
-      font-variation-settings: 'opsz' 36, 'SOFT' 90;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
       font-size: 1.5rem;
       font-weight: 500;
-      color: var(--blue);
+      color: var(--garden-ink);
       text-align: center;
       margin-bottom: 0.25rem;
     }
     .login-sub {
       text-align: center;
       font-size: 0.78rem;
-      color: var(--olive);
+      color: var(--sage);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 2rem;
@@ -52,33 +53,32 @@
     label {
       display: block;
       font-size: 0.8rem;
-      color: var(--olive);
+      color: var(--sage);
       letter-spacing: 0.05em;
       margin-bottom: 0.35rem;
     }
     input[type=text], input[type=password] {
       width: 100%;
-      font-family: 'Lora', serif;
+      font-family: 'Spectral', serif;
       font-size: 0.92rem;
       padding: 0.6rem 0.9rem;
-      border: 1.5px solid #dde;
+      border: 1.5px solid rgba(58,70,48,0.22);
       border-radius: 8px;
-      background: var(--porcelain);
-      color: var(--ink);
+      background: rgba(58,70,48,0.04);
+      color: var(--garden-ink);
       outline: none;
       transition: border-color 0.15s;
       margin-bottom: 1.1rem;
     }
-    input:focus { border-color: var(--blue); }
+    input:focus { border-color: var(--garden-ink); }
     .login-btn {
       width: 100%;
-      font-family: 'Fraunces', serif;
-      font-variation-settings: 'opsz' 18, 'SOFT' 80;
+      font-family: 'Spectral', serif;
       font-size: 1rem;
       font-weight: 500;
       padding: 0.7rem;
-      background: var(--blue);
-      color: white;
+      background: var(--garden-ink);
+      color: var(--paper);
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -99,18 +99,18 @@
     }
     .willow-rule {
       border: none;
-      border-top: 1px solid rgba(31,44,163,0.12);
+      border-top: 1px solid rgba(58,70,48,0.15);
       margin: 1.5rem 0 1.2rem;
     }
     .back-link {
       display: block;
       text-align: center;
       font-size: 0.78rem;
-      color: var(--olive);
+      color: var(--sage);
       text-decoration: none;
       margin-top: 1.2rem;
     }
-    .back-link:hover { color: var(--blue); }
+    .back-link:hover { color: var(--garden-ink); }
   </style>
 </head>
 <body>

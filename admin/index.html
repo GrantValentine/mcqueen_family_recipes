@@ -7,36 +7,37 @@
   <title>Admin — JoLene's Family Recipes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --blue:#3d6b4f; --porcelain:#faf8f4; --rose:#c07a84;
-      --olive:#7a705a; --ink:#2a2820; --light:#e6ede7;
+      --paper:#f4eee1; --paper-dark:#e8dfc8; --card-bg:#fffdf8;
+      --garden-ink:#3a4630; --sage:#8f9c7c; --fern:#4f6e44;
+      --terracotta:#9a4f35; --bloom:#d18a86; --ink:#2a2820;
     }
     *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family:'Lora',Georgia,serif; background:var(--porcelain);
+    body { font-family:'Spectral',Georgia,serif; background:var(--paper);
            color:var(--ink); min-height:100vh; }
 
     /* ── Top bar ── */
     .top-bar {
-      background:var(--blue); color:white; padding:0 1.5rem;
+      background:var(--paper); color:var(--garden-ink); padding:0 1.5rem;
       display:flex; align-items:center; justify-content:space-between;
       height:52px; position:sticky; top:0; z-index:100;
+      border-bottom:2px solid var(--terracotta);
     }
-    .top-bar__logo { font-family:'Fraunces',serif;
-      font-variation-settings:'opsz' 24,'SOFT' 90; font-size:1.05rem;
-      font-weight:500; }
-    .top-bar__logo span { opacity:.55; font-weight:400; font-size:.85rem;
-      font-family:'Lora',serif; }
+    .top-bar__logo { font-family:'Cormorant Garamond',serif; font-style:italic;
+      font-size:1.05rem; font-weight:500; }
+    .top-bar__logo span { opacity:.65; font-weight:400; font-size:.85rem;
+      font-family:'Spectral',serif; font-style:normal; }
     .top-bar__actions { display:flex; gap:.6rem; align-items:center; }
-    .btn { font-family:'Lora',serif; font-size:.8rem; padding:.38rem .9rem;
+    .btn { font-family:'Spectral',serif; font-size:.8rem; padding:.38rem .9rem;
       border-radius:6px; border:1.5px solid; cursor:pointer;
       transition:opacity .15s; }
     .btn:hover { opacity:.8; }
-    .btn--ghost { background:transparent; color:white; border-color:rgba(255,255,255,.45); }
-    .btn--primary { background:white; color:var(--blue); border-color:white; }
+    .btn--ghost { background:transparent; color:var(--garden-ink); border-color:rgba(58,70,48,.3); }
+    .btn--primary { background:var(--garden-ink); color:var(--paper); border-color:var(--garden-ink); }
     .btn--sm { font-size:.74rem; padding:.28rem .7rem; }
-    .btn--danger { color:#b91c1c; border-color:#fca5a5; background:white; }
+    .btn--danger { color:#b91c1c; border-color:#fca5a5; background:var(--card-bg); }
 
     /* ── Banner ── */
     .admin-banner { display:none; padding:.65rem 1.2rem; font-size:.83rem;
@@ -49,48 +50,49 @@
 
     /* ── Quick-add card ── */
     .quick-add {
-      background:white; border-radius:10px;
-      box-shadow:0 2px 10px rgba(31,44,163,.07);
+      background:var(--card-bg); border-radius:10px;
+      border:1.5px solid var(--paper-dark);
+      box-shadow:0 2px 12px rgba(58,70,48,.09);
       padding:1.2rem 1.4rem; margin-bottom:2rem;
       display:flex; gap:.8rem; flex-wrap:wrap; align-items:flex-end;
     }
     .quick-add__field { display:flex; flex-direction:column; gap:.3rem; flex:1;
       min-width:160px; }
-    .quick-add__field label { font-size:.76rem; color:var(--olive);
+    .quick-add__field label { font-size:.76rem; color:var(--sage);
       letter-spacing:.05em; }
     input[type=text], select {
-      font-family:'Lora',serif; font-size:.88rem;
-      padding:.45rem .7rem; border:1.5px solid #dde; border-radius:6px;
-      background:var(--porcelain); color:var(--ink); outline:none;
+      font-family:'Spectral',serif; font-size:.88rem;
+      padding:.45rem .7rem; border:1.5px solid rgba(58,70,48,.22); border-radius:6px;
+      background:rgba(58,70,48,.04); color:var(--garden-ink); outline:none;
       transition:border-color .15s; width:100%;
     }
-    input:focus, select:focus { border-color:var(--blue); }
-    .btn--add { background:var(--blue); color:white; border-color:var(--blue);
+    input:focus, select:focus { border-color:var(--garden-ink); }
+    .btn--add { background:var(--garden-ink); color:var(--paper); border-color:var(--garden-ink);
       white-space:nowrap; align-self:flex-end; padding:.45rem 1.1rem; }
-    .btn--import { background:transparent; color:var(--blue); border-color:var(--blue);
+    .btn--import { background:transparent; color:var(--garden-ink); border-color:var(--garden-ink);
       white-space:nowrap; align-self:flex-end; padding:.45rem 1.1rem;
       text-decoration:none; display:inline-flex; align-items:center; gap:.35rem; }
 
     /* ── Section heading ── */
     .section-heading {
-      font-family:'Fraunces',serif; font-variation-settings:'opsz' 24,'SOFT' 80;
-      font-size:1.1rem; font-weight:500; color:var(--blue);
-      border-bottom:1.5px solid var(--light); padding-bottom:.5rem;
+      font-family:'Cormorant Garamond',serif; font-style:italic;
+      font-size:1.1rem; font-weight:500; color:var(--garden-ink);
+      border-bottom:1.5px solid var(--paper-dark); padding-bottom:.5rem;
       margin:2rem 0 .8rem;
     }
-    .section-count { font-family:'Lora',serif; font-size:.78rem;
-      color:var(--olive); font-weight:400; margin-left:.4rem; }
+    .section-count { font-family:'Spectral',serif; font-size:.78rem;
+      color:var(--sage); font-weight:400; margin-left:.4rem; }
 
     /* ── Recipe rows ── */
     .recipe-row {
-      background:white; border-radius:8px; border:1.5px solid var(--light);
+      background:var(--card-bg); border-radius:8px; border:1.5px solid var(--paper-dark);
       padding:.65rem .9rem; margin-bottom:.45rem;
       display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;
     }
     .recipe-row__title { flex:1; min-width:180px; }
     .recipe-row__title a {
-      font-family:'Fraunces',serif; font-variation-settings:'opsz' 18,'SOFT' 70;
-      font-size:.95rem; font-weight:500; color:var(--blue); text-decoration:none;
+      font-family:'Cormorant Garamond',serif; font-style:italic;
+      font-size:.95rem; font-weight:500; color:var(--garden-ink); text-decoration:none;
     }
     .recipe-row__title a:hover { text-decoration:underline; }
     .recipe-row__cat { min-width:160px; }
@@ -100,32 +102,32 @@
     .tag-chip {
       display:inline-flex; align-items:center; gap:.25rem;
       font-size:.7rem; padding:.18rem .55rem; border-radius:20px;
-      background:var(--light); color:var(--blue); border:1px solid var(--blue);
+      background:var(--paper-dark); color:var(--garden-ink); border:1px solid var(--garden-ink);
     }
-    .tag-chip__rm { background:none; border:none; color:var(--rose);
+    .tag-chip__rm { background:none; border:none; color:var(--bloom);
       cursor:pointer; font-size:.8rem; line-height:1; padding:0 .1rem; }
     .tag-add-wrap { position:relative; }
-    .tag-add-btn { background:none; border:1.5px dashed rgba(31,44,163,.35);
-      color:var(--blue); border-radius:20px; font-size:.7rem;
+    .tag-add-btn { background:none; border:1.5px dashed rgba(58,70,48,.35);
+      color:var(--garden-ink); border-radius:20px; font-size:.7rem;
       padding:.18rem .55rem; cursor:pointer; }
-    .tag-add-btn:hover { border-color:var(--blue); background:var(--light); }
+    .tag-add-btn:hover { border-color:var(--garden-ink); background:var(--paper-dark); }
     .tag-dropdown {
       position:absolute; top:calc(100% + 4px); left:0; z-index:50;
-      background:white; border:1.5px solid var(--blue); border-radius:8px;
-      box-shadow:0 4px 16px rgba(31,44,163,.12); min-width:150px;
+      background:var(--card-bg); border:1.5px solid var(--garden-ink); border-radius:8px;
+      box-shadow:0 4px 16px rgba(58,70,48,.12); min-width:150px;
       display:none; flex-direction:column;
     }
     .tag-dropdown.open { display:flex; }
     .tag-dropdown__item { padding:.4rem .8rem; font-size:.8rem;
       cursor:pointer; transition:background .1s; }
-    .tag-dropdown__item:hover { background:var(--light); }
+    .tag-dropdown__item:hover { background:var(--paper-dark); }
 
     /* ── Empty state ── */
-    .empty { color:var(--olive); font-size:.85rem; font-style:italic;
+    .empty { color:var(--sage); font-size:.85rem; font-style:italic;
       padding:.5rem 0; }
 
     /* ── Loading ── */
-    .loading { text-align:center; padding:3rem; color:var(--olive);
+    .loading { text-align:center; padding:3rem; color:var(--sage);
       font-style:italic; }
   </style>
 </head>
