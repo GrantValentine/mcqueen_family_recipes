@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Hero -->
-<div class="wf-hero">
-  <h1>Jolene's Family Recipes</h1>
-  <p style="margin-top:0.5rem;">From our garden, with love</p>
+<!-- Hero — garden photo pressed into a journal mat, centered title -->
+<div class="wf-journal-spread">
+  <div class="wf-journal-photo">
+    <img src="/public/assets/garden/garden-header.jpg" alt="JoLene's garden">
+    <div class="wf-journal-overlay">
+      <h1>JoLene's Family Recipes</h1>
+    </div>
+  </div>
+
 </div>
 
 <div class="page-wrap">
@@ -12,13 +17,7 @@
   <!-- Grant's Letter -->
   {% if intro_paragraphs %}
   <section style="margin-bottom:4rem;">
-
-    <div style="text-align:center; margin-bottom:1.5rem;">
-      <img src="/public/assets/garden/sprig_motif.jpg" alt="" aria-hidden="true" class="sprig-divider">
-    </div>
-
     <div class="letter-wrap">
-      <hr class="letter-rule">
       <div class="letter-body">
         {% for para in intro_paragraphs %}
           {% if loop.last and intro_paragraphs|length > 1 %}
@@ -28,15 +27,6 @@
           {% endif %}
         {% endfor %}
       </div>
-
-      <div style="text-align:center; margin-top:1.75rem;">
-        <img src="/public/assets/garden/sprig_motif.jpg" alt="" aria-hidden="true"
-             style="height:32px;opacity:0.48;object-fit:contain;mix-blend-mode:multiply;">
-      </div>
-    </div>
-
-    <div style="text-align:center; margin-top:1.5rem;">
-      <img src="/public/assets/garden/sprig_motif.jpg" alt="" aria-hidden="true" class="sprig-divider">
     </div>
   </section>
   {% endif %}
@@ -55,20 +45,22 @@
       'desserts':            'peach-dessert.webp'
     } %}
 
-    <div class="seed-grid">
+    <div class="seed-packet-grid">
       {% for cat in categories %}
       {% set emblem = emblem_map.get(cat.slug, '') %}
       <a class="seed-link" href="{{ root_path }}{{ cat.slug }}/" title="{{ cat.name }}, {{ cat.count }} recipes">
-        <div class="seed-card">
-          {% if emblem %}
-          <div class="seed-card__img">
-            <img src="/public/assets/garden/{{ emblem }}" alt="{{ cat.name }}" loading="lazy">
+        <div class="seed-packet">
+          <div class="seed-packet__header">
+            <span class="seed-packet__category">{{ cat.name }}</span>
+            <span class="seed-packet__brand">JoLene's Garden</span>
           </div>
-          <div class="seed-card__rule"></div>
-          {% endif %}
-          <div class="seed-card__body">
-            <p class="seed-card__name">{{ cat.name }}</p>
-            <p class="seed-card__count">{{ cat.count }} recipes</p>
+          <div class="seed-packet__frame">
+            {% if emblem %}
+            <img src="/public/assets/garden/{{ emblem }}" alt="{{ cat.name }}" loading="lazy">
+            {% endif %}
+          </div>
+          <div class="seed-packet__footer">
+            <span class="seed-packet__count">{{ cat.count }} recipe{% if cat.count != 1 %}s{% endif %}</span>
           </div>
         </div>
       </a>

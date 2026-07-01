@@ -327,7 +327,7 @@ def build_site() -> int:
         intro_paragraphs=intro_paragraphs,
         categories=categories_summary,
         total=len(recipes),
-        page_title="Jolene's Family Recipes",
+        page_title="JoLene's Family Recipes",
         root_path="/",
     )
     (SITE_DIR / "index.html").write_text(html, encoding="utf-8")
@@ -355,7 +355,7 @@ def build_site() -> int:
             category_slug=slug,
             recipes=sorted_recs,
             category_tags=category_tags,
-            page_title=f"{cat_display[slug]} — Jolene's Family Recipes",
+            page_title=f"{cat_display[slug]} — JoLene's Family Recipes",
             root_path="/",
         )
         (cat_dir / "index.html").write_text(html, encoding="utf-8")
@@ -369,7 +369,7 @@ def build_site() -> int:
         html = recipe_tmpl.render(
             recipe=recipe,
             photo_url=recipe.get("photo"),
-            page_title=f"{recipe['title']} — Jolene's Family Recipes",
+            page_title=f"{recipe['title']} — JoLene's Family Recipes",
             root_path="/",
         )
         (page_dir / "index.html").write_text(html, encoding="utf-8")

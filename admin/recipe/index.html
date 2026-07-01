@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Edit Recipe — Jolene's Family Recipes</title>
+  <title>Edit Recipe — JoLene's Family Recipes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -333,7 +333,7 @@ function loadFromImport(payload) {
   const { recipe, pendingPhotoUrl, isImage } = payload;
 
   document.getElementById('page-title').textContent = 'Review Imported Recipe';
-  document.title = 'Review Import — Jolene\'s Family Recipes';
+  document.title = 'Review Import — JoLene\'s Family Recipes';
 
   // Title
   document.getElementById('recipe-title').value = recipe.title || '';
@@ -640,7 +640,7 @@ async function saveRecipe(btn) {
 
   // ── Post-save UI ───────────────────────────────────────────────────────
   document.getElementById('page-title').textContent = row.title;
-  document.title = `Edit "${row.title}" — Jolene's Family Recipes`;
+  document.title = `Edit "${row.title}" — JoLene's Family Recipes`;
 
   // Hide import-only chrome after first save
   const importRow = document.getElementById('use-import-photo-row');

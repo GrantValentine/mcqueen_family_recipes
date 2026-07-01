@@ -8,22 +8,23 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
   <style>
     /* Palette */
     :root {
-      --paper:       #f4eee1;
-      --paper-dark:  #e8dfc8;
-      --card-bg:     #fffdf8;
-      --garden-ink:  #3a4630;
-      --sage:        #8f9c7c;
-      --terracotta:  #bd6b4a;
-      --bloom:       #d18a86;
-      --apricot:     #dca35a;
-      --ink:         #2a2820;
-      --card-shadow: 0 2px 12px rgba(58,70,48,0.09), 0 1px 3px rgba(58,70,48,0.05);
-      --card-shadow-hover: 0 8px 28px rgba(58,70,48,0.16), 0 2px 6px rgba(58,70,48,0.08);
+      --paper:            #f4eee1;
+      --paper-dark:       #e8dfc8;
+      --card-bg:          #fffdf8;
+      --garden-ink:       #3a4630;
+      --sage:             #8f9c7c;
+      --fern:             #4f6e44;
+      --terracotta:       #9a4f35;
+      --bloom:            #d18a86;
+      --ink:              #2a2820;
+      --card-shadow:      0 2px 12px rgba(58,70,48,0.09), 0 1px 3px rgba(58,70,48,0.05);
+      --card-shadow-hover:0 8px 28px rgba(58,70,48,0.16), 0 2px 6px rgba(58,70,48,0.08);
+      --bg-wash-opacity:  0.07;
     }
 
     /* Reset */
@@ -54,7 +55,7 @@
     .wf-first .wf-card,
     .wf-first .letter-wrap,
     .wf-first .recipe-page,
-    .wf-first .seed-card,
+    .wf-first .seed-packet,
     .wf-first .recipe-card {
       animation: wf-bloom-rise 0.52s cubic-bezier(0.22, 0.61, 0.36, 1) both;
     }
@@ -64,16 +65,29 @@
     }
     @media (prefers-reduced-motion: reduce) {
       .wf-first .wf-card, .wf-first .letter-wrap, .wf-first .recipe-page,
-      .wf-first .seed-card, .wf-first .recipe-card {
+      .wf-first .seed-packet, .wf-first .recipe-card {
         animation: none !important; opacity: 1 !important; transform: none !important;
       }
     }
 
-    /* Warm paper grain background */
-    .wf-cloth {
+    /* Full-page pressed-botanical background wash */
+    .wf-bg {
       position: fixed;
       inset: 0;
       z-index: 0;
+      pointer-events: none;
+      background-image: url('/public/assets/garden/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: var(--bg-wash-opacity);
+    }
+
+    /* Warm paper grain overlay (sits above background wash) */
+    .wf-cloth {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
       pointer-events: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23grain)' opacity='0.048'/%3E%3C/svg%3E");
       background-size: 400px 400px;
@@ -83,9 +97,10 @@
     @keyframes wf-grain-fade { from { opacity: 0; } to { opacity: 1; } }
     @media (prefers-reduced-motion: reduce) { .wf-first .wf-cloth { animation: none; opacity: 1; } }
 
-    /* Navigation */
+    /* ─── Navigation — warm paper band ─── */
     .site-nav {
-      background: var(--garden-ink);
+      background: var(--paper);
+      border-bottom: 2px solid var(--terracotta);
       position: sticky;
       top: 0;
       z-index: 8000;
@@ -97,20 +112,20 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 56px;
+      height: 54px;
       gap: 1rem;
     }
     .site-nav__logo {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
+      font-weight: 400;
       font-style: italic;
-      font-size: 1.2rem;
-      color: var(--paper);
+      font-size: 1.22rem;
+      color: var(--garden-ink);
       white-space: nowrap;
       text-decoration: none;
       letter-spacing: 0.01em;
     }
-    .site-nav__logo:hover { color: rgba(244,238,225,0.72); text-decoration: none; }
+    .site-nav__logo:hover { color: var(--terracotta); text-decoration: none; }
 
     .site-nav__links {
       display: flex;
@@ -121,14 +136,14 @@
     .site-nav__links a {
       font-family: 'Spectral', serif;
       font-size: 0.82rem;
-      color: rgba(244,238,225,0.78);
+      color: rgba(58,70,48,0.65);
       padding: 0.3rem 0.65rem;
       border-radius: 4px;
       text-decoration: none;
       transition: color 0.15s;
       position: relative;
     }
-    .site-nav__links a:hover { color: var(--paper); text-decoration: none; }
+    .site-nav__links a:hover { color: var(--garden-ink); text-decoration: none; }
     .site-nav__links a.active::after {
       content: '';
       position: absolute;
@@ -136,7 +151,7 @@
       transform: translateX(-50%);
       width: 4px; height: 4px;
       border-radius: 50%;
-      background: var(--apricot);
+      background: var(--fern);
     }
 
     .site-nav__search { position: relative; flex-shrink: 0; }
@@ -145,15 +160,15 @@
       font-size: 0.82rem;
       width: 160px;
       padding: 0.35rem 0.9rem;
-      border: 1.5px solid rgba(244,238,225,0.32);
+      border: 1.5px solid rgba(58,70,48,0.22);
       border-radius: 20px;
-      background: rgba(244,238,225,0.09);
-      color: var(--paper);
+      background: rgba(58,70,48,0.04);
+      color: var(--garden-ink);
       outline: none;
       transition: border-color 0.15s, width 0.2s, background 0.15s;
     }
-    #search-input:focus { border-color: var(--paper); background: rgba(244,238,225,0.17); width: 200px; }
-    #search-input::placeholder { color: rgba(244,238,225,0.42); }
+    #search-input:focus { border-color: var(--garden-ink); background: rgba(58,70,48,0.07); width: 200px; }
+    #search-input::placeholder { color: rgba(58,70,48,0.36); }
     #search-results {
       position: absolute;
       top: calc(100% + 6px);
@@ -190,8 +205,8 @@
     .site-nav__admin {
       font-family: 'Spectral', serif;
       font-size: 0.74rem;
-      color: rgba(244,238,225,0.55);
-      border: 1px solid rgba(244,238,225,0.26);
+      color: var(--sage);
+      border: 1px solid rgba(58,70,48,0.22);
       border-radius: 20px;
       padding: 0.25rem 0.7rem;
       text-decoration: none;
@@ -200,7 +215,7 @@
       flex-shrink: 0;
       display: none;
     }
-    .site-nav__admin:hover { color: var(--paper); border-color: rgba(244,238,225,0.6); text-decoration: none; }
+    .site-nav__admin:hover { color: var(--garden-ink); border-color: rgba(58,70,48,0.55); text-decoration: none; }
 
     /* Hamburger */
     .site-nav__hamburger {
@@ -217,7 +232,7 @@
     }
     .site-nav__hamburger span {
       display: block; width: 22px; height: 2px;
-      background: rgba(244,238,225,0.85);
+      background: rgba(58,70,48,0.72);
       border-radius: 2px;
       transition: transform 0.22s ease, opacity 0.18s ease;
     }
@@ -228,8 +243,8 @@
     /* Mobile drawer */
     .site-nav__drawer {
       display: none;
-      background: var(--garden-ink);
-      border-top: 1px solid rgba(244,238,225,0.09);
+      background: var(--paper);
+      border-top: 1px solid var(--paper-dark);
     }
     .site-nav__drawer.is-open { display: block; }
     .site-nav__drawer ul {
@@ -242,19 +257,16 @@
       display: block;
       font-family: 'Spectral', serif;
       font-size: 0.9rem;
-      color: rgba(244,238,225,0.82);
+      color: rgba(58,70,48,0.75);
       padding: 0.65rem 0;
-      border-bottom: 1px solid rgba(244,238,225,0.08);
+      border-bottom: 1px solid rgba(58,70,48,0.09);
       text-decoration: none;
       transition: color 0.12s;
     }
     .site-nav__drawer li:last-child a { border-bottom: none; }
-    .site-nav__drawer li a:hover { color: var(--paper); text-decoration: none; }
+    .site-nav__drawer li a:hover { color: var(--garden-ink); text-decoration: none; }
     .site-nav__drawer .drawer-edit { display: none; }
-    .site-nav__drawer .drawer-edit a {
-      font-size: 0.78rem;
-      color: rgba(244,238,225,0.42);
-    }
+    .site-nav__drawer .drawer-edit a { font-size: 0.78rem; color: rgba(58,70,48,0.42); }
 
     @media (max-width: 900px) {
       .site-nav__hamburger { display: flex; }
@@ -264,8 +276,9 @@
     }
 
     .footer-admin-link {
-      font-family: 'Caveat', cursive;
-      font-size: 1rem;
+      font-family: 'Spectral', serif;
+      font-style: italic;
+      font-size: 0.88rem;
       color: var(--sage);
       text-decoration: none;
       opacity: 0.65;
@@ -274,36 +287,60 @@
     }
     .footer-admin-link:hover { opacity: 1; color: var(--terracotta); text-decoration: none; }
 
-    /* Hero */
-    .wf-hero {
-      background:
-        linear-gradient(
-          rgba(40, 30, 14, 0.26) 0%,
-          rgba(32, 24, 10, 0.56) 100%
-        ),
-        url('/public/assets/garden/garden-header.jpg') center 38% / cover no-repeat;
-      color: var(--paper);
-      padding: 5rem 1.5rem 8rem;
-      text-align: center;
+    /* ─── Hero — tall photo, centered title, fades to paper ─── */
+    .wf-journal-spread { position: relative; }
+    .wf-journal-photo {
       position: relative;
-      clip-path: url(#hero-arch-clip);
+      overflow: hidden;
     }
-    .wf-hero h1 {
+    .wf-journal-photo img {
+      width: 100%;
+      height: 78vh;
+      min-height: 420px;
+      object-fit: cover;
+      object-position: center 38%;
+      display: block;
+    }
+    /* Subtle vignette for title contrast */
+    .wf-journal-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse at center, rgba(28,18,6,0.42) 0%, rgba(28,18,6,0.12) 100%);
+      text-align: center;
+    }
+    .wf-journal-overlay h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.6rem, 6vw, 4.5rem);
-      font-weight: 400;
       font-style: italic;
-      color: var(--paper);
-      margin-bottom: 0.65rem;
-      text-shadow: 0 1px 18px rgba(28,18,6,0.42);
+      font-size: clamp(4.5rem, 11vw, 9rem);
+      font-weight: 500;
+      line-height: 1.08;
       letter-spacing: 0.01em;
+      /* Cut-out: botanical image tinted with cream to match page background feel */
+      background-image:
+        linear-gradient(rgba(244,238,225,0.6), rgba(244,238,225,0.6)),
+        url('/public/assets/garden/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
     }
-    .wf-hero p {
-      font-family: 'Caveat', cursive;
-      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
-      color: rgba(244,238,225,0.88);
-      font-weight: 400;
-      letter-spacing: 0.02em;
+    /* Paper fade at the bottom — smooth transition into content */
+    .wf-journal-photo::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 32%;
+      background: linear-gradient(to bottom, transparent 0%, var(--paper) 100%);
+      pointer-events: none;
+    }
+    @media (max-width: 640px) {
+      .wf-journal-photo img { height: 55vh; min-height: 300px; }
     }
 
     /* Section heading */
@@ -313,148 +350,164 @@
       font-weight: 500;
       color: var(--garden-ink);
       margin-bottom: 0.35rem;
+      text-align: center;
     }
     .wf-rule {
       display: block;
       width: 42px;
       height: 1.5px;
       background: var(--terracotta);
-      margin: 0.5rem 0 2rem;
+      margin: 0.5rem auto 2rem;
     }
 
-    /* Sprig divider */
-    .sprig-divider {
-      display: block;
-      margin: 2rem auto;
-      height: auto;
-      max-width: 180px;
-      opacity: 0.65;
-      object-fit: contain;
-      mix-blend-mode: multiply;
+    /* Hairline divider (replaces sprig in recipe) */
+    .garden-rule {
+      height: 1px;
+      background: var(--paper-dark);
+      margin: 1.75rem 0;
     }
 
-    /* Mom's letter */
+    /* ─── Letter — journal page style ─── */
     .letter-wrap {
-      max-width: 62ch;
+      max-width: 82ch;
       margin: 0 auto;
       background: var(--card-bg);
-      border-radius: 10px;
-      padding: 2.5rem 2.4rem 2.2rem;
+      border-left: 4px solid var(--terracotta);
+      border-radius: 0 8px 8px 0;
+      padding: 2.5rem 2.8rem 2.2rem 2.5rem;
       box-shadow: var(--card-shadow);
-      border: 1px solid var(--paper-dark);
-      position: relative;
     }
-    .letter-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 8px;
-      border: 1px dashed rgba(143,156,124,0.36);
-      border-radius: 5px;
-      pointer-events: none;
+    .letter-body p:first-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--garden-ink);
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
     .letter-body p {
       font-family: 'Spectral', serif;
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--ink);
       line-height: 1.88;
       margin-bottom: 1.1rem;
     }
     .letter-signature {
-      font-family: 'Caveat', cursive;
-      font-size: 1.35rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
       color: var(--garden-ink);
       margin-top: 1.5rem;
       line-height: 1.55;
       white-space: pre-line;
     }
-    .letter-rule {
-      border: none;
-      border-top: 1px solid var(--paper-dark);
-      margin: 1.2rem 0 1.5rem;
+
+    /* ─── Seed-packet category cards ─── */
+    .seed-packet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    @media (max-width: 720px) {
+      .seed-packet-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 440px;
+      }
+    }
+    @media (max-width: 440px) {
+      .seed-packet-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 340px;
+        gap: 1rem;
+      }
     }
 
-    /* Seed-packet category cards */
-    .seed-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.75rem;
-      justify-content: center;
-    }
-    .seed-link { text-decoration: none; }
+    .seed-link { text-decoration: none; display: block; }
     .seed-link:hover { text-decoration: none; }
-    .seed-card {
-      width: 175px;
+
+    .seed-packet {
       background: var(--card-bg);
-      border-radius: 8px;
       border: 1.5px solid var(--paper-dark);
+      border-radius: 4px;
       overflow: hidden;
-      position: relative;
-      box-shadow: var(--card-shadow);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
       display: flex;
       flex-direction: column;
+      box-shadow: 2px 4px 18px rgba(58,70,48,0.12), 0 1px 4px rgba(58,70,48,0.07);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      cursor: pointer;
     }
-    .seed-card::after {
-      content: '';
-      position: absolute;
-      inset: 5px;
-      border: 1.5px dashed rgba(143,156,124,0.32);
-      border-radius: 4px;
-      pointer-events: none;
-      z-index: 2;
+    .seed-link:hover .seed-packet {
+      transform: translateY(-7px);
+      box-shadow: 3px 10px 30px rgba(58,70,48,0.2), 0 2px 8px rgba(58,70,48,0.1);
     }
-    .seed-link:hover .seed-card {
-      transform: translateY(-5px) rotate(0.4deg);
-      box-shadow: var(--card-shadow-hover);
+
+    /* Header band */
+    .seed-packet__header {
+      background: var(--garden-ink);
+      padding: 0.85rem 0.85rem 0.72rem;
+      text-align: center;
     }
-    .seed-card__img {
-      height: 148px;
+    .seed-packet__category {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--paper);
+      line-height: 1.3;
+    }
+    .seed-packet__brand {
+      display: block;
+      font-family: 'Spectral', serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(244,238,225,0.42);
+      margin-top: 0.28rem;
+    }
+
+    /* Framed illustration window — white mat makes background intentional */
+    .seed-packet__frame {
+      margin: 0.75rem;
+      border: 1px solid var(--paper-dark);
+      background: #fffdf8;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.1rem 1.1rem 0.65rem;
+      flex: 1;
+      min-height: 128px;
+      overflow: hidden;
     }
-    .seed-card__img img {
-      max-width: 100%;
-      max-height: 100%;
+    .seed-packet__frame img {
+      max-width: 86%;
+      max-height: 116px;
       width: auto;
       height: auto;
       object-fit: contain;
       mix-blend-mode: multiply;
       transition: transform 0.28s ease;
     }
-    .seed-link:hover .seed-card__img img { transform: scale(1.06); }
-    .seed-card__rule {
-      height: 1px;
-      background: var(--paper-dark);
-      margin: 0 0.7rem;
-    }
-    .seed-card__body {
-      padding: 0.65rem 0.9rem 0.9rem;
+    .seed-link:hover .seed-packet__frame img { transform: scale(1.05); }
+
+    /* Footer copy */
+    .seed-packet__footer {
+      margin: 0 0.75rem 0.75rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--paper-dark);
       text-align: center;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.15rem;
     }
-    .seed-card__name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--garden-ink);
-      line-height: 1.2;
-    }
-    .seed-card__count {
-      font-family: 'Caveat', cursive;
-      font-size: 0.92rem;
+    .seed-packet__count {
+      font-family: 'Spectral', serif;
+      font-style: italic;
+      font-size: 0.72rem;
       color: var(--sage);
-    }
-    @media (max-width: 600px) {
-      .seed-card { width: 148px; }
-      .seed-card__img { height: 118px; padding: 0.85rem 0.85rem 0.5rem; }
+      display: block;
+      padding-bottom: 0.2rem;
     }
 
     /* Recipe grid cards */
@@ -643,7 +696,7 @@
       border-radius: 10px;
       padding: 1.4rem 1.5rem;
       position: sticky;
-      top: 72px;
+      top: 70px;
     }
     .ingredients-panel h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -724,8 +777,6 @@
     }
     .step p { font-size: 0.92rem; color: var(--ink); line-height: 1.75; }
 
-    .floral-divider { display: block; margin: 2rem auto; opacity: 0.65; height: auto; max-width: 180px; mix-blend-mode: multiply; }
-
     .notes-box {
       background: var(--card-bg);
       border-left: 3px solid var(--bloom);
@@ -776,8 +827,9 @@
       color: var(--garden-ink);
     }
     .category-count {
-      font-family: 'Caveat', cursive;
-      font-size: 1rem;
+      font-family: 'Spectral', serif;
+      font-style: italic;
+      font-size: 0.92rem;
       color: var(--sage);
       margin-top: 0.25rem;
       margin-bottom: 2.5rem;
@@ -823,8 +875,9 @@
     }
     .site-footer p { margin-bottom: 0.4rem; }
     .site-footer__love {
-      font-family: 'Caveat', cursive;
-      font-size: 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
       color: var(--garden-ink);
       margin-bottom: 0.6rem;
     }
@@ -851,15 +904,6 @@
 </head>
 <body>
 
-  <!-- Arch clip path for hero -->
-  <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
-    <defs>
-      <clipPath id="hero-arch-clip" clipPathUnits="objectBoundingBox">
-        <path d="M0,0 H1 V1 Q0.5,0.78 0,1 Z"/>
-      </clipPath>
-    </defs>
-  </svg>
-
   <!-- First-visit gate -->
   <script>
     (function() {
@@ -871,13 +915,16 @@
     })();
   </script>
 
+  <!-- Pressed-botanical background wash -->
+  <div class="wf-bg" aria-hidden="true"></div>
+
   <!-- Paper grain overlay -->
   <div class="wf-cloth" aria-hidden="true"></div>
 
   <!-- Navigation -->
   <nav class="site-nav" role="navigation">
     <div class="site-nav__inner">
-      <a class="site-nav__logo" href="{{ root_path }}">Jolene's Family Recipes</a>
+      <a class="site-nav__logo" href="{{ root_path }}">JoLene's Family Recipes</a>
 
       <ul class="site-nav__links">
         {% set nav_items = [
@@ -930,12 +977,8 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div style="margin-bottom:1rem;">
-      <img src="/public/assets/garden/sprig_motif.jpg" alt="" aria-hidden="true"
-           style="height:44px;opacity:0.52;object-fit:contain;mix-blend-mode:multiply;">
-    </div>
-    <p class="site-footer__love">From Jolene's garden, where so much of our family has grown.</p>
-    <p>Jolene's Family Recipes</p>
+    <p class="site-footer__love">From JoLene's garden, where so much of our family has grown.</p>
+    <p>JoLene's Family Recipes</p>
     <p style="margin-top:0.75rem;">
       <a class="footer-admin-link" href="/admin/">Open the cookbook</a>
     </p>
@@ -946,7 +989,7 @@
   <script>
   (function() {
     if (!document.documentElement.classList.contains('wf-first')) return;
-    var SELECTORS = '.letter-wrap, .recipe-page, .seed-card, .recipe-card';
+    var SELECTORS = '.letter-wrap, .recipe-page, .seed-packet, .recipe-card';
     function stagger() {
       var els = document.querySelectorAll(SELECTORS);
       var delay = 80;
