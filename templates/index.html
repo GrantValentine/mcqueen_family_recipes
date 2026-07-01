@@ -7,16 +7,14 @@
   <p style="margin-top:0.5rem;">From our garden, with love</p>
 </div>
 
-
 <div class="page-wrap">
 
-  <!-- Mom's Letter -->
+  <!-- Grant's Letter -->
   {% if intro_paragraphs %}
   <section style="margin-bottom:4rem;">
 
-    <!-- Floral motif above letter -->
     <div style="text-align:center; margin-bottom:1.5rem;">
-      <img src="/public/assets/willow/blue-flower-motif.png" alt="" aria-hidden="true" class="floral-divider" style="max-width:260px;">
+      <img src="/public/assets/garden/sprig_motif.jpg" alt="" aria-hidden="true" class="sprig-divider">
     </div>
 
     <div class="letter-wrap">
@@ -31,19 +29,14 @@
         {% endfor %}
       </div>
 
-      <!-- Wax seal / end mark -->
-      <div style="text-align:center; margin-top:2rem;">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-          <circle cx="18" cy="18" r="16" fill="#c07a84" opacity="0.85"/>
-          <circle cx="18" cy="18" r="12" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
-          <text x="18" y="23" text-anchor="middle" font-family="Fraunces,serif" font-size="14" font-style="italic" fill="white" opacity="0.9">J</text>
-        </svg>
+      <div style="text-align:center; margin-top:1.75rem;">
+        <img src="/public/assets/garden/sprig_motif.jpg" alt="" aria-hidden="true"
+             style="height:32px;opacity:0.48;object-fit:contain;mix-blend-mode:multiply;">
       </div>
     </div>
 
-    <!-- Floral motif below letter -->
     <div style="text-align:center; margin-top:1.5rem;">
-      <img src="/public/assets/willow/blue-flower-motif.png" alt="" aria-hidden="true" class="floral-divider" style="max-width:260px;">
+      <img src="/public/assets/garden/sprig_motif.jpg" alt="" aria-hidden="true" class="sprig-divider">
     </div>
   </section>
   {% endif %}
@@ -53,80 +46,29 @@
     <h2 class="wf-section-title">Browse by Category</h2>
     <span class="wf-rule"></span>
 
-    <div class="plates-grid">
-      {% for cat in categories %}
-      <a class="plate-link" href="{{ root_path }}{{ cat.slug }}/" title="{{ cat.name }} — {{ cat.count }} recipes">
-        <div class="plate-card">
-          <!-- Plate SVG rim -->
-          <svg class="plate-card-svg" viewBox="0 0 185 185" fill="none" aria-hidden="true">
-            <!-- Solid blue rim -->
-            <circle cx="92.5" cy="92.5" r="91" fill="#3d6b4f"/>
-            <!-- Outer edge highlight -->
-            <circle cx="92.5" cy="92.5" r="91" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-            <!-- Geometric cell border across the rim: white dashes -->
-            <circle cx="92.5" cy="92.5" r="84" fill="none"
-              stroke="rgba(255,255,255,0.32)" stroke-width="11" stroke-dasharray="8.5 5.5"/>
-            <!-- Fine separator line at inner edge of rim -->
-            <circle cx="92.5" cy="92.5" r="78.5" fill="none"
-              stroke="rgba(255,255,255,0.6)" stroke-width="0.9"/>
-            <!-- White plate well -->
-            <circle cx="92.5" cy="92.5" r="78" fill="white"/>
-            <!-- Bold outer ring of well -->
-            <circle cx="92.5" cy="92.5" r="78" stroke="#3d6b4f" stroke-width="2"/>
-            <!-- First inner decorative ring -->
-            <circle cx="92.5" cy="92.5" r="73.5" stroke="#3d6b4f" stroke-width="0.7" opacity="0.5"/>
-            <!-- Second inner decorative ring -->
-            <circle cx="92.5" cy="92.5" r="70" stroke="#3d6b4f" stroke-width="0.4" opacity="0.28"/>
-            <!-- 8 accent dots between the inner rings (at r=71.75) -->
-            <g fill="#3d6b4f" opacity="0.38">
-              <circle cx="92.5"  cy="20.75" r="2"/>
-              <circle cx="143.2" cy="41.8"  r="2"/>
-              <circle cx="164.25" cy="92.5" r="2"/>
-              <circle cx="143.2" cy="143.2" r="2"/>
-              <circle cx="92.5"  cy="164.25" r="2"/>
-              <circle cx="41.8"  cy="143.2" r="2"/>
-              <circle cx="20.75" cy="92.5"  r="2"/>
-              <circle cx="41.8"  cy="41.8"  r="2"/>
-            </g>
-            <!-- Subtle willow sprigs at 4 quadrant positions -->
-            <g stroke="#3d6b4f" stroke-linecap="round" opacity="0.13" fill="none">
-              <!-- Top -->
-              <path stroke-width="1" d="M92.5,48 C90,44 87,44 88,47"/>
-              <path stroke-width="1" d="M92.5,48 C95,44 98,44 97,47"/>
-              <path stroke-width="0.7" d="M90,46 C88,43 89,41 91,43"/>
-              <path stroke-width="0.7" d="M95,46 C97,43 96,41 94,43"/>
-              <circle cx="92.5" cy="49" r="1.2" fill="#3d6b4f" stroke="none"/>
-              <!-- Right -->
-              <g transform="translate(92.5,92.5) rotate(90) translate(-92.5,-92.5)">
-                <path stroke-width="1" d="M92.5,48 C90,44 87,44 88,47"/>
-                <path stroke-width="1" d="M92.5,48 C95,44 98,44 97,47"/>
-                <path stroke-width="0.7" d="M90,46 C88,43 89,41 91,43"/>
-                <path stroke-width="0.7" d="M95,46 C97,43 96,41 94,43"/>
-                <circle cx="92.5" cy="49" r="1.2" fill="#3d6b4f" stroke="none"/>
-              </g>
-              <!-- Bottom -->
-              <g transform="translate(92.5,92.5) rotate(180) translate(-92.5,-92.5)">
-                <path stroke-width="1" d="M92.5,48 C90,44 87,44 88,47"/>
-                <path stroke-width="1" d="M92.5,48 C95,44 98,44 97,47"/>
-                <path stroke-width="0.7" d="M90,46 C88,43 89,41 91,43"/>
-                <path stroke-width="0.7" d="M95,46 C97,43 96,41 94,43"/>
-                <circle cx="92.5" cy="49" r="1.2" fill="#3d6b4f" stroke="none"/>
-              </g>
-              <!-- Left -->
-              <g transform="translate(92.5,92.5) rotate(270) translate(-92.5,-92.5)">
-                <path stroke-width="1" d="M92.5,48 C90,44 87,44 88,47"/>
-                <path stroke-width="1" d="M92.5,48 C95,44 98,44 97,47"/>
-                <path stroke-width="0.7" d="M90,46 C88,43 89,41 91,43"/>
-                <path stroke-width="0.7" d="M95,46 C97,43 96,41 94,43"/>
-                <circle cx="92.5" cy="49" r="1.2" fill="#3d6b4f" stroke="none"/>
-              </g>
-            </g>
-          </svg>
+    {% set emblem_map = {
+      'appetizers':          'tomatoes-appetizers.webp',
+      'soups':               'squash-soup.webp',
+      'bread':               'wheat-bread.webp',
+      'main-dishes':         'herbs-mains.webp',
+      'sides-and-vegetables':'sides-carrots.webp',
+      'desserts':            'peach-dessert.webp'
+    } %}
 
-          <!-- Center content -->
-          <div class="plate-card-inner">
-            <h3>{{ cat.name }}</h3>
-            <p>{{ cat.count }} recipes</p>
+    <div class="seed-grid">
+      {% for cat in categories %}
+      {% set emblem = emblem_map.get(cat.slug, '') %}
+      <a class="seed-link" href="{{ root_path }}{{ cat.slug }}/" title="{{ cat.name }}, {{ cat.count }} recipes">
+        <div class="seed-card">
+          {% if emblem %}
+          <div class="seed-card__img">
+            <img src="/public/assets/garden/{{ emblem }}" alt="{{ cat.name }}" loading="lazy">
+          </div>
+          <div class="seed-card__rule"></div>
+          {% endif %}
+          <div class="seed-card__body">
+            <p class="seed-card__name">{{ cat.name }}</p>
+            <p class="seed-card__count">{{ cat.count }} recipes</p>
           </div>
         </div>
       </a>
