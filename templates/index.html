@@ -39,10 +39,19 @@
     {% set emblem_map = {
       'appetizers':          'tomatoes-appetizers.webp',
       'soups':               'squash-soup.webp',
-      'bread':               'wheat-bread.webp',
+      'bread':               'wheat-bread.jpg',
       'main-dishes':         'herbs-mains.webp',
       'sides-and-vegetables':'sides-carrots.webp',
       'desserts':            'peach-dessert.webp'
+    } %}
+
+    {% set sowing_hints = {
+      'appetizers':           'SOWING: scatter generously before the main event; thin the crowd as appetites develop.',
+      'soups':                'SOWING: best sown on cold days. Patience in the stirring yields the deepest flavor.',
+      'bread':                'SOWING: allow full room to rise. Results best shared while still warm from the oven.',
+      'main-dishes':          'SOWING: plant at the center of the table. Harvest complete when plates are clean.',
+      'sides-and-vegetables': 'SOWING: a companion to every meal. Grows well beside all other varieties.',
+      'desserts':             'SOWING: sow last. This variety rewards those patient enough to wait.',
     } %}
 
     <div class="seed-packet-grid">
@@ -51,16 +60,19 @@
       <a class="seed-link" href="{{ root_path }}{{ cat.slug }}/" title="{{ cat.name }}, {{ cat.count }} recipes">
         <div class="seed-packet">
           <div class="seed-packet__header">
+            <div class="seed-packet__hole"></div>
+            <span class="seed-packet__brand">JoLene's Garden Seed Co.</span>
             <span class="seed-packet__category">{{ cat.name }}</span>
-            <span class="seed-packet__brand">JoLene's Garden</span>
           </div>
           <div class="seed-packet__frame">
             {% if emblem %}
             <img src="/public/assets/garden/{{ emblem }}" alt="{{ cat.name }}" loading="lazy">
             {% endif %}
           </div>
-          <div class="seed-packet__footer">
-            <span class="seed-packet__count">{{ cat.count }} recipe{% if cat.count != 1 %}s{% endif %}</span>
+          <div class="seed-packet__copy">
+            <span class="seed-packet__net">NET CONTENTS · {{ cat.count }} RECIPE{% if cat.count != 1 %}S{% endif %}</span>
+            <span class="seed-packet__season">PACKED FOR · SEASON: YEAR-ROUND</span>
+            <span class="seed-packet__sowing">{{ sowing_hints.get(cat.slug, '') }}</span>
           </div>
         </div>
       </a>

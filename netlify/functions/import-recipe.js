@@ -26,7 +26,8 @@ const mammoth        = require('mammoth');
 
 const { ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY } = process.env;
 
-const MAX_BYTES = 10 * 1024 * 1024; // 10 MB
+const MAX_BYTES       = 10 * 1024 * 1024; // 10 MB — documents
+const MAX_IMAGE_BYTES =  7 * 1024 * 1024; //  7 MB — images (base64 inflates ~33%, must stay under Claude's 10 MB API limit)
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
@@ -75,8 +76,15 @@ exports.handler = async (event) => {
       const res = await fetch(url);
       if (!res.ok) throw new Error(`Storage responded ${res.status}`);
       const ab = await res.arrayBuffer();
-      if (ab.byteLength > MAX_BYTES) {
-        return respond(400, { error: 'A file exceeds the 10 MB limit.' });
+      const isImg = mime.startsWith('image/');
+      const limit = isImg ? MAX_IMAGE_BYTES : MAX_BYTES;
+      if (ab.byteLength > limit) {
+        const mb = (ab.byteLength / 1024 / 1024).toFixed(1);
+        return respond(400, {
+          error: isImg
+            ? `Photo is ${mb} MB — please use one under 7 MB. On iPhone, share the photo and choose a smaller size before uploading.`
+            : `File is ${mb} MB — please use a version under 10 MB.`,
+        });
       }
       buffer = Buffer.from(ab);
     } catch (err) {

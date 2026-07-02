@@ -123,7 +123,7 @@
       <span class="drop-zone__icon">📄</span>
       <span class="drop-zone__text">Drag &amp; drop files here, or</span>
       <span class="pick-label">Choose files</span>
-      <span class="drop-zone__hint">PDF · Word (.docx) · JPEG / PNG / WebP &nbsp;—&nbsp; up to 10 MB each · multiple photos OK</span>
+      <span class="drop-zone__hint">PDF · Word (.docx) · JPEG / PNG / WebP &nbsp;—&nbsp; multiple photos OK · large photos compressed automatically</span>
     </label>
     <input type="file" id="file-input" hidden multiple
            accept=".pdf,.docx,.doc,.jpg,.jpeg,.png,.webp,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png,image/webp,text/plain">
@@ -154,9 +154,55 @@ const ALLOWED_MIME = new Set([
   'image/jpeg', 'image/jpg', 'image/png', 'image/webp',
   'text/plain',
 ]);
-const MAX_BYTES = 10 * 1024 * 1024;
+const MAX_BYTES      = 10 * 1024 * 1024; // hard cap for documents
+const TARGET_IMAGE   =  5 * 1024 * 1024; // compress images to this before upload
+const MAX_RAW_IMAGE  = 50 * 1024 * 1024; // reject truly enormous files up front
 
 let selectedFiles = []; // array — supports multi-page photo imports
+
+// ── Image compression (Canvas API) ───────────────────────────────────────────
+// Resizes + recompresses to TARGET_IMAGE so large iPhone photos never hit
+// Claude's base64 size limit. Returns a new File (JPEG) or the original if
+// it's already small enough.
+function compressImage(file) {
+  if (file.size <= TARGET_IMAGE) return Promise.resolve(file);
+  return new Promise((resolve) => {
+    const img = new Image();
+    const objectUrl = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(objectUrl);
+      const canvas = document.createElement('canvas');
+      let w = img.naturalWidth, h = img.naturalHeight;
+      // Scale down to max 2400px on the long edge
+      const MAX_PX = 2400;
+      if (w > MAX_PX || h > MAX_PX) {
+        if (w >= h) { h = Math.round(h * MAX_PX / w); w = MAX_PX; }
+        else        { w = Math.round(w * MAX_PX / h); h = MAX_PX; }
+      }
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      // Try progressively lower JPEG quality until under TARGET_IMAGE
+      let quality = 0.82;
+      const attempt = () => {
+        canvas.toBlob(blob => {
+          if (!blob) { resolve(file); return; }
+          if (blob.size <= TARGET_IMAGE || quality <= 0.25) {
+            resolve(new File([blob],
+              file.name.replace(/\.[^.]+$/, '.jpg'),
+              { type: 'image/jpeg', lastModified: Date.now() }
+            ));
+          } else {
+            quality = Math.max(0.25, quality - 0.12);
+            attempt();
+          }
+        }, 'image/jpeg', quality);
+      };
+      attempt();
+    };
+    img.onerror = () => { URL.revokeObjectURL(objectUrl); resolve(file); };
+    img.src = objectUrl;
+  });
+}
 
 // ── Auth ──────────────────────────────────────────────────────────────────────
 (async () => { await requireAuth(); })();
@@ -175,21 +221,39 @@ dropZone.addEventListener('drop', e => {
   addFiles(e.dataTransfer.files);
 });
 
-function addFiles(files) {
+async function addFiles(files) {
   if (!files || !files.length) return;
   let rejected = 0;
+  const toCompress = [];
+
   for (const file of Array.from(files)) {
     if (!ALLOWED_MIME.has(file.type)) { rejected++; continue; }
-    if (file.size > MAX_BYTES) {
-      showBanner(`"${file.name}" is over 10 MB and was skipped.`, 'error');
-      continue;
-    }
-    // Avoid exact duplicates (same name + size)
-    if (!selectedFiles.some(f => f.name === file.name && f.size === file.size)) {
-      selectedFiles.push(file);
+    if (file.type.startsWith('image/')) {
+      if (file.size > MAX_RAW_IMAGE) {
+        showBanner(`"${file.name}" is too large to use.`, 'error'); continue;
+      }
+      toCompress.push(file);
+    } else {
+      if (file.size > MAX_BYTES) {
+        showBanner(`"${file.name}" is over 10 MB and was skipped.`, 'error'); continue;
+      }
+      if (!selectedFiles.some(f => f.name === file.name && f.size === file.size))
+        selectedFiles.push(file);
     }
   }
   if (rejected) showBanner('Some files were skipped — only PDF, Word, JPEG/PNG/WebP, or plain text are supported.', 'error');
+
+  if (toCompress.length) {
+    const btn = document.getElementById('import-btn');
+    btn.disabled = true;
+    btn.textContent = 'Compressing…';
+    const compressed = await Promise.all(toCompress.map(compressImage));
+    for (const f of compressed) {
+      if (!selectedFiles.some(s => s.name === f.name && s.size === f.size))
+        selectedFiles.push(f);
+    }
+  }
+
   renderChips();
 }
 

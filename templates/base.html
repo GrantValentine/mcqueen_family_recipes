@@ -39,6 +39,7 @@
       flex-direction: column;
       line-height: 1.7;
       background-color: var(--paper);
+      cursor: url('/public/assets/garden/oven-glove.png') 0 0, auto;
     }
 
     h1, h2, h3, h4 {
@@ -428,30 +429,100 @@
       }
     }
 
-    .seed-link { text-decoration: none; display: block; }
+    /* Shadow lives on the link wrapper so clip-path on the card doesn't eat it */
+    .seed-link {
+      text-decoration: none;
+      display: block;
+      filter:
+        drop-shadow(1px 4px 8px rgba(58,70,48,0.26))
+        drop-shadow(0 1px 2px rgba(58,70,48,0.14));
+      transition: filter 0.24s ease;
+    }
     .seed-link:hover { text-decoration: none; }
+    .seed-link:hover {
+      filter:
+        drop-shadow(2px 12px 20px rgba(58,70,48,0.32))
+        drop-shadow(0 2px 5px rgba(58,70,48,0.16));
+    }
 
+    /* Subtle per-slot rotation — packets laid by hand, not stacked by machine */
+    .seed-link:nth-child(1) { transform: rotate(-0.7deg); }
+    .seed-link:nth-child(2) { transform: rotate(0.6deg); }
+    .seed-link:nth-child(3) { transform: rotate(-1.1deg); }
+    .seed-link:nth-child(4) { transform: rotate(0.9deg); }
+    .seed-link:nth-child(5) { transform: rotate(-0.5deg); }
+    .seed-link:nth-child(6) { transform: rotate(1.0deg); }
+
+    /* Aged kraft paper card */
     .seed-packet {
-      background: var(--card-bg);
-      border: 1.5px solid var(--paper-dark);
-      border-radius: 4px;
+      background-color: #ece0c2;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75 0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)' opacity='0.32'/%3E%3C/svg%3E"),
+        linear-gradient(150deg, rgba(255,248,228,0.55) 0%, transparent 40%),
+        radial-gradient(ellipse at 85% 88%, rgba(100,70,20,.09) 0%, transparent 48%);
+      background-blend-mode: multiply, normal, normal;
+      border: 1.5px solid rgba(100,78,30,0.28);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 2px 4px 18px rgba(58,70,48,0.12), 0 1px 4px rgba(58,70,48,0.07);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      transition: transform 0.22s ease;
       cursor: pointer;
+      position: relative;
+      /* Torn top edge — opened packet silhouette */
+      clip-path: polygon(
+        0% 0.3rem,    2% 0.07rem,   4.5% 0.27rem,  7% 0.05rem,   10% 0.3rem,
+        13% 0.09rem,  16% 0.32rem,  19% 0.06rem,   22% 0.26rem,  25% 0.04rem,
+        28% 0.3rem,   31% 0.1rem,   34% 0.3rem,    37% 0.04rem,  40% 0.27rem,
+        43% 0.09rem,  46.5% 0.3rem, 50% 0.05rem,   53% 0.26rem,  56% 0.04rem,
+        59% 0.3rem,   62% 0.11rem,  65% 0.32rem,   68% 0.06rem,  71% 0.26rem,
+        74% 0.04rem,  77% 0.3rem,   80% 0.09rem,   83% 0.28rem,  86% 0.05rem,
+        89% 0.3rem,   92% 0.1rem,   95% 0.32rem,   97.5% 0.06rem, 100% 0.28rem,
+        100% 100%, 0% 100%
+      );
     }
-    .seed-link:hover .seed-packet {
-      transform: translateY(-7px);
-      box-shadow: 3px 10px 30px rgba(58,70,48,0.2), 0 2px 8px rgba(58,70,48,0.1);
+    /* Inset decorative border rule — printed frame; also tears at the top */
+    .seed-packet::before {
+      content: '';
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(80,58,18,0.17);
+      pointer-events: none;
+      z-index: 5;
     }
+    .seed-link:hover .seed-packet { transform: translateY(-8px); }
 
-    /* Header band */
+    /* Header band — ink printed ON the kraft paper, grain shows through */
     .seed-packet__header {
-      background: var(--garden-ink);
-      padding: 0.85rem 0.85rem 0.72rem;
+      background-color: var(--garden-ink);
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75 0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)' opacity='0.22'/%3E%3C/svg%3E");
+      background-blend-mode: soft-light;
+      padding: 0.45rem 0.85rem 0.65rem;
       text-align: center;
+      min-height: 4.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    /* Punch hole — cut-through circle at the top of the header */
+    .seed-packet__hole {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.5);
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07);
+      margin: 0 auto 0.42rem;
+      flex-shrink: 0;
+    }
+    .seed-packet__brand {
+      display: block;
+      font-family: 'Spectral', serif;
+      font-size: 0.48rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(244,238,225,0.38);
+      margin-bottom: 0.22rem;
     }
     .seed-packet__category {
       display: block;
@@ -463,31 +534,23 @@
       color: var(--paper);
       line-height: 1.3;
     }
-    .seed-packet__brand {
-      display: block;
-      font-family: 'Spectral', serif;
-      font-size: 0.52rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(244,238,225,0.42);
-      margin-top: 0.28rem;
-    }
 
-    /* Framed illustration window — white mat makes background intentional */
+    /* Illustration sits directly on the kraft paper — no separate white panel */
     .seed-packet__frame {
-      margin: 0.75rem;
-      border: 1px solid var(--paper-dark);
-      background: #fffdf8;
+      margin: 0.65rem 0.72rem;
+      border: 1px solid rgba(80,58,18,0.14);
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       flex: 1;
-      min-height: 128px;
+      min-height: 112px;
       overflow: hidden;
+      position: relative;
     }
     .seed-packet__frame img {
-      max-width: 86%;
-      max-height: 116px;
+      max-width: 84%;
+      max-height: 108px;
       width: auto;
       height: auto;
       object-fit: contain;
@@ -496,20 +559,37 @@
     }
     .seed-link:hover .seed-packet__frame img { transform: scale(1.05); }
 
-    /* Footer copy */
-    .seed-packet__footer {
-      margin: 0 0.75rem 0.75rem;
-      padding-top: 0.5rem;
-      border-top: 1px solid var(--paper-dark);
-      text-align: center;
+    /* Back-of-packet print copy */
+    .seed-packet__copy {
+      margin: 0 0.72rem 0.72rem;
+      padding-top: 0.48rem;
+      border-top: 1px solid rgba(100,78,30,0.18);
     }
-    .seed-packet__count {
+    .seed-packet__net {
+      display: block;
+      font-family: 'Spectral', serif;
+      font-size: 0.56rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(58,70,48,0.82);
+      margin-bottom: 0.14rem;
+    }
+    .seed-packet__season {
+      display: block;
+      font-family: 'Spectral', serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(58,70,48,0.52);
+      margin-bottom: 0.26rem;
+    }
+    .seed-packet__sowing {
+      display: block;
       font-family: 'Spectral', serif;
       font-style: italic;
-      font-size: 0.72rem;
-      color: var(--sage);
-      display: block;
-      padding-bottom: 0.2rem;
+      font-size: 0.54rem;
+      color: rgba(58,70,48,0.62);
+      line-height: 1.45;
     }
 
     /* Recipe grid cards */
