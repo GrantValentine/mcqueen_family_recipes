@@ -663,6 +663,11 @@ async function saveRecipe(btn) {
 // ── Delete ────────────────────────────────────────────────────────────────────
 async function deleteRecipe() {
   const title = document.getElementById('recipe-title').value || 'this recipe';
+  if (!recipeId) {
+    // Unsaved import — nothing in the DB to delete, just go back
+    window.location.replace('/admin/');
+    return;
+  }
   if (!confirm(`Permanently delete "${title}"? This cannot be undone.`)) return;
   const { error } = await db.from('recipes').delete().eq('id', recipeId);
   if (error) { showBanner('Delete failed: ' + error.message); return; }
