@@ -14,7 +14,8 @@
  *   SUPABASE_ANON_KEY    (same value as the public env var)
  *
  * Request body (JSON):
- *   { signedUrl, mimeType, categories: [{id,slug,name}], tags: [{id,slug,label}] }
+ *   { files: [{signedUrl, mimeType}], categories: [{id,slug,name}], tags: [{id,slug,label}] }
+ *   (legacy single-file form: { signedUrl, mimeType, ... } is still accepted)
  *
  * Authorization header: Bearer <supabase_access_token>
  */
@@ -55,31 +56,43 @@ exports.handler = async (event) => {
   try { body = JSON.parse(event.body || '{}'); }
   catch { return respond(400, { error: 'Invalid JSON body' }); }
 
-  const { signedUrl, mimeType, categories = [], tags = [] } = body;
-  if (!signedUrl || !mimeType) {
-    return respond(400, { error: 'signedUrl and mimeType are required' });
+  const { files, signedUrl, mimeType, categories = [], tags = [] } = body;
+
+  // Accept both new multi-file form and legacy single-file form
+  const fileList = files && files.length
+    ? files
+    : (signedUrl && mimeType ? [{ signedUrl, mimeType }] : null);
+
+  if (!fileList) {
+    return respond(400, { error: 'files array (or signedUrl + mimeType) is required' });
   }
 
-  // ── 3. Fetch file via signed URL ───────────────────────────────────────────
-  let buffer;
-  try {
-    const res = await fetch(signedUrl);
-    if (!res.ok) throw new Error(`Storage responded ${res.status}`);
-    const ab = await res.arrayBuffer();
-    if (ab.byteLength > MAX_BYTES) {
-      return respond(400, { error: 'File exceeds the 10 MB limit.' });
+  // ── 3. Fetch all files and build Claude content blocks ────────────────────
+  let contentBlocks = [];
+  for (const { signedUrl: url, mimeType: mime } of fileList) {
+    let buffer;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Storage responded ${res.status}`);
+      const ab = await res.arrayBuffer();
+      if (ab.byteLength > MAX_BYTES) {
+        return respond(400, { error: 'A file exceeds the 10 MB limit.' });
+      }
+      buffer = Buffer.from(ab);
+    } catch (err) {
+      return respond(400, { error: `Could not fetch file: ${err.message}` });
     }
-    buffer = Buffer.from(ab);
-  } catch (err) {
-    return respond(400, { error: `Could not fetch file: ${err.message}` });
+
+    try {
+      const blocks = await buildContentBlocks(buffer, mime);
+      contentBlocks = contentBlocks.concat(blocks);
+    } catch (err) {
+      return respond(400, { error: err.message });
+    }
   }
 
-  // ── 4. Build Claude content block(s) by file type ─────────────────────────
-  let contentBlocks;
-  try {
-    contentBlocks = await buildContentBlocks(buffer, mimeType);
-  } catch (err) {
-    return respond(400, { error: err.message });
+  if (!contentBlocks.length) {
+    return respond(400, { error: 'No content could be extracted from the uploaded files.' });
   }
 
   // ── 5. Call Claude ─────────────────────────────────────────────────────────

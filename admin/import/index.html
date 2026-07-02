@@ -63,9 +63,10 @@
     }
     .pick-label:hover { opacity:.85; }
 
-    /* ── File info chip ── */
+    /* ── File info chips ── */
+    .file-chip-list { display:flex; flex-direction:column; gap:.5rem; margin-top:1.2rem; }
     .file-chip {
-      display:flex; align-items:center; gap:.6rem; margin-top:1.2rem;
+      display:flex; align-items:center; gap:.6rem;
       background:var(--paper-dark); border-radius:8px; padding:.55rem .9rem;
     }
     .file-chip__name { font-size:.85rem; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
@@ -114,24 +115,20 @@
 
 <div class="page">
   <h1 class="page__heading">Import a Recipe</h1>
-  <p class="page__sub">Upload a PDF, Word document, or photo and Claude will extract the recipe for you to review before saving.</p>
+  <p class="page__sub">Upload a PDF, Word document, or photos and Claude will extract the recipe for you to review before saving. Select multiple photos if the recipe spans several pages.</p>
 
   <!-- Drop zone (shown by default) -->
   <div id="main-ui">
     <label class="drop-zone" id="drop-zone" for="file-input">
       <span class="drop-zone__icon">📄</span>
-      <span class="drop-zone__text">Drag &amp; drop a file here, or</span>
-      <span class="pick-label">Choose file</span>
-      <span class="drop-zone__hint">PDF · Word (.docx) · JPEG / PNG / WebP &nbsp;—&nbsp; up to 10 MB</span>
+      <span class="drop-zone__text">Drag &amp; drop files here, or</span>
+      <span class="pick-label">Choose files</span>
+      <span class="drop-zone__hint">PDF · Word (.docx) · JPEG / PNG / WebP &nbsp;—&nbsp; up to 10 MB each · multiple photos OK</span>
     </label>
-    <input type="file" id="file-input" hidden
+    <input type="file" id="file-input" hidden multiple
            accept=".pdf,.docx,.doc,.jpg,.jpeg,.png,.webp,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png,image/webp,text/plain">
 
-    <div class="file-chip" id="file-chip" hidden>
-      <span>📎</span>
-      <span class="file-chip__name" id="file-chip-name"></span>
-      <button class="file-chip__rm" onclick="clearFile()" title="Remove file">✕</button>
-    </div>
+    <div class="file-chip-list" id="file-chip-list"></div>
 
     <button class="import-btn" id="import-btn" onclick="startImport()" disabled>
       Extract Recipe
@@ -142,7 +139,7 @@
   <div class="loading-box" id="loading-box" hidden>
     <div class="spinner"></div>
     <strong>Reading your recipe…</strong>
-    <p>This usually takes 10–20 seconds.</p>
+    <p id="loading-msg">This usually takes 10–20 seconds.</p>
   </div>
 </div>
 
@@ -159,7 +156,7 @@ const ALLOWED_MIME = new Set([
 ]);
 const MAX_BYTES = 10 * 1024 * 1024;
 
-let selectedFile = null;
+let selectedFiles = []; // array — supports multi-page photo imports
 
 // ── Auth ──────────────────────────────────────────────────────────────────────
 (async () => { await requireAuth(); })();
@@ -168,92 +165,117 @@ let selectedFile = null;
 const dropZone  = document.getElementById('drop-zone');
 const fileInput = document.getElementById('file-input');
 
-fileInput.addEventListener('change', e => handleFiles(e.target.files));
+fileInput.addEventListener('change', e => addFiles(e.target.files));
 
 dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
 dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
 dropZone.addEventListener('drop', e => {
   e.preventDefault();
   dropZone.classList.remove('drag-over');
-  handleFiles(e.dataTransfer.files);
+  addFiles(e.dataTransfer.files);
 });
 
-function handleFiles(files) {
-  const file = files && files[0];
-  if (!file) return;
-
-  if (!ALLOWED_MIME.has(file.type)) {
-    showBanner('Unsupported file type. Please upload a PDF, Word doc (.docx), image (JPEG/PNG/WebP), or plain text file.', 'error');
-    return;
+function addFiles(files) {
+  if (!files || !files.length) return;
+  let rejected = 0;
+  for (const file of Array.from(files)) {
+    if (!ALLOWED_MIME.has(file.type)) { rejected++; continue; }
+    if (file.size > MAX_BYTES) {
+      showBanner(`"${file.name}" is over 10 MB and was skipped.`, 'error');
+      continue;
+    }
+    // Avoid exact duplicates (same name + size)
+    if (!selectedFiles.some(f => f.name === file.name && f.size === file.size)) {
+      selectedFiles.push(file);
+    }
   }
-  if (file.size > MAX_BYTES) {
-    showBanner('File is over 10 MB. Please use a smaller or compressed version.', 'error');
-    return;
-  }
-
-  selectedFile = file;
-  document.getElementById('file-chip-name').textContent = file.name;
-  document.getElementById('file-chip').hidden = false;
-  document.getElementById('import-btn').disabled = false;
-  hideBanner();
+  if (rejected) showBanner('Some files were skipped — only PDF, Word, JPEG/PNG/WebP, or plain text are supported.', 'error');
+  renderChips();
 }
 
-function clearFile() {
-  selectedFile = null;
+function removeFile(index) {
+  selectedFiles.splice(index, 1);
   fileInput.value = '';
-  document.getElementById('file-chip').hidden = true;
-  document.getElementById('import-btn').disabled = true;
+  renderChips();
+}
+
+function renderChips() {
+  const list = document.getElementById('file-chip-list');
+  list.innerHTML = '';
+  selectedFiles.forEach((file, i) => {
+    const chip = document.createElement('div');
+    chip.className = 'file-chip';
+    chip.innerHTML = `<span>${file.type.startsWith('image/') ? '🖼️' : '📎'}</span>
+      <span class="file-chip__name">${escHtmlInline(file.name)}</span>
+      <button class="file-chip__rm" title="Remove" onclick="removeFile(${i})">✕</button>`;
+    list.appendChild(chip);
+  });
+  document.getElementById('import-btn').disabled = selectedFiles.length === 0;
+  const btn = document.getElementById('import-btn');
+  btn.textContent = selectedFiles.length > 1
+    ? `Extract Recipe (${selectedFiles.length} pages)`
+    : 'Extract Recipe';
+}
+
+function escHtmlInline(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 // ── Import flow ───────────────────────────────────────────────────────────────
 async function startImport() {
-  if (!selectedFile) return;
+  if (!selectedFiles.length) return;
 
   const { data: { session } } = await db.auth.getSession();
   if (!session) { window.location.replace('/admin/login/'); return; }
 
-  // Fetch category + tag lists to pass into the extraction prompt
   const [{ data: categories }, { data: tags }] = await Promise.all([
     db.from('categories').select('id,slug,name').order('sort_order'),
     db.from('tags').select('id,slug,label').order('label'),
   ]);
 
-  // Switch to loading UI
-  document.getElementById('main-ui').hidden   = true;
+  document.getElementById('main-ui').hidden    = true;
   document.getElementById('loading-box').hidden = false;
+  if (selectedFiles.length > 1) {
+    document.getElementById('loading-msg').textContent =
+      `Reading ${selectedFiles.length} pages — this may take 20–40 seconds.`;
+  }
   hideBanner();
 
   try {
-    // 1. Upload file to imports bucket
-    const ext  = (selectedFile.name.split('.').pop() || 'bin').toLowerCase();
-    const path = `${Date.now()}.${ext}`;
+    // 1. Upload all files to the imports bucket and collect signed URLs + mimeTypes
+    const uploads = await Promise.all(selectedFiles.map(async (file) => {
+      const ext  = (file.name.split('.').pop() || 'bin').toLowerCase();
+      const path = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
 
-    const { error: uploadErr } = await db.storage
-      .from('imports')
-      .upload(path, selectedFile, { contentType: selectedFile.type, upsert: false });
-    if (uploadErr) throw new Error('Storage upload failed: ' + uploadErr.message);
+      const { error: uploadErr } = await db.storage
+        .from('imports')
+        .upload(path, file, { contentType: file.type, upsert: false });
+      if (uploadErr) throw new Error(`Upload failed for "${file.name}": ${uploadErr.message}`);
 
-    // 2. Short-lived signed URL for the function to fetch the file
-    const { data: { signedUrl }, error: signErr } = await db.storage
-      .from('imports')
-      .createSignedUrl(path, 120);
-    if (signErr) throw new Error('Could not create signed URL: ' + signErr.message);
+      const { data: { signedUrl }, error: signErr } = await db.storage
+        .from('imports')
+        .createSignedUrl(path, 180);
+      if (signErr) throw new Error(`Could not sign URL for "${file.name}": ${signErr.message}`);
 
-    // 3. If it's an image, also store it in recipe-photos for potential re-use as the recipe photo
+      return { signedUrl, mimeType: file.type };
+    }));
+
+    // 2. Optionally store the first image as the pending recipe photo
     let pendingPhotoUrl = null;
-    const isImage = selectedFile.type.startsWith('image/');
-    if (isImage) {
+    const firstImage = selectedFiles.find(f => f.type.startsWith('image/'));
+    if (firstImage) {
+      const ext = (firstImage.name.split('.').pop() || 'jpg').toLowerCase();
       const photoPath = `pending/${Date.now()}.${ext}`;
       const { error: photoErr } = await db.storage
         .from('recipe-photos')
-        .upload(photoPath, selectedFile, { contentType: selectedFile.type, upsert: false });
+        .upload(photoPath, firstImage, { contentType: firstImage.type, upsert: false });
       if (!photoErr) {
         const { data: { publicUrl } } = db.storage.from('recipe-photos').getPublicUrl(photoPath);
         pendingPhotoUrl = publicUrl;
       }
     }
 
-    // 4. Call the Netlify function
+    // 3. Call the Netlify function with all files
     const resp = await fetch('/.netlify/functions/import-recipe', {
       method: 'POST',
       headers: {
@@ -261,8 +283,7 @@ async function startImport() {
         'Authorization': `Bearer ${session.access_token}`,
       },
       body: JSON.stringify({
-        signedUrl,
-        mimeType: selectedFile.type,
+        files: uploads,         // [{signedUrl, mimeType}, ...]
         categories: categories || [],
         tags:       tags       || [],
       }),
@@ -271,18 +292,16 @@ async function startImport() {
     const result = await resp.json();
     if (!resp.ok) throw new Error(result.error || `Server error (${resp.status})`);
 
-    // 5. Store extracted data and hand off to the recipe editor for review
     sessionStorage.setItem('pendingImport', JSON.stringify({
       recipe:         result.recipe,
       pendingPhotoUrl,
-      isImage,
+      isImage:        !!firstImage,
     }));
 
     window.location.href = '/admin/recipe/?new=import';
 
   } catch (err) {
-    // Restore UI so the user can try again
-    document.getElementById('main-ui').hidden   = false;
+    document.getElementById('main-ui').hidden    = false;
     document.getElementById('loading-box').hidden = true;
     showBanner('Import failed: ' + err.message, 'error');
   }
