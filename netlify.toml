@@ -17,3 +17,6 @@
 [functions."import-recipe"]
   timeout = 26
 
+[functions."supabase-ping"]
+  schedule = "0 10 * * *"
+

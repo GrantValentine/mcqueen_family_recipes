@@ -201,7 +201,6 @@
 
     @media (max-width: 900px) { .site-nav__links { display: none; } }
 
-    /* Admin link: hidden by default, shown by JS when a session exists */
     .site-nav__admin {
       font-family: 'Spectral', serif;
       font-size: 0.74rem;
@@ -213,7 +212,7 @@
       white-space: nowrap;
       transition: color 0.15s, border-color 0.15s;
       flex-shrink: 0;
-      display: none;
+      display: inline-block;
     }
     .site-nav__admin:hover { color: var(--garden-ink); border-color: rgba(58,70,48,0.55); text-decoration: none; }
 
@@ -265,8 +264,8 @@
     }
     .site-nav__drawer li:last-child a { border-bottom: none; }
     .site-nav__drawer li a:hover { color: var(--garden-ink); text-decoration: none; }
-    .site-nav__drawer .drawer-edit { display: none; }
-    .site-nav__drawer .drawer-edit a { font-size: 0.78rem; color: rgba(58,70,48,0.42); }
+    .site-nav__drawer .drawer-edit a { font-size: 0.9rem; color: rgba(58,70,48,0.75); }
+    .site-nav__drawer .drawer-edit.is-admin a { font-size: 0.78rem; color: rgba(58,70,48,0.42); }
 
     @media (max-width: 900px) {
       .site-nav__hamburger { display: flex; }
@@ -341,9 +340,9 @@
     }
     @media (max-width: 640px) {
       .wf-journal-photo img { height: 55vh; min-height: 300px; }
-      /* background-attachment: fixed is broken on iOS — fall back to scroll */
+      /* background-attachment: fixed is broken on iOS for the page wash, but we
+         intentionally keep it on the h1 so the botanical image scrolls behind the title */
       .wf-bg { background-attachment: scroll; }
-      .wf-journal-overlay h1 { background-attachment: scroll; }
     }
 
     /* Section heading */
@@ -943,7 +942,7 @@
         {% endfor %}
       </ul>
 
-      <a class="site-nav__admin" href="/admin/">Edit</a>
+      <a class="site-nav__admin" href="/admin/login/">Sign in</a>
 
       <div class="site-nav__search">
         <input id="search-input" type="search" placeholder="Search recipes..." autocomplete="off" aria-label="Search recipes">
@@ -968,7 +967,7 @@
         {% for label, slug in nav_items %}
         <li><a href="{{ root_path }}{{ slug }}/">{{ label }}</a></li>
         {% endfor %}
-        <li class="drawer-edit"><a href="/admin/">Edit</a></li>
+        <li class="drawer-edit"><a href="/admin/login/">Sign in</a></li>
       </ul>
     </div>
   </nav>
@@ -1019,11 +1018,15 @@
       if (!data || !data.access_token) return;
       if (data.expires_at && data.expires_at * 1000 < Date.now()) return;
       var navAdmin = document.querySelector('.site-nav__admin');
-      if (navAdmin) navAdmin.style.display = 'inline-block';
+      if (navAdmin) { navAdmin.href = '/admin/'; navAdmin.textContent = 'Admin'; }
       var footerAdmin = document.querySelector('.footer-admin-link');
       if (footerAdmin) footerAdmin.style.display = 'block';
       var drawerEdit = document.querySelector('.drawer-edit');
-      if (drawerEdit) drawerEdit.style.display = 'list-item';
+      if (drawerEdit) {
+        drawerEdit.classList.add('is-admin');
+        var drawerLink = drawerEdit.querySelector('a');
+        if (drawerLink) { drawerLink.href = '/admin/'; drawerLink.textContent = 'Admin'; }
+      }
     } catch(e) {}
   })();
   </script>
