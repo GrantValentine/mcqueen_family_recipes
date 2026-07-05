@@ -14,7 +14,7 @@
       --garden-ink:#3a4630; --sage:#8f9c7c; --fern:#4f6e44;
       --terracotta:#9a4f35; --bloom:#d18a86; --ink:#2a2820;
     }
-    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:'Spectral',Georgia,serif; background:var(--paper);
            color:var(--ink); min-height:100vh; }
 
@@ -32,46 +32,38 @@
     .top-bar__actions { display:flex; gap:.6rem; align-items:center; }
     .btn { font-family:'Spectral',serif; font-size:.8rem; padding:.38rem .9rem;
       border-radius:6px; border:1.5px solid; cursor:pointer;
-      transition:opacity .15s; }
+      transition:opacity .15s; text-decoration:none; display:inline-flex;
+      align-items:center; gap:.3rem; }
     .btn:hover { opacity:.8; }
-    .btn--ghost { background:transparent; color:var(--garden-ink); border-color:rgba(58,70,48,.3); }
+    .btn--ghost   { background:transparent; color:var(--garden-ink); border-color:rgba(58,70,48,.3); }
     .btn--primary { background:var(--garden-ink); color:var(--paper); border-color:var(--garden-ink); }
-    .btn--sm { font-size:.74rem; padding:.28rem .7rem; }
-    .btn--danger { color:#b91c1c; border-color:#fca5a5; background:var(--card-bg); }
+    .btn--sm      { font-size:.74rem; padding:.28rem .7rem; }
+    .btn--danger  { color:#b91c1c; border-color:#fca5a5; background:var(--card-bg); }
 
     /* ── Banner ── */
     .admin-banner { display:none; padding:.65rem 1.2rem; font-size:.83rem;
       border-radius:6px; margin:1rem 1.5rem 0; }
-    .admin-banner--error { background:#fef2f2; border:1px solid #fca5a5; color:#b91c1c; }
+    .admin-banner--error   { background:#fef2f2; border:1px solid #fca5a5; color:#b91c1c; }
     .admin-banner--success { background:#f0fdf4; border:1px solid #86efac; color:#166534; }
 
     /* ── Page body ── */
     .page { max-width:1060px; margin:0 auto; padding:1.5rem 1.5rem 4rem; }
 
-    /* ── Quick-add card ── */
-    .quick-add {
-      background:var(--card-bg); border-radius:10px;
-      border:1.5px solid var(--paper-dark);
-      box-shadow:0 2px 12px rgba(58,70,48,.09);
-      padding:1.2rem 1.4rem; margin-bottom:2rem;
-      display:flex; gap:.8rem; flex-wrap:wrap; align-items:flex-end;
+    /* ── Toolbar ── */
+    .toolbar {
+      display:flex; gap:.7rem; align-items:center; flex-wrap:wrap;
+      margin-bottom:1.5rem;
     }
-    .quick-add__field { display:flex; flex-direction:column; gap:.3rem; flex:1;
-      min-width:160px; }
-    .quick-add__field label { font-size:.76rem; color:var(--sage);
-      letter-spacing:.05em; }
-    input[type=text], select {
+    .toolbar__search { flex:1; min-width:180px; }
+    .toolbar__filter { min-width:160px; }
+    .toolbar__actions { display:flex; gap:.5rem; align-items:center; flex-shrink:0; }
+    input[type=text], input[type=search], select {
       font-family:'Spectral',serif; font-size:.88rem;
       padding:.45rem .7rem; border:1.5px solid rgba(58,70,48,.22); border-radius:6px;
       background:rgba(58,70,48,.04); color:var(--garden-ink); outline:none;
       transition:border-color .15s; width:100%;
     }
     input:focus, select:focus { border-color:var(--garden-ink); }
-    .btn--add { background:var(--garden-ink); color:var(--paper); border-color:var(--garden-ink);
-      white-space:nowrap; align-self:flex-end; padding:.45rem 1.1rem; }
-    .btn--import { background:transparent; color:var(--garden-ink); border-color:var(--garden-ink);
-      white-space:nowrap; align-self:flex-end; padding:.45rem 1.1rem;
-      text-decoration:none; display:inline-flex; align-items:center; gap:.35rem; }
 
     /* ── Section heading ── */
     .section-heading {
@@ -122,13 +114,28 @@
       cursor:pointer; transition:background .1s; }
     .tag-dropdown__item:hover { background:var(--paper-dark); }
 
-    /* ── Empty state ── */
-    .empty { color:var(--sage); font-size:.85rem; font-style:italic;
-      padding:.5rem 0; }
+    /* ── Empty / loading ── */
+    .empty   { color:var(--sage); font-size:.85rem; font-style:italic; padding:.5rem 0; }
+    .loading { text-align:center; padding:3rem; color:var(--sage); font-style:italic; }
 
-    /* ── Loading ── */
-    .loading { text-align:center; padding:3rem; color:var(--sage);
-      font-style:italic; }
+    /* ── Modal ── */
+    .modal-backdrop {
+      position:fixed; inset:0; background:rgba(42,40,32,.45);
+      z-index:200; display:none; align-items:center; justify-content:center;
+    }
+    .modal-backdrop.open { display:flex; }
+    .modal {
+      background:var(--card-bg); border:1.5px solid var(--paper-dark);
+      border-radius:12px; padding:1.8rem 2rem; max-width:420px; width:90%;
+      box-shadow:0 8px 32px rgba(58,70,48,.2);
+    }
+    .modal__title {
+      font-family:'Cormorant Garamond',serif; font-style:italic;
+      font-size:1.25rem; color:var(--garden-ink); margin-bottom:1.2rem;
+    }
+    .modal__field { display:flex; flex-direction:column; gap:.3rem; margin-bottom:.9rem; }
+    .modal__field label { font-size:.76rem; color:var(--sage); letter-spacing:.05em; }
+    .modal__actions { display:flex; justify-content:flex-end; gap:.6rem; margin-top:1.4rem; }
   </style>
 </head>
 <body>
@@ -148,18 +155,17 @@
 
 <div class="page">
 
-  <!-- Quick-add a new recipe -->
-  <div class="quick-add">
-    <div class="quick-add__field">
-      <label for="new-title">New recipe title</label>
-      <input id="new-title" type="text" placeholder="Grandma's Apple Pie">
+  <!-- Toolbar: search + filter + actions -->
+  <div class="toolbar">
+    <input class="toolbar__search" type="search" id="search-input"
+           placeholder="Search recipes…" autocomplete="off" oninput="onSearch(this.value)">
+    <select class="toolbar__filter" id="filter-category" onchange="onFilterCat(this.value)">
+      <option value="">All categories</option>
+    </select>
+    <div class="toolbar__actions">
+      <button class="btn btn--primary btn--sm" onclick="openAddModal()">+ Add Recipe</button>
+      <a class="btn btn--ghost btn--sm" href="/admin/import/">&#8593; Import</a>
     </div>
-    <div class="quick-add__field">
-      <label for="new-category">Section</label>
-      <select id="new-category"></select>
-    </div>
-    <button class="btn btn--add" onclick="addRecipe()">+ Add Recipe</button>
-    <a class="btn btn--import" href="/admin/import/">&#8593; Import from file</a>
   </div>
 
   <div id="recipe-list">
@@ -168,15 +174,36 @@
 
 </div>
 
-<!-- Supabase CDN -->
+<!-- Add-recipe modal -->
+<div class="modal-backdrop" id="add-modal" onclick="onBackdropClick(event)">
+  <div class="modal">
+    <div class="modal__title">Add a new recipe</div>
+    <div class="modal__field">
+      <label for="new-title">Recipe title</label>
+      <input type="text" id="new-title" placeholder="Grandma's Apple Pie"
+             onkeydown="if(event.key==='Enter') addRecipe()">
+    </div>
+    <div class="modal__field">
+      <label for="new-category">Category</label>
+      <select id="new-category"></select>
+    </div>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" onclick="closeAddModal()">Cancel</button>
+      <button class="btn btn--primary" onclick="addRecipe()">Create</button>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/admin/config.js" onerror="window.ADMIN_EMAIL=null;window.NETLIFY_BUILD_HOOK=null"></script>
 <script src="/admin/admin.js"></script>
 <script>
 // ── State ─────────────────────────────────────────────────────────────────────
-let allCategories = [];   // [{id, slug, name, sort_order}]
-let allTags       = [];   // [{id, slug, label}]
-let recipesData   = [];   // flat array from Supabase, with .tags injected
+let allCategories = [];
+let allTags       = [];
+let recipesData   = [];
+let searchTerm    = '';
+let filterCatId   = '';
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 (async () => {
@@ -188,15 +215,17 @@ let recipesData   = [];   // flat array from Supabase, with .tags injected
 // ── Data loading ──────────────────────────────────────────────────────────────
 async function loadCategories() {
   const { data, error } = await db.from('categories')
-    .select('id, slug, name, sort_order')
-    .order('sort_order');
+    .select('id, slug, name, sort_order').order('sort_order');
   if (error) { showBanner('Could not load categories: ' + error.message); return; }
   allCategories = data;
-  // Populate quick-add dropdown
-  const sel = document.getElementById('new-category');
-  sel.innerHTML = allCategories.map(c =>
-    `<option value="${escHtml(c.id)}">${escHtml(c.name)}</option>`
-  ).join('');
+
+  const opts = allCategories.map(c =>
+    `<option value="${escHtml(c.id)}">${escHtml(c.name)}</option>`).join('');
+
+  document.getElementById('new-category').innerHTML = opts;
+
+  const filterSel = document.getElementById('filter-category');
+  filterSel.innerHTML = '<option value="">All categories</option>' + opts;
 }
 
 async function loadTags() {
@@ -207,52 +236,63 @@ async function loadTags() {
 
 async function loadRecipes() {
   document.getElementById('recipe-list').innerHTML = '<p class="loading">Loading recipes…</p>';
-
-  // Fetch recipes with their category and tags
-  const { data: recipes, error } = await db
+  const { data, error } = await db
     .from('recipes')
     .select('id, title, slug, category_id, recipe_tags(tag_id)')
     .order('title');
-
   if (error) {
     showBanner('Could not load recipes: ' + error.message);
     document.getElementById('recipe-list').innerHTML = '';
     return;
   }
-
-  recipesData = recipes;
+  recipesData = data;
   renderList();
+}
+
+// ── Filtering ─────────────────────────────────────────────────────────────────
+function onSearch(val) {
+  searchTerm = val.trim();
+  renderList();
+}
+
+function onFilterCat(val) {
+  filterCatId = val;
+  renderList();
+}
+
+function getFiltered() {
+  const term = searchTerm.toLowerCase();
+  return recipesData.filter(r => {
+    const matchSearch = !term || r.title.toLowerCase().includes(term);
+    const matchCat    = !filterCatId || r.category_id === filterCatId;
+    return matchSearch && matchCat;
+  });
 }
 
 // ── Render ────────────────────────────────────────────────────────────────────
 function renderList() {
   const container = document.getElementById('recipe-list');
   container.innerHTML = '';
+  const filtered = getFiltered();
 
-  // Group by category order
   const catOrder = allCategories.map(c => c.id);
   const groups = {};
   allCategories.forEach(c => { groups[c.id] = { cat: c, recipes: [] }; });
   const uncategorised = [];
 
-  recipesData.forEach(r => {
-    if (r.category_id && groups[r.category_id]) {
-      groups[r.category_id].recipes.push(r);
-    } else {
-      uncategorised.push(r);
-    }
+  filtered.forEach(r => {
+    if (r.category_id && groups[r.category_id]) groups[r.category_id].recipes.push(r);
+    else uncategorised.push(r);
   });
 
   catOrder.forEach(catId => {
     const g = groups[catId];
     if (!g.recipes.length) return;
-
     const heading = document.createElement('div');
     heading.className = 'section-heading';
     heading.innerHTML = escHtml(g.cat.name) +
       `<span class="section-count">${g.recipes.length}</span>`;
     container.appendChild(heading);
-
     g.recipes.forEach(r => container.appendChild(buildRow(r)));
   });
 
@@ -264,8 +304,10 @@ function renderList() {
     uncategorised.forEach(r => container.appendChild(buildRow(r)));
   }
 
-  if (!recipesData.length) {
-    container.innerHTML = '<p class="empty">No recipes yet. Add one above.</p>';
+  if (!filtered.length) {
+    container.innerHTML = `<p class="empty">${searchTerm || filterCatId
+      ? 'No recipes match your search.'
+      : 'No recipes yet — add one to get started.'}</p>`;
   }
 }
 
@@ -278,13 +320,11 @@ function buildRow(recipe) {
   row.className = 'recipe-row';
   row.dataset.id = recipe.id;
 
-  // Title + edit link
   const titleCell = document.createElement('div');
   titleCell.className = 'recipe-row__title';
   titleCell.innerHTML = `<a href="/admin/recipe/?id=${encodeURIComponent(recipe.id)}">${escHtml(recipe.title)}</a>`;
   row.appendChild(titleCell);
 
-  // Category dropdown (inline move)
   const catCell = document.createElement('div');
   catCell.className = 'recipe-row__cat';
   const catSel = document.createElement('select');
@@ -295,7 +335,6 @@ function buildRow(recipe) {
   catCell.appendChild(catSel);
   row.appendChild(catCell);
 
-  // Tags
   const tagsCell = document.createElement('div');
   tagsCell.className = 'recipe-row__tags';
 
@@ -307,16 +346,13 @@ function buildRow(recipe) {
     tagsCell.appendChild(chip);
   });
 
-  // Add-tag dropdown
   if (unusedTags.length) {
     const wrap = document.createElement('div');
     wrap.className = 'tag-add-wrap';
-
     const addBtn = document.createElement('button');
     addBtn.className = 'tag-add-btn';
     addBtn.textContent = '+ tag';
     addBtn.onclick = (e) => { e.stopPropagation(); toggleDropdown(wrap); };
-
     const dropdown = document.createElement('div');
     dropdown.className = 'tag-dropdown';
     unusedTags.forEach(tag => {
@@ -326,7 +362,6 @@ function buildRow(recipe) {
       item.onclick = () => addTag(recipe.id, tag.id);
       dropdown.appendChild(item);
     });
-
     wrap.appendChild(addBtn);
     wrap.appendChild(dropdown);
     tagsCell.appendChild(wrap);
@@ -336,10 +371,27 @@ function buildRow(recipe) {
   return row;
 }
 
-// ── Actions ───────────────────────────────────────────────────────────────────
+// ── Modal ─────────────────────────────────────────────────────────────────────
+function openAddModal() {
+  document.getElementById('new-title').value = '';
+  document.getElementById('add-modal').classList.add('open');
+  setTimeout(() => document.getElementById('new-title').focus(), 50);
+}
 
+function closeAddModal() {
+  document.getElementById('add-modal').classList.remove('open');
+}
+
+function onBackdropClick(e) {
+  if (e.target === document.getElementById('add-modal')) closeAddModal();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeAddModal();
+});
+
+// ── Actions ───────────────────────────────────────────────────────────────────
 function toggleDropdown(wrap) {
-  // Close all other open dropdowns first
   document.querySelectorAll('.tag-dropdown.open').forEach(d => {
     if (d !== wrap.querySelector('.tag-dropdown')) d.classList.remove('open');
   });
@@ -350,11 +402,10 @@ document.addEventListener('click', () => {
 });
 
 async function addRecipe() {
-  const title = document.getElementById('new-title').value.trim();
+  const title      = document.getElementById('new-title').value.trim();
   const categoryId = document.getElementById('new-category').value;
   if (!title) { showBanner('Please enter a recipe title.', 'error'); return; }
 
-  // Build a slug from the title
   const slug = title.toLowerCase()
     .replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
 
@@ -362,28 +413,24 @@ async function addRecipe() {
     .from('recipes')
     .insert({ title, category_id: categoryId, slug,
               ingredients: [], instructions: [], notes: [] })
-    .select('id')
-    .single();
+    .select('id').single();
 
   if (error) {
-    showBanner('Could not create recipe: ' + (error.message.includes('duplicate') ?
-      'A recipe with that title already exists.' : error.message), 'error');
+    showBanner('Could not create recipe: ' + (error.message.includes('duplicate')
+      ? 'A recipe with that title already exists.' : error.message), 'error');
     return;
   }
-  document.getElementById('new-title').value = '';
+  closeAddModal();
   await triggerRebuild(null, 'Recipe added. Will show up in ~1 minute!');
   window.location.href = `/admin/recipe/?id=${data.id}`;
 }
 
 async function moveRecipe(recipeId, newCategoryId, selectEl) {
   selectEl.disabled = true;
-  const { error } = await db
-    .from('recipes')
-    .update({ category_id: newCategoryId })
-    .eq('id', recipeId);
+  const { error } = await db.from('recipes')
+    .update({ category_id: newCategoryId }).eq('id', recipeId);
   selectEl.disabled = false;
   if (error) { showBanner('Move failed: ' + error.message); return; }
-  // Update local state + re-render
   const r = recipesData.find(x => x.id === recipeId);
   if (r) r.category_id = newCategoryId;
   renderList();
