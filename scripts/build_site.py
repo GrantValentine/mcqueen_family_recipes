@@ -374,6 +374,17 @@ def build_site() -> int:
         )
         (page_dir / "index.html").write_text(html, encoding="utf-8")
 
+    # ── Help page ─────────────────────────────────────────────────────────────
+    help_tmpl = env.get_template("help.html")
+    html = help_tmpl.render(
+        page_title="How to use this site — JoLene's Family Recipes",
+        root_path="/",
+    )
+    help_dir = SITE_DIR / "help"
+    help_dir.mkdir(exist_ok=True)
+    (help_dir / "index.html").write_text(html, encoding="utf-8")
+    print("  site/help/index.html")
+
     print(f"\nBuilt {len(recipes)} recipe pages -> site/  ({matched} with photos)")
     return 0
 

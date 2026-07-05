@@ -152,8 +152,9 @@
     <span class="top-bar__title" id="page-title">Edit Recipe</span>
   </div>
   <div class="top-bar__actions">
-    <span id="save-indicator" style="font-size:.78rem;color:rgba(255,255,255,.65);"></span>
+    <span id="save-indicator" style="font-size:.76rem; color:var(--sage);"></span>
     <button class="btn btn--primary" onclick="saveRecipe(this)">Save Recipe</button>
+    <button class="btn btn--ghost" id="publish-btn" onclick="triggerRebuild(this)" style="display:none;">Publish Changes</button>
     <button class="btn btn--ghost" onclick="logout()">Log out</button>
   </div>
 </div>
@@ -620,8 +621,6 @@ async function saveRecipe(btn) {
     sessionStorage.removeItem('pendingImport');
     // Switch URL to edit mode without a page reload
     window.history.replaceState({}, '', `/admin/recipe/?id=${recipeId}`);
-    // Auto-publish so the new recipe appears on the site without a manual rebuild
-    triggerRebuild(null, 'Recipe saved. Will show up in ~1 minute!');
 
   } else {
     // ── UPDATE existing recipe ─────────────────────────────────────────────
@@ -654,9 +653,10 @@ async function saveRecipe(btn) {
   renderList('instructions');
   renderList('notes');
 
-  showBanner('Recipe saved!', 'success');
+  showBanner('Recipe saved! Click Publish Changes when you\'re done to update the site.', 'success');
   const ind = document.getElementById('save-indicator');
-  ind.textContent = 'Saved ' + new Date().toLocaleTimeString();
+  ind.textContent = 'Saved · not yet published';
+  document.getElementById('publish-btn').style.display = '';
   btn.disabled = false; btn.textContent = 'Save Recipe';
 }
 

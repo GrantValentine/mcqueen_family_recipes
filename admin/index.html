@@ -421,7 +421,6 @@ async function addRecipe() {
     return;
   }
   closeAddModal();
-  await triggerRebuild(null, 'Recipe added. Will show up in ~1 minute!');
   window.location.href = `/admin/recipe/?id=${data.id}`;
 }
 

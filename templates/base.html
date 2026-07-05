@@ -1050,6 +1050,7 @@
         {% for label, slug in nav_items %}
         <li><a href="{{ root_path }}{{ slug }}/">{{ label }}</a></li>
         {% endfor %}
+        <li><a href="/help/">How to use this site</a></li>
         <li class="drawer-edit"><a href="/admin/login/">Sign in</a></li>
       </ul>
     </div>
@@ -1064,7 +1065,8 @@
   <footer class="site-footer">
     <p class="site-footer__love">From JoLene's garden, where so much of our family has grown.</p>
     <p>JoLene's Family Recipes</p>
-    <p style="margin-top:0.75rem;">
+    <p style="margin-top:0.75rem; display:flex; align-items:center; justify-content:center; gap:1.2rem;">
+      <a href="/help/" style="font-family:'Spectral',serif; font-style:italic; font-size:0.82rem; color:var(--sage); text-decoration:none; opacity:0.7; transition:opacity 0.15s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">How to use this site</a>
       <a class="footer-admin-link" href="/admin/">Open the cookbook</a>
     </p>
     <div class="garden-footer-bar" role="presentation" aria-hidden="true"></div>
